@@ -22,17 +22,36 @@ jobs:
           set -uo pipefail
 
           REPOS=(
+            # core a11y tooling
             "dequelabs/axe-core"
+            "dequelabs/axe-core-npm"
             "a11yproject/a11yproject.com"
             "jsx-eslint/eslint-plugin-jsx-a11y"
             "microsoft/accessibility-insights-web"
             "IBM/equal-access"
-            "alphagov/accessible-autocomplete"
             "testing-library/jest-dom"
+            # smaller a11y libs (less umkämpft)
+            "pa11y/pa11y"
+            "pa11y/pa11y-ci"
+            "pa11y/pa11y-dashboard"
+            "focus-trap/focus-trap"
+            "focus-trap/focus-trap-react"
+            "KittyGiraudel/a11y-dialog"
+            "ericwbailey/a11y-syntax-highlighting"
+            "WICG/aom"
+            # GOV.UK / community
+            "alphagov/accessible-autocomplete"
+            "alphagov/govuk-frontend"
+            "alphagov/govuk-design-system"
+            # bigger but plenty of a11y issues
+            "GoogleChrome/lighthouse"
+            "component-driven/cypress-axe"
+            "adobe/react-spectrum"
+            "radix-ui/primitives"
           )
           LABELS=("good first issue" "help wanted" "documentation")
 
-          # Nur Issues mit Aktivität in den letzten 6 Monaten
+          # 6-Monats-Frische
           SINCE=$(date -u -d '6 months ago' +%Y-%m-%d)
           echo "Stage 1 cutoff: updated:>=$SINCE"
 
@@ -93,12 +112,15 @@ jobs:
               or .authorAssociation == "MEMBER"
               or .authorAssociation == "COLLABORATOR";
 
+            def is_recent(c; days):
+              ((now - (c.createdAt | fromdateiso8601)) < (days * 86400));
+
             def maintainer_green(cs):
               cs
               | map(select(is_maintainer))
               | map(select(
                   ((.body // "") | ascii_downcase)
-                  | test("pr welcome|would accept|happy to (review|accept)|contributions welcome|please (open|submit) a pr")
+                  | test("pr welcome|would accept|happy to (review|accept)|contributions welcome|please (open|submit) a pr|that.?d be great|sounds good")
                 ))
               | length;
 
@@ -107,15 +129,26 @@ jobs:
               | map(select(is_maintainer))
               | map(select(
                   ((.body // "") | ascii_downcase)
-                  | test("won.?t fix|will not (fix|implement)|no longer relevant|out of scope|wontfix|stale|closing( as)?|not planned")
+                  | test("won.?t fix|will not (fix|implement)|no longer relevant|out of scope|wontfix|stale|closing( as)?|not planned|need to (test|investigate|check) (this )?first|let me (test|check)|extensive testing")
                 ))
               | length;
 
-            def claimed(cs):
+            # Recent claims only (last 120 days) - older claims often expire
+            def claimed_recent(cs):
+              cs
+              | map(select(is_recent(.; 120)))
+              | map(select(
+                  ((.body // "") | ascii_downcase)
+                  | test("i.?ll (work|take) (on )?this|i.?ll do this|taking this|i can (do|take) this|i.?m on it|working on this|let me work on|please assign( me)?|assign( me)?|could i (open|create|submit|raise) a pr|may i (work on|take|tackle)|would (love|like) to (work|take|tackle)|happy to (take|tackle|work on)|i would like to (work on|take|tackle)|here is the pr|i.?ve (opened|submitted|created) (a |the )?pr|see pr #")
+                ))
+              | length;
+
+            # Did someone already submit a PR for this?
+            def pr_submitted(cs):
               cs
               | map(select(
                   ((.body // "") | ascii_downcase)
-                  | test("i.?ll work on this|i.?ll take this|taking this|i can do this|i.?m on it|working on this|let me work on|please assign( me)?|assign( me)?")
+                  | test("(submitted|opened|created|here.?s|here is) (a |the )?(pr|pull request) #|see pr #|fixes? in #|merged in #|closed in #|resolved (by |in )#")
                 ))
               | length;
 
@@ -130,6 +163,11 @@ jobs:
               else ((now - (ts | fromdateiso8601)) / 86400) | floor
               end;
 
+            def recent_activity_score(cs):
+              cs
+              | map(select(is_recent(.; 60)))
+              | length;
+
             def score:
               . as $i
               | (.comments // []) as $cs
@@ -140,15 +178,19 @@ jobs:
               | days_since(.createdAt) as $age_cre
               | maintainer_green($cs) as $mg
               | maintainer_red($cs)   as $mr
-              | claimed($cs)          as $cl
+              | claimed_recent($cs)   as $cl
+              | pr_submitted($cs)     as $pr
+              | recent_activity_score($cs) as $rec_act
               | (
-                  (if $age_upd < 30 then 15 elif $age_upd < 90 then 8 elif $age_upd < 180 then 3 else 0 end)
-                  + (if $age_cre < 365 then 10 elif $age_cre < 730 then 4 else 0 end)
-                  + ($mg * 20)
-                  + ($mr * -40)
-                  + ($cl * -25)
-                  + (if ($cb.total > 3 and $cb_ratio >= 0.8) then -30 else 0 end)
-                  + (if ($cs | length) > 60 then -25 elif ($cs | length) > 30 then -10 else 0 end)
+                  (if $age_upd < 14 then 20 elif $age_upd < 30 then 12 elif $age_upd < 90 then 6 else 1 end)
+                  + (if $age_cre < 90 then 25 elif $age_cre < 365 then 12 elif $age_cre < 730 then 4 else 0 end)
+                  + ($mg * 18)
+                  + ($mr * -45)
+                  + ($cl * -40)
+                  + ($pr * -50)
+                  + ($rec_act * 2)
+                  + (if ($cb.total > 5 and $cb_ratio >= 0.7) then -25 else 0 end)
+                  + (if ($cs | length) > 80 then -20 elif ($cs | length) > 40 then -8 else 0 end)
                 ) as $s
               | {
                   score: $s,
@@ -163,9 +205,11 @@ jobs:
                   daysSinceUpdate: $age_upd,
                   daysSinceCreate: $age_cre,
                   commentCount: ($cs | length),
+                  recentActivity: $rec_act,
                   maintainerGreen: $mg,
                   maintainerRed: $mr,
-                  claimedCount: $cl,
+                  claimedRecent: $cl,
+                  prSubmitted: $pr,
                   checkboxes: $cb,
                   bodyExcerpt: ($b | gsub("\r"; "") | .[0:300]),
                   recentComments: (
@@ -186,15 +230,15 @@ jobs:
             | {
                 scannedAt: (now | strftime("%Y-%m-%dT%H:%M:%SZ")),
                 count: length,
-                topIssues: (.[0:12]),
+                topIssues: (.[0:15]),
                 allRanked: (
-                  map({score, repo, number, title, url, daysSinceUpdate, claimedCount, maintainerGreen, maintainerRed})
+                  map({score, repo, number, title, url, daysSinceUpdate, claimedRecent, prSubmitted, maintainerGreen, maintainerRed})
                 )
               }
           ' data/enriched.json > data/issues_latest.json
 
-          echo "--- Top 8 ---"
-          jq -r '.topIssues[0:8][] | "  [\(.score)]  \(.repo)#\(.number) - \(.title[0:80])"' data/issues_latest.json
+          echo "--- Top 10 ---"
+          jq -r '.topIssues[0:10][] | "  [\(.score)]  \(.repo)#\(.number)  -  \(.title[0:80])"' data/issues_latest.json
           echo "Total: $(jq '.count' data/issues_latest.json)"
 
       - name: Commit result if changed
@@ -205,6 +249,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "Keine Änderungen."
           else
-            git commit -m "chore(a11y-radar): refresh scan with comment analysis"
+            git commit -m "chore(a11y-radar): refresh scan v3 (more repos, better scoring)"
             git push
           fi
