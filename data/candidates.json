@@ -1,0 +1,123 @@
+[
+  {
+    "createdAt": "2013-01-13T21:48:53Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwyNDk1OTMzMA==",
+        "name": "idea",
+        "description": "Suggestions for the site.",
+        "color": "d4c5f9"
+      },
+      {
+        "id": "MDU6TGFiZWw2NzM2NTgwMDE=",
+        "name": "help wanted",
+        "description": "Issues the team would like assistince with.",
+        "color": "e11d21"
+      }
+    ],
+    "number": 12,
+    "title": "List of Post Ideas",
+    "updatedAt": "2025-12-04T04:26:09Z",
+    "url": "https://github.com/a11yproject/a11yproject.com/issues/12",
+    "repo": "a11yproject/a11yproject.com",
+    "queryLabel": "help wanted"
+  },
+  {
+    "createdAt": "2022-10-03T01:19:07Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwyNDQ3NTU1Ng==",
+        "name": "bug",
+        "description": "Problems with the project's functionality",
+        "color": "e11d21"
+      },
+      {
+        "id": "MDU6TGFiZWw2NzM2NTgwMDE=",
+        "name": "help wanted",
+        "description": "Issues the team would like assistince with.",
+        "color": "e11d21"
+      },
+      {
+        "id": "MDU6TGFiZWw3MzEwNzUzMjQ=",
+        "name": "good first issue",
+        "description": "A small, good place to get started working with the site.",
+        "color": "e2fed2"
+      },
+      {
+        "id": "MDU6TGFiZWwyMTk4ODIzMTU4",
+        "name": "content",
+        "description": "Issues dealing with our published content.",
+        "color": "ffce29"
+      }
+    ],
+    "number": 1478,
+    "title": "[Bug]  404s, bad host, timeouts, bad urls for URLs linked from website",
+    "updatedAt": "2026-02-05T09:41:15Z",
+    "url": "https://github.com/a11yproject/a11yproject.com/issues/1478",
+    "repo": "a11yproject/a11yproject.com",
+    "queryLabel": "good first issue"
+  },
+  {
+    "createdAt": "2018-11-13T11:05:36Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwyMjI4MjgzODQ=",
+        "name": "feat",
+        "description": "New feature or enhancement",
+        "color": "84b6eb"
+      },
+      {
+        "id": "MDU6TGFiZWwyMjc1NTg1OTEz",
+        "name": "good first issue",
+        "description": "For first-time contributors",
+        "color": "94efc9"
+      }
+    ],
+    "number": 1237,
+    "title": "dom.isFocusable should consider `audio` and `video` controls",
+    "updatedAt": "2025-11-12T07:06:16Z",
+    "url": "https://github.com/dequelabs/axe-core/issues/1237",
+    "repo": "dequelabs/axe-core",
+    "queryLabel": "good first issue"
+  },
+  {
+    "createdAt": "2025-09-02T19:14:22Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwzMjc3NzUyMjg=",
+        "name": "help wanted",
+        "description": "",
+        "color": "159818"
+      }
+    ],
+    "number": 1060,
+    "title": "`jsx-a11y/anchor-has-content`: do not encourage title attribute usage",
+    "updatedAt": "2026-02-27T01:13:08Z",
+    "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1060",
+    "repo": "jsx-eslint/eslint-plugin-jsx-a11y",
+    "queryLabel": "help wanted"
+  },
+  {
+    "createdAt": "2026-04-28T14:40:32Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwzMjc3NzUyMjY=",
+        "name": "enhancement",
+        "description": "",
+        "color": "84b6eb"
+      },
+      {
+        "id": "MDU6TGFiZWwzMjc3NzUyMjg=",
+        "name": "help wanted",
+        "description": "",
+        "color": "159818"
+      }
+    ],
+    "number": 1087,
+    "title": "The document of `lang` differs from the implementation.",
+    "updatedAt": "2026-04-29T05:34:35Z",
+    "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1087",
+    "repo": "jsx-eslint/eslint-plugin-jsx-a11y",
+    "queryLabel": "help wanted"
+  }
+]

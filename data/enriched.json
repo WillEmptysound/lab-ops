@@ -1,0 +1,2106 @@
+[
+  {
+    "author": {
+      "id": "MDQ6VXNlcjQyMjE4",
+      "is_bot": false,
+      "login": "davatron5000",
+      "name": "Dave Rupert"
+    },
+    "body": "Simple, bite-sized snippets of content to teach A11Y in smaller pieces instead of big chunks. We can check them off (using githubs new todo list feature) as we get them finished.\r\n\r\n:chart_with_upwards_trend: == A table or  chart here would be useful.\r\n## Concepts\r\n\r\nBasic introductions to various concepts. What is it? Why does it exist?\r\n- [x] ARIA introduction: roles :chart_with_upwards_trend: \r\n- [x] ARIA introduction: states :chart_with_upwards_trend: \r\n- [x] ARIA introduction: properties :chart_with_upwards_trend: \r\n- [x] Basic ARIA roles\r\n- [x] Basic ARIA states\r\n- [x] Basic ARIA properties\r\n- [x] Color blindness\r\n- [x] Color Contrast\r\n- [ ] What is WAI? The Web Accessibility Initiative\r\n- [x] Section 508\r\n- [x] WCAG 2 (38 reqs)\r\n## Features\r\n- [x] Accessibility Checklist\r\n- [x] Resource Page\r\n## Quick Tips\r\n\r\nQuick, tiny, easy improvements for maximum ROI\r\n- [x] Using `alt` text correctly\r\n- [x] Using `title` attributes correctly\r\n- [x] Never use `maximum-scale=1.0`\r\n- [x] Prefer button to div elements [https://staging.w15y.com/shortcuts/prefer-button-to-div](shhhh!)\r\n- [ ] Avoid -webkit-text-adjust-size: none; http://codepen.io/davatron5000/full/14/7\r\n## Quick Tests\r\n- [x] Navigate using your keyboard\r\n- [x] Test contrast on your phone\r\n- [x] Larger Touch Targets\r\n- [x] Accessible Typography (considerations: larger font-size, etc)\r\n## HOWTOs\r\n\r\nMore in-depth, yet simple articles on HOW-TO use/create something.\r\n- [x] HOWTO: Use VoiceOver on iOS\r\n- [x] HOWTO: Use NVDA on Windows\r\n- [ ] HOWTO: Use JAWS on Windows\r\n- [x] HOWTO: Use VoiceOver on Mac\r\n- [ ] HOWTO: Make an accessible `<nav>` with dropdowns @jimbateson\r\n- [x] HOWTO: Hide content\r\n- [x] HOWTO: Write accessible `FORM`s\r\n- [x] HOWTO: Make accessible `VIDEO`s: `<track>` & HTML5 Video Controls\r\n- [ ] ?? HOWTO: Make accessible `CANVAS` & SVG ?? (2 posts?) @CBID2 \r\n- [ ] HOWTO: Ajax with `ARIA-LIVE`\r\n- [ ] HOWTO: Make accessible dialogs and modals\r\n- [x] HOWTO: Test text at 200%\r\n- [x] HOWTO: Em-based Media Queries\r\n- [x] HOWTO: Accessible Animations (i.e, they're frustrating)\r\n- [x] HOWTO: Use Access Keys\r\n## Myths\r\n- [x] MYTHBUSTED: Accessibility is “blind people”\r\n- [x] MYTHBUSTED: Screen readers don't use Javascript\r\n- [ ] ?? MYTHBUSTED: Accessibility is just turning off CSS ?? @JSmurf \r\n## Assistive Technology (AT)\r\n- [x] NVDA: The OpenSource Screen Reader\r\n- [x] High Contrast Mode\r\n- [x] User Zoom\r\n- [x] Dyslexic Fonts\r\n## Videos\r\n- [ ] Video: How a non-sighted person uses a screen reader\r\n- [ ] Video: How a partially-sighted person uses High Contrast Mode\r\n- [ ] Video: How a mobility-limited person uses a website\r\n## Misc.\r\n- [ ] Firefox & Accessibility (aka, Don’t neglect FF).\r\n- [x] ?? Myths: A11Y and SEO (myth confirmed?) ??\r\n- [ ] SPANS. pause. screen. readers. (aka, \"Why Lettering.JS sucks\")\r\n- [ ] ?? Cheapest way to get audio/video transcribed ??\r\n- [ ] ?? Making Bootstrap Accessible ??\r\n",
+    "comments": [
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDEyMjAzMTEy",
+        "author": {
+          "login": "thomassjogren"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "I've composed a quick tip on `maximum-scale`, but how do you want it? The gist url or some other way?\nI'm not sure what workflow you are using for posts. :smile:\n\nBtw. I tried to follow the basic layout of the already existing posts. If you wouldn't mind checking it and report back any issues with it.\n\nhttps://gist.github.com/4526795\n",
+        "createdAt": "2013-01-14T00:03:25Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-12203112",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDEyMjc4MTcy",
+        "author": {
+          "login": "chriscoyier"
+        },
+        "authorAssociation": "NONE",
+        "body": "Link dump...\n\nSkip to content links:\nhttp://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/\n\nColor contrast:\nhttp://leaverou.github.com/contrast-ratio/\n\nIcon fonts:\nhttp://symbolset.com/\nhttp://css-tricks.com/html-for-icon-font-usage/\n",
+        "createdAt": "2013-01-15T17:15:21Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-12278172",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDEyMjc5Njk2",
+        "author": {
+          "login": "grayghostvisuals"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "@chriscoyier \nOK so we got Lea in on the checklist page under 'testing' and also listed under 'online tools' on the resources page :metal:\n",
+        "createdAt": "2013-01-15T17:46:26Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-12279696",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDEyMjc5Nzc2",
+        "author": {
+          "login": "susanjrobertson"
+        },
+        "authorAssociation": "NONE",
+        "body": "Another link regarding title attribute usage: \nhttp://www.paciellogroup.com/blog/2013/01/using-the-html-title-attribute-updated/\n",
+        "createdAt": "2013-01-15T17:47:59Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-12279776",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDIxNDQ2NDEz",
+        "author": {
+          "login": "p4bl1t0"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "An idea for a post could be:\n\nHOWTO: Correctly label input types\n\nIncluding labels, hints (formats or required messages), error message, etc.\n",
+        "createdAt": "2013-07-23T21:12:46Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-21446413",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDI4MjY5MzM2",
+        "author": {
+          "login": "grayghostvisuals"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "- [ ] How Screen Readers Handle Text when used with `pseudo` selectors and `data-attributes` for fancy overlay effects\n  [http://trentwalton.com/2013/11/06/a-better-way-to-layer-type/#comment-55979](http://trentwalton.com/2013/11/06/a-better-way-to-layer-type/#comment-55979)\n",
+        "createdAt": "2013-11-12T05:26:20Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-28269336",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDEzMjUzNzQ5MQ==",
+        "author": {
+          "login": "pstonier"
+        },
+        "authorAssociation": "NONE",
+        "body": "Good resource for ARIA-Live \nhttps://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions\n",
+        "createdAt": "2015-08-19T10:49:13Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-132537491",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDE0MzI0MDc4Mw==",
+        "author": {
+          "login": "chrisdemars"
+        },
+        "authorAssociation": "NONE",
+        "body": "I can definitely see myself writing some posts. I will come up with some ideas and content.\n",
+        "createdAt": "2015-09-25T14:39:45Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-143240783",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDE2NTgwMzcyNw==",
+        "author": {
+          "login": "RachelRVasquez"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "Hmm I think I'm going to give Color Contrast a try!\n",
+        "createdAt": "2015-12-18T15:26:27Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-165803727",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDE5MDY5MDUzNQ==",
+        "author": {
+          "login": "bupkes"
+        },
+        "authorAssociation": "NONE",
+        "body": "Hello.\nJust wanted to introduce myself, apologies if this is inappropriate.\nI am very new to Github and so am struggling to work out where/how to help with this project (eg I've never done a pull request or filed an issue and that sort of thing).\nI have been working for the past few years teaching blind and partially sighted users how to navigate computers and the web with screenreader software, so I'm hopeful that my experience might be useful.\nAnyway just saying hi. I'm doing a course on Github on Treehouse soon - once I've done that I should have a better idea what to do!\nMatt.\n",
+        "createdAt": "2016-03-01T12:12:20Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-190690535",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDE5MDgwNzU2Mg==",
+        "author": {
+          "login": "joe-watkins"
+        },
+        "authorAssociation": "NONE",
+        "body": "@bupkes Welcome :) !!! Yes finish that course and report back.. but until you get a grasp of Git you can contribute. Your experience is priceless. Poke around our issues and chime in.. poke around our website and create issues if you find them. You don't have to be expert coder human to make a difference :)\n\nIf GitHub is a barrier feel free to email me directly ideas and such: info/at/joe-watkins.io\n",
+        "createdAt": "2016-03-01T16:51:30Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-190807562",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDE5MjQ2OTkyMg==",
+        "author": {
+          "login": "jeryj"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Welcome @bupkes! In our redesign of the a11yproject.com site, we were struggling on the best implementation method for accordion-style collapsable content on mobile devices. There were some quirks with implementation that we thought might give screen reader users a worse experience with the site, so we abandoned it. It'd be great to pick your brain on the topic so we could figure out some solid patterns that give screen reader users and non-screen reader users a great experience. \n\nThanks for getting in touch and offering to help! Cheers, Jerry\n",
+        "createdAt": "2016-03-04T21:20:12Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-192469922",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDIwNzQ1MjMzMA==",
+        "author": {
+          "login": "inclusiveThinking"
+        },
+        "authorAssociation": "NONE",
+        "body": "Recommendation to add the following book to the list:\n\nDigital Outcasts: Moving Technology Forward without Leaving People Behind - Kel Smith\n",
+        "createdAt": "2016-04-08T14:27:35Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-207452330",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDIxNjA5MTczMA==",
+        "author": {
+          "login": "inclusiveThinking"
+        },
+        "authorAssociation": "NONE",
+        "body": "Greetings. I would like to take \"Accessible Typography\". I should have a gist about in about a week.\n",
+        "createdAt": "2016-05-02T01:50:35Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-216091730",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDI2MzQ3NjYyOQ==",
+        "author": {
+          "login": "RachelRVasquez"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "Hiya! 👋 I'd like to tackle an ARIA basics article to write. Question about the ARIA basics for roles, states, and properties - how would these differ from their intros? Would we be diving into specific application with examples? E.g. How to use ARIA landmark roles or How to use ARIA states on XYZ?",
+        "createdAt": "2016-11-29T04:58:47Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-263476629",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDI2MzUwMzUwMQ==",
+        "author": {
+          "login": "jpdevries"
+        },
+        "authorAssociation": "NONE",
+        "body": "I think clarifying the difference between roles, states, and properties would be of benefit. People often refer to ARIA as \"ARIA roles\" when I think they usually mean ARIA in general.",
+        "createdAt": "2016-11-29T08:10:11Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-263503501",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDMzMzYxMDAwMw==",
+        "author": {
+          "login": "kendrick"
+        },
+        "authorAssociation": "NONE",
+        "body": "I'll work on a HOWTO for accessible modals.",
+        "createdAt": "2017-10-02T17:45:57Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-333610003",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDMzMzYxNzUxOA==",
+        "author": {
+          "login": "svinkle"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "@kendrick Sounds good, go for it!\r\n\r\nPlease create a new issue when you've got something to show, linking your text in a gist for review.",
+        "createdAt": "2017-10-02T18:10:15Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "LAUGH",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-333617518",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDMzNDMyNzIwMQ==",
+        "author": {
+          "login": "digilou"
+        },
+        "authorAssociation": "NONE",
+        "body": "Has High Contrast Mode under AT been taken yet?",
+        "createdAt": "2017-10-05T00:33:43Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-334327201",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDMzNDMyNzY1Mw==",
+        "author": {
+          "login": "svinkle"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "I don't think so, @digilou. Go for it! 🙂\r\n\r\nPlease create a [new issue](https://github.com/a11yproject/a11yproject.com/issues/new) when you've got something to show, linking your text in a [gist](https://gist.github.com/) for review.",
+        "createdAt": "2017-10-05T00:37:08Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-334327653",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDM4ODQ4MTcyNg==",
+        "author": {
+          "login": "Watso196"
+        },
+        "authorAssociation": "NONE",
+        "body": "Hi all!\r\nI work with ARIA during most days of the week and was wondering if the ARIA states article was still up for grabs? I'd love to contribute to a project that myself and my team of developers could use on a regular basis!",
+        "createdAt": "2018-05-11T20:49:19Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-388481726",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDM4ODQ4MjYxNA==",
+        "author": {
+          "login": "svinkle"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "@Watso196 Awesome idea! It's great when you write something then reference later. It could also be a mini series if you're keen; ARIA roles and properties could also use an article.\r\n\r\nEither way, I say go for it! 👍",
+        "createdAt": "2018-05-11T20:52:57Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-388482614",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDQwNzc5MTgwNA==",
+        "author": {
+          "login": "alexroseb"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "@Watso196 Are you still taking the ARIA states/properties? If not, I'd like to write the article about properties at least then potentially expand to articles about states and roles.",
+        "createdAt": "2018-07-25T15:18:27Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-407791804",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDQwNzc5MzY2NA==",
+        "author": {
+          "login": "scottaohara"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "I think there's enough there that the work could be split up :)",
+        "createdAt": "2018-07-25T15:23:49Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-407793664",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDQxNDA4NzIwMQ==",
+        "author": {
+          "login": "missmatsuko"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "I think some of the unchecked items on the issue are already published.\r\n\r\nBasic - Color blindness: https://a11yproject.com/posts/understanding-colourblindness/\r\nAssistive Technology - NVDA: The OpenSource Screen Reader: https://a11yproject.com/posts/getting-started-with-nvda/",
+        "createdAt": "2018-08-18T21:25:05Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-414087201",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDQ1ODMyNzQ2Mg==",
+        "author": {
+          "login": "sheribyrne"
+        },
+        "authorAssociation": "NONE",
+        "body": "If you are still looking for an article on color blindness I published one on Medium a couple of months ago that was picked up by the UX collective and has thousands of reads.  https://medium.com/@sheribyrnehaber/color-blindness-considerations-for-designers-and-content-managers-a767ab38a825  I've also done a couple more techy ones on accessibility as measured by 2.1 for toast messages.  Haven't done too much on GitHub before, but I will learn",
+        "createdAt": "2019-01-28T22:27:39Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-458327462",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDQ3Mjg5MTUxMg==",
+        "author": {
+          "login": "michaelspellacy"
+        },
+        "authorAssociation": "NONE",
+        "body": "HOWTO: Implementing Audio Descriptions",
+        "createdAt": "2019-03-14T14:39:10Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-472891512",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDY3NzgyMTA0Mw==",
+        "author": {
+          "login": "youriwims"
+        },
+        "authorAssociation": "NONE",
+        "body": "Hi there 👋🏽 I've done a [few videos on Firefox + A11Y](https://www.youtube.com/c/MozillaDeveloper/search?query=youriwims) with the Mozilla Developer YouTube channel. Is it okay to re-share them or would it be best to re-shoot them? Also, would I be responsible for the editing or does the A11Y Project provide support?",
+        "createdAt": "2020-08-20T18:15:46Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "HOORAY",
+            "users": {
+              "totalCount": 2
+            }
+          }
+        ],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-677821043",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDY3Nzg3MjQ4Mg==",
+        "author": {
+          "login": "joe-watkins"
+        },
+        "authorAssociation": "NONE",
+        "body": "@youriwims Those are **so** well done! I love the tone, pace, and how approachable they are!! Awesome work :) You are a great teacher.",
+        "createdAt": "2020-08-20T19:57:40Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "HEART",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-677872482",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDY3ODMzNzgwNA==",
+        "author": {
+          "login": "ericwbailey"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "@youriwims We can [list the videos on our Resources page](https://www.a11yproject.com/resources/#courses). And echoing what Joe said, I love these videos!\r\n\r\nWould you like to draft up a PR, or is that something you'd like us to do?",
+        "createdAt": "2020-08-21T15:01:17Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "HEART",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-678337804",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDY3OTI5Njg5NQ==",
+        "author": {
+          "login": "youriwims"
+        },
+        "authorAssociation": "NONE",
+        "body": "Thank you so much @joe-watkins + @ericwbailey! @ericwbailey I can definitely put up a PR for them—will do soon, thanks!",
+        "createdAt": "2020-08-24T18:38:19Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-679296895",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDcyNzUxOTU4Nw==",
+        "author": {
+          "login": "Taenerys"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "Hi!! I'm new here, would love to take up writing about HOWTO: Use VoiceOver on iOS if no one has claimed this topic yet!",
+        "createdAt": "2020-11-15T05:47:21Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 2
+            }
+          }
+        ],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-727519587",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDcyNzY4NjU2Mw==",
+        "author": {
+          "login": "ericwbailey"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "@Taenerys Thanks for volunteering, it's yours! Here's [our contribution guidelines for posts](https://www.a11yproject.com/contributing-guidelines/#posts), as well as [our style guide](https://www.a11yproject.com/content-style-guide/).",
+        "createdAt": "2020-11-16T01:51:18Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "HEART",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-727686563",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDczOTA1ODQ4Ng==",
+        "author": {
+          "login": "rmleg"
+        },
+        "authorAssociation": "NONE",
+        "body": "Hi! I have been working on modal accessibility quite a bit lately and I would love to take a stab at the \"HOWTO: Make accessible dialogs and modals\" article if it hasn't been claimed yet.",
+        "createdAt": "2020-12-04T22:31:38Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-739058486",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDczOTA2NjUyNA==",
+        "author": {
+          "login": "ericwbailey"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Sounds great!",
+        "createdAt": "2020-12-04T22:57:47Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-739066524",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDczOTA5MzE0MQ==",
+        "author": {
+          "login": "sheribyrne"
+        },
+        "authorAssociation": "NONE",
+        "body": "I'm about to post an article on Medium on accessible form construction.  If\nthat is a topic of interest that hasn't been taken yet, let me know and\nI'll look at those guidelines that are in the earlier response\n\nSheri\n\nOn Fri, Dec 4, 2020 at 2:58 PM Eric Bailey <notifications@github.com> wrote:\n\n> Sounds great!\n>\n> —\n> You are receiving this because you commented.\n> Reply to this email directly, view it on GitHub\n> <https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-739066524>,\n> or unsubscribe\n> <https://github.com/notifications/unsubscribe-auth/ALHRHKWSPCNP6DBUSOEM7RTSTFSPTANCNFSM4AC3Z2ZA>\n> .\n>\n",
+        "createdAt": "2020-12-05T00:43:48Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-739093141",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDc2NTU2NTk1Mg==",
+        "author": {
+          "login": "JSmurf"
+        },
+        "authorAssociation": "NONE",
+        "body": "I'd love to write a few posts. I have an idea for the \"?? MYTHBUSTED: Accessibility is just turning off CSS ??\" item on the list. ",
+        "createdAt": "2021-01-22T17:20:39Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-765565952",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDc2NTcwMzIyMg==",
+        "author": {
+          "login": "davatron5000"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "@JSmurf Have at it! Feel free to post a PR. Or if you'd rather, open a new issue with a link to an outline or gist of some kind and we can assist. I'll add your name next to the post to \"claim\" it.",
+        "createdAt": "2021-01-22T21:47:00Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-765703222",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDg0Nzg3MTYyNw==",
+        "author": {
+          "login": "MicheleAWilliams-A11y"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "Hi everyone, I'm Michele (featured on the home page right now for context :P). I'm drafting a blog post about \"Everyday Accessibility\" that compiles the small steps people can take w/o expertise, particularly on social media and in documents, e.g., using capitals in hashtags and the \"ribbon\" to make bullets in Word rather than just style them. I find people still aren't aware of even the little details like this and could use a place where they see them listed and are encouraged to take actionable steps. If it's of interest, just let me know the next steps (in GitHub novice detail - LOL). Thanks!",
+        "createdAt": "2021-05-25T13:29:55Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "HOORAY",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-847871627",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDg0ODM2MzQxNg==",
+        "author": {
+          "login": "ericwbailey"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "@MicheleAWilliams-A11y That sounds amazing, and we are definitely interested! Here are [the next steps](https://www.a11yproject.com/contributing-guidelines/#posts) for writing a post. If you prefer, we can collaborate via Google Docs, Microsoft Word, or another app as well.",
+        "createdAt": "2021-05-26T00:14:53Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-848363416",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDg0ODc0MTk3NA==",
+        "author": {
+          "login": "MicheleAWilliams-A11y"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "Wonderful, @ericwbailey - I'm on it! I'll let you know if I run into issues and need to fall back to Word or Docs.",
+        "createdAt": "2021-05-26T12:50:14Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "HOORAY",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-848741974",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDg1MTg3NzI0MQ==",
+        "author": {
+          "login": "rianrietveld"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "Hi :-)\r\nI'd like to propose an article: HOW TO: Accessible heading structure. Is that an idea? To also address the multiple H1 discussion.\r\n\r\nIs it possible to tick the checkboxes of the articles already written?",
+        "createdAt": "2021-06-01T07:01:39Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-851877241",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDg1MjYzMDI2OQ==",
+        "author": {
+          "login": "ericwbailey"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "@rianrietveld We'd love that 🙂\r\n\r\nAnd Thanks for the nudge, I'll update the list.",
+        "createdAt": "2021-06-02T01:07:01Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-852630269",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDg1Mjc3NjAwMw==",
+        "author": {
+          "login": "rianrietveld"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "@ericwbailey Thank you!",
+        "createdAt": "2021-06-02T06:32:32Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-852776003",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs43JktF",
+        "author": {
+          "login": "chollma"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "@ericwbailey, we've chatted about this a little bit. I think it'd be great to add more posts around operationalizing accessibility. Example posts might be:\r\n\r\n- Getting executive buy-in to do accessibility work\r\n- How can I measure my accessibility efforts?\r\n- How can I hire more inclusively?\r\n- What's a core accessibility team and why do I need one?\r\n- What tools are teams using to empower teams to design/develop/write inclusively at scale?\r\n- etc.\r\n\r\nI'm admittedly not an expert, yet. But would be happy to write a few posts if the audience would find these topics beneficial as they try to gain more support at their organizations.",
+        "createdAt": "2021-09-22T19:30:18Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-925256517",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs43O9OW",
+        "author": {
+          "login": "ericwbailey"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "@chollma These all sound great to me! ",
+        "createdAt": "2021-09-24T14:24:12Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-926667670",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs48dCoB",
+        "author": {
+          "login": "jimbateson"
+        },
+        "authorAssociation": "NONE",
+        "body": "Hello :)\r\n\r\nI was wondering if I might be able to have a go at the \"A11y and SEO\" item if it's not already been claimed? If so, just checking what the angle was with \"Myths\" and \"myth confirmed\"?\r\n\r\nI've not done any public writing like this before, but something I'm challenging myself to do more of this year! No worries if it's already been done etc though.\r\n\r\nThanks",
+        "createdAt": "2022-01-17T08:13:04Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1014245889",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs48fJzI",
+        "author": {
+          "login": "davatron5000"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "@jimbateson Looks like Cooper Hollmair wrote about that one already. https://www.a11yproject.com/posts/accessibility-seo/ \r\n\r\nSorry, that's probably on me because I don't stay on top of checking this list off.",
+        "createdAt": "2022-01-17T18:25:24Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1014799560",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs48fRo3",
+        "author": {
+          "login": "jimbateson"
+        },
+        "authorAssociation": "NONE",
+        "body": "@davatron5000 no problem at all, thanks for the info :)\r\n\r\nI'll keep an eye out for others/have a think about a topic I could suggest.",
+        "createdAt": "2022-01-17T19:23:17Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1014831671",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs48fTnM",
+        "author": {
+          "login": "jimbateson"
+        },
+        "authorAssociation": "NONE",
+        "body": "@davatron5000 would I be able to take \"HOWTO: Make an accessible `<nav>` with dropdowns\" (couldn't see that one on the site) but apologies if I've missed it :)",
+        "createdAt": "2022-01-17T19:38:24Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1014839756",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs48fh1f",
+        "author": {
+          "login": "davatron5000"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "@jimbateson Unclaimed! I'll put your name next to it. \r\n\r\nFor more information on contributing, here's a little guide, but holler if you have questions. https://www.a11yproject.com/contributing-guidelines/#submitting-content",
+        "createdAt": "2022-01-17T21:27:51Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "HEART",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1014898015",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5CPWjd",
+        "author": {
+          "login": "burnhc"
+        },
+        "authorAssociation": "NONE",
+        "body": "Hello! My name is Chandra and I am interested in contributing an article on how to respect users' preference on reduced motion in web design (specifically, the prefers-reduced-motion media query). I would be happy to write it if it is not already done.\r\n\r\nThank you!",
+        "createdAt": "2022-04-27T18:04:35Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "HOORAY",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1111320797",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5CPb8Y",
+        "author": {
+          "login": "ericwbailey"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Hi @burnhc! That's a subject that's near and dear to my heart. We'd love to have that post in our collection.",
+        "createdAt": "2022-04-27T18:27:30Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "HEART",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1111342872",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5CPcje",
+        "author": {
+          "login": "burnhc"
+        },
+        "authorAssociation": "NONE",
+        "body": "> Hi @burnhc! That's a subject that's near and dear to my heart. We'd love to have that post in our collection.\r\n\r\nGreat, I'll follow the procedures on the Contributing Guidelines page and open a new issue for that. ",
+        "createdAt": "2022-04-27T18:30:21Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "HOORAY",
+            "users": {
+              "totalCount": 1
+            }
+          },
+          {
+            "content": "HEART",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1111345374",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5GNgzs",
+        "author": {
+          "login": "ilknureren"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "Hi,\r\n\r\nI was wondering if \"What is WAI? The Web Accessibility Initiative\" is claimed yet? \r\nI would love to write it if its not already claimed.\r\n\r\nThanks\r\n\r\n",
+        "createdAt": "2022-07-07T17:09:44Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "HEART",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1177947372",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5Gj8A7",
+        "author": {
+          "login": "ericwbailey"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Hi @ilknureren! We'd love that!",
+        "createdAt": "2022-07-14T00:48:49Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1183825979",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5TmE-2",
+        "author": {
+          "login": "peternjugunamwaura"
+        },
+        "authorAssociation": "NONE",
+        "body": "Hi I am Peter, I have never contributed to accessibility before. I checked the a11y project site and noticed that there could be violation of Success Criteria 1.4.5 (Images of text). I don't know if this has been written about before. My exact title would be \"Testing Success Criteria 1.4.5 (Images of text)\"",
+        "createdAt": "2023-01-24T19:39:04Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1402490806",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5T5F9B",
+        "author": {
+          "login": "ericwbailey"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Hi @peternjugunamwaura, welcome! To clarify: do you think you've found a violation of SC 1.4.5 on The A11Y Project's website, or is this SC something you'd like to write about?",
+        "createdAt": "2023-01-28T20:03:33Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1407475521",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5VrIcT",
+        "author": {
+          "login": "peternjugunamwaura"
+        },
+        "authorAssociation": "NONE",
+        "body": "Hi @ericwbailey I think I can now go ahead and report the accessibility issue. Last time I broke some of the community guidelines and you were unhappy about it. But yeah here is the section on the site that violates SC 1.4.5.\r\n![Screenshot_25](https://user-images.githubusercontent.com/61505930/220173178-06f89ce5-92af-4b76-9c47-64f5dd173df7.png)\r\nThanks.\r\n",
+        "createdAt": "2023-02-20T17:51:01Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1437370131",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5VrNy6",
+        "author": {
+          "login": "ericwbailey"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "@peternjugunamwaura Each of these images have alternate content descriptions and are not obscured when the browser is zoomed. This is a common and expected technique for providing an accessible experience for this type of content and not a violation of SC 1.4.5.\r\n\r\nAdditionally, this is not the proper place to report on this form of issue. Based on our interactions here, I'd encourage you to spend a little more time learning about how GitHub and open source works before participating again.",
+        "createdAt": "2023-02-20T18:09:11Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1437392058",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5VrszQ",
+        "author": {
+          "login": "peternjugunamwaura"
+        },
+        "authorAssociation": "NONE",
+        "body": "Thanks i will familiarize myself with all the guidelines and then possibly contribute again in the future. The thought was that the content above does not respond to changes in text spacing. But i now understand it. Thanks a lot.",
+        "createdAt": "2023-02-20T20:35:46Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1437519056",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5cNwbT",
+        "author": {
+          "login": "HarcourtHamsa"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "@ericwbailey can I write about \"Myth: Accessibility is just turning off CSS?\"",
+        "createdAt": "2023-05-15T02:35:43Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1547110099",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5ctkt0",
+        "author": {
+          "login": "jscherer92"
+        },
+        "authorAssociation": "NONE",
+        "body": "Hello!\n\nI was wondering if I could do a write up on common UI behaviors that break color blindness. Things such as using red to highlight incorrectly filled out fields and the like.",
+        "createdAt": "2023-05-20T03:18:25Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1555450740",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5cvL_b",
+        "author": {
+          "login": "HarcourtHamsa"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "Yeah sure !\n\nOn Sat, 20 May 2023 at 4:18 AM, Justin Scherer ***@***.***>\nwrote:\n\n> Hello!\n>\n> I was wondering if I could do a write up on common UI behaviors that break\n> color blindness. Things such as using red to highlight incorrectly filled\n> out fields and the like.\n>\n> —\n> Reply to this email directly, view it on GitHub\n> <https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1555450740>,\n> or unsubscribe\n> <https://github.com/notifications/unsubscribe-auth/ALPT4HI7K6ZDWPSI77LVIULXHAZY7ANCNFSM4AC3Z2ZA>\n> .\n> You are receiving this because you commented.Message ID:\n> ***@***.***>\n>\n",
+        "createdAt": "2023-05-20T09:35:14Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1555873755",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5gNWri",
+        "author": {
+          "login": "CBID2"
+        },
+        "authorAssociation": "NONE",
+        "body": "Hi @davatron5000! :) I would like to work on the HOWTO: Make an accessible <nav> with dropdowns” option ",
+        "createdAt": "2023-06-30T04:42:19Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1614113506",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5ghK0F",
+        "author": {
+          "login": "davatron5000"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "@CBID2 Looks like @jimbateson claimed that one (see thread above). Let's see if they still are planning on that - they may have already I'm newly back on the project.",
+        "createdAt": "2023-07-04T00:50:34Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1619307781",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5ghOgY",
+        "author": {
+          "login": "CBID2"
+        },
+        "authorAssociation": "NONE",
+        "body": "> @CBID2 Looks like @jimbateson claimed that one (see thread above). Let's see if they still are planning on that - they may have already I'm newly back on the project.\n\nHi @davatron5000! :) Ok, I'll do this one:\n\n ?? HOWTO: Make accessible CANVAS & SVG ?? (2 posts?)",
+        "createdAt": "2023-07-04T01:13:13Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1619322904",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5ghOpf",
+        "author": {
+          "login": "davatron5000"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "@CBID2 great! I'll put your name next to it. ",
+        "createdAt": "2023-07-04T01:14:25Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1619323487",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5ghO5e",
+        "author": {
+          "login": "CBID2"
+        },
+        "authorAssociation": "NONE",
+        "body": "> @CBID2 great! I'll put your name next to it. \n\nThanks @davatron5000. Just out of curiosity, does Canvas refer to the design app?",
+        "createdAt": "2023-07-04T01:16:25Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1619324510",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5ghPi1",
+        "author": {
+          "login": "davatron5000"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "@CBID2 No, more about the HTML `<canvas>` element? Do you have experience making accessible experiences with HTML canvas? I think for the purposes of this site/post it'd be good to have some expertise here and some examples to point to. ",
+        "createdAt": "2023-07-04T01:21:41Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1619327157",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5ghRjM",
+        "author": {
+          "login": "CBID2"
+        },
+        "authorAssociation": "NONE",
+        "body": "> @CBID2 No, more about the HTML `<canvas>` element? Do you have experience making accessible experiences with HTML canvas? I think for the purposes of this site/post it'd be good to have some expertise here and some examples to point to. \n\nNo I don't unfortunately @davatron5000. Maybe I can do this one instead:\n\nWhat is WAI? The Web Accessibility Initiative",
+        "createdAt": "2023-07-04T01:35:01Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1619335372",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5iJvEm",
+        "author": {
+          "login": "CBID2"
+        },
+        "authorAssociation": "NONE",
+        "body": "Hey @davatron5000! :) Can I do the entry on the Web Accessibility Initiative? ",
+        "createdAt": "2023-07-23T01:40:16Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1646719270",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5i5Hmb",
+        "author": {
+          "login": "davatron5000"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "@CBID2 Sounds good! I think WAI, it's relation to the W3C and ARIA and WCAG, etc would be super cool to have an overview about. ",
+        "createdAt": "2023-07-31T20:48:36Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1659140507",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5i5IJZ",
+        "author": {
+          "login": "CBID2"
+        },
+        "authorAssociation": "NONE",
+        "body": "> @CBID2 Sounds good! I think WAI, it's relation to the W3C and ARIA and WCAG, etc would be super cool to have an overview about. \n\nOk I'll add that to my article too. Can you place my name near the WAI checkbox @davatron5000? ",
+        "createdAt": "2023-07-31T20:50:32Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1659142745",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5jeylb",
+        "author": {
+          "login": "Rittikadesigner"
+        },
+        "authorAssociation": "NONE",
+        "body": "Hello @davatron5000 \r\nI am interested to write on gerontological design and gerontechnology. Thank you\r\n",
+        "createdAt": "2023-08-08T06:57:14Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1669015899",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5uIbV6",
+        "author": {
+          "login": "rajatagarwal2409"
+        },
+        "authorAssociation": "NONE",
+        "body": "Hello, I would love to write and share my expertise on \" HOWTO: Make accessible dialogs and modals\". \r\nHas it been claimed, yet? Please let me know",
+        "createdAt": "2023-12-08T19:25:19Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1847702906",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5wD9JM",
+        "author": {
+          "login": "rajatagarwal2409"
+        },
+        "authorAssociation": "NONE",
+        "body": "> Hello, I would love to write and share my expertise on \" HOWTO: Make accessible dialogs and modals\". Has it been claimed, yet? Please let me know\r\n\r\nHi, I'm eager to contribute my knowledge on \"HOWTO: Create accessible dialogs and modals.\" Could anyone please confirm if it's already taken? \r\n\r\n\r\n",
+        "createdAt": "2024-01-07T15:07:51Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-1880085068",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs6eyx1Z",
+        "author": {
+          "login": "Bureau-Toegankelijkheid"
+        },
+        "authorAssociation": "NONE",
+        "body": "Hi,\n\nI’d love to contribute by sharing an accessibility checklist. Is this still open for submissions?\n\nI’ve created a very accessible and user-friendly checklist, with practical examples. You can check out the Dutch version here for a tangible impression: [https://www.bureautoegankelijkheid.nl/checklist-digitale-toegankelijkheid](url)\n\nI'd be happy to translate it into English and make it my first contribution to a11y.\n\nLooking forward to contributing to this fantastic platform!",
+        "createdAt": "2025-02-17T21:35:09Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-2664111449",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs6px6zn",
+        "author": {
+          "login": "KatieSeeMePls"
+        },
+        "authorAssociation": "NONE",
+        "body": "@davatron5000 I have a 5 min video explaining how screen readers work curated and presented by 2 blind guys that I'm happy to share. They use a thought provoking use case of trying to apply for a job to provide an example of the friction they experience.\n\nI also have 2 min video of someone with low vision explaining magnification.\n\nSing out if you'd like me to share. \n",
+        "createdAt": "2025-05-03T05:06:49Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-2848435431",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs7Wlkbm",
+        "author": {
+          "login": "RachelRVasquez"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "@davatron5000 It's been a while since I've contributed! 👋 I've taken a crack at the \"HOWTO: Make accessible dialogs and modals\" post and have a feature branch ready so I can set up a pull request. It doesn't look like I can push the branch up to the Github repo though. Is this because I cloned the project directly instead of forking it? Let me know how I can push that branch up or if you'd prefer that I attach the post as a file to the comments thread here. Thanks! 🙏 ",
+        "createdAt": "2025-12-02T04:46:57Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-3600172774",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs7XBW9f",
+        "author": {
+          "login": "davatron5000"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "@RachelRVasquez yes, you'd need to fork the project and PR from your own fork of that. Github makes it pretty easy to do as well as sync the latest `main` to your version. ",
+        "createdAt": "2025-12-03T15:38:33Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-3607457631",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs7XLOmt",
+        "author": {
+          "login": "RachelRVasquez"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "@davatron5000 Done! 😁 [Here is the PR for review.](https://github.com/a11yproject/a11yproject.com/pull/1634) Thank you!",
+        "createdAt": "2025-12-04T04:26:09Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/12#issuecomment-3610044845",
+        "viewerDidAuthor": false
+      }
+    ],
+    "createdAt": "2013-01-13T21:48:53Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwyNDk1OTMzMA==",
+        "name": "idea",
+        "description": "Suggestions for the site.",
+        "color": "d4c5f9"
+      },
+      {
+        "id": "MDU6TGFiZWw2NzM2NTgwMDE=",
+        "name": "help wanted",
+        "description": "Issues the team would like assistince with.",
+        "color": "e11d21"
+      }
+    ],
+    "number": 12,
+    "title": "List of Post Ideas",
+    "updatedAt": "2025-12-04T04:26:09Z",
+    "url": "https://github.com/a11yproject/a11yproject.com/issues/12",
+    "repo": "a11yproject/a11yproject.com",
+    "queryLabel": "help wanted"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjg0ODg0NDY=",
+      "is_bot": false,
+      "login": "Roshanjossey",
+      "name": "Roshan Jossy"
+    },
+    "body": "## Bug description\r\n\r\nI checked links in the website with [brokenlinkcheck.com](https://www.brokenlinkcheck.com/) and found the following links could potentially have problems\r\n\r\n| # | URL | link text | response |\r\n|---|---|---|---:|\r\n| 1 | https://jenniferbrownconsulting.com/inclusion-the-book/ | Inclusion: Diversity<COMMA> The New Workplace &amp; The Will | 404 |\r\n| 2\t | https://www.getstark.co/newsletter | Stark | 404 |\r\n| 3\t | https://www.a11yproject.com/posts/everyday-accessibility/A11yProject.com/Resources | The A11Y Project’s Resources Page | 404 |\r\n| 4\t | https://chrome.google.com/webstore/detail/i-want-to-see-like-the-co/jebeedfnielkcjlcokhiobodkjjpbjia | Landmarks | 404 |\r\n| 5\t | https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl | NoCoffee | 404 |\r\n| 6\t | https://confrere.com/a11y/test/ | Accessibility Tester | 404 |\r\n| 7\t | http://blindspot.fas.harvard.edu/Book | Blindspot: Hidden Biases of Good People | bad host |\r\n| 8\t | http://colorfilter.wickline.org/ | Colorblind Web Page Filter | bad host |\r\n| 9\t | https://hexnaw.com/ | Hex Naw | timeout |\r\n| 10\t | https://image-color.com/color-contrast.html | Image-Color: Color Contrast Checker | 404 |\r\n| 11\t | http://www.karlgroves.com/blog/ | Blog - Karl Groves | 404 |\r\n| 12\t | https://pragmaticaccess.com/articles/2019-05-30-pdf-accessibility-introduction | PDF accessibility introduction | bad host |\r\n| 13\t | https://www.funka.com/en/we-offer/funka-accessibility-days/ | Funka Accessibility Days | 404 |\r\n| 14\t | https://www.meetup.com/a11yphl/ | A11yPHL - Philly Accessibility Meetup | 404 |\r\n| 15\t | https://www.meetup.com/Munich-Accessibility-Meetup/ | Munich Accessibility Meetup | 404 |\r\n| 16\t | https://www.meetup.com/Paris-Web-Accessibility/ | Paris Web Accessibility | 404 |\r\n| 17\t | https://developer.yoast.com/accessibility-slow-down-development-process/ | The a11y Monthly: Does Accessibility slow down the deve | 404 |\r\n| 18\t | https://usabilitygeek.com/information-different-types-people-graphic-communication-website-information-designers/ | Information On Different Types Of People For Graphic Co | 404 |\r\n| 19\t | https://addons.mozilla.org/en-US/firefox/addon/visbug/ | VisBug | 404 |\r\n| 20\t | https://blindjournalist.wordpress.com/2021/03/04/why-i-blocked-accessibe/ | Why I blocked #AccessiBe | 404 |\r\n| 21\t | https://www.barrierbreak.com/2021/07/13/why-should-you-stay-away-from-accessibility-overlays/ | Why should you stay away from Accessibility Overlays? | 404 |\r\n| 22\t | hhttps://www.w3.org/WAI/WCAG21/Understanding/understanding-techniques | Techniques | bad url |\r\n| 23\t | http://ffb.ca/learn/eye-diseases/ | Retinal degeneration | 404 |\r\n| 24\t | https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/accessibility.tabfocus | accessibility.tabfocus | 404 |\r\n| 25\t | https://www.ncdt.nl/ncdt-2019/readability-on-the-web-damien-senger | research on readability on the web | 404 |\r\n| 26\t | https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-invalid_attribute | aria-invalid=&quot;true&quot; | 404 |\r\n| 27\t | https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute | aria-describedby | 404 |\r\n| 28\t | https://help.ubuntu.com/lts/installation-guide/s390x/ch01s01.html | Ubuntu | 404 |\r\n| 29\t | https://www.pixel-ruler.net/android-scale-independent-pixel | scale-independent pixels | timeout |\r\n| 30\t | https://www.mobileux.net/2019/06/24/designing-apps-with-accessible-fonts/ | Designing Apps with Accessible Fonts | 404 |\r\n| 31\t | https://midnight-lizard.org/home | Midnight Lizard | 404 |\r\n| 32\t | https://jamstackconf.com/jammies/ | Jammy for Social Impact Award | 404 |\r\n| 33\t | http://jxnblk.com/colorable/demos/text/ | Colorable | 404 |\r\n\r\n## Expected outcome\r\n\r\nNot many 404s\r\n\r\n## Steps to reproduce\r\n\r\nCheck if these links are working, use an automated tool to check\r\n\r\n## Checklist to track what's updated\r\n\r\n\r\n- [x] https://jenniferbrownconsulting.com/inclusion-the-book/ \r\n- [x] https://www.getstark.co/newsletter\r\n- [ ] https://www.a11yproject.com/posts/everyday-accessibility/A11yProject.com/Resources\r\n- [x] https://chrome.google.com/webstore/detail/i-want-to-see-like-the-co/jebeedfnielkcjlcokhiobodkjjpbjia\r\n- [ ] https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl\r\n- [x] https://confrere.com/a11y/test/\r\n- [x] http://blindspot.fas.harvard.edu/Book\r\n- [ ] http://colorfilter.wickline.org/\r\n- [ ] https://hexnaw.com/\r\n- [x] https://image-color.com/color-contrast.html\r\n- [x] http://www.karlgroves.com/blog/\r\n- [ ] https://pragmaticaccess.com/articles/2019-05-30-pdf-accessibility-introduction\r\n- [ ] https://www.funka.com/en/we-offer/funka-accessibility-days/\r\n- [x] https://www.meetup.com/a11yphl/\r\n- [x] https://www.meetup.com/Munich-Accessibility-Meetup/\r\n- [x] https://www.meetup.com/Paris-Web-Accessibility/\r\n- [ ] https://developer.yoast.com/accessibility-slow-down-development-process/\r\n- [ ] https://usabilitygeek.com/information-different-types-people-graphic-communication-website-information-designers/\r\n- [ ] https://addons.mozilla.org/en-US/firefox/addon/visbug/\r\n- [ ] https://blindjournalist.wordpress.com/2021/03/04/why-i-blocked-accessibe/\r\n- [ ] https://www.barrierbreak.com/2021/07/13/why-should-you-stay-away-from-accessibility-overlays/\r\n- [ ] hhttps://www.w3.org/WAI/WCAG21/Understanding/understanding-techniques\r\n- [ ] http://ffb.ca/learn/eye-diseases/\r\n- [ ] https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/accessibility.tabfocus\r\n- [ ] https://www.ncdt.nl/ncdt-2019/readability-on-the-web-damien-senger\r\n- [ ] https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-invalid_attribute\r\n- [ ] https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute\r\n- [ ] https://help.ubuntu.com/lts/installation-guide/s390x/ch01s01.html\r\n- [ ] https://www.pixel-ruler.net/android-scale-independent-pixel\r\n- [ ] https://www.mobileux.net/2019/06/24/designing-apps-with-accessible-fonts/\r\n- [ ] https://midnight-lizard.org/home\r\n- [ ] https://jamstackconf.com/jammies/\r\n- [ ] http://jxnblk.com/colorable/demos/text/\r\n\r\n## Terms\r\n\r\n- [x] I have read, and agree to follow this project's [Code of Conduct](https://www.a11yproject.com/code-of-conduct/)\r\n",
+    "comments": [
+      {
+        "id": "IC_kwDOAHMtVs5LbnX_",
+        "author": {
+          "login": "ericwbailey"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Thanks for submitting this, looks like we have some URLs to fix 😅",
+        "createdAt": "2022-10-03T14:28:12Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/1478#issuecomment-1265530367",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5LcIE-",
+        "author": {
+          "login": "Roshanjossey"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "Cool cool cool. I'll change the number in the table to checkboxes to keep track of what's updated. \r\nI'll ask questions when working on updating these",
+        "createdAt": "2022-10-03T15:45:05Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/1478#issuecomment-1265664318",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5WC5uQ",
+        "author": {
+          "login": "p2635"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "Potentially implement something like https://github.com/marketplace/actions/broken-link-checker-action to improve the process? Shall I create this as a new issue?",
+        "createdAt": "2023-02-24T12:11:40Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/1478#issuecomment-1443601296",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5WRfnn",
+        "author": {
+          "login": "ericwbailey"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "@p2635 That'd be great, yes please!",
+        "createdAt": "2023-02-28T01:29:18Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/1478#issuecomment-1447426535",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5WZRMc",
+        "author": {
+          "login": "harsxv"
+        },
+        "authorAssociation": "NONE",
+        "body": "Actually, the [broken-link-checker-action](https://github.com/technote-space/broken-link-checker-action) is also \"broken\" since the owner archived the repository to read-only 😁 \r\n",
+        "createdAt": "2023-03-01T07:10:53Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/1478#issuecomment-1449464604",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5WZ9d5",
+        "author": {
+          "login": "p2635"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "Thanks for pointing that out, but that was just an example anyway @harsxv. I was just linking that as an idea. I've seen other link checkers and they are not perfect, but hopefully they can still save some time. More research to be done on #1521 ",
+        "createdAt": "2023-03-01T09:11:55Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/1478#issuecomment-1449645945",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5dO-0F",
+        "author": {
+          "login": "meatnordrink"
+        },
+        "authorAssociation": "NONE",
+        "body": "Yeah, the Newsletter link, which was just posted on Mastodon, is totally broken. \r\n\r\n(Tried to tell you on Mastodon, but you're not allowing new accounts now, nor allowing accounts created elsewhere to sign in on your servers...?)",
+        "createdAt": "2023-05-26T10:53:26Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/1478#issuecomment-1564208389",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5dRWd5",
+        "author": {
+          "login": "davatron5000"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "@meatnordrink Apologies. Mastodon ownership handoff is still in-progress. Will be awhile before that gets sorted out and a few mistakes might go through the auto-poster. ",
+        "createdAt": "2023-05-26T19:24:25Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/1478#issuecomment-1564829561",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5dRlEq",
+        "author": {
+          "login": "ericwbailey"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "To clarify, `@a11y.info` is not owned by The A11Y Project organization. The account is hosted on the service, which is maintained by another individual. The A11Y Project are not allowing or disallowing anything in this regard.\r\n\r\nThe newsletter link was shared over two weeks ago, [as per its post date](https://a11y.info/@thea11yproject/110357073171353645). The page itself has been intentionally removed, and is not \"totally broken.\" ",
+        "createdAt": "2023-05-26T20:09:13Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "CONFUSED",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/1478#issuecomment-1564889386",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5uH7wD",
+        "author": {
+          "login": "westonludeke"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "Hi A11Y Project team! \r\n\r\nI'm Weston👋 I love the work y'all are doing!\r\n\r\nI saw this issue is still open and is labeled as a 'good-first-issue'. I've never committed a pull request to an open source project before, so I thought this would be a good chance for me to dip my toes in the water.\r\n\r\nI updated three links and submitted a pull request: https://github.com/a11yproject/a11yproject.com/pull/1584\r\n\r\nLet me know if there's anything I need to fix. If all goes well, I'm happy to continue to review other links.\r\n\r\nCheers!",
+        "createdAt": "2023-12-08T17:36:49Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "HEART",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/1478#issuecomment-1847573507",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5zK4FC",
+        "author": {
+          "login": "p2635"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "Is @Roshanjossey  still around to check off whatever is done on the main list of links? It's hard for me to know what is remaining.",
+        "createdAt": "2024-02-07T15:00:45Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/1478#issuecomment-1932230978",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5zQODe",
+        "author": {
+          "login": "p2635"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "I cross-checked it against my automated github action which I am investigating on https://github.com/a11yproject/a11yproject.com/issues/1521#issuecomment-1933607034\r\n\r\nThese appear to be the outstanding broken links if anyone wants to pick it up:\r\n\r\n- https://blindjournalist.wordpress.com/2021/03/04/why-i-blocked-accessibe/\r\n- https://www.barrierbreak.com/2021/07/13/why-should-you-stay-away-from-accessibility-overlays/\r\n- https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/accessibility.tabfocus\r\n- https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-invalid_attribute\r\n- https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute\r\n- https://help.ubuntu.com/lts/installation-guide/s390x/ch01s01.html\r\n- https://www.pixel-ruler.net/android-scale-independent-pixel\r\n- https://midnight-lizard.org/home (this appears to be a false positive, I can visit the site fine)\r\n- http://jxnblk.com/colorable/demos/text/\r\n",
+        "createdAt": "2024-02-08T09:03:50Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 2
+            }
+          }
+        ],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/1478#issuecomment-1933631710",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs5zxNdk",
+        "author": {
+          "login": "westonludeke"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "I just submitted a new pull request, #1587 which updates six of the URLs listed above. A few notes:\r\n\r\n* The https://www.pixel-ruler.net domain seems down, so I replaced the URL with a Web Archive link.\r\n* With this URL https://blindjournalist.wordpress.com/2021/03/04/why-i-blocked-accessibe/, it seems that the author possibly deleted/unpublished the blog post. I didn't replace this URL, but an archived version could be added in the future from the Web Archive.\r\n* Confirming this URL https://midnight-lizard.org/home is valid for me and the site loads fine\r\n* It doesn't look like MDN has a replacement URL for `accessibility.tabfocus`, so I didn't replace this link: https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/accessibility.tabfocus It's possible Mozilla renamed or removed this functionality.",
+        "createdAt": "2024-02-13T19:42:48Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/1478#issuecomment-1942280036",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs6CA12R",
+        "author": {
+          "login": "evelinabe"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "I just submitted a new pull request,  #1596. It updates or removes some of the broken links above:\r\n\r\n- https://www.funka.com/en/we-offer/funka-accessibility-days/ removed section\r\n- https://yoast.com/developer-blog/accessibility-slow-down-development-process/ updated\r\n- https://medium.com/@user_design/information-on-different-types-of-people-for-graphic-communication-website-and-information-4b6454905bb1 updated with info about new destination\r\n- https://blindjournalist.wordpress.com/2021/03/04/why-i-blocked-accessibe/ removed\r\n- http://ffb.ca/learn/eye-diseases/ changed link to https://www.sciencedirect.com/topics/neuroscience/retinal-degeneration \r\n- http://colorfilter.wickline.org/ is removed already\r\n- https://hexnaw.com/ is valid\r\n- https://addons.mozilla.org/en-US/firefox/addon/visbug/ is valid\r\n",
+        "createdAt": "2024-06-20T18:09:21Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 3
+            }
+          },
+          {
+            "content": "HEART",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/1478#issuecomment-2181258641",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAHMtVs7lncE2",
+        "author": {
+          "login": "shnjd"
+        },
+        "authorAssociation": "NONE",
+        "body": "This \"[the straw test](https://scottvinkle.me/blogs/work/proximity-and-zoom)\" link mentioned on the [checklist](https://www.a11yproject.com/checklist/#double-check-that-good-proximity-between-content-is-maintained) page is also unavailable right now.",
+        "createdAt": "2026-02-05T09:41:15Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/a11yproject/a11yproject.com/issues/1478#issuecomment-3852321078",
+        "viewerDidAuthor": false
+      }
+    ],
+    "createdAt": "2022-10-03T01:19:07Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwyNDQ3NTU1Ng==",
+        "name": "bug",
+        "description": "Problems with the project's functionality",
+        "color": "e11d21"
+      },
+      {
+        "id": "MDU6TGFiZWw2NzM2NTgwMDE=",
+        "name": "help wanted",
+        "description": "Issues the team would like assistince with.",
+        "color": "e11d21"
+      },
+      {
+        "id": "MDU6TGFiZWw3MzEwNzUzMjQ=",
+        "name": "good first issue",
+        "description": "A small, good place to get started working with the site.",
+        "color": "e2fed2"
+      },
+      {
+        "id": "MDU6TGFiZWwyMTk4ODIzMTU4",
+        "name": "content",
+        "description": "Issues dealing with our published content.",
+        "color": "ffce29"
+      }
+    ],
+    "number": 1478,
+    "title": "[Bug]  404s, bad host, timeouts, bad urls for URLs linked from website",
+    "updatedAt": "2026-02-05T09:41:15Z",
+    "url": "https://github.com/a11yproject/a11yproject.com/issues/1478",
+    "repo": "a11yproject/a11yproject.com",
+    "queryLabel": "good first issue"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjIwOTc4MjUy",
+      "is_bot": false,
+      "login": "jeeyyy",
+      "name": "Jeeyyy"
+    },
+    "body": "`dom.isFocusable` function to be updated to consider `audio` and `video` controls.",
+    "comments": [
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDQzODg0NjQ1NQ==",
+        "author": {
+          "login": "marcysutton"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "Focusability is pretty all over the place for those controls in browsers though, I think we need to do some testing to determine support.",
+        "createdAt": "2018-11-14T22:41:50Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/dequelabs/axe-core/issues/1237#issuecomment-438846455",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDQ1Mjg1NzI0Mg==",
+        "author": {
+          "login": "marcysutton"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "To expand on what I meant by testing here: the default controls in HTML5 video and audio aren't consistently focusable, it depends on the browser. And I'm pretty sure it will also depend on whether the `controls` attribute is present. We need to validate whether the video and audio element controls are focusable in every browser. So far they are in Chrome, Safari and Firefox but the behavior is super inconsistent in regards to the experience and number of tab stops (thanks, user agent shadow DOM!). We should check IE11 and Edge to see if they are focusable there.",
+        "createdAt": "2019-01-09T21:12:55Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/dequelabs/axe-core/issues/1237#issuecomment-452857242",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDU2NDE0NTMyMQ==",
+        "author": {
+          "login": "WilcoFiers"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "This is particularly relevant for a case like this:\r\n\r\n```html\r\n<div aria-hidden=\"true\">\r\n  <video controls />\r\n</div>\r\n```\r\n\r\nThat should probably fail, whereas without the controls it shouldn't.",
+        "createdAt": "2019-12-10T17:33:57Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/dequelabs/axe-core/issues/1237#issuecomment-564145321",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAje1wM7QqFul",
+        "author": {
+          "login": "namansancheti"
+        },
+        "authorAssociation": "NONE",
+        "body": "@WilcoFiers @straker \nI would like to help with this fix - would the change be needed to `isNativelyFocusable` in https://github.com/dequelabs/axe-core/blob/develop/lib/commons/dom/is-natively-focusable.js#L13, to also handle `audio` and `video` elements ? If yes, simillar to the check for `href`, for `a` and `area` elements, would we need to check for the presence of the `controls` attribute ?\n\nFirst-time contributing to `axe-core`, so would greatly appreciate your guidance.",
+        "createdAt": "2025-11-07T04:48:00Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/dequelabs/axe-core/issues/1237#issuecomment-3500694437",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAje1wM7RkC_e",
+        "author": {
+          "login": "namansancheti"
+        },
+        "authorAssociation": "NONE",
+        "body": "@WilcoFiers @straker\nHope you are doing great ?\n\nFollowing up on above - please let me know, in case the above approach doesn't sound right, will look further.",
+        "createdAt": "2025-11-11T09:38:02Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/dequelabs/axe-core/issues/1237#issuecomment-3515887582",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAje1wM7RpWtg",
+        "author": {
+          "login": "straker"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "@namansancheti Thanks for wanting to take this one. For now I'd have to do some extensive testing to see when controls are and are not focusable, especially with Wilco's example above where the video is inside an `aria-hidden` element. I'm not sure how soon I can do that testing but I'll try to get it prioritized so we can get back to you with details on how we want to fix it.",
+        "createdAt": "2025-11-11T14:49:43Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/dequelabs/axe-core/issues/1237#issuecomment-3517279072",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAje1wM7R1H7z",
+        "author": {
+          "login": "namansancheti"
+        },
+        "authorAssociation": "NONE",
+        "body": "@straker \nSounds good, thank you - will wait for the update 👍",
+        "createdAt": "2025-11-12T07:06:16Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/dequelabs/axe-core/issues/1237#issuecomment-3520364275",
+        "viewerDidAuthor": false
+      }
+    ],
+    "createdAt": "2018-11-13T11:05:36Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwyMjI4MjgzODQ=",
+        "name": "feat",
+        "description": "New feature or enhancement",
+        "color": "84b6eb"
+      },
+      {
+        "id": "MDU6TGFiZWwyMjc1NTg1OTEz",
+        "name": "good first issue",
+        "description": "For first-time contributors",
+        "color": "94efc9"
+      }
+    ],
+    "number": 1237,
+    "title": "dom.isFocusable should consider `audio` and `video` controls",
+    "updatedAt": "2025-11-12T07:06:16Z",
+    "url": "https://github.com/dequelabs/axe-core/issues/1237",
+    "repo": "dequelabs/axe-core",
+    "queryLabel": "good first issue"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjMwMjc2NjM=",
+      "is_bot": false,
+      "login": "mikemai2awesome",
+      "name": "Mike Mai"
+    },
+    "body": "From: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/anchor-has-content.md\n\n> Alternatively, you may use the `title` prop or the `aria-label` prop.\n\nCan we please remove the mention of the HTML `title` attribute? It is problematic with assistive tech. `aria-label` and `aria-labelledby` should be the only alternatives accepted. [[source](https://www.tpgi.com/using-the-html-title-attribute/)]\n\nThen remove this from the success criteria.\n\n```html\n<a title='foo' />\n```\n\n",
+    "comments": [
+      {
+        "id": "IC_kwDOAxjC4s7BlfDo",
+        "author": {
+          "login": "ljharb"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Do you have a more recent source than 15 years ago for this?",
+        "createdAt": "2025-09-03T06:18:06Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1060#issuecomment-3247829224",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAxjC4s7BsVDu",
+        "author": {
+          "login": "mikemai2awesome"
+        },
+        "authorAssociation": "NONE",
+        "body": "@ljharb  the post has been updated in 2020, it's clearly stated in the title and throughout the post.\n\nalso here's a test using MacOS + VoiceOver and Windows Edge + Narrator (it's what i have access to at the moment) to show the inconsistency across browsers and screen readers with the `title` attribute.\n\nhttps://github.com/user-attachments/assets/abb24e22-fb59-4182-a202-792efe1dfcb1\n\nhttps://github.com/user-attachments/assets/66385ec8-5692-4704-bf82-63f8768210c9\n\n```html\n<a href=\"...\" title=\"profile\">\n  <svg viewBox=\"0 0 576 512\" width=\"100\">\n    ...\n  </svg>\n</a>\n<a href=\"...\" title=\"profile\">\n  <svg viewBox=\"0 0 576 512\" width=\"100\" role=\"img\">\n    <title>Address card</title>\n    ...\n  </svg>\n</a>\n<a href=\"...\" title=\"profile\">\n  <svg viewBox=\"0 0 576 512\" width=\"100\" title=\"address-card\">\n    ...\n  </svg>\n</a>\n```\n\nboth pages have the same code, just different browsers (chrome and safari). `title` does not behave like `aria-label`, it doesn't always set a link's (or any interactive element) accessible name, certain markup can throw it off. this is just one of the problems of the `title` attribute.\n\ni understand this rule is about not having empty links, but i also don't think we should encourage something that's problematic.",
+        "createdAt": "2025-09-03T15:00:05Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1060#issuecomment-3249623278",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAxjC4s7KlZqW",
+        "author": {
+          "login": "TMaszko"
+        },
+        "authorAssociation": "NONE",
+        "body": "More than happy to work on this ;) ",
+        "createdAt": "2025-10-13T19:35:25Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "HEART",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1060#issuecomment-3398802070",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAxjC4s7KspMk",
+        "author": {
+          "login": "TMaszko"
+        },
+        "authorAssociation": "NONE",
+        "body": "Could you assign me to this one ?",
+        "createdAt": "2025-10-14T08:29:20Z",
+        "includesCreatedEdit": false,
+        "isMinimized": true,
+        "minimizedReason": "spam",
+        "reactionGroups": [],
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1060#issuecomment-3400700708",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAxjC4s7VxWm7",
+        "author": {
+          "login": "smellai"
+        },
+        "authorAssociation": "NONE",
+        "body": "@mikemai2awesome do you think it would make sense to have a rule to discourage usage of title attribute for good outside of iframe and the other few [valid use cases](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/title)? ",
+        "createdAt": "2025-11-27T15:36:10Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1060#issuecomment-3586484667",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAxjC4s7skKI1",
+        "author": {
+          "login": "mikemai2awesome"
+        },
+        "authorAssociation": "NONE",
+        "body": "@smellai i think that makes a lot of sense.",
+        "createdAt": "2026-02-26T20:01:49Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1060#issuecomment-3968901685",
+        "viewerDidAuthor": false
+      }
+    ],
+    "createdAt": "2025-09-02T19:14:22Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwzMjc3NzUyMjg=",
+        "name": "help wanted",
+        "description": "",
+        "color": "159818"
+      }
+    ],
+    "number": 1060,
+    "title": "`jsx-a11y/anchor-has-content`: do not encourage title attribute usage",
+    "updatedAt": "2026-02-27T01:13:08Z",
+    "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1060",
+    "repo": "jsx-eslint/eslint-plugin-jsx-a11y",
+    "queryLabel": "help wanted"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjgzNzQ0OTc1",
+      "is_bot": false,
+      "login": "mehm8128",
+      "name": "mehm8128"
+    },
+    "body": "[`lang`](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/lang.md) rule checks that a `lang` attribute on the `<html>` is a valid IETF's BCP 47 language tag and doesn't check whether `<html>` has `lang` attribute or not, but the document says `<html>` fails for this rule.\n\n[`html-has-lang`](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/html-has-lang.md) document says:\n>This rule is largely superseded by the `lang` rule\n\nso should we fix the implementation of `lang` rule to check `html-has-lang` rule in addition to `lang` validation? or should we remove the example of `<html>` from `lang` rule document?",
+    "comments": [
+      {
+        "id": "IC_kwDOAxjC4s8AAAABApkYBg",
+        "author": {
+          "login": "ljharb"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "We could certainly add an option that fails if there's _no_ `lang` attribute.",
+        "createdAt": "2026-04-28T19:48:30Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1087#issuecomment-4338554886",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAxjC4s8AAAABAr6HoA",
+        "author": {
+          "login": "mehm8128"
+        },
+        "authorAssociation": "NONE",
+        "body": "That sounds good. If we don't remove `html-has-lang`, this change won't be a breaking change.\nCould I create a PR to add an option that reports missing `lang` attribute on `<html>` element for `lang` rule?",
+        "createdAt": "2026-04-29T05:16:16Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1087#issuecomment-4341008288",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAxjC4s8AAAABAsBlSg",
+        "author": {
+          "login": "ljharb"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "That'd be great, thanks.",
+        "createdAt": "2026-04-29T05:34:29Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1087#issuecomment-4341130570",
+        "viewerDidAuthor": false
+      }
+    ],
+    "createdAt": "2026-04-28T14:40:32Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwzMjc3NzUyMjY=",
+        "name": "enhancement",
+        "description": "",
+        "color": "84b6eb"
+      },
+      {
+        "id": "MDU6TGFiZWwzMjc3NzUyMjg=",
+        "name": "help wanted",
+        "description": "",
+        "color": "159818"
+      }
+    ],
+    "number": 1087,
+    "title": "The document of `lang` differs from the implementation.",
+    "updatedAt": "2026-04-29T05:34:35Z",
+    "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1087",
+    "repo": "jsx-eslint/eslint-plugin-jsx-a11y",
+    "queryLabel": "help wanted"
+  }
+]
