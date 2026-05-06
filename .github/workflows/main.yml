@@ -32,7 +32,7 @@ jobs:
           )
           LABELS=("good first issue" "help wanted" "documentation")
 
-          # Nur Issues, die in den letzten 6 Monaten Aktivität hatten
+          # Nur Issues mit Aktivität in den letzten 6 Monaten
           SINCE=$(date -u -d '6 months ago' +%Y-%m-%d)
           echo "Stage 1 cutoff: updated:>=$SINCE"
 
@@ -126,7 +126,9 @@ jobs:
               };
 
             def days_since(ts):
-              ((now - (ts | fromdateiso8601)) / 86400) | floor;
+              if (ts == null or ts == "") then 9999
+              else ((now - (ts | fromdateiso8601)) / 86400) | floor
+              end;
 
             def score:
               . as $i
@@ -146,7 +148,7 @@ jobs:
                   + ($mr * -40)
                   + ($cl * -25)
                   + (if ($cb.total > 3 and $cb_ratio >= 0.8) then -30 else 0 end)
-                  + (if ($cs | length) > 30 then -10 elif ($cs | length) > 60 then -25 else 0 end)
+                  + (if ($cs | length) > 60 then -25 elif ($cs | length) > 30 then -10 else 0 end)
                 ) as $s
               | {
                   score: $s,
@@ -178,7 +180,8 @@ jobs:
                   )
                 };
 
-            map(score)
+            map(select(.number != null and .updatedAt != null))
+            | map(score)
             | sort_by(-.score)
             | {
                 scannedAt: (now | strftime("%Y-%m-%dT%H:%M:%SZ")),
@@ -191,7 +194,7 @@ jobs:
           ' data/enriched.json > data/issues_latest.json
 
           echo "--- Top 8 ---"
-          jq -r '.topIssues[0:8][] | "  [\(.score|tostring|.+"   ")[0:5]] \(.repo)#\(.number) - \(.title[0:80])"' data/issues_latest.json
+          jq -r '.topIssues[0:8][] | "  [\(.score)]  \(.repo)#\(.number) - \(.title[0:80])"' data/issues_latest.json
           echo "Total: $(jq '.count' data/issues_latest.json)"
 
       - name: Commit result if changed
