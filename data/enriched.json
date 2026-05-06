@@ -1,6 +1,788 @@
 [
   {
     "author": {
+      "id": "MDQ6VXNlcjExOTg5MTU=",
+      "is_bot": false,
+      "login": "bakura10",
+      "name": "Michaël Gallego"
+    },
+    "body": "<!-- We would love to hear anything on your mind about Lighthouse -->\r\n**Summary**\r\n\r\nHi !\r\n\r\nI am trying to get rid of the \"Properly image size\" but I am facing a wall here. Here are the kind of errors I get:\r\n\r\n![image](https://user-images.githubusercontent.com/1198915/97066910-92428000-15f3-11eb-82e7-6a869b56e595.png)\r\n\r\nAfter checking, it appears that I serve a 800px image, the actual displayed size is 362px and as the DPI is 2, so to serve a perfect image I would need to serve 362x2 = 724px images. But as the design is fluid, it depends of course of the screen width.\r\n\r\nIn my srcset, I have images that range from 300px to 1000px by increment of 100px. The issue is that it seems the tolerance is super small, and I would need to serve much more images (maybe by increment of 20 or 30px) ?\r\n\r\nI have two problems with that:\r\n\r\n* The document size would grow quite a lot (especially on product listing pages where I can have up to 50 products, so adding that many srcset will likely outgrows the minor win you can have at serving an exact size.\r\n* This will make a pretty poor usage of CDN: we are using Shopify to serve image, and whenever you ask for a given size, it generates on the fly a new copy at each edges. This initial resize can take a bit of time (especially if the original image is super large) which means that by having way too many srcset, a lot more of users will face the initial resizing, and the cache will fill much faster and therefore lead again to more resizing.\r\n\r\nI would like to know what is the recommended practice here, and if being too strict here actually does not encourage a bad practice that would like to extremely large document size, and poor usage of CDN.\r\n\r\nThanks :)\r\n",
+    "comments": [
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDcxNjE5OTY0NQ==",
+        "author": {
+          "login": "patrickhulce"
+        },
+        "authorAssociation": "COLLABORATOR",
+        "body": "Thanks for filing @bakura10! \r\n\r\nThis audit could do with a bit of loosening, but a few other things to keep in mind too...\r\n\r\n- To avoid explosion of sizes and best utilize a CDN for fluid images it's recommended to select breakpoints that scale with the *area* of the image (aka the file size) rather than with a single dimension. This would probably solve your case too (though currently might get flagged when the image is smaller).\r\n- The document size increase per image typically pales in comparison to the savings on the image (~33KB here). If you're finding individual `<picture>` elements are even just 1KB after gzip, then something is seriously wrong, and they should probably be dynamically generated instead.\r\n\r\nFor Lighthouse team, inline with file size breakpoint approaches, I think we should ignore up to ~10-20KB of savings even on smaller images to encourage this best practice (if there is picture or srcset already detected, if they didn't use either, then we can keep the lower threshold 😃 ).",
+        "createdAt": "2020-10-25T19:34:36Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/11593#issuecomment-716199645",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDcxNjQwNjEwOQ==",
+        "author": {
+          "login": "bakura10"
+        },
+        "authorAssociation": "NONE",
+        "body": "@patrickhulce Thanks for the feedback. The GZip compression is a good point, I will try to do some test to check the impact.\r\n\r\nFor the first one I am not sure to follow you there. We have a fluid design so possibly an infinity of different sizes for the image based on the width of the screen. Do you mean maybe that we should provide fixed sizes in the srcset based on the 4-5 most popular sizes?",
+        "createdAt": "2020-10-26T08:53:35Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/11593#issuecomment-716406109",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDcxNjU5ODIxOA==",
+        "author": {
+          "login": "patrickhulce"
+        },
+        "authorAssociation": "COLLABORATOR",
+        "body": "> Do you mean maybe that we should provide fixed sizes in the srcset based on the 4-5 most popular sizes?\r\n\r\nNo, for fluid sized situations such as yours I'm suggesting generating sizes in increments according to the *area* of the image rather than a *single dimension* (you mentioned that they \"range from 300px to 1000px by increment of 100px\" on its longest dimension). \r\n\r\nInstead have breakpoints for every 0.1 megapixel increase in resolution (width * height, not *just* width or *just* height) or by file size like [the method described in this post](https://cloudinary.com/blog/introducing_intelligent_responsive_image_breakpoints_solutions). If we decide to loosen our thresholds *this* is the sort of strategy we would respect.",
+        "createdAt": "2020-10-26T14:50:58Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 2
+            }
+          },
+          {
+            "content": "EYES",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/11593#issuecomment-716598218",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDcyNDk3MDkwNw==",
+        "author": {
+          "login": "paulirish"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "> For Lighthouse team, inline with file size breakpoint approaches, I think we should ignore up to ~10-20KB of savings even on smaller images to encourage this best practice (if there is picture or srcset already detected, if they didn't use either, then we can keep the lower threshold 😃 ).\r\n\r\n👍 ",
+        "createdAt": "2020-11-10T21:15:33Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/11593#issuecomment-724970907",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAy5gbM41v3fi",
+        "author": {
+          "login": "sahilcode17"
+        },
+        "authorAssociation": "NONE",
+        "body": "is this issue still available to work on?",
+        "createdAt": "2021-08-19T09:03:54Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/11593#issuecomment-901740514",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAy5gbM41wtCc",
+        "author": {
+          "login": "patrickhulce"
+        },
+        "authorAssociation": "COLLABORATOR",
+        "body": "Yes go for it @sahilcode17! You'll want to look at the uses-responsive-images audit for this one.\r\n\r\nhttps://github.com/GoogleChrome/lighthouse/blob/a1dfe6c5d85e300d53538ac1bf607b99da12989f/lighthouse-core/audits/byte-efficiency/uses-responsive-images.js#L128-L137",
+        "createdAt": "2021-08-19T14:24:01Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/11593#issuecomment-901959836",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAy5gbM43h3t4",
+        "author": {
+          "login": "priyang12"
+        },
+        "authorAssociation": "NONE",
+        "body": "can i work on this issue if no one is working on this???\r\n",
+        "createdAt": "2021-09-30T20:05:12Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/11593#issuecomment-931625848",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAy5gbM43lI6Y",
+        "author": {
+          "login": "adamraine"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "> can i work on this issue if no one is working on this???\r\n\r\nYes",
+        "createdAt": "2021-10-01T19:05:38Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/11593#issuecomment-932482712",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAy5gbM43l6zG",
+        "author": {
+          "login": "Mbellsudteen"
+        },
+        "authorAssociation": "NONE",
+        "body": "ในวันที่ ส. 2 ต.ค. 2021 02:06 น. Adam Raine ***@***.***>\nเขียนว่า:\n\n> can i work on this issue if no one is working on this???\n>\n> Yes\n>\n> —\n> You are receiving this because you are subscribed to this thread.\n> Reply to this email directly, view it on GitHub\n> <https://github.com/GoogleChrome/lighthouse/issues/11593#issuecomment-932482712>,\n> or unsubscribe\n> <https://github.com/notifications/unsubscribe-auth/APZGLUWMMDXXYQGDSQJ4NTDUEYBDJANCNFSM4S5I6KMA>\n> .\n> Triage notifications on the go with GitHub Mobile for iOS\n> <https://apps.apple.com/app/apple-store/id1477376905?ct=notification-email&mt=8&pt=524675>\n> or Android\n> <https://play.google.com/store/apps/details?id=com.github.android&referrer=utm_campaign%3Dnotification-email%26utm_medium%3Demail%26utm_source%3Dgithub>.\n>\n>\n",
+        "createdAt": "2021-10-02T05:39:19Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/11593#issuecomment-932687046",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAy5gbM46xr_0",
+        "author": {
+          "login": "O2Graphics"
+        },
+        "authorAssociation": "NONE",
+        "body": "Hello! :-)\r\n\r\nDoes anyone is working to fix this problem?\r\nI have exactly the same issue as @bakura10. In my case, it's with \"Moto G4\", and DPI is 3 in Chrome's Lighthouse (or 2.625 for some strange reasons: https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/config/constants.js#L60-L63 and it looks like a hack: https://github.com/GoogleChrome/lighthouse/issues/10741 ).",
+        "createdAt": "2021-12-04T22:41:43Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/11593#issuecomment-986103796",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAy5gbM4_LtQn",
+        "author": {
+          "login": "TripleEquals"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "I believe I have the bandwidth to take this on, just looking for some clarification on the intent of the potential fix.\r\n\r\nThe intent as I understand it, is to allow the audit to pass even if the wasted bytes exceed the `IGNORE_THRESHOLD_IN_BYTES` threshold so long as the developer used scrcset in an attempt to pass the audit; but also the image should pass only if the wasted bytes is below a new, sliding threshold that is based on the image size. Is that correct?",
+        "createdAt": "2022-03-06T20:29:03Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/11593#issuecomment-1060033575",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAy5gbM4_2hj6",
+        "author": {
+          "login": "connorjclark"
+        },
+        "authorAssociation": "COLLABORATOR",
+        "body": "> The intent as I understand it, is to allow the audit to pass even if the wasted bytes exceed the IGNORE_THRESHOLD_IN_BYTES threshold so long as the developer used scrcset in an attempt to pass the audit; but also the image should pass only if the wasted bytes is below a new, sliding threshold that is based on the image size. Is that correct?\r\n\r\nAlmost–although we want to encourage breakpoints by image area (not width or height), we weren't thinking of making that explicit in the audit. By introducing a `IGNORE_THRESHOLD_IN_BYTES_BREAKPOINTS_PRESENT` (which is ~10-20KB as @patrickhulce suggested), the audit would fail less often for folks whose breakpoints are based on area (which means that the delta between each image would be larger than if doing by just one dimension).\r\n\r\nSo no sliding threshold. Just a different threshold, if srcset/was in a picture element (these properties are already on the ImageElement artifact).\r\n\r\n> To avoid explosion of sizes and best utilize a CDN for fluid images it's recommended to select breakpoints that scale with the area of the image (aka the file size) rather than with a single dimension.\r\n\r\nI couldn't find any reference to this in our [docs](https://web.dev/uses-responsive-images/), so we should probably add one. Anyone know the origin of this \"best practice\"?",
+        "createdAt": "2022-03-17T19:29:23Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/11593#issuecomment-1071257850",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAy5gbM5M6m0W",
+        "author": {
+          "login": "robots4life"
+        },
+        "authorAssociation": "NONE",
+        "body": "> To avoid explosion of sizes and best utilize a CDN for fluid images it's recommended to select breakpoints that scale with the area of the image (aka the file size) rather than with a single dimension.\r\n> \r\n> I couldn't find any reference to this in our [docs](https://web.dev/uses-responsive-images/), so we should probably add one. Anyone know the origin of this \"best practice\"?\r\n\r\nI checked in https://web.dev/uses-responsive-images/ and https://web.dev/serve-responsive-images/ and see no mention of such Image File Size Breakpoints or how to create them. An official documentation outlining the technique and how to achieve a good test result would be super nice to have.\r\n",
+        "createdAt": "2022-10-25T11:58:25Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/11593#issuecomment-1290431766",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAy5gbM5M75tc",
+        "author": {
+          "login": "bakura10"
+        },
+        "authorAssociation": "NONE",
+        "body": "I did not write any follow up on this but I am still having a lot of reports on PageSpeed for this, without any clear way on how to solve the issue. We try to limit the number of srcset image we generate, we tried a lot of different sizes/steps, but those issues always happen. It would be very nice to have some example algorithm on how to solve this.",
+        "createdAt": "2022-10-25T15:44:54Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 2
+            }
+          }
+        ],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/11593#issuecomment-1290771292",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAy5gbM5PcTiz",
+        "author": {
+          "login": "goranhorvathr"
+        },
+        "authorAssociation": "NONE",
+        "body": "I second this and raise it 100%. The report does not make any sense. Even with perfect srcset and sizes this thing flags certain images. There is somewhere in official documentation that I dug up\" If the rendered/displayed image is at least 4 KB smaller than the actual image size, it will be flagged as improperly sized\". I raise you with this screenshot.\r\n\r\n![buggedBehaviour](https://user-images.githubusercontent.com/36931660/204921929-6313551c-f27f-459b-b4da-5f41aef6749b.jpg)\r\n\r\nIs this 4kib smaller ? I investigated this in depth gents you have bugs.  I created my own linter that checks all of the images and all of the properties I assign inside srcset and sizes and even does custom calculations in the background if sizes are incorrect and checks from 165px width to 3000px width. And we developers even when we do a good job or excellent job get questions hey why even though the desktop score is 99 why is this 0.67sec showing there we should fix this this is slowing our website down. Yea right how do I explain this to a client this absolutely has no performance impact??? Additionally besides that  I found other bugs which pretty much means that everyone and by that I mean clients respect lighthouse and think oh its 100% accurate but the inconsistency of the tool is horrible. And we all know that by that I mean contributors, google, developers and etc.\r\n\r\n",
+        "createdAt": "2022-11-30T22:29:47Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/11593#issuecomment-1332820147",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAy5gbM5o_dkI",
+        "author": {
+          "login": "aditya2049"
+        },
+        "authorAssociation": "NONE",
+        "body": "Hey! Can I work on this issue?",
+        "createdAt": "2023-10-13T12:49:25Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/11593#issuecomment-1761466632",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAy5gbM51v_Lb",
+        "author": {
+          "login": "bakura10"
+        },
+        "authorAssociation": "NONE",
+        "body": "Hello,\r\n\r\nI would like to do a follow-up on this as I really feel there is a problem in this report. You can try this page: https://prestige-theme-allure.myshopify.com/\r\n\r\nI get this error from Lighthouse:\r\n\r\n<img width=\"930\" alt=\"image\" src=\"https://github.com/GoogleChrome/lighthouse/assets/1198915/4ed059b0-bb6c-4a0b-9bf9-e23779453c88\">\r\n\r\nThe issue happens for this image:\r\n\r\n<img width=\"923\" alt=\"image\" src=\"https://github.com/GoogleChrome/lighthouse/assets/1198915/d35e664b-91b7-47fa-9bba-10d949eb1d8d\">\r\n\r\nHowever the size is correct. I give the browsers images up to 1600w, and the image rendered on my MacBook as 830px. Considering the 2 screen density, the best image would be an image of 1660px, but as I don't have such an image, the browser picks the best possible match, so the 1600px image (which is actually smaller than the optimal size).\r\n\r\nThere is definitely no way I could size it better and I don't understand why Lighthouse reports this error here. @patrickhulce can you please explain me what is the error here? ",
+        "createdAt": "2024-03-04T01:49:13Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/11593#issuecomment-1975513819",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAy5gbM52YUku",
+        "author": {
+          "login": "robots4life"
+        },
+        "authorAssociation": "NONE",
+        "body": "I have a similar issue here. https://davidmorrison.ch/\r\n\r\nhttps://ausi.github.io/respimagelint/ reports the `sizes` and `srcset` to be correct.\r\n\r\n![image](https://github.com/GoogleChrome/lighthouse/assets/34193243/ee8602a3-012e-4ced-b841-555518f8cf9c)\r\n\r\nHowever PageSpeed for Desktop flags it.\r\n\r\n![image](https://github.com/GoogleChrome/lighthouse/assets/34193243/989e12f3-0999-4971-a28e-342fb5e649dc)\r\n\r\nThe `sizes` is `(min-width: 2140px) 1984px, calc(94.29vw - 15px)` and this is the HTML with the `srcset`.\r\n\r\n```html\r\n<img\r\n\tloading=\"eager\"\r\n\tfetchpriority=\"high\"\r\n\tsrc=\"https://media.graphassets.com/g5WFNGErQaydakaw9hJw\"\r\n\tsizes=\"(min-width: 2140px) 1984px, calc(94.29vw - 15px)\"\r\n\tsrcset=\"\r\n\thttps://media.graphassets.com/resize=width:2048/g5WFNGErQaydakaw9hJw 2048w,\r\n\thttps://media.graphassets.com/resize=width:1984/g5WFNGErQaydakaw9hJw 1984w,\r\n\thttps://media.graphassets.com/resize=width:1810/g5WFNGErQaydakaw9hJw 1810w,\r\n\thttps://media.graphassets.com/resize=width:1630/g5WFNGErQaydakaw9hJw 1630w,\r\n\thttps://media.graphassets.com/resize=width:1420/g5WFNGErQaydakaw9hJw 1420w,\r\n\thttps://media.graphassets.com/resize=width:1200/g5WFNGErQaydakaw9hJw 1200w,\r\n\thttps://media.graphassets.com/resize=width:1170/g5WFNGErQaydakaw9hJw 1170w,\r\n\thttps://media.graphassets.com/resize=width:850/g5WFNGErQaydakaw9hJw 850w,\r\n\thttps://media.graphassets.com/resize=width:768/g5WFNGErQaydakaw9hJw 768w,\r\n\thttps://media.graphassets.com/resize=width:700/g5WFNGErQaydakaw9hJw 700w,\r\n\thttps://media.graphassets.com/resize=width:650/g5WFNGErQaydakaw9hJw 650w,\r\n\thttps://media.graphassets.com/resize=width:600/g5WFNGErQaydakaw9hJw 600w,\r\n\thttps://media.graphassets.com/resize=width:550/g5WFNGErQaydakaw9hJw 550w,\r\n\thttps://media.graphassets.com/resize=width:500/g5WFNGErQaydakaw9hJw 500w,\r\n\thttps://media.graphassets.com/resize=width:425/g5WFNGErQaydakaw9hJw 425w,\r\n\thttps://media.graphassets.com/resize=width:370/g5WFNGErQaydakaw9hJw 370w,\r\n\thttps://media.graphassets.com/resize=width:320/g5WFNGErQaydakaw9hJw 320w,\r\n\thttps://media.graphassets.com/resize=width:270/g5WFNGErQaydakaw9hJw 270w,\r\n\thttps://media.graphassets.com/resize=width:240/g5WFNGErQaydakaw9hJw 240w,\r\n\thttps://media.graphassets.com/resize=width:180/g5WFNGErQaydakaw9hJw 180w,\r\n\thttps://media.graphassets.com/resize=width:120/g5WFNGErQaydakaw9hJw 120w\"\r\n\twidth=\"1984\"\r\n\theight=\"1582\"\r\n\talt=\"Hippomania 2011 Oil on cotton\"\r\n/>\r\n```\r\nPageSpeed does not flag it on Mobile though, so there the rules for \"Properly size images\"  are met.\r\n\r\nDoes anyone know what could possibly cause this ?\r\n\r\nhttps://pagespeed.web.dev/analysis/https-davidmorrison-ch/aw29646ovc?form_factor=desktop",
+        "createdAt": "2024-03-08T17:12:00Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/11593#issuecomment-1986087214",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAy5gbM6EYnNO",
+        "author": {
+          "login": "rgpublic"
+        },
+        "authorAssociation": "NONE",
+        "body": "I second this. I'm also quite confused by the report. Please also note that it's just not viable for everyone to use a CDN which creates any resolution on the fly. Even a CDN at some points need to cache all those generated images. And not everyone can create an arbitrary number of breakpoints either. IMHO that's too strict.  We currently serve up to 8 different breakpoints. If someone tells me that 12 or 16 breakpoints are better - so be it. Unfortunately, at the moment PSI doesn't even tell me how the supposed savings come to be. If at the very least it showed which image for which specific window size it'd deem more suitable, things would become much clearer.\r\n\r\nBTW: Does it really respect the retina resolution? We are currently serving e.g. a 900px image for a full-width 450px window size to get  decent quality.\r\n\r\nAnother related thing PSI gets wrong in my opinion: If we are say somewhere in the middle of a range associated with a certain breakpoint, we should always serve a size according to the upper end of the range. The docs claim we should never serve more pixels than necessary because it's a waste of bandwidth. But if we don't serve perfectly sized images via CDN, we'll always have the problem that we don't want to scale up to avoid quality problems. In summary, I think the policy should be relaxed/resonsidered. Right now it's not really in line with what's actually practical.\r\n",
+        "createdAt": "2024-07-10T17:08:23Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 7
+            }
+          }
+        ],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/11593#issuecomment-2221044558",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAy5gbM7sEguN",
+        "author": {
+          "login": "rafay247"
+        },
+        "authorAssociation": "NONE",
+        "body": "Hi, I would like to work on this issue.",
+        "createdAt": "2026-02-25T16:50:50Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/11593#issuecomment-3960605581",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAy5gbM8AAAABAHaWfg",
+        "author": {
+          "login": "thommyhh"
+        },
+        "authorAssociation": "NONE",
+        "body": "That seems to be resolve with Lighthouse 13.0.2 in Brave browser and Lighthouse 13.1.0 in Chrome Canary.  Lighthouse 13.0.1 (Pagespeed Insights) still shows messages where the image is \"too large\". So let's hope, that Pagespeed Insight updates Lighthouse soon.",
+        "createdAt": "2026-04-23T08:09:25Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/11593#issuecomment-4302739070",
+        "viewerDidAuthor": false
+      }
+    ],
+    "createdAt": "2020-10-24T03:27:29Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWw0NzI0NDQwMTE=",
+        "name": "good first issue",
+        "description": "",
+        "color": "0e8a16"
+      },
+      {
+        "id": "MDU6TGFiZWw0ODg4MTM5NTk=",
+        "name": "docs",
+        "description": "",
+        "color": "f9d0c4"
+      },
+      {
+        "id": "MDU6TGFiZWw3MDM3OTkzMDQ=",
+        "name": "P2",
+        "description": "",
+        "color": "bfdadc"
+      },
+      {
+        "id": "MDU6TGFiZWwxODE0MjY1NzA5",
+        "name": "images",
+        "description": "",
+        "color": "44c124"
+      }
+    ],
+    "number": 11593,
+    "title": "\"Properly size image\" report is too strict?",
+    "updatedAt": "2026-04-23T08:09:25Z",
+    "url": "https://github.com/GoogleChrome/lighthouse/issues/11593",
+    "repo": "GoogleChrome/lighthouse",
+    "queryLabel": "good first issue"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjMxNjg5MQ==",
+      "is_bot": false,
+      "login": "brendankenny",
+      "name": "Brendan Kenny"
+    },
+    "body": "[`navigator.scheduling.isInputPending`](https://wicg.github.io/is-input-pending/) is shipping by default in current Chrome stable (m87). Without user input, any page using `isInputPending` has a strong reason to believe yielding during long tasks won't improve user experience so it could keep on chugging instead.\r\n\r\nThis may have a large impact on any metric looking at long tasks (TBT, TTI) compared to what a real user would experience when loading the same page.\r\n\r\n- There was a discussion in the WICG about how it should interact with the Long Tasks API and warnings against long tasks, as well if there should be a way to tell if `isInputPending` was called during a particular long task: https://github.com/WICG/is-input-pending/issues/37\r\n- [Chrome status entry](https://chromestatus.com/feature/5719830432841728)",
+    "comments": [
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDczNzM0Mjc1Mw==",
+        "author": {
+          "login": "patrickhulce"
+        },
+        "authorAssociation": "COLLABORATOR",
+        "body": "There was some good discussion about this at TPAC too. My primary concern with checking if it was called is that we need to be sure *how often* it's called. I imagine we'll need to do some sort of shimming like we do with rIC.",
+        "createdAt": "2020-12-02T16:28:49Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/11747#issuecomment-737342753",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDczNzM0ODE2Nw==",
+        "author": {
+          "login": "brendankenny"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "the last comment in that thread (https://github.com/WICG/is-input-pending/issues/37#issuecomment-698617998) brings up the gameability problem with it, too. Calling `isInputPending` would essentially bless a long task as fine even if the page had no intention of acting responsibly regardless of the `isInputPending` result.",
+        "createdAt": "2020-12-02T16:36:24Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/11747#issuecomment-737348167",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDc1ODI2MjgxNQ==",
+        "author": {
+          "login": "paulirish"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "We think an approach like \"flip on isInputPending in certain circumstances\" could make sense and be more fair to pages using this. Possibilities, always flip on (during a task) at 5000ms since navigation. or flip on after XXms in a long task.\r\n\r\n\r\nNext step:\r\n\r\n* find out how to control the value of `isInputPending()`\r\n* find a working/production app/page using this\r\n* explore what diff emulation approaches make sense. perhaps talk to framework-side contact to determine what a fair/deterministic \r\n* test impact on long-task metrics like TBT and TTI\r\n\r\n\r\nmostly chillin for now. \r\n\r\nwe're happy to hear from people familiar with `isInputPending()` use in frameworks, etc. \"good first issue\" if this is you.",
+        "createdAt": "2021-01-11T22:23:15Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/11747#issuecomment-758262815",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAy5gbM73REM3",
+        "author": {
+          "login": "chinhkrb113"
+        },
+        "authorAssociation": "NONE",
+        "body": "Auto-closing: linked PR #16935 was closed (CI checks failed). Sorry for the inconvenience.",
+        "createdAt": "2026-03-28T17:10:21Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/11747#issuecomment-4148446007",
+        "viewerDidAuthor": false
+      }
+    ],
+    "createdAt": "2020-12-02T16:24:54Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWw0NzI0NDQwMTE=",
+        "name": "good first issue",
+        "description": "",
+        "color": "0e8a16"
+      },
+      {
+        "id": "MDU6TGFiZWw3MDM3OTkzMDQ=",
+        "name": "P2",
+        "description": "",
+        "color": "bfdadc"
+      },
+      {
+        "id": "MDU6TGFiZWwyMzE0NTg5ODgy",
+        "name": "metrics-cwv",
+        "description": "",
+        "color": "c5def5"
+      }
+    ],
+    "number": 11747,
+    "title": "handling impact of isInputPending on long tasks metrics?",
+    "updatedAt": "2026-03-28T17:10:21Z",
+    "url": "https://github.com/GoogleChrome/lighthouse/issues/11747",
+    "repo": "GoogleChrome/lighthouse",
+    "queryLabel": "good first issue"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjI5OTE4NDI=",
+      "is_bot": false,
+      "login": "tkindy",
+      "name": "Tyler Kindy"
+    },
+    "body": "<!-- Before creating an issue please make sure you are using the latest version and have checked for duplicate issues. -->\r\n\r\n<!-- Before creating an Accessibility issue please test that it is reproducible upstream with axe (https://www.deque.com/axe/) first and file the issue there if necessary. -->\r\n\r\n#### Provide the steps to reproduce\r\n1. Run LH on https://output.jsbin.com/vulerujohi for just the `canonical` audit\r\n  \r\n<!-- If your page is only local, or is liable to change, consider uploading a repro so that we can more easily debug the problem. Some services that will help are: https://jsbin.com/, https://surge.sh/ -->\r\n\r\n#### What is the current behavior?\r\nThe audit fails with explanation `Relative URL (https:// example.com)`\r\n\r\n#### What is the expected behavior?\r\nThe audit fails with explanation `Invalid URL (https:// example.com)`\r\n\r\n#### Environment Information\r\n* Affected Channels: CLI, Node, DevTools <!-- CLI, Node, Extension, DevTools -->\r\n* Lighthouse version: 7.0.1\r\n* Chrome version: 88.0.4324.96\r\n* Node.js version: 14.15.4\r\n* Operating System: macOS Mojave 10.14.6",
+    "comments": [
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDc2NzkwODM3Nw==",
+        "author": {
+          "login": "tkindy"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "The example canonical URL `https:// example.com` comes straight from [this audit's unit tests][1]. Stepping through the code, it seems like [the logic for detecting what's wrong with the canonical URL][2] doesn't work correctly. For this page's `link` tag, the extracted values of `hrefRaw` and `href` are `'https:// example.com'` and `'https://%20example.com/'`, respectively.\r\n\r\nI'm wondering if this was caused by a change in Chrome's link parsing logic at some point.\r\n\r\n[1]: https://github.com/GoogleChrome/lighthouse/blob/36e666c1160dab60c37ac7da028d034caafdcd2b/lighthouse-core/test/audits/seo/canonical-test.js#L76\r\n[2]: https://github.com/GoogleChrome/lighthouse/blob/36e666c1160dab60c37ac7da028d034caafdcd2b/lighthouse-core/audits/seo/canonical.js#L89-L107",
+        "createdAt": "2021-01-26T23:56:39Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/12008#issuecomment-767908377",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDc2ODM2MzQ1OA==",
+        "author": {
+          "login": "patrickhulce"
+        },
+        "authorAssociation": "COLLABORATOR",
+        "body": "Thanks for filing with such great research ahead of time @tkindy! I think the unit tests are just wrong here. I don't see any tests where we checked that Chrome was actually returning `null` for that URL and `document.querySelector('link[rel=canonical]').href` never returned `null` in my recent exploration, no matter how invalid the URL used was. I think we wrote the unit test without double checking that situation was possible. This appears to match the discrepancy in node's `URL` implementation with the browser's as well.\r\n\r\n`new URL('https:// example.com')` in node will throw while in the browser it simply URL-encodes the host and successfully returns a (still invalid) URL object.\r\n\r\nYou're right we'll need to update the logic for \"Invalid URL\" and \"Relative URL\" in this audit 👍 For future implementors, I'm thinking the new invalid check should be \"URL is invalid when invoked with `new URL(hrefRaw, 'https://example.com')` and the new relative check is \"URL is valid when invoked with `new URL(hrefRaw, 'https://example.com)` but invalid with `new URL(hrefRaw)`.",
+        "createdAt": "2021-01-27T15:27:45Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/12008#issuecomment-768363458",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDc2ODM5MTY5NQ==",
+        "author": {
+          "login": "tkindy"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "Ah, good call on the difference between Node's `URL` implementation and the browsers'.\r\n\r\nAs an aside, I did a bit of testing for what browsers consider a valid URL. The latest versions of both Firefox and Chrome interpret an anchor tag's `href` of `\"this is a bad URL\"` as a path-relative URL with the spaces percent-encoded as one would expect. However, Chrome interprets `\"https:// example.com\"` by just percent-encoding the space (as @patrickhulce pointed out above) while Firefox seems to ignore it; the text is formatted as a link, but clicking it has no effect. These behaviors extend to the `URL` constructor; Chrome gives back the invalidly-encoded domain while Firefox throws an error.\r\n\r\nThese differences aren't super pertinent to this issue (the real question is what search engines consider valid URLs, which is harder to know), but I found it interesting how Chrome seems to be more relaxed on URL syntax compared to Firefox and Node.",
+        "createdAt": "2021-01-27T16:07:38Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/12008#issuecomment-768391695",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAy5gbM7fCHl7",
+        "author": {
+          "login": "omwanere"
+        },
+        "authorAssociation": "NONE",
+        "body": "Hi @tkindy 👋  \nI’d like to work on this issue and submit a fix if that’s okay.\n",
+        "createdAt": "2026-01-13T04:31:24Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/12008#issuecomment-3741874555",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAy5gbM7fLa7s",
+        "author": {
+          "login": "tkindy"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "@omwanere I'm not a core maintainer of the project, but I'm sure the maintainers would take a look at a PR if you put one together.",
+        "createdAt": "2026-01-13T13:19:10Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/12008#issuecomment-3744313068",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAy5gbM7fLx9V",
+        "author": {
+          "login": "omwanere"
+        },
+        "authorAssociation": "NONE",
+        "body": "@tkindy Thanks for the confirmation! I’ll put together a PR addressing this.",
+        "createdAt": "2026-01-13T13:42:19Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/12008#issuecomment-3744407381",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAy5gbM7qwLWv",
+        "author": {
+          "login": "emazack"
+        },
+        "authorAssociation": "NONE",
+        "body": "> [@tkindy](https://github.com/tkindy) Thanks for the confirmation! I’ll put together a PR addressing this.\n\nSorry for the late, there is already a PR open about this :)\n\nhttps://github.com/GoogleChrome/lighthouse/pull/16765#discussion_r2442993721\n",
+        "createdAt": "2026-02-21T09:16:58Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/12008#issuecomment-3938497967",
+        "viewerDidAuthor": false
+      }
+    ],
+    "createdAt": "2021-01-26T23:44:14Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWw0NzI0NDQwMTE=",
+        "name": "good first issue",
+        "description": "",
+        "color": "0e8a16"
+      },
+      {
+        "id": "MDU6TGFiZWw3MDM3OTkyMzk=",
+        "name": "P3",
+        "description": "",
+        "color": "0e8a16"
+      }
+    ],
+    "number": 12008,
+    "title": "Canonical URL audit mistakes invalid URLs for relative ones",
+    "updatedAt": "2026-02-21T09:16:58Z",
+    "url": "https://github.com/GoogleChrome/lighthouse/issues/12008",
+    "repo": "GoogleChrome/lighthouse",
+    "queryLabel": "good first issue"
+  },
+  {
+    "author": {
+      "is_bot": true,
+      "login": "app/"
+    },
+    "body": "It's really annoying when a website needs to have a double tap on links and buttons when the website is being used on a mobile device.\r\n\r\nIt would be a nice feature for Lighthouse to test if the website has this poor user experience.\r\n\r\nThen if the website does make users have to double tap for links and buttons, give a warning message in lighthouse so the developer knows there is this problem in their website.\r\n\r\nMaybe have this feature under the Performance section.",
+    "comments": [
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDUxNTc3MDc0MA==",
+        "author": {
+          "login": "patrickhulce"
+        },
+        "authorAssociation": "COLLABORATOR",
+        "body": "Thanks for filing @ayumihamsaki! Are you referring to the use of a `:hover` style [that forces double tap on iOS](https://css-tricks.com/annoying-mobile-double-tap-link-issue/)?\r\n\r\nI'm not sure if we could go sofar as to flag all `:hover` styling served to a mobile device, but it's an interesting idea!",
+        "createdAt": "2019-07-28T15:12:14Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/9474#issuecomment-515770740",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDUxNTc3NjgyNw==",
+        "author": {
+          "login": ""
+        },
+        "authorAssociation": "NONE",
+        "body": "Yes I'm talking about that issue, especially on links and buttons! For example, where I touch a link and it gets a hover underline style, but doesn't open the link and you have to touch the link a second time and then it opens the link.\r\n\r\nI'm sure you could add some clever logic to work out the problem ones and the ok ones. It would be a useful tool to have in Lighthouse, where it scans just the webpage and flags up the problem ones as a yellow warning (not a major issue) - more like a suggestion.\r\n",
+        "createdAt": "2019-07-28T16:38:20Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/9474#issuecomment-515776827",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDUxNTgwMjAzOQ==",
+        "author": {
+          "login": "patrickhulce"
+        },
+        "authorAssociation": "COLLABORATOR",
+        "body": "Perhaps a candidate for the UX audits @egsweeny wherever that list is being tracked?",
+        "createdAt": "2019-07-28T22:52:55Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/9474#issuecomment-515802039",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDY5Mjk2MzEyNg==",
+        "author": {
+          "login": "patrickhulce"
+        },
+        "authorAssociation": "COLLABORATOR",
+        "body": "We don't know if this is still a problem. Someone will need to investigate.",
+        "createdAt": "2020-09-15T20:32:43Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/9474#issuecomment-692963126",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDg2NTM1ODIyMQ==",
+        "author": {
+          "login": "patrickhulce"
+        },
+        "authorAssociation": "COLLABORATOR",
+        "body": "We like this idea if it's still a problem! Good first issue to investigate if anyone out there would like to put in the research :)",
+        "createdAt": "2021-06-21T21:29:46Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/9474#issuecomment-865358221",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOAy5gbM780H_4",
+        "author": {
+          "login": "Malusnow"
+        },
+        "authorAssociation": "NONE",
+        "body": "Hello, I'm interested in this issue, may I work on this?",
+        "createdAt": "2026-04-14T05:39:04Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/GoogleChrome/lighthouse/issues/9474#issuecomment-4241522680",
+        "viewerDidAuthor": false
+      }
+    ],
+    "createdAt": "2019-07-27T12:35:28Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwzNDM0NjQ2ODk=",
+        "name": "new_audit",
+        "description": "",
+        "color": "7B5785"
+      },
+      {
+        "id": "MDU6TGFiZWw0NzI0NDQwMTE=",
+        "name": "good first issue",
+        "description": "",
+        "color": "0e8a16"
+      },
+      {
+        "id": "MDU6TGFiZWw3MDM3OTkyMzk=",
+        "name": "P3",
+        "description": "",
+        "color": "0e8a16"
+      }
+    ],
+    "number": 9474,
+    "title": "Add a check to test if :hover styles require doubletapping links",
+    "updatedAt": "2026-04-14T05:39:04Z",
+    "url": "https://github.com/GoogleChrome/lighthouse/issues/9474",
+    "repo": "GoogleChrome/lighthouse",
+    "queryLabel": "good first issue"
+  },
+  {
+    "author": {
       "id": "MDQ6VXNlcjQyMjE4",
       "is_bot": false,
       "login": "davatron5000",
@@ -1723,6 +2505,2444 @@
     "url": "https://github.com/a11yproject/a11yproject.com/issues/1478",
     "repo": "a11yproject/a11yproject.com",
     "queryLabel": "good first issue"
+  },
+  {
+    "author": {
+      "id": "U_kgDOEFk9gQ",
+      "is_bot": false,
+      "login": "rhysevans-qz",
+      "name": "Rhys Evans"
+    },
+    "body": "### 🙋 Documentation Request\n\nIt's exported alongside the other hooks, and seems intended as a public API, but is completely missing from the documentation. \n\n### 🧢 Your Company/Team\n\nQuizlet",
+    "comments": [
+      {
+        "id": "IC_kwDODGtc288AAAABBTA1lA",
+        "author": {
+          "login": "yihuiliao"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Yeah we are aware that we are missing quite of few docs for our hooks, but we do plan to add additional documentation for them soonish",
+        "createdAt": "2026-05-05T18:39:11Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/10015#issuecomment-4382012820",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc288AAAABBUywww",
+        "author": {
+          "login": "snowystinger"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "I think this response will have some more relevant information https://github.com/adobe/react-spectrum/issues/9904#issuecomment-4219050595\n\nThe short of it is that `useInteractOutside` is considered private, we'd need to discuss making it public. If you can provide use cases or a description of how you're using it, that would be helpful to the discussion.",
+        "createdAt": "2026-05-05T23:22:34Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/10015#issuecomment-4383879363",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc288AAAABBX_4kQ",
+        "author": {
+          "login": "rhysevans-qz"
+        },
+        "authorAssociation": "NONE",
+        "body": "Probably using it similarly to how you use it internally: to handle a click or other interaction outside a target element that reliably works even as the react-aria library evolves. I'm working on fixing a bug with multiple pop up menus being open at the same time: opening one should automatically close all others. We had:\n\n```\n  useEffect(() => {\n    if (\n      isOpen &&\n      !isMobileSearchable &&\n      (shouldCloseOnBlur || shouldCloseOnClickOutside)\n    ) {\n      document.addEventListener('mousedown', handleClickOutside);\n    }\n    return () => {\n      document.removeEventListener('mousedown', handleClickOutside);\n    };\n  }, [isOpen]);\n```\n\nAt some point* this stopped working for cases when the click outside was on a button that used react-aria to handle events since it stops propagation of the bubble. So the solution is to use capture for the click outside handler, and it seems safer to consume one published by yourselves that takes care of any known edge cases and will get updated to deal with any emerging edge cases as the rest of the library evolves. Now we have (waiting to be merged)\n\n```\n  useInteractOutside({\n    ref: overlayRef as React.RefObject<Element>,\n    isDisabled:\n      !isOpen ||\n      isMobileSearchable ||\n      (!shouldCloseOnBlur && !shouldCloseOnClickOutside),\n    onInteractOutside: useCallback(\n      event => {\n        if (triggerRef.current?.contains(event.target as Element)) {\n          return;\n        }\n        if (onClose) onClose();\n        state.close();\n      },\n      [state, onClose]\n    ),\n  });\n```\nWe could reimplement the hook ourselves, but it's a ~150 line function and I'd be nervous about understanding which bits are/aren't relevant to our use case, so copying it into our codebase feels safer but a) then we have some complex library code that's poorly understood by us b) it can still go out of sync with your other interaction implementations. \n\n*it's possible that it never worked but seems unlikely as the bug would be quite easy to spot when developing the feature",
+        "createdAt": "2026-05-06T10:47:37Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/10015#issuecomment-4387240081",
+        "viewerDidAuthor": false
+      }
+    ],
+    "createdAt": "2026-05-05T14:39:04Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzEy",
+        "name": "documentation",
+        "description": "Improvements or additions to documentation",
+        "color": "0075ca"
+      }
+    ],
+    "number": 10015,
+    "title": "Docs are missing section on InteractOutside",
+    "updatedAt": "2026-05-06T10:47:37Z",
+    "url": "https://github.com/adobe/react-spectrum/issues/10015",
+    "repo": "adobe/react-spectrum",
+    "queryLabel": "documentation"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjc2MTE5MA==",
+      "is_bot": false,
+      "login": "kcoop",
+      "name": "Ken Cooper"
+    },
+    "body": "# 🐛 Bug Report (or maybe feature request?)\r\n\r\nWhen adding an `onCancel` handler to an AlertDialog, it should fire if the dialog is closed via the Escape key.\r\n\r\nSee here for a repro: https://codesandbox.io/s/adoring-meadow-7cl4c?file=/src/App.js\r\n\r\nOpen the dialog, click Cancel, dialog will close, you'll see 'Canceled' in the console.\r\nOpen the dialog, press Escape key, dialog will close, no 'Canceled' in the console.",
+    "comments": [
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDgxNjAwOTIwMg==",
+        "author": {
+          "login": "snowystinger"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Yep, I see that. Seems like a bug, but I'll check with the team to make sure it wasn't on purpose. Surprised it didn't come up earlier.",
+        "createdAt": "2021-04-08T17:33:46Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/1773#issuecomment-816009202",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDgxNjMyMDY5MQ==",
+        "author": {
+          "login": "snowystinger"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "In the meantime though, you should be able to watch onOpenChange on the DialogTrigger.\r\nI looked into why we don't have it, and the short summary is:\r\n`Dialogs` only fire `onDismiss` for the button in the top right. `Dialogs` also have no idea about the `Esc` key, that’s something that `DialogTrigger` adds to it via `Modal` in `renderOverlay`. So we may need to add this to `DialogTrigger`, which would probably mean a different name for the event. Still talking it over with the team, but figured I'd give an update.",
+        "createdAt": "2021-04-09T00:31:04Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/adobe/react-spectrum/issues/1773#issuecomment-816320691",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDg3NzExNjczMA==",
+        "author": {
+          "login": "tenphi"
+        },
+        "authorAssociation": "NONE",
+        "body": "Also, there is no `onDismiss` event while using the Dialog component if we click outside the modal or press `Esc`. It doesn't look correct. Some other libraries simplify it using a single callback for that. Not sure about introducing another one.",
+        "createdAt": "2021-07-09T11:25:36Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/1773#issuecomment-877116730",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDg3NzEyNTg5NA==",
+        "author": {
+          "login": "tenphi"
+        },
+        "authorAssociation": "NONE",
+        "body": "As I see even using `onOpenState` there is no difference between the Button that calls `close()` and pressing `Esc`. So I can't tell if a user dismissed the dialog or confirmed it without wrapping `onPress` event for buttons.",
+        "createdAt": "2021-07-09T11:42:53Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/1773#issuecomment-877125894",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDg3NzE0NDM3NQ==",
+        "author": {
+          "login": "tenphi"
+        },
+        "authorAssociation": "NONE",
+        "body": "Looks like `DialogContainer` fires the `onDismiss` event in both cases. So it would be consistent to have `onDismiss` event on `DialogTrigger` that works the same.",
+        "createdAt": "2021-07-09T12:16:54Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/1773#issuecomment-877144375",
+        "viewerDidAuthor": false
+      }
+    ],
+    "createdAt": "2021-04-07T22:55:57Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE2",
+        "name": "good first issue",
+        "description": "Good for newcomers",
+        "color": "7057ff"
+      }
+    ],
+    "number": 1773,
+    "title": "onCancel should fire in AlertDialog if Escape is pressed",
+    "updatedAt": "2026-01-15T21:59:24Z",
+    "url": "https://github.com/adobe/react-spectrum/issues/1773",
+    "repo": "adobe/react-spectrum",
+    "queryLabel": "good first issue"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjIzMzM1Njg3",
+      "is_bot": false,
+      "login": "RyoSogawa",
+      "name": "Ryo Sogawa"
+    },
+    "body": "<!---\r\nThanks for filing an issue 😄! Before you submit, please read the following:\r\n\r\nSearch open/closed issues before submitting since someone might have asked the same thing before!\r\n-->\r\n\r\n# 🐛 Bug Report \r\n\r\n<!--- Provide a general summary of the issue here -->\r\nClicking outside the DatePicker can manipulate the focus of the DateSegment. \r\n\r\nreact-spectrum's DatePicker does not cause this phenomenon.\r\nOnly react-aria's DatePicker.\r\n\r\n## 🤔 Expected Behavior\r\n\r\n<!--- Tell us what should happen -->\r\nClicking outside of DatePicker does not focus or move focus.\r\n\r\n## 😯 Current Behavior\r\n\r\n<!--- Tell us what happens instead of the expected behavior. Please include a link to the storybook if possible. -->\r\n[![Image from Gyazo](https://i.gyazo.com/cb96c807a213f772de54af31f929fdf4.gif)](https://gyazo.com/cb96c807a213f772de54af31f929fdf4)\r\n\r\n\r\n<!--- If you are seeing an error, please include the full error message and stack trace -->\r\n\r\n## 💁 Possible Solution\r\n\r\n<!--- Not obligatory, but suggest a fix/reason for the bug -->\r\n\r\n## 🔦 Context\r\n\r\n<!--- How has this issue affected you? What are you trying to accomplish? -->\r\n\r\n<!--- Providing context helps us come up with a solution that is most useful in the real world -->\r\n\r\n## 💻 Code Sample\r\nhttps://react-spectrum.adobe.com/react-aria/useDatePicker.html#example\r\n\r\n<!-- Please provide a code repository, gist, code snippet or sample files to reproduce the issue -->\r\n<!-- You can use this codesandbox template to get started https://codesandbox.io/s/react-spectrum-template-syueo -->\r\n\r\n## 🌍 Your Environment\r\n\r\n<!--- Include as many relevant details about the environment you experienced the bug in -->\r\n\r\n| Software         | Version(s) |\r\n| ---------------- | ---------- |\r\n| @react-stately/datepicker   | ~3.0.0-rc.0 |\r\n| @react-aria/datepicker   | ~3.0.0-rc.0 |\r\n| Browser          | Chrome |\r\n| Operating System | macOS |\r\n\r\n## 🧢 Your Company/Team\r\n\r\n<!--- Which product team is this bug impacting? (i.e. Adobe/Photoshop) -->\r\n\r\n## 🕷 Tracking Issue (optional)\r\n\r\n<!--- Link to the issue in your system, if publicly available -->\r\n",
+    "comments": [
+      {
+        "id": "IC_kwDODGtc285EMdNJ",
+        "author": {
+          "login": "LFDanLu"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Thanks for filing this issue, not exactly sure what is going on here. As you noted, this isn't happening for our RSP DatePicker nor for the styled examples in the aria docs so perhaps there is some styling specific things happening in those components that prevent this issue ",
+        "createdAt": "2022-06-01T20:43:56Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/3164#issuecomment-1144116041",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc285Eka74",
+        "author": {
+          "login": "snowystinger"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Moving my comments here\r\n\r\nLooks like it's related to contentEditable\r\nhttps://stackoverflow.com/questions/24345805/prevent-contenteditable-element-from-getting-focus-when-clicking-parent\r\n\r\nhttps://codesandbox.io/s/silent-snowflake-nzv9xf?file=/src/App.js\r\n\r\nThat's without any React Spectrum or React Aria. Content editable fields are focusable when you click an ancestor in Chrome. Chrome is also the one responsible for figuring out how close you clicked to any given editable field, which is why you can change which one is currently active.\r\n\r\nWe could add a line to our docs to prevent this behavior, just a user-select: none on the parent, like here https://codesandbox.io/s/heuristic-dubinsky-bcnnrd\r\n\r\nHere's a more in depth answer as to why it happens btw https://stackoverflow.com/questions/34354085/clicking-outside-a-contenteditable-div-stills-give-focus-to-it",
+        "createdAt": "2022-06-08T20:47:30Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 2
+            }
+          }
+        ],
+        "url": "https://github.com/adobe/react-spectrum/issues/3164#issuecomment-1150398200",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc285NXrfw",
+        "author": {
+          "login": "jake-chapman-mark43"
+        },
+        "authorAssociation": "NONE",
+        "body": "Bringing this back up. Looks like something else is causing this now. I just checked out the codesandbox for the fix to add `user-select: none;` to the parent. The fix didn't actually work and the docs and provided sandbox both appear to have the same issue still. Any possibly way we can investigate this again? ",
+        "createdAt": "2022-11-01T05:37:12Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/3164#issuecomment-1298053104",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc285NbAF2",
+        "author": {
+          "login": "snowystinger"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "@jake-chapman-mark43 it's interesting, when I opened the codesandbox the first time, it was missing the userSelect none. However, the second time I opened it, it had it. Can you try one more time? With the userSelect none, I'm seeing the correct behavior. I've added a border to make it easier to see the previously troublesome area",
+        "createdAt": "2022-11-01T18:15:07Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/3164#issuecomment-1298923894",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc285arVY6",
+        "author": {
+          "login": "badsyntax"
+        },
+        "authorAssociation": "NONE",
+        "body": "@snowystinger the `user-select:none` approach doesn't work well on safari. it fixes the focus issue but then you can't type into the segments. see forked version in safari (note I had to use `webkitUserSelect: \"none\"` for safari support) : https://codesandbox.io/s/smoosh-wind-lg2rqb?file=/src/App.js\r\n\r\n[edit] I attempted to fix this behaviour on safari by resetting the user-select on the indiviaul segments but that then breaks the focus fix: https://codesandbox.io/s/young-wood-80qlxi?file=/src/App.js\r\n\r\n[edit2] Workaround for safari: https://codesandbox.io/s/smoosh-wind-9rx6pt?file=/src/App.js",
+        "createdAt": "2023-04-25T07:43:57Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/3164#issuecomment-1521309242",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc285asEST",
+        "author": {
+          "login": "badsyntax"
+        },
+        "authorAssociation": "NONE",
+        "body": "Note this is bug DOES affect react-spectrum's DatePicker, but it's only evident on certain examples that use `display: flex` on their parent:\r\n\r\nhttps://user-images.githubusercontent.com/102141/234239941-397a9f79-fc20-4b07-a67c-33f06cb2e9ba.mov\r\n\r\nPlay with the examples in the [Granularity section](https://react-spectrum.adobe.com/react-spectrum/DateField.html#granularity) to see this behaviour.\r\n\r\nSo it seems like `display: flex` affects this behaviour.\r\n\r\nHere's a new codepen that shows using `display: inline-flex` fixes it for both chrome and safari: https://codesandbox.io/s/hopeful-pare-xt775d?file=/src/App.js\r\n\r\nIn that codepen, if you change it to `display: flex` you can see the focus bug again.\r\n",
+        "createdAt": "2023-04-25T09:50:20Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 3
+            }
+          }
+        ],
+        "url": "https://github.com/adobe/react-spectrum/issues/3164#issuecomment-1521501331",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc285auXi3",
+        "author": {
+          "login": "snowystinger"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Thanks for the sandbox. Putting `user-select: none;` is working for me in the sandbox. And thanks for the React Spectrum tip, it looks like the same thing needs to be applied there. I'm trying to see if there is a place we could apply it either through our hook props or at least in our component's rendering, however, it seems not to matter if it's an immediate parent or not. As you can see here I've added a parent again with padding and even though the earlier problematic one has the user-select trick, the new ancestor would also need it https://codesandbox.io/s/summer-pine-q8xbh3?file=/src/App.js\r\n\r\nIt does look like one of the other workarounds in the StackOverflow holds promise even with the additional ancestor. It does need to be used in conjunction with the first workaround though from what I can tell. Here's an example https://codesandbox.io/s/broken-rain-c5lsl0?file=/src/App.js\r\n\r\nUnfortunately, we cannot build the invisible characters into the hooks. So that part will need to be done by you. But we might be able to add the user-select through the hook `useDateField`'s `fieldProps`. We could also come up with a convenience component for wrapping a `content-editable` in zero-width characters.\r\n\r\nWe welcome contributions if anyone wants to work on this.",
+        "createdAt": "2023-04-25T16:43:04Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/3164#issuecomment-1522104503",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc285axfcy",
+        "author": {
+          "login": "badsyntax"
+        },
+        "authorAssociation": "NONE",
+        "body": "@snowystinger does `user-select: none;` work for you in **_Safari_**?\r\n\r\nSafari using [un-prefixed `user-select: none`](https://codesandbox.io/s/heuristic-dubinsky-bcnnrd) rule (focus bug):\r\n\r\nhttps://user-images.githubusercontent.com/102141/234502080-61e5a733-6344-4d9e-a681-755038de3824.mov\r\n\r\n\r\nSafari using [webkit prefixed `-wekit-user-select: none`](https://codesandbox.io/s/smoosh-wind-lg2rqb?file=/src/App.js:517-533) (no focus bug, but unable to edit text):\r\n\r\nhttps://user-images.githubusercontent.com/102141/234502126-989b101c-f610-4d53-acf2-26430d2ed877.mov\r\n\r\n\r\n",
+        "createdAt": "2023-04-26T07:31:28Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/3164#issuecomment-1522923314",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc285a0i1W",
+        "author": {
+          "login": "snowystinger"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "The second example i shared is working for me in Safari without the prefix.\r\nSafari 16.4",
+        "createdAt": "2023-04-26T16:33:56Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/adobe/react-spectrum/issues/3164#issuecomment-1523723606",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc2852bA8C",
+        "author": {
+          "login": "mauron85"
+        },
+        "authorAssociation": "NONE",
+        "body": "Reading @snowystinger detailed link to stackoverflow article.\r\n\r\nThe cleanest solution is workaround with div wrapper. This can be done since DateInput expects render function anyway. So just wrap DateSegment with empty div. \r\n\r\n```\r\n<DateInput className={theme.dateInput} slot=\"end\">\r\n\t{segment => (\r\n\t\t<div>\r\n\t\t\t<DateSegment className={theme.dateSegment} segment={segment} />\r\n\t\t</div>\r\n\t)}\r\n</DateInput>\r\n```\r\n\r\nExample: https://codesandbox.io/p/sandbox/small-cloud-qd67sx\r\n\r\nUnfortunatelly, it still focus date separators like '/'.\r\n\r\nEdit:\r\n\r\nIt seems to work in Firefox and Edge, if I combine with wrapper div having `user-select: none`. Need to check Safari",
+        "createdAt": "2024-03-09T08:28:03Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/3164#issuecomment-1986793218",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc2857aeAx",
+        "author": {
+          "login": "bielern"
+        },
+        "authorAssociation": "NONE",
+        "body": "I had a similar problem with the datepicker. Clicking on any input field (i.e. month or day) would still make it jump to the year field. I could navigate back though through Option + Shift. \r\nI tried using `user-select: none`  but this didn't work.\r\n\r\nWhat did help was getting rid of a `Group` that I had around the `DateInput` and a calendar `Button`. I simply replaced it by a `div` and it seems to work now. Maybe this helps somebody else.",
+        "createdAt": "2024-04-22T18:22:44Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/3164#issuecomment-2070536241",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc285-wxCJ",
+        "author": {
+          "login": "EliteUser"
+        },
+        "authorAssociation": "NONE",
+        "body": "Faced the same issue. It is very annoying, because breaks any logic which may depend on focused state of the field/segments.\r\nI tried to dynamically set `contentEditable`, and it fixed focus, but not blur - when click exactly below the segment, it focuses the segment.\r\n\r\nBut looks like I found the solution, at least it works for me. Just wrap the segment into `span`, the segment should be `div` without any `display` property (all kinds of `flex` and `grid` breaks it). The opposite wrapping `div`>`span` doesn't work\r\n\r\nHere is the [example](https://codesandbox.io/p/sandbox/magical-waterfall-s72v85)",
+        "createdAt": "2024-05-23T10:01:30Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/3164#issuecomment-2126712969",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc286HOcIj",
+        "author": {
+          "login": "CarlosVergikosk"
+        },
+        "authorAssociation": "NONE",
+        "body": "I'm encountering the same issue on my project, bumping this, hoping for a fix soon :) ",
+        "createdAt": "2024-08-05T10:13:33Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/3164#issuecomment-2268709411",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc286h_RLE",
+        "author": {
+          "login": "nicoknoll"
+        },
+        "authorAssociation": "NONE",
+        "body": "Taking the code from the example: https://react-spectrum.adobe.com/react-aria/useDateField.html\n\n```jsx\n      <div {...fieldProps} ref={ref} className=\"field\">\n        {state.segments.map((segment, i) => (\n          <DateSegment key={i} segment={segment} state={state} />\n        ))}\n        {state.isInvalid &&\n          <span aria-hidden=\"true\">🚫</span>}\n      </div>\n\n```\n\nmaking sure that the `.field` class has `user-select: none` fixes it for me. No need for divs in spans.",
+        "createdAt": "2025-03-12T12:24:48Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/adobe/react-spectrum/issues/3164#issuecomment-2717717188",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc28608ud2",
+        "author": {
+          "login": "joonass-visma"
+        },
+        "authorAssociation": "NONE",
+        "body": "Any updates on this? Wrapping DateSegments with divs -workaround used to work for RAC DatePicker, but not anymore it seems. It is also bugged on the website https://react-spectrum.adobe.com/react-aria/DatePicker.html so I'd imagine it would be good to get this fixed.",
+        "createdAt": "2025-07-04T11:43:28Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/3164#issuecomment-3035817846",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc2861oJHS",
+        "author": {
+          "login": "snowystinger"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "As noted, this is a browser bug https://issues.chromium.org/issues/339458174\nThere are some more suggestions for workarounds here https://stackoverflow.com/questions/34354085/clicking-outside-a-contenteditable-div-stills-give-focus-to-it\nI've verified in Chrome that if I add `&#8203;` around the DatePicker, as suggested in Workaround 2, then the problem goes away.\n\nI'm not sure we can introduce it into our component without a breaking change since it adds dom elements that may mess with styles. Will raise with team since I don't recall this particular workaround from before.",
+        "createdAt": "2025-07-08T03:03:10Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/3164#issuecomment-3047199186",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc287BTqcm",
+        "author": {
+          "login": "sualex"
+        },
+        "authorAssociation": "NONE",
+        "body": "Nothing works except wrapping editable text into a table/thead/tr/th (to keep correct DOM nesting) as proposed here: https://stackoverflow.com/a/77051508/28852187.\nThis makes date segments work like a charm.",
+        "createdAt": "2025-09-01T19:40:37Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/3164#issuecomment-3243157286",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc287Kp0x7",
+        "author": {
+          "login": "nguyenbry"
+        },
+        "authorAssociation": "NONE",
+        "body": "```jsx\n<DateInput className=\"block\">\n  {(segment) => {\n    return (\n      <>\n        &#8203;\n        <DateSegment segment={segment} />    \n        &#8203;\n      </>\n    );\n  }}\n</DateInput>\n```\n\nThis worked for me, using https://github.com/adobe/react-spectrum/issues/3164#issuecomment-3047199186",
+        "createdAt": "2025-10-14T03:20:25Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/adobe/react-spectrum/issues/3164#issuecomment-3399961723",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc2877M1cC",
+        "author": {
+          "login": "pro-verstka"
+        },
+        "authorAssociation": "NONE",
+        "body": "This works for me\n\n```css\ntable,\ntbody,\ntr,\ntd {\n  all: unset;\n  width: 100%;\n}\n\ntable {\n  display: table; /* this is important and fixes the bug */\n}\n```\n\n```tsx\nexport const FieldDateInput = (props: FieldDateInputProps) => {\n  return (\n    <table>\n      <tbody>\n        <tr>\n          <td>\n            <ReactAriaDateInput {...props} />\n          </td>\n        </tr>\n      </tbody>\n    </table>\n  )\n}\n```",
+        "createdAt": "2026-04-09T13:06:38Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/3164#issuecomment-4214445826",
+        "viewerDidAuthor": false
+      }
+    ],
+    "createdAt": "2022-05-26T04:01:43Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE1",
+        "name": "help wanted",
+        "description": "Extra attention is needed",
+        "color": "008672"
+      },
+      {
+        "id": "MDU6TGFiZWwyNTE2MDI3MDA5",
+        "name": "browser bug",
+        "description": "",
+        "color": "b50042"
+      },
+      {
+        "id": "MDU6TGFiZWwyODM4MjIyOTc0",
+        "name": "DatePicker",
+        "description": "",
+        "color": "bbbbbb"
+      },
+      {
+        "id": "LA_kwDODGtc287grz73",
+        "name": "needs investigation",
+        "description": "",
+        "color": "FB9F58"
+      }
+    ],
+    "number": 3164,
+    "title": "Clicking outside the DatePicker can manipulate the focus of the DateSegment. (react-aria's DatePicker)",
+    "updatedAt": "2026-04-09T13:06:38Z",
+    "url": "https://github.com/adobe/react-spectrum/issues/3164",
+    "repo": "adobe/react-spectrum",
+    "queryLabel": "help wanted"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjI4NjczNzE5",
+      "is_bot": false,
+      "login": "deebov",
+      "name": "Dilshod"
+    },
+    "body": "### Provide a general summary of the feature here\n\nWould be very useful to style the Popover overlay the same way as Modal and ModalOverlay.\r\n\n\n### 🤔 Expected Behavior?\n\nYou should not be able to interact with outside elements while the popover is open.\n\n### 😯 Current Behavior\n\nIf there are elements with `zIndex` set, you're able to click them while the popover is still open. That's due to the Popover Overlay not having any `zIndex` which makes it possible to click other elements with `zIndex`.\n\n### 💁 Possible Solution\n\nEither the popover overlay already comes with `zIndex` or an ability to customize the overlay.\n\n### 🔦 Context\n\nWe have clickable elements with higher `zIndex` and if you try to close the popover by clicking outside, you can accidentally interact with an element with higher `zIndex` than the overlay.\n\n### 💻 Examples\n\n_No response_\n\n### 🧢 Your Company/Team\n\n_No response_\n\n### 🕷 Tracking Issue\n\n_No response_",
+    "comments": [
+      {
+        "id": "IC_kwDODGtc285peQQw",
+        "author": {
+          "login": "reidbarber"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Related to discussion in #5126. This would be nice to have, and since it's non-breaking it doesn't need to be added before RAC GA.",
+        "createdAt": "2023-10-18T23:04:34Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/5231#issuecomment-1769538608",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc285tetBS",
+        "author": {
+          "login": "Talor-A"
+        },
+        "authorAssociation": "NONE",
+        "body": "hi @reidbarber , this is a niche blocker for us as well. we have an electron app we use the popovers in, and the overlays need this special style rule applied:\r\n\r\n```css\r\n -webkit-app-region: no-drag;\r\n```\r\n\r\notherwise, window titlebars eat click events and prevent modals from being closed. \r\n\r\nall we need is some way to target the underlay with styles, either by className, rendering a `<Overlay />` element that replaces the built in one, or some other method as a workaround.",
+        "createdAt": "2023-12-01T20:56:19Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/5231#issuecomment-1836765266",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc285tgXaG",
+        "author": {
+          "login": "devongovett"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "I think we could add an API similar to `<ModalOverlay>`, but for popovers. By default, `<Popover>` would include the overlay, but if you want to customize it, you could wrap it in a `<PopoverOverlay>`.",
+        "createdAt": "2023-12-02T16:52:26Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "HEART",
+            "users": {
+              "totalCount": 10
+            }
+          }
+        ],
+        "url": "https://github.com/adobe/react-spectrum/issues/5231#issuecomment-1837201030",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc285tmecO",
+        "author": {
+          "login": "deebov"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "@devongovett That would be ideal!",
+        "createdAt": "2023-12-04T14:48:52Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/5231#issuecomment-1838802702",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc286M3dsg",
+        "author": {
+          "login": "levrik"
+        },
+        "authorAssociation": "NONE",
+        "body": "This is really needed as otherwise Popovers (Menus in our case) inside a Modal Dialog don't overlay the Modal Dialog which uses `z-index` as written in code examples from the documentation.\r\n\r\nAs a workaround I apply styles to `[data-testid=\"underlay\"]` for now but TBH this feels hacky.",
+        "createdAt": "2024-09-20T10:04:48Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 3
+            }
+          }
+        ],
+        "url": "https://github.com/adobe/react-spectrum/issues/5231#issuecomment-2363349792",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc287Zhl38",
+        "author": {
+          "login": "xamgore"
+        },
+        "authorAssociation": "NONE",
+        "body": "That would also be helpful for our own context menu implementations. There are a few things to consider:\n- How to reposition the popover on subsequent right-clicks\n- How to block the browser’s context menu on following right clicks outside the popover\n- How to access `underlay` without the `[data-testid=\"underlay\"]` hack\n\nContext menus are common among desktop users in professional software such as Linear. From an accessibility perspective, couldn't long-presses  help here?",
+        "createdAt": "2025-12-13T14:02:44Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/5231#issuecomment-3649461756",
+        "viewerDidAuthor": false
+      }
+    ],
+    "createdAt": "2023-10-10T13:17:52Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE0",
+        "name": "enhancement",
+        "description": "New feature or request",
+        "color": "a2eeef"
+      },
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE1",
+        "name": "help wanted",
+        "description": "Extra attention is needed",
+        "color": "008672"
+      },
+      {
+        "id": "LA_kwDODGtc288AAAABRBVxZA",
+        "name": "RAC",
+        "description": "",
+        "color": "4E5394"
+      },
+      {
+        "id": "LA_kwDODGtc288AAAABgJG1gA",
+        "name": "Overlays",
+        "description": "",
+        "color": "bbbbbb"
+      }
+    ],
+    "number": 5231,
+    "title": "Ability to style the Popover overlay",
+    "updatedAt": "2025-12-13T14:02:44Z",
+    "url": "https://github.com/adobe/react-spectrum/issues/5231",
+    "repo": "adobe/react-spectrum",
+    "queryLabel": "help wanted"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjI5NTQ0NTY1",
+      "is_bot": false,
+      "login": "neefrehman",
+      "name": "Neef Rehman"
+    },
+    "body": "### Provide a general summary of the issue here\r\n\r\nAfter doing a `Tabs` implementation where we are using each `Tab` as a link, per [the docs](https://react-spectrum.adobe.com/react-aria/Tabs.html#links), I've noticed that `onSelectionChange` doesn't fire correctly.\r\n\r\n### 🤔 Expected Behavior?\r\n\r\n- `onSelectionChange` should fire with the current key\r\n- `onSelectionChange` should fire on keyboard navigation between tabs\r\n\r\n### 😯 Current Behavior\r\n\r\n- `onSelectionChange` is firing with the _previous_ key \r\n- `onSelectionChange` is not firing on keyboard navigation\r\n\r\n### 💁 Possible Solution\r\n\r\n_No response_\r\n\r\n### 🔦 Context\r\n\r\nI've been adding analytics functionality to our implementation of Tabs, that should track each tab change a user makes. To make it easier for our product/analytics people to use the results in their dashboards and reports, the tracking should include the tab's text value, as opposed to it's key. To do this without using `useTabList`—because we would like to keep the rest of what `Tabs` offers for 'free'—I am having to use a sub-component that can access `TabListState`, which we can then use to create the tracking function and pass it back to `Tabs` via state.\r\n\r\n```js\r\nconst UpdateTabTrackingFunction = ({ setTrackTabChange }) => {\r\n  const tabListState = useContext(TabListStateContext);\r\n  useEffect(() => {\r\n    setTrackTabChange(() => (key) => {\r\n      track('TabChange', tabListState?.collection?.getItem(key)?.textValue);\r\n    });\r\n  }, [tabListState?.collection]); // eslint-disable-line react-hooks/exhaustive-deps\r\n  return null;\r\n};\r\n\r\nconst CustomTabs = (props: ComponentPropsWithoutRef<typeof Tabs>) => {\r\n  const [trackTabChange, setTrackTabChange] = useState(null);\r\n\r\n  const onSelectionChange = (key) => {\r\n    props.onSelectionChange?.(key);\r\n    trackTabChange?.(key);\r\n  };\r\n\r\n  return (\r\n    <Tabs {...props} onSelectionChange={onSelectionChange}>\r\n      <>\r\n        <UpdateTabTrackingFunction setTrackTabChange={setTrackTabChange} />\r\n        {props.children}\r\n      </>\r\n    </Tabs>\r\n  );\r\n};\r\n```\r\n\r\nIt's a little ugly, but does the job! I should also note that it would be really nice to have access to the full tab item in `onSelectionChange`, which would help us avoid this situation.\r\n\r\nWhen testing this with our tabs that use links, I noticed the reported behaviour.\r\n\r\n### 🖥️ Steps to Reproduce\r\n\r\nMinimal reproduction: https://codesandbox.io/p/sandbox/react-aria-components-tabs-onselectionchange-bug-cv6wh2?file=%2Fapp%2Fpage.js%3A7%2C21\r\n\r\n### Version\r\n\r\n1.0.0-beta-1\r\n\r\n### What browsers are you seeing the problem on?\r\n\r\nFirefox, Chrome, Safari\r\n\r\n### If other, please specify.\r\n\r\n_No response_\r\n\r\n### What operating system are you using?\r\n\r\nMacOS\r\n\r\n### 🧢 Your Company/Team\r\n\r\n_No response_\r\n\r\n### 🕷 Tracking Issue\r\n\r\n_No response_",
+    "comments": [
+      {
+        "id": "IC_kwDODGtc285pNeNG",
+        "author": {
+          "login": "snowystinger"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "I'm not sure why, but the codesandbox won't open for me.\r\nCould you try an `id` other than `'all'`? like `'foo'` or anything else, I'm curious if we're just running into a special word which we use in collections to signify selecting all.",
+        "createdAt": "2023-10-16T19:27:32Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/5252#issuecomment-1765139270",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc285pQ3d5",
+        "author": {
+          "login": "neefrehman"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "@snowystinger sorry about that, I had the default port misconfigured. If you try again now it should work.\r\n\r\nThanks also for the suggestion! I've just tried a UUID for the `id` but there is no change.",
+        "createdAt": "2023-10-17T09:28:07Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/5252#issuecomment-1766029177",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc285pU29F",
+        "author": {
+          "login": "snowystinger"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Thanks, it's still not loading for me. However, I revisited our docs for Tabs and Links because I remembered Links don't participate in selection for things like Menus, so I figured it was similar here. We have an example of how to synchronize the selected key and the link events https://react-spectrum.adobe.com/react-spectrum/Tabs.html#links\r\n\r\nCan you give this a try and see if it works for you?",
+        "createdAt": "2023-10-17T19:57:55Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/5252#issuecomment-1767075653",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc285pZEGH",
+        "author": {
+          "login": "neefrehman"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "@snowystinger that's curious! is the browser in the sandbox running port 3000? Potentially this link will work to access the output: https://cv6wh2-3000.csb.app/\r\n\r\nI've tried things as they are are in the example you linked, and sadly the outcome is the same. I just used search parameters in the repro's case to make the surface area narrower. Just to be clear as well, the synchronisation between the URL and `selectedKey` is working totally fine. It's `onSelectionChange` that seems to be misbehaving.\r\n",
+        "createdAt": "2023-10-18T10:42:54Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/5252#issuecomment-1768178055",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc285peFew",
+        "author": {
+          "login": "snowystinger"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "I think we might need to add a little clarification to our docs. As I mentioned earlier, links in collections do not participate in selection changes. So this is working as intended.\r\n\r\nJust to get a little more information though to inform what we add to the docs. If you can currently handle the synchronization, what do you need onSelectionChange for?\r\n",
+        "createdAt": "2023-10-18T22:23:29Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/5252#issuecomment-1769494448",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc285pi16C",
+        "author": {
+          "login": "neefrehman"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "@snowystinger ah I see what you we're saying earlier now, sorry that I didn't clock your meaning initially.\r\n\r\n>So this is working as intended.\r\n\r\nBased on what you are saying, I still think that there may be a bug. It sounds like `onSelectionChange` shouldn't fire at all if it doesn't take part in selection changes, but based on my observations it still is firing, just only on click events and with the previous key. I initially read into this observation as there being a bug, and that it should have the same behaviour as non-link based `Tab`s. \r\n\r\n>Just to get a little more information though to inform what we add to the docs. If you can currently handle the synchronization, what do you need onSelectionChange for?\r\n\r\nWe are using `onSelectionChange` for product analytics purposes, so we can track user journeys properly, on pages that use tabs. In our app there are multiple ways to get to a specific tab, as we use deeplinks extensively, so knowing which interaction took a user to a tab is valuable. There are more details in the 'Context' section of the PR description, but let me know if anything needs to be clearer.",
+        "createdAt": "2023-10-19T11:51:41Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/5252#issuecomment-1770741378",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc285pny4x",
+        "author": {
+          "login": "snowystinger"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Thanks, firing with the previous key does indeed seem a bit unexpected. I'll add our bug label.\r\nOn another note, I was able to get the codesandbox running. I think I just had a network problem earlier. So I was able to observe the behavior as well.\r\n\r\nAs for analytics, you could probably listen for some pointer/keyboard events with capturing to determine if they came from the tabs. Or attach a URL fragment?",
+        "createdAt": "2023-10-20T03:58:20Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/5252#issuecomment-1772039729",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc285p6rnN",
+        "author": {
+          "login": "neefrehman"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "Thanks @snowystinger!\r\n\r\n>you could probably listen for some pointer/keyboard events with capturing to determine if they came from the tabs.\r\n\r\nI guess we'll do this. Though, we were hoping to not have to re-implement in userland part of what (we thought) the library offers us.",
+        "createdAt": "2023-10-24T11:02:12Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/5252#issuecomment-1776990669",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc285t7ibs",
+        "author": {
+          "login": "snowystinger"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "I looked into this a bit more. There are two places I think need some updating\r\nWe should be updating the selection here https://github.com/adobe/react-spectrum/blob/main/packages/%40react-aria/selection/src/useSelectableCollection.ts#L144\r\n\r\nAnd we should also find a way to work around this restriction from combobox https://github.com/adobe/react-spectrum/blob/main/packages/%40react-aria/selection/src/useSelectableItem.ts#L135",
+        "createdAt": "2023-12-07T04:24:41Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/5252#issuecomment-1844324076",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc287k3eAg",
+        "author": {
+          "login": "arzatskis"
+        },
+        "authorAssociation": "NONE",
+        "body": "Come to open the issue, found out this one. Current value instead current tab id is passed to `onSelectionChange` when tabs use `href`. Here is a fork with latest RAC version: https://stackblitz.com/edit/hkvqvisg?file=src%2FExample.tsx",
+        "createdAt": "2026-02-03T08:09:26Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/5252#issuecomment-3839746080",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc288AAAABAF_WTA",
+        "author": {
+          "login": "snowystinger"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Looks like press events have been fixed, so you can use now those for your analytics if needed https://stackblitz.com/edit/hkvqvisg-esuhpazp?file=src%2FExample.tsx\n\n> Current value instead current tab id\n\nI'm not sure what this means, is it different than what is mentioned in the description `onSelectionChange is firing with the previous key`. When a Tab is a link, I don't think it should participate in selection. I've opened a PR to address this. You should instead synchronize your controlled selection via your router or window.location",
+        "createdAt": "2026-04-23T02:05:49Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/adobe/react-spectrum/issues/5252#issuecomment-4301248076",
+        "viewerDidAuthor": false
+      }
+    ],
+    "createdAt": "2023-10-16T13:20:14Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzEx",
+        "name": "bug",
+        "description": "Something isn't working",
+        "color": "d73a4a"
+      },
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzEy",
+        "name": "documentation",
+        "description": "Improvements or additions to documentation",
+        "color": "0075ca"
+      },
+      {
+        "id": "LA_kwDODGtc288AAAABRBVxZA",
+        "name": "RAC",
+        "description": "",
+        "color": "4E5394"
+      }
+    ],
+    "number": 5252,
+    "title": "[react-aria-components] Tabs' onSelectionChange prop doesn't fire correctly when using tabs as links",
+    "updatedAt": "2026-04-23T02:05:49Z",
+    "url": "https://github.com/adobe/react-spectrum/issues/5252",
+    "repo": "adobe/react-spectrum",
+    "queryLabel": "documentation"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjYzMzk4NTM=",
+      "is_bot": false,
+      "login": "philwolstenholme",
+      "name": "Phil Wolstenholme"
+    },
+    "body": "### Provide a general summary of the feature here\r\n\r\nChrome 120 introduced the concept of a `CloseWatcher` that can replace a `Esc` key listener. A `CloseWatcher` fires when the `Esc` key is pressed but has the bonus of being triggered by 'back' gestures or buttons on Android, 'back' physical buttons on gamepads, and potentially in the future other 'close' gestures like iOS VoiceOver's two-finger scrub \"z\" gesture. \r\n\r\nMultiple `CloseWatchers` can be created and will stack, and a user gesture will trigger the watcher at the top of the stack (removing it from the stack).\r\n\r\nFrom [the WICG explainer](https://github.com/WICG/close-watcher):\r\n\r\n> Currently, web developers have no good way to handle these close requests. This is especially problematic on Android devices, where the back button is the traditional close request. Imagine a user filling in a twenty-field form, with the last item being a custom date picker modal. The user might click the back button hoping to close the date picker, like they would in a native app. But instead, the back button navigates the web page's history tree, likely closing the whole form and losing the filled information. But the problem of how to handle close requests extends across all operating systems; implementing a good experience for users of different browsers, platforms, and accessibility technologies requires a lot of user agent sniffing today.\r\n\r\nIs this something that React Aria would be interested in using instead of an `Esc` key listener (in supported browsers) in `useOverlay`? We could fall back to the key listener in browser that don't support `new CloseWatcher()`. I'd be happy to try raising a PR. \r\n\r\n### 🤔 Expected Behavior?\r\n\r\nWe will get the benefits of the `CloseWatcher` and mobile users will be less likely to suffer data loss or irritation if they use a back gesture that is uncaught and they end up on a different page as a result.\r\n\r\n### 😯 Current Behavior\r\n\r\nCurrently we only dismiss overlays when the `Esc` key is pressed.\r\n\r\n### 💁 Possible Solution\r\n\r\nSee general summary – I would be happy to try adding this via a PR\r\n\r\n### 💻 Examples\r\n\r\n* https://close-watcher-demo.glitch.me\r\n* https://twitter.com/bramus/status/1730325130033697278\r\n* https://github.com/WICG/close-watcher\r\n* https://html.spec.whatwg.org/multipage/interaction.html#close-requests-and-close-watchers\r\n\r\n### 🧢 Your Company/Team\r\n\r\nExternal to Adobe (my team is working on a rebuild of http://shop.coop.co.uk for Co-op in the UK)",
+    "comments": [
+      {
+        "id": "IC_kwDODGtc285uGAf_",
+        "author": {
+          "login": "bramus"
+        },
+        "authorAssociation": "NONE",
+        "body": "For completeness: the linked to https://close-watcher-demo.glitch.me/ demo comes with a polyfill. ",
+        "createdAt": "2023-12-08T12:10:50Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "HEART",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/adobe/react-spectrum/issues/5531#issuecomment-1847068671",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc285uT6oX",
+        "author": {
+          "login": "LFDanLu"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "I think this would be a good update, especially if it gets support for screen readers as you alluded to. Currently we rely on visually hidden dismiss buttons to allow screen reader users to close some of our overlays, but navigating to those in a large list can be problematic. Having built in gesture support to trigger those overlay closes would solve that for us. I'll bring this up to the team to field opinions.",
+        "createdAt": "2023-12-11T19:09:21Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 2
+            }
+          }
+        ],
+        "url": "https://github.com/adobe/react-spectrum/issues/5531#issuecomment-1850714647",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc285ujeoI",
+        "author": {
+          "login": "LFDanLu"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Talked to the team and we are definitely interested in this, but we'd like to get some research done on how the device back buttons on devices work with native elements so we know which ESC key handlers to replace with CloseWatcher (for example overlays seems like a good place but we wouldn't want to replace the ESC key for something like our TableColumnResizer). Let us know if you'd like to help out with this research!",
+        "createdAt": "2023-12-13T22:25:45Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/adobe/react-spectrum/issues/5531#issuecomment-1854794248",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc285ujh7a",
+        "author": {
+          "login": "lukewarlow"
+        },
+        "authorAssociation": "NONE",
+        "body": "The native html dialog (when modal) and popovers both have the close watcher behaviour. So basically any elements that use escape to \"close\" (selects, modals, tooltips etc) are prime candidates for a close watcher.\n\nLooking through react aria that would seem to be:\n\nPickers - Select, Combobox\nOverlays - Modal, Popover, Tooltip\n\nChanging the above components should address the use cases for the derivatives such as Date picker which should also have this.",
+        "createdAt": "2023-12-13T22:39:08Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "HEART",
+            "users": {
+              "totalCount": 4
+            }
+          }
+        ],
+        "url": "https://github.com/adobe/react-spectrum/issues/5531#issuecomment-1854807770",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc287kZLWF",
+        "author": {
+          "login": "philwolstenholme"
+        },
+        "authorAssociation": "NONE",
+        "body": "Small update on this: the Base UI Drawer component (still being worked on) has added CloseWatcher support: https://github.com/mui/base-ui/pull/3680",
+        "createdAt": "2026-02-01T19:23:45Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/5531#issuecomment-3831805317",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc287ka0Ai",
+        "author": {
+          "login": "devongovett"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Would you like to send a PR? It should be pretty straightforward to add. Look in useOverlay.",
+        "createdAt": "2026-02-01T23:04:16Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/5531#issuecomment-3832234018",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc2870HZiE",
+        "author": {
+          "login": "mvanhorn"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "I've submitted a PR for this: #9818\n\nThe implementation adds CloseWatcher support to `useOverlay` with runtime feature detection and a fallback to the existing Escape key handler for unsupported browsers. The `isKeyboardDismissDisabled` prop and overlay stack behavior are preserved.",
+        "createdAt": "2026-03-20T05:05:02Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/5531#issuecomment-4095580292",
+        "viewerDidAuthor": false
+      }
+    ],
+    "createdAt": "2023-12-05T22:36:09Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE0",
+        "name": "enhancement",
+        "description": "New feature or request",
+        "color": "a2eeef"
+      },
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE2",
+        "name": "good first issue",
+        "description": "Good for newcomers",
+        "color": "7057ff"
+      },
+      {
+        "id": "LA_kwDODGtc288AAAABgJG1gA",
+        "name": "Overlays",
+        "description": "",
+        "color": "bbbbbb"
+      }
+    ],
+    "number": 5531,
+    "title": "React Aria: Replace Esc key listeners with a CloseWatcher in supported browsers",
+    "updatedAt": "2026-03-20T05:05:02Z",
+    "url": "https://github.com/adobe/react-spectrum/issues/5531",
+    "repo": "adobe/react-spectrum",
+    "queryLabel": "good first issue"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjE0MTg5NDk3",
+      "is_bot": false,
+      "login": "jhackett1",
+      "name": "Jaye Hackett"
+    },
+    "body": "### 🙋 Documentation Request\n\nI've been trying to use several dialog components nested inside each other.\r\n\r\nI've noticed through trial and error that without a `<ModalOverlay/>` in the mix, this simply doesn't work at all: opening one dialog opens them all simultaneously, and once open they can't be closed again.\r\n\r\nMy code now resembles this, which works:\r\n\r\n```\r\n    <DialogTrigger>\r\n      <Button>Open me!</Button>\r\n      <ModalOverlay>\r\n        <Modal>\r\n          <Dialog>\r\n            {({ close }) => (\r\n              <>\r\n                <button onClick={close}>Close</button>\r\n                <h2>Example dialog</h2>\r\n                Example content\r\n                <DialogTrigger>\r\n                  <Button>Open me!</Button>\r\n                  <ModalOverlay>\r\n                    <Modal>\r\n                      <Dialog>\r\n                        {({ close }) => (\r\n                          <>\r\n                            <button onClick={close}>Close</button>\r\n                            <h2>Example dialog</h2>\r\n                            Example content\r\n                          </>\r\n                        )}\r\n                      </Dialog>\r\n                    </Modal>\r\n                  </ModalOverlay>\r\n                </DialogTrigger>\r\n              </>\r\n            )}\r\n          </Dialog>\r\n        </Modal>\r\n      </ModalOverlay>\r\n    </DialogTrigger>\r\n```\r\n\r\nI'm  not sure why including `<ModalOverlay/>` has this effect, so it could be worth a note in the docs on how to properly orchestrate nested dialogs?\n\n### 🧢 Your Company/Team\n\n_No response_",
+    "comments": [
+      {
+        "id": "IC_kwDODGtc286A9zzN",
+        "author": {
+          "login": "LFDanLu"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "This seems to be because we will only [conditionally render the nested Modal](https://github.com/adobe/react-spectrum/blob/6e57855257f54738418f98c37efae798bf9fb4ad/packages/react-aria-components/src/Modal.tsx#L129-L131) based on its actual tracked isOpen state if you have a wrapping ModalOverlay. Without that wrapping ModalOverlay around the nested Modal, the nested Modal is rendered and gets access to the internal Modal context [here](https://github.com/adobe/react-spectrum/blob/6e57855257f54738418f98c37efae798bf9fb4ad/packages/react-aria-components/src/Modal.tsx#L65-L69) which is setup by the parent Modal [here](https://github.com/adobe/react-spectrum/blob/6e57855257f54738418f98c37efae798bf9fb4ad/packages/react-aria-components/src/Modal.tsx#L179-L183), resulting in every nested Modal rendering its contents [instead of automatically setting up their own ModalOverlay](https://github.com/adobe/react-spectrum/blob/6e57855257f54738418f98c37efae798bf9fb4ad/packages/react-aria-components/src/Modal.tsx#L86-L99). This doesn't feel quite right to me, perhaps it shouldn't be accessing that internal context since it will setup its own ModalOverlay + ModalContents but I might be missing something here. If it turns out that we do require a ModalOverlay around every nested Modal, then we can definitely update the docs accordingly.",
+        "createdAt": "2024-06-12T18:43:48Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 2
+            }
+          }
+        ],
+        "url": "https://github.com/adobe/react-spectrum/issues/6531#issuecomment-2163686605",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc288AAAABAGPZ0w",
+        "author": {
+          "login": "snowystinger"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Noticed this is still an issue by opening our example in stackblitz and copying the example inside itself, including a reproduction https://stackblitz.com/edit/3vwpr2za?file=src%2FExample.tsx",
+        "createdAt": "2026-04-23T03:18:08Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/6531#issuecomment-4301511123",
+        "viewerDidAuthor": false
+      }
+    ],
+    "createdAt": "2024-06-12T12:00:41Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzEx",
+        "name": "bug",
+        "description": "Something isn't working",
+        "color": "d73a4a"
+      },
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzEy",
+        "name": "documentation",
+        "description": "Improvements or additions to documentation",
+        "color": "0075ca"
+      }
+    ],
+    "number": 6531,
+    "title": "Using nested dialogs seems to depend on including a custom `<ModalOverlay/>`",
+    "updatedAt": "2026-04-23T03:18:08Z",
+    "url": "https://github.com/adobe/react-spectrum/issues/6531",
+    "repo": "adobe/react-spectrum",
+    "queryLabel": "documentation"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjQ2MzE3OA==",
+      "is_bot": false,
+      "login": "psirenny",
+      "name": "Dennis Torres"
+    },
+    "body": "### Provide a general summary of the feature here\r\n\r\nReplace use of `Number.NaN` values in the NumberField component with `null`. This would also enable passing in `null` to the NumberField which was requested in: #5524.\r\n\r\n### 🤔 Expected Behavior?\r\n\r\nThe expected behavior is that one must check for `null` before interacting with values returned by a NumberField. This isn't extra work, because one must *already* call `Number.isNaN()` when handling number values.\r\n\r\nWhy is `Number.NaN` less desirable? Because:\r\n* TypeScript doesn't error if a developer forgets to check for NaN\r\n* TypeScript can't determine whether a NaN check was already performed (extra unnecessary checks)\r\n* Serializing a NaN to JSON resolves to a `null` value anyway\r\n\r\n### 😯 Current Behavior\r\n\r\nAll values from a NumberField component need to be checked for `Number.isNaN()`. \r\n\r\n### 💁 Possible Solution\r\n\r\n_No response_\r\n\r\n### 🔦 Context\r\n\r\nI observe most of my team members override `onChange` and `value` properties to support `null` instead. This leads me to think that the DX of the NumberField component isn't quite right. Developers don't expect a number to not be a number and TypeScript doesn't warn about it.\r\n\r\n### 💻 Examples\r\n\r\n_No response_\r\n\r\n### 🧢 Your Company/Team\r\n\r\n_No response_\r\n\r\n### 🕷 Tracking Issue\r\n\r\n_No response_",
+    "comments": [
+      {
+        "id": "IC_kwDODGtc286KDbwj",
+        "author": {
+          "login": "snowystinger"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Yes, numberfield is a bit weird in this regard. We'll need to see if we can do this without breaking the current code paths. The behavior has been this way for a long time, and if we did away with it, that'd be considered a breaking change, regardless of intent.",
+        "createdAt": "2024-08-28T20:05:20Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/6971#issuecomment-2316155939",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc286W-Ijc",
+        "author": {
+          "login": "liam-hunt-bonterra"
+        },
+        "authorAssociation": "NONE",
+        "body": "+1 to this. I have a controlled `NumberField` component and I was surprised to find that the empty value is `NaN` rather than `null`. React Aria radios and Selects accept a controlled value of `null`. `null` is more pleasant for type checking as typescript has no `NaN` type.",
+        "createdAt": "2024-12-10T20:54:17Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 6
+            }
+          }
+        ],
+        "url": "https://github.com/adobe/react-spectrum/issues/6971#issuecomment-2532870364",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc2861EVNd",
+        "author": {
+          "login": "snowystinger"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "> as typescript has no NaN type\n\nThis isn't quite true, the type is `number`, which was chosen initially to reduce the need to declare state for the NumberField\n```\nfunction ControlledNumberField() {\n  const [value, setValue] = useState(5);\n  return <NumberField value={value} onChange={setValue}\n}\n```\nvs if we had done null, then you'd need to declare the state as\n```\nconst [value, setValue] = useState<number | null>(5);\n```\n\nThat said, everything else uses `null` for no value, so I get that people are used to it.\n\nI was thinking about this some more, I'm not sure how we could make this change without it being breaking. We can't return null from onChange because then the types are breaking for the handler.\n\nIt would also be breaking on the State context that we pass along for React Aria Context.\n\nIt'd be pretty easy to allow it on the value/defaultValue props, if we see `null` come in, we can just reassign to NaN so that changes inside the useNumberFieldState hook are minimal.\n\nWe can't depend on a generic type to enable the new behaviour either, since the logical code wouldn't know about that. We also can't assume that the initial value/defaultValue will be null or NaN, it could change to one of those later in which case we'd initially be emitting the wrong value. We could put it behind a prop, though I don't love that, and I don't have a good name for the prop. Open to possible ideas.\n\nUnfortunately though, I think this is going to need to wait for a major.",
+        "createdAt": "2025-07-05T03:14:35Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/6971#issuecomment-3037811549",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc2877rUWo",
+        "author": {
+          "login": "ik-southpole"
+        },
+        "authorAssociation": "NONE",
+        "body": "Hi, should we expect further discussion on this, or would you prefer a PR at this point? The fact that NumberField doesn’t accept null prevents us from displaying an empty input, forcing us to prefill it with an odd default value instead of letting the user enter their own.",
+        "createdAt": "2026-04-10T09:09:23Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/6971#issuecomment-4222436776",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc28779tOO",
+        "author": {
+          "login": "snowystinger"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "If you can think of a way to do this and have it be backwards compatible, then we welcome a PR.\n\nOtherwise, this statement holds\n> Unfortunately though, I think this is going to need to wait for a major.\n\nAnd you can display an empty input by using `NaN`. You can map `null` to `NaN` outside of the component if you are controlling the value.",
+        "createdAt": "2026-04-10T23:06:50Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/6971#issuecomment-4227257230",
+        "viewerDidAuthor": false
+      }
+    ],
+    "createdAt": "2024-08-28T14:05:29Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE0",
+        "name": "enhancement",
+        "description": "New feature or request",
+        "color": "a2eeef"
+      },
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE1",
+        "name": "help wanted",
+        "description": "Extra attention is needed",
+        "color": "008672"
+      }
+    ],
+    "number": 6971,
+    "title": "Use `null` instead of `Number.NaN` in NumberField component",
+    "updatedAt": "2026-04-10T23:06:50Z",
+    "url": "https://github.com/adobe/react-spectrum/issues/6971",
+    "repo": "adobe/react-spectrum",
+    "queryLabel": "help wanted"
+  },
+  {
+    "author": {
+      "id": "U_kgDOC2V9rQ",
+      "is_bot": false,
+      "login": "wmodden",
+      "name": ""
+    },
+    "body": "### Provide a general summary of the issue here\n\nI have a custom [Datepicker](https://react-spectrum.adobe.com/react-aria/DatePicker.html) component that I'm integrating with `react-hook-form`. I was wondering which component should received the ref (passed by forwardRef), I need to do so since `react hook form` uses this ref to focus an element on error (think a form submission that has client validation)\n\nI've tried with the `DatePicker` and `DateInput` but no luck.\n\n### 🤔 Expected Behavior?\n\nRef should be received by the `DatePicker` or `DateInput` component.\n\n### 😯 Current Behavior\n\nLooks like the ref is not being received by the mentioned react-aria-components.\n\n### 💁 Possible Solution\n\n_No response_\n\n### 🔦 Context\n\n_No response_\n\n### 🖥️ Steps to Reproduce\n\nYou can use the documentation https://react-spectrum.adobe.com/react-aria/DatePicker.html\n\n### Version\n\n1.5.0\n\n### What browsers are you seeing the problem on?\n\nChrome\n\n### If other, please specify.\n\n_No response_\n\n### What operating system are you using?\n\nmacos sequoia\n\n### 🧢 Your Company/Team\n\n_No response_\n\n### 🕷 Tracking Issue\n\n_No response_",
+    "comments": [
+      {
+        "id": "IC_kwDODGtc286eBTFm",
+        "author": {
+          "login": "reidbarber"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Looks like it is being added here:\n\nhttps://github.com/adobe/react-spectrum/blob/4b8b33a022a17c7df2d6ee6d23b6208b503973fe/packages/react-aria-components/src/DatePicker.tsx#L162-L166\n\nAre you seeing different behavior? You can try to `console.log` the ref to check.",
+        "createdAt": "2025-02-11T15:21:17Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/7756#issuecomment-2651140454",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc286hPX_u",
+        "author": {
+          "login": "adhameer"
+        },
+        "authorAssociation": "NONE",
+        "body": "I am experiencing the same issue with `DateField`. I need to focus the actual \"input\" (which is actually the first of multiple inputs in a group) and it seems to require quite a bit of work to attach the ref to the right place regardless of the user's locale.\n\nThe refs passed directly to `DateField` and `DateInput` are applied to the outer elements, which aren't the focusable ones. What _does_ work is passing the ref to the first `DateSegment`. However, there are no values in the FaC of `DateInput` that allow me to figure out which segment is the first one. An easy way to do it is as follows:\n\n```tsx\nfunction MyCustomDateField() {\n  const ref = React.useRef(null);\n\n  return (\n    <DateField>\n      <Label>Label</Label>\n      <DateInput>\n        {(segment) => <DateSegment segment={segment} ref={segment.type === 'month' ? ref : undefined} />}\n      </DateInput>\n    </DateField>\n  );\n}\n```\n\nbut of course this is making an assumption about the user's locale and is inflexible. Probably I can use the internationalization library to determine which is the type of the first segment, but that would be a lot of work for this simple functionality.\n\nSomething that would help would be if the FaC included a value that indicated if the segment being rendered is the first editable segment of the input. A simple index passed in could work, though I'm not sure if there are any cases where the first segment is actually a literal (which cannot be focused - we need the first _editable_ segment).\n\nFor instance:\n\n```tsx\n<DateInput>\n  {(segment, index) => <DateSegment segment={segment} ref={index === 0 ? ref : undefined} />}\n</DateInput>\n```\n\nBut ideally there would just be one simple place to attach the ref as it is for other non-compound form inputs.",
+        "createdAt": "2025-03-06T23:26:16Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 2
+            }
+          }
+        ],
+        "url": "https://github.com/adobe/react-spectrum/issues/7756#issuecomment-2705162222",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc286lFNnu",
+        "author": {
+          "login": "joestrkr"
+        },
+        "authorAssociation": "NONE",
+        "body": "I have the exact same issue, trying to pass the ref from react-hook-form. \n\nWeird thing is that tabbing into the DateField with the keyboard or clicking on the label or DateField group element correctly places the focus on the first DateSegment. It just does not seem to work when RHF focuses the element programmatically. ",
+        "createdAt": "2025-04-01T14:39:40Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/7756#issuecomment-2769607150",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc286lrrL7",
+        "author": {
+          "login": "adhameer"
+        },
+        "authorAssociation": "NONE",
+        "body": "@wmodden @joestrkr I've found a solution that doesn't require _too_ much extra code and seems to work for me for now. Basically, we make use of the `DateFieldStateContext` to find out which segment is the first editable segment, and then we can use that information to pass the ref to only that segment.\n\nThe code looks something like this:\n\n```ts\nconst MyCustomDateInput = React.forwardRef<HTMLInputElement>(function DateInput(_props, ref) {\n  const { segments } = useContext(DateFieldStateContext)!;\n  // Find the first editable date segment - this is the one we want to focus\n  // when focusing the input\n  const firstSegmentType = segments.find(\n  \t({ isEditable }) => isEditable,\n  )?.type;\n\n  return (\n    <DateInput>\n      {(segment) => (\n        <DateSegment segment={segment} ref={segment.type === firstSegmentType ? ref : undefined} />\n      )}\n    </DateInput>\n  );\n});\n\nfunction MyCustomDateField() {\n  const ref = React.useRef<HTMLInputElement>(null);\n\n  return (\n    <DateField>\n      <Label>Label</Label>\n      <MyCustomDateInput ref={ref} />\n    </DateField>\n  );\n}\n```\n\n`MyCustomDateField` would then be updated to use a forwarded ref.",
+        "createdAt": "2025-04-04T20:39:49Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/7756#issuecomment-2779689723",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc286symcM",
+        "author": {
+          "login": "devongovett"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Maybe we could add a `focusableRef` prop or something like that to DateInput? We're pretty consistent across all of our components that the forwarded `ref` always goes to the outer-most element. But I could see for this specific case of focusing the first segment it's not super easy at the moment.",
+        "createdAt": "2025-05-21T19:03:28Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/adobe/react-spectrum/issues/7756#issuecomment-2898945804",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc287Angsh",
+        "author": {
+          "login": "wmodden"
+        },
+        "authorAssociation": "NONE",
+        "body": "I still see this on version 1.11.0",
+        "createdAt": "2025-08-28T02:58:15Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/7756#issuecomment-3231583009",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc287Annj2",
+        "author": {
+          "login": "wmodden"
+        },
+        "authorAssociation": "NONE",
+        "body": "> Maybe we could add a `focusableRef` prop or something like that to DateInput? We're pretty consistent across all of our components that the forwarded `ref` always goes to the outer-most element. But I could see for this specific case of focusing the first segment it's not super easy at the moment.\n\nhappy to help if you can show me the way (some of it of course) 🚀 ",
+        "createdAt": "2025-08-28T03:04:32Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/7756#issuecomment-3231611126",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc287BSDYQ",
+        "author": {
+          "login": "lensbart"
+        },
+        "authorAssociation": "NONE",
+        "body": "> Maybe we could add a `focusableRef` prop or something like that to DateInput? We're pretty consistent across all of our components that the forwarded `ref` always goes to the outer-most element. But I could see for this specific case of focusing the first segment it's not super easy at the moment.\n\nAnother benefit of having a `ref` that points to the input element, is that it allows using the input value via `ref.current?.value` without requiring a controlled component.",
+        "createdAt": "2025-09-01T15:24:45Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/7756#issuecomment-3242735120",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc287SfqBc",
+        "author": {
+          "login": "hasegawa-101"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "Hi! @snowystinger I'd like to work on this issue. I'll submit a PR soon.",
+        "createdAt": "2025-11-14T08:17:16Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/7756#issuecomment-3531513948",
+        "viewerDidAuthor": false
+      }
+    ],
+    "createdAt": "2025-02-11T02:51:42Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE2",
+        "name": "good first issue",
+        "description": "Good for newcomers",
+        "color": "7057ff"
+      },
+      {
+        "id": "MDU6TGFiZWwyODM4MjIyOTc0",
+        "name": "DatePicker",
+        "description": "",
+        "color": "bbbbbb"
+      }
+    ],
+    "number": 7756,
+    "title": "Unable to pass ref to Datepicker [react-aria-components]",
+    "updatedAt": "2025-11-14T08:17:16Z",
+    "url": "https://github.com/adobe/react-spectrum/issues/7756",
+    "repo": "adobe/react-spectrum",
+    "queryLabel": "good first issue"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjIyNDI0OTg=",
+      "is_bot": false,
+      "login": "gijsroge",
+      "name": "Gijs Rogé"
+    },
+    "body": "### Provide a general summary of the issue here\n\nReact Aria's table is not interactive on the first click when the page was loaded through SSR.\n\n### 🤔 Expected Behavior?\n\nThe table should be interactive/hydrated on page load, not only after a user clicked on the page.\n\n### 😯 Current Behavior\n\n-\n\n### 💁 Possible Solution\n\n_No response_\n\n### 🔦 Context\n\n_No response_\n\n### 🖥️ Steps to Reproduce\n\nhttps://github.com/gijsroge/react-aria-table-issue\n\n`npm install && npm run dev`\n\nOn page load you will notice the table is not interactive on the first click, only on the second click.\n\nIf you start on page 2: http://localhost:5174/2 and then use the link on this page to navigate to the table using a client side navigation, the table is interactive on first click.\n\n### Version\n\n1.8.0\n\n### What browsers are you seeing the problem on?\n\nChrome, Microsoft Edge, Safari, Firefox\n\n### If other, please specify.\n\n_No response_\n\n### What operating system are you using?\n\nWindows\n\n### 🧢 Your Company/Team\n\n_No response_\n\n### 🕷 Tracking Issue\n\n_No response_",
+    "comments": [
+      {
+        "id": "IC_kwDODGtc286sBNcU",
+        "author": {
+          "login": "herkulano"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "Reverted to version 1.7.1 to get it working again.",
+        "createdAt": "2025-05-16T08:18:57Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/adobe/react-spectrum/issues/8239#issuecomment-2885998356",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc286sCfW9",
+        "author": {
+          "login": "snowystinger"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "I can reproduce in the nightly version as well. I'm not sure why the checkboxes take two clicks.\n\nThe app you have is not going to be keyboard accessible until we support edit mode. See https://github.com/adobe/react-spectrum/issues/6037\n",
+        "createdAt": "2025-05-16T10:31:45Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/8239#issuecomment-2886333885",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc286sCmto",
+        "author": {
+          "login": "gijsroge"
+        },
+        "authorAssociation": "NONE",
+        "body": "@snowystinger it's not just the checkbox specific, anything inside the table is somehow ignored on first click. Also it gets weird when I add a button inside a cell. If I do that the row is selected on first click, but the button did not handle the click event.\n\nI pushed this in the repo as an example as well.\n\n",
+        "createdAt": "2025-05-16T10:45:49Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/adobe/react-spectrum/issues/8239#issuecomment-2886364008",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc286s_HGe",
+        "author": {
+          "login": "splicebison"
+        },
+        "authorAssociation": "NONE",
+        "body": "Can confirm behavior though it's an upgrade for us where on 1.7.1 sometimes the table would disappear completely on first click. ",
+        "createdAt": "2025-05-22T18:43:13Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/8239#issuecomment-2902225310",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc286zm4sH",
+        "author": {
+          "login": "LouisCuvelier"
+        },
+        "authorAssociation": "NONE",
+        "body": "I can confirm it's not working on version `1.10.1`",
+        "createdAt": "2025-06-27T14:40:21Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/8239#issuecomment-3013315335",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc2867beuU",
+        "author": {
+          "login": "greg-hoarau"
+        },
+        "authorAssociation": "NONE",
+        "body": "I have the same issue with a Button in a Cell with RAC version `1.11.0`. It seems like react keys are changing on first click",
+        "createdAt": "2025-08-01T13:10:12Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/8239#issuecomment-3144543124",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc287wCT_O",
+        "author": {
+          "login": "rsolomon-muon"
+        },
+        "authorAssociation": "NONE",
+        "body": "Anyone have any luck with a workaround? Right now we're forcing a re-render after client render, but combined with #8617 it makes any table-based experiences very suboptimal.",
+        "createdAt": "2026-03-09T21:51:15Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/8239#issuecomment-4027137998",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc287zuJSL",
+        "author": {
+          "login": "florianloechle"
+        },
+        "authorAssociation": "NONE",
+        "body": "We also noticed this issue today. We are using v1.16.0.",
+        "createdAt": "2026-03-19T09:48:21Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/8239#issuecomment-4088960139",
+        "viewerDidAuthor": false
+      }
+    ],
+    "createdAt": "2025-05-15T14:32:17Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE1",
+        "name": "help wanted",
+        "description": "Extra attention is needed",
+        "color": "008672"
+      },
+      {
+        "id": "LA_kwDODGtc287grz73",
+        "name": "needs investigation",
+        "description": "",
+        "color": "FB9F58"
+      }
+    ],
+    "number": 8239,
+    "title": "Table is not interactive on first click in SSR",
+    "updatedAt": "2026-03-19T13:24:04Z",
+    "url": "https://github.com/adobe/react-spectrum/issues/8239",
+    "repo": "adobe/react-spectrum",
+    "queryLabel": "help wanted"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjMxMzUzNjk1",
+      "is_bot": false,
+      "login": "axelthat",
+      "name": ""
+    },
+    "body": "### Provide a general summary of the issue here\n\nPress a button to open a modal. Inspect button's html and you can see the button has the attribute `data-pressed=true`. It also doesn't go away when you're focusing/clicking inside a modal.\n\n### 🤔 Expected Behavior?\n\nButton should not remain in pressed state.\n\n### 😯 Current Behavior\n\nButton remains in pressed state.\n\n### 💁 Possible Solution\n\n_No response_\n\n### 🔦 Context\n\nI have an outline button that animates to having a black background on pressed/hovered state. When the button is pressed to open a modal, the black background is still visible which is distracting.\n\n### 🖥️ Steps to Reproduce\n\nhttps://stackblitz.com/edit/vitejs-vite-ydyoxcq5?file=src%2FApp.tsx\n\n### Version\n\n1.9.0\n\n### What browsers are you seeing the problem on?\n\nChrome\n\n### If other, please specify.\n\n_No response_\n\n### What operating system are you using?\n\nStackblitz\n\n### 🧢 Your Company/Team\n\n_No response_\n\n### 🕷 Tracking Issue\n\n_No response_",
+    "comments": [
+      {
+        "id": "IC_kwDODGtc286vF4Cy",
+        "author": {
+          "login": "snowystinger"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Thanks for the issue. Unfortunately, changing how it behaves right now would be a breaking change. That said, we're aware of it and had to do a workaround for it in our own implementation. This is less than ideal however.\n\nWe'd like a prop on MenuTrigger/DialogTrigger/Select/Picker/DatePicker/etc, name tbd , which just needs to not set `isPressed` on the press responder. Examples of places to look to apply:\n\nhttps://github.com/adobe/react-spectrum/blob/61f6f427f1596d95578e225193c4db4479fc5079/packages/react-aria-components/src/Dialog.tsx#L84\nhttps://github.com/adobe/react-spectrum/blob/61f6f427f1596d95578e225193c4db4479fc5079/packages/react-aria-components/src/Menu.tsx#L89\n\nSee https://github.com/adobe/react-spectrum/blob/61f6f427f1596d95578e225193c4db4479fc5079/packages/%40react-spectrum/s2/src/DialogTrigger.tsx#L29 where we work around this currently\n\npossible names\n- `persistPressStateWhenOpen`\n- `isPressedWhenOpen`\n- `consideredPressedWhenOpen`\n- `notPressedWhenOpen`\n ",
+        "createdAt": "2025-06-03T22:46:23Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/8339#issuecomment-2937553074",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDODGtc286yBECc",
+        "author": {
+          "login": "axelthat"
+        },
+        "authorAssociation": "NONE",
+        "body": "I see. Thanks.",
+        "createdAt": "2025-06-19T05:07:17Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/8339#issuecomment-2986623132",
+        "viewerDidAuthor": false
+      }
+    ],
+    "createdAt": "2025-06-03T08:20:48Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE0",
+        "name": "enhancement",
+        "description": "New feature or request",
+        "color": "a2eeef"
+      },
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE2",
+        "name": "good first issue",
+        "description": "Good for newcomers",
+        "color": "7057ff"
+      }
+    ],
+    "number": 8339,
+    "title": "Button remains in pressed state when opening a modal",
+    "updatedAt": "2026-02-03T23:29:00Z",
+    "url": "https://github.com/adobe/react-spectrum/issues/8339",
+    "repo": "adobe/react-spectrum",
+    "queryLabel": "good first issue"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjE2MTA2MTQ=",
+      "is_bot": false,
+      "login": "lixiaoyan",
+      "name": "XiaoYan Li"
+    },
+    "body": "### 🙋 Documentation Request\n\nFor example, open https://react-aria.adobe.com/Button and search for `onFocusChange`.\n\n### 🧢 Your Company/Team\n\n_No response_",
+    "comments": [
+      {
+        "id": "IC_kwDODGtc287a3VO-",
+        "author": {
+          "login": "LFDanLu"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Unfortunately, those prop tables don't have that functionality since we can't add a hidden until found wrapper around the rows since it is a table. We'll investigate some alternatives to make this more searchable",
+        "createdAt": "2025-12-18T19:38:10Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/9374#issuecomment-3671937982",
+        "viewerDidAuthor": false
+      }
+    ],
+    "createdAt": "2025-12-18T11:42:29Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzEy",
+        "name": "documentation",
+        "description": "Improvements or additions to documentation",
+        "color": "0075ca"
+      },
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE0",
+        "name": "enhancement",
+        "description": "New feature or request",
+        "color": "a2eeef"
+      }
+    ],
+    "number": 9374,
+    "title": "Documentation: collapsed props cannot be searched",
+    "updatedAt": "2025-12-18T19:38:10Z",
+    "url": "https://github.com/adobe/react-spectrum/issues/9374",
+    "repo": "adobe/react-spectrum",
+    "queryLabel": "documentation"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjgyNDY1NDc1",
+      "is_bot": false,
+      "login": "schurchleycci",
+      "name": ""
+    },
+    "body": "To recreate: focus a tab, and hit CMD + left/right arrow. This switches tabs rather than trigger browser back/forward.\r\n\r\n_Originally posted by @schurchleycci in https://github.com/adobe/react-spectrum/discussions/9628_",
+    "comments": [
+      {
+        "id": "IC_kwDODGtc287oCLq8",
+        "author": {
+          "login": "Zdog1206"
+        },
+        "authorAssociation": "NONE",
+        "body": "Hello, I'd be interested in being assigned this issue for my software engineering class.",
+        "createdAt": "2026-02-12T19:10:48Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/adobe/react-spectrum/issues/9648#issuecomment-3892886204",
+        "viewerDidAuthor": false
+      }
+    ],
+    "createdAt": "2026-02-12T18:10:23Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE2",
+        "name": "good first issue",
+        "description": "Good for newcomers",
+        "color": "7057ff"
+      }
+    ],
+    "number": 9648,
+    "title": "Back/forward keyboard shortcuts (e.g. CMD + left arrow) triggering tab switching rather than page navigation ",
+    "updatedAt": "2026-02-12T19:10:48Z",
+    "url": "https://github.com/adobe/react-spectrum/issues/9648",
+    "repo": "adobe/react-spectrum",
+    "queryLabel": "good first issue"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjExMzI5MDQ=",
+      "is_bot": false,
+      "login": "joelanman",
+      "name": "Joe Lanman"
+    },
+    "body": "Many of the patterns in [make a declaration](https://github.com/alphagov/govuk-design-system-backlog/issues/29) use a single checkbox, but there's no documentation of this in the design system. Do we need some? For reference you can do this:\r\n\r\n```\r\n{{ govukCheckboxes({\r\n  \"name\": \"t-and-c\",\r\n  \"items\": [\r\n    {\r\n      \"value\": \"yes\",\r\n      \"text\": \"I agree to the terms and conditions\"\r\n    }\r\n  ]\r\n}) }}\r\n```",
+    "comments": [
+      {
+        "id": "IC_kwDOBZRkxM43YwLw",
+        "author": {
+          "login": "edwardhorsford"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "I came here to request / suggest such an example.\r\n\r\nI've got two use cases in my service, and it would be good for it to be shown as an example. I worked out what to do with the macros, but it wasn't obvious if you did or didn't need a fieldset, etc.\r\n\r\nSome examples of usage:\r\n## DfE Register trainee teachers\r\n![Screenshot 2021-09-28 at 14 50 59](https://user-images.githubusercontent.com/2204224/135100291-dafaa0db-cde9-4931-91ac-a3da5d962196.png)\r\n\r\n![Screenshot 2021-09-28 at 14 51 14](https://user-images.githubusercontent.com/2204224/135100352-ae7f10a4-cb2f-4485-ad97-40b8a153df3d.png)\r\n\r\n## Passport renewals\r\n![image](https://user-images.githubusercontent.com/2204224/135101063-59b3340a-92cc-4eb9-8724-6ba3eee275e5.png)\r\n\r\n\r\n",
+        "createdAt": "2021-09-28T13:51:26Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/alphagov/govuk-design-system/issues/1176#issuecomment-929235696",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOBZRkxM43Ywzb",
+        "author": {
+          "login": "edwardhorsford"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "And to confirm what @joelanman, it's a very common pattern in the context of consent / agreeing to declarations. Probably not common across checkboxes in general, but for that one context of use it is.",
+        "createdAt": "2021-09-28T13:52:37Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/alphagov/govuk-design-system/issues/1176#issuecomment-929238235",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOBZRkxM43Y05U",
+        "author": {
+          "login": "martinantrobus"
+        },
+        "authorAssociation": "NONE",
+        "body": "Here's an example from Find Your Business Rates:\r\n\r\n![image](https://user-images.githubusercontent.com/87323164/135102225-dee248bc-5f36-4ae2-aec0-4aa3a5b90956.png)\r\n",
+        "createdAt": "2021-09-28T14:01:53Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/alphagov/govuk-design-system/issues/1176#issuecomment-929254996",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOBZRkxM43bjuP",
+        "author": {
+          "login": "frankieroberto"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "There's a healthy debate in the [Make a declaration](https://github.com/alphagov/govuk-design-system-backlog/issues/29) backlog thread about whether or not to use a checkbox for declarations.\r\n\r\nThere’s definitely a few use cases for single checkboxes without fieldsets and legends though.",
+        "createdAt": "2021-09-29T08:48:19Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/alphagov/govuk-design-system/issues/1176#issuecomment-929971087",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOBZRkxM44gpdM",
+        "author": {
+          "login": "matthew-shaw"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "It might be neat if `govukCheckboxes` contained a collection of `govukCheckbox` items. So a singular checkbox was a thing in it's own right and a fieldset and legend were only valid macro options on collections of them.",
+        "createdAt": "2021-10-20T22:24:01Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/alphagov/govuk-design-system/issues/1176#issuecomment-948082508",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOBZRkxM5kLPnK",
+        "author": {
+          "login": "querkmachine"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "I've given this a little thought but I'm rather struggling to think of examples where [inline radios](https://design-system.service.gov.uk/components/radios/#inline-radios) wouldn't be better when compared to a checkbox. \r\n\r\nRadios allow the question to be formatted as a question (\"Do you agree to...?\", \"Do you want to...?\") rather than as a statement the user has to agree or disagree with. \r\n\r\nRadios also ensure that the user has read the question and given an explicit response for validation purposes, whereas an empty checkbox could be the result of an oversight\r\n\r\nThere's something to be said for the familiarity of an \"I agree to the terms and conditions\" checkbox, but I'm straining to think of places where a checkbox would be considered preferable.",
+        "createdAt": "2023-08-16T13:59:01Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/alphagov/govuk-design-system/issues/1176#issuecomment-1680669130",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOBZRkxM78Ryot",
+        "author": {
+          "login": "joelanman"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "Could we revisit this? It's a very common pattern. Sometimes radios are a better approach, sometimes a single checkbox, it would be up to the designer and researcher to assess for their projects. Agreeing to terms is a good example for it - it often wouldn't make sense to have a 'no' option - you simply wouldn't be able to continue.",
+        "createdAt": "2026-04-12T19:00:12Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/alphagov/govuk-design-system/issues/1176#issuecomment-4232522285",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOBZRkxM78bclS",
+        "author": {
+          "login": "frankieroberto"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "Agreeing to terms is a moderately controversial example, as there’s some disagreement about whether a checkbox is even needed for this, or whether you can do something like \"By continuing you agree to terms...\" (which I’ve had agreed in the past). Legal opinion on this is mixed!\n\nCould still be used as an example, with some caveats, but perhaps there’s a more neutral example?\n\nHow about something like a \"this is an estimate\" checkbox, as seen [on this DfE service](https://becoming-a-teacher.design-history.education.gov.uk/apply-for-teacher-training/work-history-iteration/):\n\n<img width=\"511\" height=\"209\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/70f40a94-aab0-4a6e-bcba-0acc53585917\" />\n\nAlternatively another example could be a mailing list opt-in checkbox, or an \"I’m happy to be contacted about user research\" type checkbox?",
+        "createdAt": "2026-04-13T08:45:20Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/alphagov/govuk-design-system/issues/1176#issuecomment-4235053394",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOBZRkxM78bxOM",
+        "author": {
+          "login": "joelanman"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "Petition parliament has some\n\n<img width=\"742\" height=\"738\" alt=\"Only British citizens or UK residents have the right to sign Checkbox I am a British citizen or UK resident. Checkbox Email me whenever there’s an update about this petition\" src=\"https://github.com/user-attachments/assets/4b2b9868-c939-47f0-b973-70835579f760\" />",
+        "createdAt": "2026-04-13T08:59:48Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/alphagov/govuk-design-system/issues/1176#issuecomment-4235137932",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOBZRkxM78dvb5",
+        "author": {
+          "login": "edwardhorsford"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "I'd probably argue that a continue button that also opts-in to accepting terms is the controversial option - whereas a checkbox is the more traditional. Agreed it would still be good to have an example.",
+        "createdAt": "2026-04-13T10:23:25Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/alphagov/govuk-design-system/issues/1176#issuecomment-4235654905",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOBZRkxM78lciB",
+        "author": {
+          "login": "frankieroberto"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "> I'd probably argue that a continue button that also opts-in to accepting terms is the controversial option - whereas a checkbox is the more traditional. Agreed it would still be good to have an example.\n\nAgree - both are controversial! \n\nTerms and conditions / declaring things are probably best left to a separate pattern, which could go into more detail of the pros and cons. There’s separate backlog issues for that: https://github.com/alphagov/govuk-design-system-backlog/issues/102 /  https://github.com/alphagov/govuk-design-system-backlog/issues/29\n\n\"Email me whenever there’s an update about this\" feels like a good, neutral example?",
+        "createdAt": "2026-04-13T15:38:35Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/alphagov/govuk-design-system/issues/1176#issuecomment-4237674625",
+        "viewerDidAuthor": false
+      }
+    ],
+    "createdAt": "2020-02-26T15:56:51Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxMDY5MDQ1MDgw",
+        "name": "documentation",
+        "description": "User requests new documentation or improvements to existing documentation",
+        "color": "00703c"
+      },
+      {
+        "id": "MDU6TGFiZWwxOTM5MDIwODkz",
+        "name": "checkboxes",
+        "description": "",
+        "color": "1d70b8"
+      }
+    ],
+    "number": 1176,
+    "title": "Documentation/example for a single checkbox",
+    "updatedAt": "2026-04-13T15:38:35Z",
+    "url": "https://github.com/alphagov/govuk-design-system/issues/1176",
+    "repo": "alphagov/govuk-design-system",
+    "queryLabel": "documentation"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjE5ODM0NDYw",
+      "is_bot": false,
+      "login": "christopherthomasdesign",
+      "name": "Chris Ballantine-Thomas"
+    },
+    "body": "Raised by a user on Slack. They weren't sure whether a cookie banner should appear on a service's cookie page, and had seen varying implementations in different services.\r\n\r\n## Related documentation\r\n\r\n[Cookie banner component](https://design-system.service.gov.uk/components/cookie-banner/)\r\n[Cookies page pattern](https://design-system.service.gov.uk/patterns/cookies-page/)\r\n\r\n## Suggestion\r\n\r\nExplain what the approach should be.\r\n\r\nWe have some logic to stop the cookie banner showing on the cookies page in the Design System:\r\nhttps://github.com/alphagov/govuk-design-system/blob/main/src/javascripts/components/cookie-banner.mjs#L22\r\n\r\nSo it's a case of explaining that this is how it should work, and why.\r\n\r\n## Evidence (where applicable)\r\n\r\nPassports doesn't show the cookie banner – https://www.passport.service.gov.uk/help/cookies-setting\r\nJSA does - https://www.apply-for-new-style-jsa.dwp.gov.uk/citizen-ui/cookies-policy\r\n\r\n",
+    "comments": [],
+    "createdAt": "2024-03-06T16:27:27Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxMDY5MDQ1MDgw",
+        "name": "documentation",
+        "description": "User requests new documentation or improvements to existing documentation",
+        "color": "00703c"
+      },
+      {
+        "id": "MDU6TGFiZWwxODI0NjE5NjAw",
+        "name": "design",
+        "description": "",
+        "color": "db2096"
+      },
+      {
+        "id": "MDU6TGFiZWwyNTU3MTI4NTc1",
+        "name": "cookie banner",
+        "description": "",
+        "color": "1d70b8"
+      }
+    ],
+    "number": 3634,
+    "title": "It's not clear if the cookie banner should appear on the cookies page itself",
+    "updatedAt": "2025-12-30T13:54:26Z",
+    "url": "https://github.com/alphagov/govuk-design-system/issues/3634",
+    "repo": "alphagov/govuk-design-system",
+    "queryLabel": "documentation"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjE5ODM0NDYw",
+      "is_bot": false,
+      "login": "christopherthomasdesign",
+      "name": "Chris Ballantine-Thomas"
+    },
+    "body": "## Related documentation\r\n\r\nOn the [notification banner](https://design-system.service.gov.uk/components/notification-banner/) page:\r\n\r\n\"Use a notification banner to tell the user about something they need to know about, but that’s not directly related to the page content.\"\r\n\r\n## Suggestion\r\n\r\nThere are cases where you might use a notification banner that _is_ directly related to the page content, particularly when using a [green success banner](https://design-system.service.gov.uk/components/notification-banner/#reacting-to-something-the-user-has-done). So we might need to change the emphasis of that opening line so it doesn't mislead people.\r\n\r\n## Evidence (where applicable)\r\n\r\nA designer raised this when designing a page that allowed users to save changes to a content page. They wanted to show a message to confirm the saved changes to users, whilst staying on the same page. I think the green success banner is ideal for that use case. However, the content at the top of the page (about not being related to the page content) made them think this wasn't an option.\r\n",
+    "comments": [],
+    "createdAt": "2024-06-06T14:19:08Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxMDY5MDQ1MDgw",
+        "name": "documentation",
+        "description": "User requests new documentation or improvements to existing documentation",
+        "color": "00703c"
+      },
+      {
+        "id": "MDU6TGFiZWwzMTUxMDA4MTQ4",
+        "name": "small story",
+        "description": "",
+        "color": "0b0c0c"
+      }
+    ],
+    "number": 3827,
+    "title": "Notification banner guidance has misleading line?",
+    "updatedAt": "2025-12-18T14:53:39Z",
+    "url": "https://github.com/alphagov/govuk-design-system/issues/3827",
+    "repo": "alphagov/govuk-design-system",
+    "queryLabel": "documentation"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjEwODg5Mw==",
+      "is_bot": false,
+      "login": "selfthinker",
+      "name": "Anika Henke"
+    },
+    "body": "## What\r\n\r\nFill the (currently empty) [accessibility page in the team playbook](https://govuk-design-system-team-docs.netlify.app/accessibility/).\r\n\r\n## Why\r\n\r\nWe should document how we are and should be doing things around accessibility.\r\nThat will make it easier for new joiners to learn about it and established team members to remind themselves.\r\n\r\nSomewhat related is the ['Testing accessibility concerns' section in the accessibility strategy](https://design-system.service.gov.uk/accessibility/accessibility-strategy/#testing-accessibility-concerns).\r\n\r\n## Who needs to work on this\r\n\r\nAnika\r\n\r\n## Who needs to review this\r\n\r\nAny team member\r\n\r\n## Done when\r\n\r\n- [ ] Dependent on https://github.com/alphagov/govuk-design-system/issues/3943\r\n- [ ] Raise PR for additions to the page\r\n- [ ] Review PR\r\n- [ ] Publish\r\n",
+    "comments": [],
+    "createdAt": "2024-07-18T15:54:18Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxMDY5MDQ0NTI4",
+        "name": "accessibility",
+        "description": "",
+        "color": "5bffd8"
+      },
+      {
+        "id": "MDU6TGFiZWwxMDY5MDQ1MDgw",
+        "name": "documentation",
+        "description": "User requests new documentation or improvements to existing documentation",
+        "color": "00703c"
+      },
+      {
+        "id": "MDU6TGFiZWwzMTUxMDA4MTQ4",
+        "name": "small story",
+        "description": "",
+        "color": "0b0c0c"
+      }
+    ],
+    "number": 3944,
+    "title": "Write accessibility page in team playbook",
+    "updatedAt": "2025-12-30T13:47:11Z",
+    "url": "https://github.com/alphagov/govuk-design-system/issues/3944",
+    "repo": "alphagov/govuk-design-system",
+    "queryLabel": "documentation"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjM2NzY4NTA1",
+      "is_bot": false,
+      "login": "kellylee-gds",
+      "name": "Kelly Lee"
+    },
+    "body": "## What\nEdit the transcript from the recording of June's #DSChat.\n\n## Why\nTo ensure it's correct and free of typos.\n\n## Who needs to work on this\nAnyone\n\n## Who needs to review this\nN/A\n\n## Done when\n- [ ] [transcript ](https://docs.google.com/document/d/1pQap4fpVZYXyL53TxjpXW1W3DSzgeXdkWjz5zPKrz7o/edit?tab=t.0) edited\n- [ ] [publishing tracker](https://docs.google.com/spreadsheets/d/1GoB91TII6Rp6NtDXxQA_bdIjwgw4CaDMk39Pz67dkdQ/edit?gid=1642600478#gid=1642600478) updated",
+    "comments": [],
+    "createdAt": "2025-06-05T11:37:17Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxMDY5MDQ1MDgw",
+        "name": "documentation",
+        "description": "User requests new documentation or improvements to existing documentation",
+        "color": "00703c"
+      },
+      {
+        "id": "MDU6TGFiZWwzMTUxMDA4MTQ4",
+        "name": "small story",
+        "description": "",
+        "color": "0b0c0c"
+      }
+    ],
+    "number": 4758,
+    "title": "Edit transcript for June's #DSChat",
+    "updatedAt": "2025-12-30T13:43:29Z",
+    "url": "https://github.com/alphagov/govuk-design-system/issues/4758",
+    "repo": "alphagov/govuk-design-system",
+    "queryLabel": "documentation"
+  },
+  {
+    "author": {
+      "id": "U_kgDOChTwFw",
+      "is_bot": false,
+      "login": "paris-dp",
+      "name": ""
+    },
+    "body": "\n## Related documentation\n\nThe 'Showing service name and navigation links' section of the [service navigation component documentation ](https://design-system.service.gov.uk/components/service-navigation/#brand-refresh-of-the-service-navigation-component)\n\n## Suggestion\n\n<!-- How could this documentation be improved? -->\n\nThe documentation could be improved by informing that where the service name is too long to be in line with navigation, the expected behaviour would be for the service name to be on the line above the navigation.\n\n## Evidence (where applicable)\n\n<!-- Please provide any relevant user research or evidence to support this change. -->\n[Slack thread](https://ukgovernmentdigital.slack.com/archives/C6DMEH5R6/p1764341323210729)\n",
+    "comments": [],
+    "createdAt": "2025-12-02T09:24:26Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxMDY5MDQ1MDgw",
+        "name": "documentation",
+        "description": "User requests new documentation or improvements to existing documentation",
+        "color": "00703c"
+      }
+    ],
+    "number": 5019,
+    "title": "Add content to service navigation component documentation",
+    "updatedAt": "2025-12-02T09:24:26Z",
+    "url": "https://github.com/alphagov/govuk-design-system/issues/5019",
+    "repo": "alphagov/govuk-design-system",
+    "queryLabel": "documentation"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjE5MzUxNzM=",
+      "is_bot": false,
+      "login": "matteason",
+      "name": "Matt Eason"
+    },
+    "body": "<!--\n    Please fill in as much of the template below as you’re able to. If you're unsure whether the issue already exists or how to fill in the template, open an issue anyway. Our team will help you to complete the rest.\n\n    Your issue might already exist. If so, add a comment to the existing issue instead of creating a new one. You can find existing issues here: https://github.com/alphagov/govuk-design-system/issues\n\n    We also welcome pull requests from users, if you feel comfortable doing so.\n-->\n\n## Related documentation\n\n<!-- Does this issue refer to a gap or mistake in some existing documentation? Provide a link if possible. -->\nhttps://design-system.service.gov.uk/patterns/passwords/\nhttps://github.com/alphagov/govuk-design-system/blob/9cff8f47f6f47a5387fd4a60a508fa271588c320/src/patterns/passwords/index.md?plain=1#L90\n\n## Suggestion\n\n<!-- How could this documentation be improved? -->\n\nOn the Passwords pattern documentation, the following paragraph is repeated for both the 'Avoid password reset questions' and 'Avoid password reminders' sections\n\n> Some services ask users to provide a ‘password reminder’ when they create a password, and give users the option to show this reminder when they’ve forgotten their password.\n\nThis is correct for password reminders but not for password reset questions. For a password reset question, the user must provide the answer to this question at some point in the password reset flow (for example, before or after a password reset link is sent), and they're prevented from resetting their password if they can't provide the answer they gave when creating their account; they're not shown the answer at any point.",
+    "comments": [],
+    "createdAt": "2026-02-12T15:16:12Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxMDY5MDQ1MDgw",
+        "name": "documentation",
+        "description": "User requests new documentation or improvements to existing documentation",
+        "color": "00703c"
+      }
+    ],
+    "number": 5153,
+    "title": "Duplicate guidance for password reset questions and password reminders",
+    "updatedAt": "2026-02-12T15:16:12Z",
+    "url": "https://github.com/alphagov/govuk-design-system/issues/5153",
+    "repo": "alphagov/govuk-design-system",
+    "queryLabel": "documentation"
+  },
+  {
+    "author": {
+      "id": "U_kgDOCrZhCQ",
+      "is_bot": false,
+      "login": "ch-ncolley",
+      "name": "Nick Colley"
+    },
+    "body": "On [Customised page template](https://design-system.service.gov.uk/styles/page-template/#customised-page-template).\n\nThe block `containerStart` contains the phase banner component but the guidance says to put that in the `headerEnd` block.\n\nGiven there are many more blocks now it may be that this example should be reviewed entirely and removed or replaced entirely with something like a more real world example?\n\nRegardless if the example is unchanged it may be appropriate to update it as is.\n",
+    "comments": [
+      {
+        "id": "IC_kwDOBZRkxM7t2LxO",
+        "author": {
+          "login": "36degrees"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "@ch-ncolley thanks for flagging – is this resolved if we merge #5152?",
+        "createdAt": "2026-03-03T11:30:11Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/alphagov/govuk-design-system/issues/5161#issuecomment-3990404174",
+        "viewerDidAuthor": false
+      }
+    ],
+    "createdAt": "2026-02-26T09:45:23Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxMDY5MDQ1MDgw",
+        "name": "documentation",
+        "description": "User requests new documentation or improvements to existing documentation",
+        "color": "00703c"
+      }
+    ],
+    "number": 5161,
+    "title": "Page Template documentation blocks refer to deprecated blocks",
+    "updatedAt": "2026-03-03T11:30:11Z",
+    "url": "https://github.com/alphagov/govuk-design-system/issues/5161",
+    "repo": "alphagov/govuk-design-system",
+    "queryLabel": "documentation"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjExMzI5MDQ=",
+      "is_bot": false,
+      "login": "joelanman",
+      "name": "Joe Lanman"
+    },
+    "body": "We've had some support queries recently relating to Hint guidance.\r\n\r\nCurrently there's no search result, and it is only covered on the Text input component, when the guidance is relevant to any input type.",
+    "comments": [
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDQ1ODkyMzk1NQ==",
+        "author": {
+          "login": ""
+        },
+        "authorAssociation": "NONE",
+        "body": "@joelanman There is information in the GOV.UK Service Manual too. https://www.gov.uk/service-manual/design/designing-good-questions#add-help-text-where-necessary",
+        "createdAt": "2019-01-30T12:18:58Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/alphagov/govuk-design-system/issues/778#issuecomment-458923955",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDQ1ODk3ODI4NQ==",
+        "author": {
+          "login": "kellylee-gds"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "@joelanman does this need to be triaged? If so please add a \"new\" label and \"submitted-by-user\" label",
+        "createdAt": "2019-01-30T15:08:39Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/alphagov/govuk-design-system/issues/778#issuecomment-458978285",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDQ1OTA0NzE0MA==",
+        "author": {
+          "login": "edwardhorsford"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "Some things that came up recently:\r\n\r\n* Adding hint text to fieldset component - I asked this. We're using fieldset macro but I couldn't work out how to add hint text.\r\n* Whether hint text should include a full stop some of the time, all of the time, or none of the time.\r\n\r\n",
+        "createdAt": "2019-01-30T18:05:51Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 2
+            }
+          }
+        ],
+        "url": "https://github.com/alphagov/govuk-design-system/issues/778#issuecomment-459047140",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDQ1OTMwNTgxOQ==",
+        "author": {
+          "login": "36degrees"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "> * Adding hint text to fieldset component - I asked this. We're using fieldset macro but I couldn't work out how to add hint text.\r\n\r\n@edwardhorsford we _could_ provide additional guidance for this, but it's relatively complex so this feels more of a feature request for GOV.UK Frontend to make it easier to do. I've [raised an issue over there on your behalf](https://github.com/alphagov/govuk-frontend/issues/1166).",
+        "createdAt": "2019-01-31T11:08:50Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [
+          {
+            "content": "THUMBS_UP",
+            "users": {
+              "totalCount": 1
+            }
+          }
+        ],
+        "url": "https://github.com/alphagov/govuk-design-system/issues/778#issuecomment-459305819",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDU2MTEzMDUxMw==",
+        "author": {
+          "login": "adamsilver"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "Currently, the hint text component accepts HTML which is great because it makes the component flexible.\r\n\r\nIt gets rendered as a `<span>` with the specified HTML inside of it.\r\n\r\nIf the HTML consists of block level elements then it becomes invalid.\r\n\r\nThe following points are relevant:\r\n\r\n(1) Interfaces that have a lot of content can be a sign that the design is complicated and needs further work.\r\n\r\n(2) If we have done the hard work to keep hint text to a minimum, then we might need to look at other ways to present the information.\r\n\r\nOption A: Use an interruption page with the content that needs reading. Once read the next page can contain a simple label/legend + input(s).\r\n\r\nOption B: Just have a lot of hint text. This way it’s seen in context of the input and provides a comparable experience for screen reader users.\r\n\r\nOption C: Allow hint text to contain the Details component which will let users expand content if they need it.\r\n\r\nThere may be other options but as a start I’d suggest:\r\n\r\n1. Adding guidance to clarify our position on this\r\n2. Make the `<span>` a `<div>` to make sure it’s valid when doing Option B or Option C.\r\n",
+        "createdAt": "2019-12-03T11:41:01Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/alphagov/govuk-design-system/issues/778#issuecomment-561130513",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDU2MTEzMjI2OA==",
+        "author": {
+          "login": "NickColley"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "In terms of HTML validation we could consider making the hint component render with a div when supplied with HTML (or at all times) since we make it a block level element anyway with CSS.",
+        "createdAt": "2019-12-03T11:46:38Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/alphagov/govuk-design-system/issues/778#issuecomment-561132268",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDU2MTE1MzgwNg==",
+        "author": {
+          "login": "edwardhorsford"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "I don't think I quite realised that you _couldn't_ put block level elements in there. I've not checked my whole app, but it wouldn't surprise me if we'd supplied the hint with two paragraphs. \r\n\r\nChanging to support this, or providing guidance for what to do in situations where you have more content would be great.",
+        "createdAt": "2019-12-03T12:53:03Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/alphagov/govuk-design-system/issues/778#issuecomment-561153806",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDU4NDU3ODc1Ng==",
+        "author": {
+          "login": "edwardhorsford"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "Would it be possible to mention details about hint text in the typography section? This seems a logical place people might go to look up details / guidance for hint text.",
+        "createdAt": "2020-02-11T10:54:49Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/alphagov/govuk-design-system/issues/778#issuecomment-584578756",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDY3Mjc3MjQyMQ==",
+        "author": {
+          "login": "frankieroberto"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "I've definitely used the Details component within hint text. I used it to give further examples – so the Details summary was \"Examples\" and contained good and sometimes bad examples of how to fill in the field. This was for an internal tool.",
+        "createdAt": "2020-08-12T09:48:33Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/alphagov/govuk-design-system/issues/778#issuecomment-672772421",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOBZRkxM5WVGqi",
+        "author": {
+          "login": "matteason"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "We ran into an issue with the hint text guidance the other day - a colleague asked me if it was ok to use links in hint text, because there was nothing on the textarea guidance to advise against it. I found [the appropriate guidance on the text input page](https://design-system.service.gov.uk/components/text-input/#avoid-links) but it would have been easy to miss. \r\n\r\nI wonder if there's an argument for hint text to be considered a component in its own right. That's what's done for [error messages](https://design-system.service.gov.uk/components/error-message/) and [character counts](https://design-system.service.gov.uk/components/character-count/), for example - like hint text, both of those only exist as parts of other components. Individual components that allow hint text could then link to the hint text component guidance, as they do for error messages (for example on the [Radios ](https://design-system.service.gov.uk/components/radios/#error-messages) page)",
+        "createdAt": "2023-02-28T15:21:07Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/alphagov/govuk-design-system/issues/778#issuecomment-1448372898",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOBZRkxM7rhCKn",
+        "author": {
+          "login": "selfthinker"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "We've had a support request from the Home Office Style Council that suggested the following changes...\n\nTheir first request was this change:\n\n> Hint text should not be longer than a sentence. If you need to write more than 1 sentence, use GOV.UK's paragraph style. Do not use full stops after hint text unless you are updating an existing service that uses full stops inconsistently.\n\nTheir second request included more changes:\n\n> ## Hint text\n> \n> Hint text gives brief additional information that helps people understand and answer a question or take an action.\n> \n> ### When to use hint text\n> \n> Hint text should only be used to help a user understand a question, answer a question, or take an action. Only add it when there is a clear user need, and after you have first tried improving the question.\n> \n> Hint text can:\n> \n> * explain the interface, for example: Select all that apply\n> * clarify the question or answer\n> * give examples of valid formats\n> * give examples that help the user recognise their own situation\n> * briefly clarify or define a term used in the question or answer\n> * tell the user where they can find or look up the information you’re asking for\n> \n> Do not use hint text for important information that a user should not skip, or for explanations longer than one sentence. The GOV.UK Design System has advice on [asking complex questions without using hint text](https://design-system.service.gov.uk/patterns/question-pages/#asking-complex-questions-without-using-hint-text).\n> \n> ### Keep it short\n> \n> Hint text should be a few words only, and a maximum of one sentence.\n> \n> If you find yourself needing to write more, it could be because the question is needs to be clarified, improved, or split into more than one question; or you need an explanatory paragraph, which is styled like a normal paragraph.\n> \n> ### Text only\n> \n> Don’t use hint text as a container for other elements like links or details components. If you need to include these elements, you are probably not writing hint text anyway.\n> \n> ### End hint text consistently\n> \n> You must be consistent in your use of full stops in a product.\n> \n> If you are writing hint text in, ensure it is coded correctly. If the hint text is coded correctly, you do not need to use full stops.\n> \n> If you are working on a component for a product that uses full stops in hint text inconsistently, err on the side of using full stops.\n\n\"coded correctly\" had the style of a link but the link was missing.",
+        "createdAt": "2026-02-24T12:09:22Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/alphagov/govuk-design-system/issues/778#issuecomment-3951305383",
+        "viewerDidAuthor": false
+      }
+    ],
+    "createdAt": "2019-01-30T11:13:02Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxMDY5MDQ1MDgw",
+        "name": "documentation",
+        "description": "User requests new documentation or improvements to existing documentation",
+        "color": "00703c"
+      },
+      {
+        "id": "MDU6TGFiZWwxOTM5MDIwODk0",
+        "name": "hint",
+        "description": "",
+        "color": "1d70b8"
+      }
+    ],
+    "number": 778,
+    "title": "Improve Hint text guidance",
+    "updatedAt": "2026-02-24T12:09:22Z",
+    "url": "https://github.com/alphagov/govuk-design-system/issues/778",
+    "repo": "alphagov/govuk-design-system",
+    "queryLabel": "documentation"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjIyNTI0NjM0",
+      "is_bot": false,
+      "login": "domoscargin",
+      "name": ""
+    },
+    "body": "<!--\n\n  This is a template for any issues that aren’t bug reports or new feature requests. The headings in this section provide examples of the information you might want to include, but feel free to add/delete sections where appropriate.\n\n-->\n\n## What\nThere are some things we've identified in our test runs that need updating in the docs:\n\n- Make it clearer that a second developer should review the build release PR - not  just the person who triggers the workflow\n- Add a note to say that if a workflow fails, it's OK to fix the issue then re-run the workflow - and not to move to the next step until the current step is successful\n- Remind folks to refresh the GitHub Actions workflow page, because GitHub does not refresh when you run a new `workflow_dispatch` workflow\n- Remind folks to refresh `npm` if they don't see the published release there once the Action is complete\n\n## Why\nTo help future devs who make releases\n\n## Who needs to work on this\nDevelopers\n\n## Who needs to review this\nDeveloper, Technical writer/Content designer\n\n## Done when\n\n- [ ] Documentation has been updated\n",
+    "comments": [],
+    "createdAt": "2025-01-31T16:11:48Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWw2MjMxMzkxODg=",
+        "name": "documentation",
+        "description": "User requests new documentation or improvements to existing documentation",
+        "color": "00703c"
+      },
+      {
+        "id": "MDU6TGFiZWwzMTUxMDA4MzEz",
+        "name": "small story",
+        "description": "",
+        "color": "0b0c0c"
+      },
+      {
+        "id": "LA_kwDOBBCSo88AAAABVNuC3A",
+        "name": "github_actions",
+        "description": "Pull requests that update GitHub Actions code",
+        "color": "000000"
+      }
+    ],
+    "number": 5674,
+    "title": "Improve release documentation",
+    "updatedAt": "2025-12-30T13:41:45Z",
+    "url": "https://github.com/alphagov/govuk-frontend/issues/5674",
+    "repo": "alphagov/govuk-frontend",
+    "queryLabel": "documentation"
   },
   {
     "author": {

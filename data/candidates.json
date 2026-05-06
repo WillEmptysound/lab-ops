@@ -1,5 +1,121 @@
 [
   {
+    "createdAt": "2020-10-24T03:27:29Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWw0NzI0NDQwMTE=",
+        "name": "good first issue",
+        "description": "",
+        "color": "0e8a16"
+      },
+      {
+        "id": "MDU6TGFiZWw0ODg4MTM5NTk=",
+        "name": "docs",
+        "description": "",
+        "color": "f9d0c4"
+      },
+      {
+        "id": "MDU6TGFiZWw3MDM3OTkzMDQ=",
+        "name": "P2",
+        "description": "",
+        "color": "bfdadc"
+      },
+      {
+        "id": "MDU6TGFiZWwxODE0MjY1NzA5",
+        "name": "images",
+        "description": "",
+        "color": "44c124"
+      }
+    ],
+    "number": 11593,
+    "title": "\"Properly size image\" report is too strict?",
+    "updatedAt": "2026-04-23T08:09:25Z",
+    "url": "https://github.com/GoogleChrome/lighthouse/issues/11593",
+    "repo": "GoogleChrome/lighthouse",
+    "queryLabel": "good first issue"
+  },
+  {
+    "createdAt": "2020-12-02T16:24:54Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWw0NzI0NDQwMTE=",
+        "name": "good first issue",
+        "description": "",
+        "color": "0e8a16"
+      },
+      {
+        "id": "MDU6TGFiZWw3MDM3OTkzMDQ=",
+        "name": "P2",
+        "description": "",
+        "color": "bfdadc"
+      },
+      {
+        "id": "MDU6TGFiZWwyMzE0NTg5ODgy",
+        "name": "metrics-cwv",
+        "description": "",
+        "color": "c5def5"
+      }
+    ],
+    "number": 11747,
+    "title": "handling impact of isInputPending on long tasks metrics?",
+    "updatedAt": "2026-03-28T17:10:21Z",
+    "url": "https://github.com/GoogleChrome/lighthouse/issues/11747",
+    "repo": "GoogleChrome/lighthouse",
+    "queryLabel": "good first issue"
+  },
+  {
+    "createdAt": "2021-01-26T23:44:14Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWw0NzI0NDQwMTE=",
+        "name": "good first issue",
+        "description": "",
+        "color": "0e8a16"
+      },
+      {
+        "id": "MDU6TGFiZWw3MDM3OTkyMzk=",
+        "name": "P3",
+        "description": "",
+        "color": "0e8a16"
+      }
+    ],
+    "number": 12008,
+    "title": "Canonical URL audit mistakes invalid URLs for relative ones",
+    "updatedAt": "2026-02-21T09:16:58Z",
+    "url": "https://github.com/GoogleChrome/lighthouse/issues/12008",
+    "repo": "GoogleChrome/lighthouse",
+    "queryLabel": "good first issue"
+  },
+  {
+    "createdAt": "2019-07-27T12:35:28Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwzNDM0NjQ2ODk=",
+        "name": "new_audit",
+        "description": "",
+        "color": "7B5785"
+      },
+      {
+        "id": "MDU6TGFiZWw0NzI0NDQwMTE=",
+        "name": "good first issue",
+        "description": "",
+        "color": "0e8a16"
+      },
+      {
+        "id": "MDU6TGFiZWw3MDM3OTkyMzk=",
+        "name": "P3",
+        "description": "",
+        "color": "0e8a16"
+      }
+    ],
+    "number": 9474,
+    "title": "Add a check to test if :hover styles require doubletapping links",
+    "updatedAt": "2026-04-14T05:39:04Z",
+    "url": "https://github.com/GoogleChrome/lighthouse/issues/9474",
+    "repo": "GoogleChrome/lighthouse",
+    "queryLabel": "good first issue"
+  },
+  {
     "createdAt": "2013-01-13T21:48:53Z",
     "labels": [
       {
@@ -56,6 +172,553 @@
     "url": "https://github.com/a11yproject/a11yproject.com/issues/1478",
     "repo": "a11yproject/a11yproject.com",
     "queryLabel": "good first issue"
+  },
+  {
+    "createdAt": "2026-05-05T14:39:04Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzEy",
+        "name": "documentation",
+        "description": "Improvements or additions to documentation",
+        "color": "0075ca"
+      }
+    ],
+    "number": 10015,
+    "title": "Docs are missing section on InteractOutside",
+    "updatedAt": "2026-05-06T10:47:37Z",
+    "url": "https://github.com/adobe/react-spectrum/issues/10015",
+    "repo": "adobe/react-spectrum",
+    "queryLabel": "documentation"
+  },
+  {
+    "createdAt": "2021-04-07T22:55:57Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE2",
+        "name": "good first issue",
+        "description": "Good for newcomers",
+        "color": "7057ff"
+      }
+    ],
+    "number": 1773,
+    "title": "onCancel should fire in AlertDialog if Escape is pressed",
+    "updatedAt": "2026-01-15T21:59:24Z",
+    "url": "https://github.com/adobe/react-spectrum/issues/1773",
+    "repo": "adobe/react-spectrum",
+    "queryLabel": "good first issue"
+  },
+  {
+    "createdAt": "2022-05-26T04:01:43Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE1",
+        "name": "help wanted",
+        "description": "Extra attention is needed",
+        "color": "008672"
+      },
+      {
+        "id": "MDU6TGFiZWwyNTE2MDI3MDA5",
+        "name": "browser bug",
+        "description": "",
+        "color": "b50042"
+      },
+      {
+        "id": "MDU6TGFiZWwyODM4MjIyOTc0",
+        "name": "DatePicker",
+        "description": "",
+        "color": "bbbbbb"
+      },
+      {
+        "id": "LA_kwDODGtc287grz73",
+        "name": "needs investigation",
+        "description": "",
+        "color": "FB9F58"
+      }
+    ],
+    "number": 3164,
+    "title": "Clicking outside the DatePicker can manipulate the focus of the DateSegment. (react-aria's DatePicker)",
+    "updatedAt": "2026-04-09T13:06:38Z",
+    "url": "https://github.com/adobe/react-spectrum/issues/3164",
+    "repo": "adobe/react-spectrum",
+    "queryLabel": "help wanted"
+  },
+  {
+    "createdAt": "2023-10-10T13:17:52Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE0",
+        "name": "enhancement",
+        "description": "New feature or request",
+        "color": "a2eeef"
+      },
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE1",
+        "name": "help wanted",
+        "description": "Extra attention is needed",
+        "color": "008672"
+      },
+      {
+        "id": "LA_kwDODGtc288AAAABRBVxZA",
+        "name": "RAC",
+        "description": "",
+        "color": "4E5394"
+      },
+      {
+        "id": "LA_kwDODGtc288AAAABgJG1gA",
+        "name": "Overlays",
+        "description": "",
+        "color": "bbbbbb"
+      }
+    ],
+    "number": 5231,
+    "title": "Ability to style the Popover overlay",
+    "updatedAt": "2025-12-13T14:02:44Z",
+    "url": "https://github.com/adobe/react-spectrum/issues/5231",
+    "repo": "adobe/react-spectrum",
+    "queryLabel": "help wanted"
+  },
+  {
+    "createdAt": "2023-10-16T13:20:14Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzEx",
+        "name": "bug",
+        "description": "Something isn't working",
+        "color": "d73a4a"
+      },
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzEy",
+        "name": "documentation",
+        "description": "Improvements or additions to documentation",
+        "color": "0075ca"
+      },
+      {
+        "id": "LA_kwDODGtc288AAAABRBVxZA",
+        "name": "RAC",
+        "description": "",
+        "color": "4E5394"
+      }
+    ],
+    "number": 5252,
+    "title": "[react-aria-components] Tabs' onSelectionChange prop doesn't fire correctly when using tabs as links",
+    "updatedAt": "2026-04-23T02:05:49Z",
+    "url": "https://github.com/adobe/react-spectrum/issues/5252",
+    "repo": "adobe/react-spectrum",
+    "queryLabel": "documentation"
+  },
+  {
+    "createdAt": "2023-12-05T22:36:09Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE0",
+        "name": "enhancement",
+        "description": "New feature or request",
+        "color": "a2eeef"
+      },
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE2",
+        "name": "good first issue",
+        "description": "Good for newcomers",
+        "color": "7057ff"
+      },
+      {
+        "id": "LA_kwDODGtc288AAAABgJG1gA",
+        "name": "Overlays",
+        "description": "",
+        "color": "bbbbbb"
+      }
+    ],
+    "number": 5531,
+    "title": "React Aria: Replace Esc key listeners with a CloseWatcher in supported browsers",
+    "updatedAt": "2026-03-20T05:05:02Z",
+    "url": "https://github.com/adobe/react-spectrum/issues/5531",
+    "repo": "adobe/react-spectrum",
+    "queryLabel": "good first issue"
+  },
+  {
+    "createdAt": "2024-06-12T12:00:41Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzEx",
+        "name": "bug",
+        "description": "Something isn't working",
+        "color": "d73a4a"
+      },
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzEy",
+        "name": "documentation",
+        "description": "Improvements or additions to documentation",
+        "color": "0075ca"
+      }
+    ],
+    "number": 6531,
+    "title": "Using nested dialogs seems to depend on including a custom `<ModalOverlay/>`",
+    "updatedAt": "2026-04-23T03:18:08Z",
+    "url": "https://github.com/adobe/react-spectrum/issues/6531",
+    "repo": "adobe/react-spectrum",
+    "queryLabel": "documentation"
+  },
+  {
+    "createdAt": "2024-08-28T14:05:29Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE0",
+        "name": "enhancement",
+        "description": "New feature or request",
+        "color": "a2eeef"
+      },
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE1",
+        "name": "help wanted",
+        "description": "Extra attention is needed",
+        "color": "008672"
+      }
+    ],
+    "number": 6971,
+    "title": "Use `null` instead of `Number.NaN` in NumberField component",
+    "updatedAt": "2026-04-10T23:06:50Z",
+    "url": "https://github.com/adobe/react-spectrum/issues/6971",
+    "repo": "adobe/react-spectrum",
+    "queryLabel": "help wanted"
+  },
+  {
+    "createdAt": "2025-02-11T02:51:42Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE2",
+        "name": "good first issue",
+        "description": "Good for newcomers",
+        "color": "7057ff"
+      },
+      {
+        "id": "MDU6TGFiZWwyODM4MjIyOTc0",
+        "name": "DatePicker",
+        "description": "",
+        "color": "bbbbbb"
+      }
+    ],
+    "number": 7756,
+    "title": "Unable to pass ref to Datepicker [react-aria-components]",
+    "updatedAt": "2025-11-14T08:17:16Z",
+    "url": "https://github.com/adobe/react-spectrum/issues/7756",
+    "repo": "adobe/react-spectrum",
+    "queryLabel": "good first issue"
+  },
+  {
+    "createdAt": "2025-05-15T14:32:17Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE1",
+        "name": "help wanted",
+        "description": "Extra attention is needed",
+        "color": "008672"
+      },
+      {
+        "id": "LA_kwDODGtc287grz73",
+        "name": "needs investigation",
+        "description": "",
+        "color": "FB9F58"
+      }
+    ],
+    "number": 8239,
+    "title": "Table is not interactive on first click in SSR",
+    "updatedAt": "2026-03-19T13:24:04Z",
+    "url": "https://github.com/adobe/react-spectrum/issues/8239",
+    "repo": "adobe/react-spectrum",
+    "queryLabel": "help wanted"
+  },
+  {
+    "createdAt": "2025-06-03T08:20:48Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE0",
+        "name": "enhancement",
+        "description": "New feature or request",
+        "color": "a2eeef"
+      },
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE2",
+        "name": "good first issue",
+        "description": "Good for newcomers",
+        "color": "7057ff"
+      }
+    ],
+    "number": 8339,
+    "title": "Button remains in pressed state when opening a modal",
+    "updatedAt": "2026-02-03T23:29:00Z",
+    "url": "https://github.com/adobe/react-spectrum/issues/8339",
+    "repo": "adobe/react-spectrum",
+    "queryLabel": "good first issue"
+  },
+  {
+    "createdAt": "2025-12-18T11:42:29Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzEy",
+        "name": "documentation",
+        "description": "Improvements or additions to documentation",
+        "color": "0075ca"
+      },
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE0",
+        "name": "enhancement",
+        "description": "New feature or request",
+        "color": "a2eeef"
+      }
+    ],
+    "number": 9374,
+    "title": "Documentation: collapsed props cannot be searched",
+    "updatedAt": "2025-12-18T19:38:10Z",
+    "url": "https://github.com/adobe/react-spectrum/issues/9374",
+    "repo": "adobe/react-spectrum",
+    "queryLabel": "documentation"
+  },
+  {
+    "createdAt": "2026-02-12T18:10:23Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxNTU1MDEwMzE2",
+        "name": "good first issue",
+        "description": "Good for newcomers",
+        "color": "7057ff"
+      }
+    ],
+    "number": 9648,
+    "title": "Back/forward keyboard shortcuts (e.g. CMD + left arrow) triggering tab switching rather than page navigation ",
+    "updatedAt": "2026-02-12T19:10:48Z",
+    "url": "https://github.com/adobe/react-spectrum/issues/9648",
+    "repo": "adobe/react-spectrum",
+    "queryLabel": "good first issue"
+  },
+  {
+    "createdAt": "2020-02-26T15:56:51Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxMDY5MDQ1MDgw",
+        "name": "documentation",
+        "description": "User requests new documentation or improvements to existing documentation",
+        "color": "00703c"
+      },
+      {
+        "id": "MDU6TGFiZWwxOTM5MDIwODkz",
+        "name": "checkboxes",
+        "description": "",
+        "color": "1d70b8"
+      }
+    ],
+    "number": 1176,
+    "title": "Documentation/example for a single checkbox",
+    "updatedAt": "2026-04-13T15:38:35Z",
+    "url": "https://github.com/alphagov/govuk-design-system/issues/1176",
+    "repo": "alphagov/govuk-design-system",
+    "queryLabel": "documentation"
+  },
+  {
+    "createdAt": "2024-03-06T16:27:27Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxMDY5MDQ1MDgw",
+        "name": "documentation",
+        "description": "User requests new documentation or improvements to existing documentation",
+        "color": "00703c"
+      },
+      {
+        "id": "MDU6TGFiZWwxODI0NjE5NjAw",
+        "name": "design",
+        "description": "",
+        "color": "db2096"
+      },
+      {
+        "id": "MDU6TGFiZWwyNTU3MTI4NTc1",
+        "name": "cookie banner",
+        "description": "",
+        "color": "1d70b8"
+      }
+    ],
+    "number": 3634,
+    "title": "It's not clear if the cookie banner should appear on the cookies page itself",
+    "updatedAt": "2025-12-30T13:54:26Z",
+    "url": "https://github.com/alphagov/govuk-design-system/issues/3634",
+    "repo": "alphagov/govuk-design-system",
+    "queryLabel": "documentation"
+  },
+  {
+    "createdAt": "2024-06-06T14:19:08Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxMDY5MDQ1MDgw",
+        "name": "documentation",
+        "description": "User requests new documentation or improvements to existing documentation",
+        "color": "00703c"
+      },
+      {
+        "id": "MDU6TGFiZWwzMTUxMDA4MTQ4",
+        "name": "small story",
+        "description": "",
+        "color": "0b0c0c"
+      }
+    ],
+    "number": 3827,
+    "title": "Notification banner guidance has misleading line?",
+    "updatedAt": "2025-12-18T14:53:39Z",
+    "url": "https://github.com/alphagov/govuk-design-system/issues/3827",
+    "repo": "alphagov/govuk-design-system",
+    "queryLabel": "documentation"
+  },
+  {
+    "createdAt": "2024-07-18T15:54:18Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxMDY5MDQ0NTI4",
+        "name": "accessibility",
+        "description": "",
+        "color": "5bffd8"
+      },
+      {
+        "id": "MDU6TGFiZWwxMDY5MDQ1MDgw",
+        "name": "documentation",
+        "description": "User requests new documentation or improvements to existing documentation",
+        "color": "00703c"
+      },
+      {
+        "id": "MDU6TGFiZWwzMTUxMDA4MTQ4",
+        "name": "small story",
+        "description": "",
+        "color": "0b0c0c"
+      }
+    ],
+    "number": 3944,
+    "title": "Write accessibility page in team playbook",
+    "updatedAt": "2025-12-30T13:47:11Z",
+    "url": "https://github.com/alphagov/govuk-design-system/issues/3944",
+    "repo": "alphagov/govuk-design-system",
+    "queryLabel": "documentation"
+  },
+  {
+    "createdAt": "2025-06-05T11:37:17Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxMDY5MDQ1MDgw",
+        "name": "documentation",
+        "description": "User requests new documentation or improvements to existing documentation",
+        "color": "00703c"
+      },
+      {
+        "id": "MDU6TGFiZWwzMTUxMDA4MTQ4",
+        "name": "small story",
+        "description": "",
+        "color": "0b0c0c"
+      }
+    ],
+    "number": 4758,
+    "title": "Edit transcript for June's #DSChat",
+    "updatedAt": "2025-12-30T13:43:29Z",
+    "url": "https://github.com/alphagov/govuk-design-system/issues/4758",
+    "repo": "alphagov/govuk-design-system",
+    "queryLabel": "documentation"
+  },
+  {
+    "createdAt": "2025-12-02T09:24:26Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxMDY5MDQ1MDgw",
+        "name": "documentation",
+        "description": "User requests new documentation or improvements to existing documentation",
+        "color": "00703c"
+      }
+    ],
+    "number": 5019,
+    "title": "Add content to service navigation component documentation",
+    "updatedAt": "2025-12-02T09:24:26Z",
+    "url": "https://github.com/alphagov/govuk-design-system/issues/5019",
+    "repo": "alphagov/govuk-design-system",
+    "queryLabel": "documentation"
+  },
+  {
+    "createdAt": "2026-02-12T15:16:12Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxMDY5MDQ1MDgw",
+        "name": "documentation",
+        "description": "User requests new documentation or improvements to existing documentation",
+        "color": "00703c"
+      }
+    ],
+    "number": 5153,
+    "title": "Duplicate guidance for password reset questions and password reminders",
+    "updatedAt": "2026-02-12T15:16:12Z",
+    "url": "https://github.com/alphagov/govuk-design-system/issues/5153",
+    "repo": "alphagov/govuk-design-system",
+    "queryLabel": "documentation"
+  },
+  {
+    "createdAt": "2026-02-26T09:45:23Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxMDY5MDQ1MDgw",
+        "name": "documentation",
+        "description": "User requests new documentation or improvements to existing documentation",
+        "color": "00703c"
+      }
+    ],
+    "number": 5161,
+    "title": "Page Template documentation blocks refer to deprecated blocks",
+    "updatedAt": "2026-03-03T11:30:11Z",
+    "url": "https://github.com/alphagov/govuk-design-system/issues/5161",
+    "repo": "alphagov/govuk-design-system",
+    "queryLabel": "documentation"
+  },
+  {
+    "createdAt": "2019-01-30T11:13:02Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwxMDY5MDQ1MDgw",
+        "name": "documentation",
+        "description": "User requests new documentation or improvements to existing documentation",
+        "color": "00703c"
+      },
+      {
+        "id": "MDU6TGFiZWwxOTM5MDIwODk0",
+        "name": "hint",
+        "description": "",
+        "color": "1d70b8"
+      }
+    ],
+    "number": 778,
+    "title": "Improve Hint text guidance",
+    "updatedAt": "2026-02-24T12:09:22Z",
+    "url": "https://github.com/alphagov/govuk-design-system/issues/778",
+    "repo": "alphagov/govuk-design-system",
+    "queryLabel": "documentation"
+  },
+  {
+    "createdAt": "2025-01-31T16:11:48Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWw2MjMxMzkxODg=",
+        "name": "documentation",
+        "description": "User requests new documentation or improvements to existing documentation",
+        "color": "00703c"
+      },
+      {
+        "id": "MDU6TGFiZWwzMTUxMDA4MzEz",
+        "name": "small story",
+        "description": "",
+        "color": "0b0c0c"
+      },
+      {
+        "id": "LA_kwDOBBCSo88AAAABVNuC3A",
+        "name": "github_actions",
+        "description": "Pull requests that update GitHub Actions code",
+        "color": "000000"
+      }
+    ],
+    "number": 5674,
+    "title": "Improve release documentation",
+    "updatedAt": "2025-12-30T13:41:45Z",
+    "url": "https://github.com/alphagov/govuk-frontend/issues/5674",
+    "repo": "alphagov/govuk-frontend",
+    "queryLabel": "documentation"
   },
   {
     "createdAt": "2018-11-13T11:05:36Z",

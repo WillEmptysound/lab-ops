@@ -1,9 +1,116 @@
 {
-  "scannedAt": "2026-05-06T23:06:53Z",
-  "count": 5,
+  "scannedAt": "2026-05-06T23:26:02Z",
+  "count": 32,
   "topIssues": [
     {
-      "score": 25,
+      "score": 51,
+      "repo": "adobe/react-spectrum",
+      "number": 10015,
+      "title": "Docs are missing section on InteractOutside",
+      "url": "https://github.com/adobe/react-spectrum/issues/10015",
+      "queryLabel": "documentation",
+      "labels": [
+        "documentation"
+      ],
+      "createdAt": "2026-05-05T14:39:04Z",
+      "updatedAt": "2026-05-06T10:47:37Z",
+      "daysSinceUpdate": 0,
+      "daysSinceCreate": 1,
+      "commentCount": 3,
+      "recentActivity": 3,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "### 🙋 Documentation Request\n\nIt's exported alongside the other hooks, and seems intended as a public API, but is completely missing from the documentation. \n\n### 🧢 Your Company/Team\n\nQuizlet",
+      "recentComments": [
+        {
+          "author": "rhysevans-qz",
+          "association": "NONE",
+          "createdAt": "2026-05-06T10:47:37Z",
+          "excerpt": "Probably using it similarly to how you use it internally: to handle a click or other interaction outside a target element that reliably works even as the react-aria library evolves. I'm working on fix"
+        },
+        {
+          "author": "snowystinger",
+          "association": "MEMBER",
+          "createdAt": "2026-05-05T23:22:34Z",
+          "excerpt": "I think this response will have some more relevant information https://github.com/adobe/react-spectrum/issues/9904#issuecomment-4219050595\n\nThe short of it is that `useInteractOutside` is considered p"
+        },
+        {
+          "author": "yihuiliao",
+          "association": "MEMBER",
+          "createdAt": "2026-05-05T18:39:11Z",
+          "excerpt": "Yeah we are aware that we are missing quite of few docs for our hooks, but we do plan to add additional documentation for them soonish"
+        }
+      ]
+    },
+    {
+      "score": 31,
+      "repo": "alphagov/govuk-design-system",
+      "number": 5153,
+      "title": "Duplicate guidance for password reset questions and password reminders",
+      "url": "https://github.com/alphagov/govuk-design-system/issues/5153",
+      "queryLabel": "documentation",
+      "labels": [
+        "documentation"
+      ],
+      "createdAt": "2026-02-12T15:16:12Z",
+      "updatedAt": "2026-02-12T15:16:12Z",
+      "daysSinceUpdate": 83,
+      "daysSinceCreate": 83,
+      "commentCount": 0,
+      "recentActivity": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "<!--\n    Please fill in as much of the template below as you’re able to. If you're unsure whether the issue already exists or how to fill in the template, open an issue anyway. Our team will help you to complete the rest.\n\n    Your issue might already exist. If so, add a comment to the existing issu",
+      "recentComments": []
+    },
+    {
+      "score": 31,
+      "repo": "alphagov/govuk-design-system",
+      "number": 5161,
+      "title": "Page Template documentation blocks refer to deprecated blocks",
+      "url": "https://github.com/alphagov/govuk-design-system/issues/5161",
+      "queryLabel": "documentation",
+      "labels": [
+        "documentation"
+      ],
+      "createdAt": "2026-02-26T09:45:23Z",
+      "updatedAt": "2026-03-03T11:30:11Z",
+      "daysSinceUpdate": 64,
+      "daysSinceCreate": 69,
+      "commentCount": 1,
+      "recentActivity": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "On [Customised page template](https://design-system.service.gov.uk/styles/page-template/#customised-page-template).\n\nThe block `containerStart` contains the phase banner component but the guidance says to put that in the `headerEnd` block.\n\nGiven there are many more blocks now it may be that this ex",
+      "recentComments": [
+        {
+          "author": "36degrees",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2026-03-03T11:30:11Z",
+          "excerpt": "@ch-ncolley thanks for flagging – is this resolved if we merge #5152?"
+        }
+      ]
+    },
+    {
+      "score": 29,
       "repo": "jsx-eslint/eslint-plugin-jsx-a11y",
       "number": 1087,
       "title": "The document of `lang` differs from the implementation.",
@@ -18,9 +125,11 @@
       "daysSinceUpdate": 7,
       "daysSinceCreate": 8,
       "commentCount": 3,
-      "maintainerGreen": 0,
+      "recentActivity": 3,
+      "maintainerGreen": 1,
       "maintainerRed": 0,
-      "claimedCount": 0,
+      "claimedRecent": 1,
+      "prSubmitted": 0,
       "checkboxes": {
         "total": 0,
         "done": 0
@@ -48,7 +157,189 @@
       ]
     },
     {
-      "score": 3,
+      "score": 26,
+      "repo": "adobe/react-spectrum",
+      "number": 6531,
+      "title": "Using nested dialogs seems to depend on including a custom `<ModalOverlay/>`",
+      "url": "https://github.com/adobe/react-spectrum/issues/6531",
+      "queryLabel": "documentation",
+      "labels": [
+        "bug",
+        "documentation"
+      ],
+      "createdAt": "2024-06-12T12:00:41Z",
+      "updatedAt": "2026-04-23T03:18:08Z",
+      "daysSinceUpdate": 13,
+      "daysSinceCreate": 693,
+      "commentCount": 2,
+      "recentActivity": 1,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "### 🙋 Documentation Request\n\nI've been trying to use several dialog components nested inside each other.\n\nI've noticed through trial and error that without a `<ModalOverlay/>` in the mix, this simply doesn't work at all: opening one dialog opens them all simultaneously, and once open they can't be c",
+      "recentComments": [
+        {
+          "author": "snowystinger",
+          "association": "MEMBER",
+          "createdAt": "2026-04-23T03:18:08Z",
+          "excerpt": "Noticed this is still an issue by opening our example in stackblitz and copying the example inside itself, including a reproduction https://stackblitz.com/edit/3vwpr2za?file=src%2FExample.tsx"
+        },
+        {
+          "author": "LFDanLu",
+          "association": "MEMBER",
+          "createdAt": "2024-06-12T18:43:48Z",
+          "excerpt": "This seems to be because we will only [conditionally render the nested Modal](https://github.com/adobe/react-spectrum/blob/6e57855257f54738418f98c37efae798bf9fb4ad/packages/react-aria-components/src/M"
+        }
+      ]
+    },
+    {
+      "score": 22,
+      "repo": "adobe/react-spectrum",
+      "number": 8239,
+      "title": "Table is not interactive on first click in SSR",
+      "url": "https://github.com/adobe/react-spectrum/issues/8239",
+      "queryLabel": "help wanted",
+      "labels": [
+        "help wanted",
+        "needs investigation"
+      ],
+      "createdAt": "2025-05-15T14:32:17Z",
+      "updatedAt": "2026-03-19T13:24:04Z",
+      "daysSinceUpdate": 48,
+      "daysSinceCreate": 356,
+      "commentCount": 8,
+      "recentActivity": 2,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "### Provide a general summary of the issue here\n\nReact Aria's table is not interactive on the first click when the page was loaded through SSR.\n\n### 🤔 Expected Behavior?\n\nThe table should be interactive/hydrated on page load, not only after a user clicked on the page.\n\n### 😯 Current Behavior\n\n-\n\n###",
+      "recentComments": [
+        {
+          "author": "florianloechle",
+          "association": "NONE",
+          "createdAt": "2026-03-19T09:48:21Z",
+          "excerpt": "We also noticed this issue today. We are using v1.16.0."
+        },
+        {
+          "author": "rsolomon-muon",
+          "association": "NONE",
+          "createdAt": "2026-03-09T21:51:15Z",
+          "excerpt": "Anyone have any luck with a workaround? Right now we're forcing a re-render after client render, but combined with #8617 it makes any table-based experiences very suboptimal."
+        },
+        {
+          "author": "greg-hoarau",
+          "association": "NONE",
+          "createdAt": "2025-08-01T13:10:12Z",
+          "excerpt": "I have the same issue with a Button in a Cell with RAC version `1.11.0`. It seems like react keys are changing on first click"
+        }
+      ]
+    },
+    {
+      "score": 22,
+      "repo": "alphagov/govuk-design-system",
+      "number": 1176,
+      "title": "Documentation/example for a single checkbox",
+      "url": "https://github.com/alphagov/govuk-design-system/issues/1176",
+      "queryLabel": "documentation",
+      "labels": [
+        "documentation",
+        "checkboxes"
+      ],
+      "createdAt": "2020-02-26T15:56:51Z",
+      "updatedAt": "2026-04-13T15:38:35Z",
+      "daysSinceUpdate": 23,
+      "daysSinceCreate": 2261,
+      "commentCount": 11,
+      "recentActivity": 5,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "Many of the patterns in [make a declaration](https://github.com/alphagov/govuk-design-system-backlog/issues/29) use a single checkbox, but there's no documentation of this in the design system. Do we need some? For reference you can do this:\n\n```\n{{ govukCheckboxes({\n  \"name\": \"t-and-c\",\n  \"items\": ",
+      "recentComments": [
+        {
+          "author": "frankieroberto",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2026-04-13T15:38:35Z",
+          "excerpt": "> I'd probably argue that a continue button that also opts-in to accepting terms is the controversial option - whereas a checkbox is the more traditional. Agreed it would still be good to have an exam"
+        },
+        {
+          "author": "edwardhorsford",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2026-04-13T10:23:25Z",
+          "excerpt": "I'd probably argue that a continue button that also opts-in to accepting terms is the controversial option - whereas a checkbox is the more traditional. Agreed it would still be good to have an exampl"
+        },
+        {
+          "author": "joelanman",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2026-04-13T08:59:48Z",
+          "excerpt": "Petition parliament has some\n\n<img width=\"742\" height=\"738\" alt=\"Only British citizens or UK residents have the right to sign Checkbox I am a British citizen or UK resident. Checkbox Email me whenever"
+        }
+      ]
+    },
+    {
+      "score": 20,
+      "repo": "adobe/react-spectrum",
+      "number": 6971,
+      "title": "Use `null` instead of `Number.NaN` in NumberField component",
+      "url": "https://github.com/adobe/react-spectrum/issues/6971",
+      "queryLabel": "help wanted",
+      "labels": [
+        "enhancement",
+        "help wanted"
+      ],
+      "createdAt": "2024-08-28T14:05:29Z",
+      "updatedAt": "2026-04-10T23:06:50Z",
+      "daysSinceUpdate": 26,
+      "daysSinceCreate": 616,
+      "commentCount": 5,
+      "recentActivity": 2,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "### Provide a general summary of the feature here\n\nReplace use of `Number.NaN` values in the NumberField component with `null`. This would also enable passing in `null` to the NumberField which was requested in: #5524.\n\n### 🤔 Expected Behavior?\n\nThe expected behavior is that one must check for `null",
+      "recentComments": [
+        {
+          "author": "snowystinger",
+          "association": "MEMBER",
+          "createdAt": "2026-04-10T23:06:50Z",
+          "excerpt": "If you can think of a way to do this and have it be backwards compatible, then we welcome a PR.\n\nOtherwise, this statement holds\n> Unfortunately though, I think this is going to need to wait for a maj"
+        },
+        {
+          "author": "ik-southpole",
+          "association": "NONE",
+          "createdAt": "2026-04-10T09:09:23Z",
+          "excerpt": "Hi, should we expect further discussion on this, or would you prefer a PR at this point? The fact that NumberField doesn’t accept null prevents us from displaying an empty input, forcing us to prefill"
+        },
+        {
+          "author": "snowystinger",
+          "association": "MEMBER",
+          "createdAt": "2025-07-05T03:14:35Z",
+          "excerpt": "> as typescript has no NaN type\n\nThis isn't quite true, the type is `number`, which was chosen initially to reduce the need to declare state for the NumberField\n```\nfunction ControlledNumberField() {\n"
+        }
+      ]
+    },
+    {
+      "score": 19,
       "repo": "a11yproject/a11yproject.com",
       "number": 1478,
       "title": "[Bug]  404s, bad host, timeouts, bad urls for URLs linked from website",
@@ -65,9 +356,11 @@
       "daysSinceUpdate": 90,
       "daysSinceCreate": 1311,
       "commentCount": 15,
-      "maintainerGreen": 0,
+      "recentActivity": 0,
+      "maintainerGreen": 1,
       "maintainerRed": 0,
-      "claimedCount": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
       "checkboxes": {
         "total": 34,
         "done": 11
@@ -95,52 +388,7 @@
       ]
     },
     {
-      "score": 3,
-      "repo": "dequelabs/axe-core",
-      "number": 1237,
-      "title": "dom.isFocusable should consider `audio` and `video` controls",
-      "url": "https://github.com/dequelabs/axe-core/issues/1237",
-      "queryLabel": "good first issue",
-      "labels": [
-        "feat",
-        "good first issue"
-      ],
-      "createdAt": "2018-11-13T11:05:36Z",
-      "updatedAt": "2025-11-12T07:06:16Z",
-      "daysSinceUpdate": 175,
-      "daysSinceCreate": 2731,
-      "commentCount": 7,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedCount": 0,
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "`dom.isFocusable` function to be updated to consider `audio` and `video` controls.",
-      "recentComments": [
-        {
-          "author": "namansancheti",
-          "association": "NONE",
-          "createdAt": "2025-11-12T07:06:16Z",
-          "excerpt": "@straker \nSounds good, thank you - will wait for the update 👍"
-        },
-        {
-          "author": "straker",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2025-11-11T14:49:43Z",
-          "excerpt": "@namansancheti Thanks for wanting to take this one. For now I'd have to do some extensive testing to see when controls are and are not focusable, especially with Wilco's example above where the video "
-        },
-        {
-          "author": "namansancheti",
-          "association": "NONE",
-          "createdAt": "2025-11-11T09:38:02Z",
-          "excerpt": "@WilcoFiers @straker\nHope you are doing great ?\n\nFollowing up on above - please let me know, in case the above approach doesn't sound right, will look further."
-        }
-      ]
-    },
-    {
-      "score": -7,
+      "score": 18,
       "repo": "jsx-eslint/eslint-plugin-jsx-a11y",
       "number": 1060,
       "title": "`jsx-a11y/anchor-has-content`: do not encourage title attribute usage",
@@ -154,9 +402,11 @@
       "daysSinceUpdate": 68,
       "daysSinceCreate": 246,
       "commentCount": 6,
+      "recentActivity": 0,
       "maintainerGreen": 0,
       "maintainerRed": 0,
-      "claimedCount": 1,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
       "checkboxes": {
         "total": 0,
         "done": 0
@@ -184,104 +434,568 @@
       ]
     },
     {
-      "score": -72,
-      "repo": "a11yproject/a11yproject.com",
-      "number": 12,
-      "title": "List of Post Ideas",
-      "url": "https://github.com/a11yproject/a11yproject.com/issues/12",
+      "score": 14,
+      "repo": "adobe/react-spectrum",
+      "number": 3164,
+      "title": "Clicking outside the DatePicker can manipulate the focus of the DateSegment. (react-aria's DatePicker)",
+      "url": "https://github.com/adobe/react-spectrum/issues/3164",
       "queryLabel": "help wanted",
       "labels": [
-        "idea",
-        "help wanted"
+        "help wanted",
+        "browser bug",
+        "DatePicker",
+        "needs investigation"
       ],
-      "createdAt": "2013-01-13T21:48:53Z",
-      "updatedAt": "2025-12-04T04:26:09Z",
-      "daysSinceUpdate": 153,
-      "daysSinceCreate": 4861,
-      "commentCount": 82,
+      "createdAt": "2022-05-26T04:01:43Z",
+      "updatedAt": "2026-04-09T13:06:38Z",
+      "daysSinceUpdate": 27,
+      "daysSinceCreate": 1441,
+      "commentCount": 19,
+      "recentActivity": 1,
       "maintainerGreen": 0,
       "maintainerRed": 0,
-      "claimedCount": 2,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
       "checkboxes": {
-        "total": 52,
-        "done": 37
+        "total": 0,
+        "done": 0
       },
-      "bodyExcerpt": "Simple, bite-sized snippets of content to teach A11Y in smaller pieces instead of big chunks. We can check them off (using githubs new todo list feature) as we get them finished.\n\n:chart_with_upwards_trend: == A table or  chart here would be useful.\n## Concepts\n\nBasic introductions to various concep",
+      "bodyExcerpt": "<!---\nThanks for filing an issue 😄! Before you submit, please read the following:\n\nSearch open/closed issues before submitting since someone might have asked the same thing before!\n-->\n\n# 🐛 Bug Report \n\n<!--- Provide a general summary of the issue here -->\nClicking outside the DatePicker can manipul",
       "recentComments": [
         {
-          "author": "RachelRVasquez",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2025-12-04T04:26:09Z",
-          "excerpt": "@davatron5000 Done! 😁 [Here is the PR for review.](https://github.com/a11yproject/a11yproject.com/pull/1634) Thank you!"
+          "author": "pro-verstka",
+          "association": "NONE",
+          "createdAt": "2026-04-09T13:06:38Z",
+          "excerpt": "This works for me\n\n```css\ntable,\ntbody,\ntr,\ntd {\n  all: unset;\n  width: 100%;\n}\n\ntable {\n  display: table; /* this is important and fixes the bug */\n}\n```\n\n```tsx\nexport const FieldDateInput = (props:"
         },
         {
-          "author": "davatron5000",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2025-12-03T15:38:33Z",
-          "excerpt": "@RachelRVasquez yes, you'd need to fork the project and PR from your own fork of that. Github makes it pretty easy to do as well as sync the latest `main` to your version. "
+          "author": "nguyenbry",
+          "association": "NONE",
+          "createdAt": "2025-10-14T03:20:25Z",
+          "excerpt": "```jsx\n<DateInput className=\"block\">\n  {(segment) => {\n    return (\n      <>\n        &#8203;\n        <DateSegment segment={segment} />    \n        &#8203;\n      </>\n    );\n  }}\n</DateInput>\n```\n\nThis "
         },
         {
-          "author": "RachelRVasquez",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2025-12-02T04:46:57Z",
-          "excerpt": "@davatron5000 It's been a while since I've contributed! 👋 I've taken a crack at the \"HOWTO: Make accessible dialogs and modals\" post and have a feature branch ready so I can set up a pull request. It "
+          "author": "sualex",
+          "association": "NONE",
+          "createdAt": "2025-09-01T19:40:37Z",
+          "excerpt": "Nothing works except wrapping editable text into a table/thead/tr/th (to keep correct DOM nesting) as proposed here: https://stackoverflow.com/a/77051508/28852187.\nThis makes date segments work like a"
         }
       ]
+    },
+    {
+      "score": 13,
+      "repo": "adobe/react-spectrum",
+      "number": 8339,
+      "title": "Button remains in pressed state when opening a modal",
+      "url": "https://github.com/adobe/react-spectrum/issues/8339",
+      "queryLabel": "good first issue",
+      "labels": [
+        "enhancement",
+        "good first issue"
+      ],
+      "createdAt": "2025-06-03T08:20:48Z",
+      "updatedAt": "2026-02-03T23:29:00Z",
+      "daysSinceUpdate": 91,
+      "daysSinceCreate": 337,
+      "commentCount": 2,
+      "recentActivity": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "### Provide a general summary of the issue here\n\nPress a button to open a modal. Inspect button's html and you can see the button has the attribute `data-pressed=true`. It also doesn't go away when you're focusing/clicking inside a modal.\n\n### 🤔 Expected Behavior?\n\nButton should not remain in presse",
+      "recentComments": [
+        {
+          "author": "axelthat",
+          "association": "NONE",
+          "createdAt": "2025-06-19T05:07:17Z",
+          "excerpt": "I see. Thanks."
+        },
+        {
+          "author": "snowystinger",
+          "association": "MEMBER",
+          "createdAt": "2025-06-03T22:46:23Z",
+          "excerpt": "Thanks for the issue. Unfortunately, changing how it behaves right now would be a breaking change. That said, we're aware of it and had to do a workaround for it in our own implementation. This is les"
+        }
+      ]
+    },
+    {
+      "score": 13,
+      "repo": "adobe/react-spectrum",
+      "number": 9374,
+      "title": "Documentation: collapsed props cannot be searched",
+      "url": "https://github.com/adobe/react-spectrum/issues/9374",
+      "queryLabel": "documentation",
+      "labels": [
+        "documentation",
+        "enhancement"
+      ],
+      "createdAt": "2025-12-18T11:42:29Z",
+      "updatedAt": "2025-12-18T19:38:10Z",
+      "daysSinceUpdate": 139,
+      "daysSinceCreate": 139,
+      "commentCount": 1,
+      "recentActivity": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "### 🙋 Documentation Request\n\nFor example, open https://react-aria.adobe.com/Button and search for `onFocusChange`.\n\n### 🧢 Your Company/Team\n\n_No response_",
+      "recentComments": [
+        {
+          "author": "LFDanLu",
+          "association": "MEMBER",
+          "createdAt": "2025-12-18T19:38:10Z",
+          "excerpt": "Unfortunately, those prop tables don't have that functionality since we can't add a hidden until found wrapper around the rows since it is a table. We'll investigate some alternatives to make this mor"
+        }
+      ]
+    },
+    {
+      "score": 13,
+      "repo": "alphagov/govuk-design-system",
+      "number": 4758,
+      "title": "Edit transcript for June's #DSChat",
+      "url": "https://github.com/alphagov/govuk-design-system/issues/4758",
+      "queryLabel": "documentation",
+      "labels": [
+        "documentation",
+        "small story"
+      ],
+      "createdAt": "2025-06-05T11:37:17Z",
+      "updatedAt": "2025-12-30T13:43:29Z",
+      "daysSinceUpdate": 127,
+      "daysSinceCreate": 335,
+      "commentCount": 0,
+      "recentActivity": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "checkboxes": {
+        "total": 2,
+        "done": 0
+      },
+      "bodyExcerpt": "## What\nEdit the transcript from the recording of June's #DSChat.\n\n## Why\nTo ensure it's correct and free of typos.\n\n## Who needs to work on this\nAnyone\n\n## Who needs to review this\nN/A\n\n## Done when\n- [ ] [transcript ](https://docs.google.com/document/d/1pQap4fpVZYXyL53TxjpXW1W3DSzgeXdkWjz5zPKrz7o/",
+      "recentComments": []
+    },
+    {
+      "score": 13,
+      "repo": "alphagov/govuk-design-system",
+      "number": 5019,
+      "title": "Add content to service navigation component documentation",
+      "url": "https://github.com/alphagov/govuk-design-system/issues/5019",
+      "queryLabel": "documentation",
+      "labels": [
+        "documentation"
+      ],
+      "createdAt": "2025-12-02T09:24:26Z",
+      "updatedAt": "2025-12-02T09:24:26Z",
+      "daysSinceUpdate": 155,
+      "daysSinceCreate": 155,
+      "commentCount": 0,
+      "recentActivity": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "\n## Related documentation\n\nThe 'Showing service name and navigation links' section of the [service navigation component documentation ](https://design-system.service.gov.uk/components/service-navigation/#brand-refresh-of-the-service-navigation-component)\n\n## Suggestion\n\n<!-- How could this documenta",
+      "recentComments": []
     }
   ],
   "allRanked": [
     {
-      "score": 25,
+      "score": 51,
+      "repo": "adobe/react-spectrum",
+      "number": 10015,
+      "title": "Docs are missing section on InteractOutside",
+      "url": "https://github.com/adobe/react-spectrum/issues/10015",
+      "daysSinceUpdate": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 31,
+      "repo": "alphagov/govuk-design-system",
+      "number": 5153,
+      "title": "Duplicate guidance for password reset questions and password reminders",
+      "url": "https://github.com/alphagov/govuk-design-system/issues/5153",
+      "daysSinceUpdate": 83,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 31,
+      "repo": "alphagov/govuk-design-system",
+      "number": 5161,
+      "title": "Page Template documentation blocks refer to deprecated blocks",
+      "url": "https://github.com/alphagov/govuk-design-system/issues/5161",
+      "daysSinceUpdate": 64,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 29,
       "repo": "jsx-eslint/eslint-plugin-jsx-a11y",
       "number": 1087,
       "title": "The document of `lang` differs from the implementation.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1087",
       "daysSinceUpdate": 7,
-      "claimedCount": 0,
+      "claimedRecent": 1,
+      "prSubmitted": 0,
+      "maintainerGreen": 1,
+      "maintainerRed": 0
+    },
+    {
+      "score": 26,
+      "repo": "adobe/react-spectrum",
+      "number": 6531,
+      "title": "Using nested dialogs seems to depend on including a custom `<ModalOverlay/>`",
+      "url": "https://github.com/adobe/react-spectrum/issues/6531",
+      "daysSinceUpdate": 13,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
       "maintainerGreen": 0,
       "maintainerRed": 0
     },
     {
-      "score": 3,
+      "score": 22,
+      "repo": "adobe/react-spectrum",
+      "number": 8239,
+      "title": "Table is not interactive on first click in SSR",
+      "url": "https://github.com/adobe/react-spectrum/issues/8239",
+      "daysSinceUpdate": 48,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 22,
+      "repo": "alphagov/govuk-design-system",
+      "number": 1176,
+      "title": "Documentation/example for a single checkbox",
+      "url": "https://github.com/alphagov/govuk-design-system/issues/1176",
+      "daysSinceUpdate": 23,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 20,
+      "repo": "adobe/react-spectrum",
+      "number": 6971,
+      "title": "Use `null` instead of `Number.NaN` in NumberField component",
+      "url": "https://github.com/adobe/react-spectrum/issues/6971",
+      "daysSinceUpdate": 26,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 19,
       "repo": "a11yproject/a11yproject.com",
       "number": 1478,
       "title": "[Bug]  404s, bad host, timeouts, bad urls for URLs linked from website",
       "url": "https://github.com/a11yproject/a11yproject.com/issues/1478",
       "daysSinceUpdate": 90,
-      "claimedCount": 0,
-      "maintainerGreen": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "maintainerGreen": 1,
       "maintainerRed": 0
     },
     {
-      "score": 3,
-      "repo": "dequelabs/axe-core",
-      "number": 1237,
-      "title": "dom.isFocusable should consider `audio` and `video` controls",
-      "url": "https://github.com/dequelabs/axe-core/issues/1237",
-      "daysSinceUpdate": 175,
-      "claimedCount": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": -7,
+      "score": 18,
       "repo": "jsx-eslint/eslint-plugin-jsx-a11y",
       "number": 1060,
       "title": "`jsx-a11y/anchor-has-content`: do not encourage title attribute usage",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1060",
       "daysSinceUpdate": 68,
-      "claimedCount": 1,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
       "maintainerGreen": 0,
       "maintainerRed": 0
     },
     {
-      "score": -72,
+      "score": 14,
+      "repo": "adobe/react-spectrum",
+      "number": 3164,
+      "title": "Clicking outside the DatePicker can manipulate the focus of the DateSegment. (react-aria's DatePicker)",
+      "url": "https://github.com/adobe/react-spectrum/issues/3164",
+      "daysSinceUpdate": 27,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 13,
+      "repo": "adobe/react-spectrum",
+      "number": 8339,
+      "title": "Button remains in pressed state when opening a modal",
+      "url": "https://github.com/adobe/react-spectrum/issues/8339",
+      "daysSinceUpdate": 91,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 13,
+      "repo": "adobe/react-spectrum",
+      "number": 9374,
+      "title": "Documentation: collapsed props cannot be searched",
+      "url": "https://github.com/adobe/react-spectrum/issues/9374",
+      "daysSinceUpdate": 139,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 13,
+      "repo": "alphagov/govuk-design-system",
+      "number": 4758,
+      "title": "Edit transcript for June's #DSChat",
+      "url": "https://github.com/alphagov/govuk-design-system/issues/4758",
+      "daysSinceUpdate": 127,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 13,
+      "repo": "alphagov/govuk-design-system",
+      "number": 5019,
+      "title": "Add content to service navigation component documentation",
+      "url": "https://github.com/alphagov/govuk-design-system/issues/5019",
+      "daysSinceUpdate": 155,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 8,
+      "repo": "GoogleChrome/lighthouse",
+      "number": 11747,
+      "title": "handling impact of isInputPending on long tasks metrics?",
+      "url": "https://github.com/GoogleChrome/lighthouse/issues/11747",
+      "daysSinceUpdate": 39,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 6,
+      "repo": "GoogleChrome/lighthouse",
+      "number": 12008,
+      "title": "Canonical URL audit mistakes invalid URLs for relative ones",
+      "url": "https://github.com/GoogleChrome/lighthouse/issues/12008",
+      "daysSinceUpdate": 74,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 6,
+      "repo": "alphagov/govuk-design-system",
+      "number": 778,
+      "title": "Improve Hint text guidance",
+      "url": "https://github.com/alphagov/govuk-design-system/issues/778",
+      "daysSinceUpdate": 71,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 5,
+      "repo": "adobe/react-spectrum",
+      "number": 7756,
+      "title": "Unable to pass ref to Datepicker [react-aria-components]",
+      "url": "https://github.com/adobe/react-spectrum/issues/7756",
+      "daysSinceUpdate": 173,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 5,
+      "repo": "alphagov/govuk-design-system",
+      "number": 3827,
+      "title": "Notification banner guidance has misleading line?",
+      "url": "https://github.com/alphagov/govuk-design-system/issues/3827",
+      "daysSinceUpdate": 139,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 5,
+      "repo": "alphagov/govuk-design-system",
+      "number": 3944,
+      "title": "Write accessibility page in team playbook",
+      "url": "https://github.com/alphagov/govuk-design-system/issues/3944",
+      "daysSinceUpdate": 127,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 5,
+      "repo": "alphagov/govuk-frontend",
+      "number": 5674,
+      "title": "Improve release documentation",
+      "url": "https://github.com/alphagov/govuk-frontend/issues/5674",
+      "daysSinceUpdate": 127,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 1,
+      "repo": "adobe/react-spectrum",
+      "number": 1773,
+      "title": "onCancel should fire in AlertDialog if Escape is pressed",
+      "url": "https://github.com/adobe/react-spectrum/issues/1773",
+      "daysSinceUpdate": 111,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 1,
+      "repo": "adobe/react-spectrum",
+      "number": 5231,
+      "title": "Ability to style the Popover overlay",
+      "url": "https://github.com/adobe/react-spectrum/issues/5231",
+      "daysSinceUpdate": 144,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 1,
+      "repo": "alphagov/govuk-design-system",
+      "number": 3634,
+      "title": "It's not clear if the cookie banner should appear on the cookies page itself",
+      "url": "https://github.com/alphagov/govuk-design-system/issues/3634",
+      "daysSinceUpdate": 127,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 1,
+      "repo": "dequelabs/axe-core",
+      "number": 1237,
+      "title": "dom.isFocusable should consider `audio` and `video` controls",
+      "url": "https://github.com/dequelabs/axe-core/issues/1237",
+      "daysSinceUpdate": 175,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": -9,
+      "repo": "adobe/react-spectrum",
+      "number": 9648,
+      "title": "Back/forward keyboard shortcuts (e.g. CMD + left arrow) triggering tab switching rather than page navigation ",
+      "url": "https://github.com/adobe/react-spectrum/issues/9648",
+      "daysSinceUpdate": 83,
+      "claimedRecent": 1,
+      "prSubmitted": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": -18,
+      "repo": "GoogleChrome/lighthouse",
+      "number": 11593,
+      "title": "\"Properly size image\" report is too strict?",
+      "url": "https://github.com/GoogleChrome/lighthouse/issues/11593",
+      "daysSinceUpdate": 13,
+      "claimedRecent": 1,
+      "prSubmitted": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": -18,
+      "repo": "adobe/react-spectrum",
+      "number": 5252,
+      "title": "[react-aria-components] Tabs' onSelectionChange prop doesn't fire correctly when using tabs as links",
+      "url": "https://github.com/adobe/react-spectrum/issues/5252",
+      "daysSinceUpdate": 13,
+      "claimedRecent": 1,
+      "prSubmitted": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": -26,
+      "repo": "GoogleChrome/lighthouse",
+      "number": 9474,
+      "title": "Add a check to test if :hover styles require doubletapping links",
+      "url": "https://github.com/GoogleChrome/lighthouse/issues/9474",
+      "daysSinceUpdate": 22,
+      "claimedRecent": 1,
+      "prSubmitted": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": -26,
       "repo": "a11yproject/a11yproject.com",
       "number": 12,
       "title": "List of Post Ideas",
       "url": "https://github.com/a11yproject/a11yproject.com/issues/12",
       "daysSinceUpdate": 153,
-      "claimedCount": 2,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "maintainerGreen": 1,
+      "maintainerRed": 0
+    },
+    {
+      "score": -32,
+      "repo": "adobe/react-spectrum",
+      "number": 5531,
+      "title": "React Aria: Replace Esc key listeners with a CloseWatcher in supported browsers",
+      "url": "https://github.com/adobe/react-spectrum/issues/5531",
+      "daysSinceUpdate": 47,
+      "claimedRecent": 1,
+      "prSubmitted": 0,
       "maintainerGreen": 0,
       "maintainerRed": 0
     }
