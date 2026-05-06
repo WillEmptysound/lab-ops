@@ -2,8 +2,8 @@ name: A11y Issue Radar
 
 on:
   schedule:
-    - cron: '0 8 * * 1'   # jeden Montag 08:00 UTC
-  workflow_dispatch:       # Button "Run workflow" für manuellen Test
+    - cron: '0 8 * * 1'   # Montags 08:00 UTC
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -15,7 +15,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Scan repos for fresh issues
+      - name: Stage 1 - Find candidates (recent + unassigned)
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -32,8 +32,11 @@ jobs:
           )
           LABELS=("good first issue" "help wanted" "documentation")
 
+          # Nur Issues, die in den letzten 6 Monaten Aktivität hatten
+          SINCE=$(date -u -d '6 months ago' +%Y-%m-%d)
+          echo "Stage 1 cutoff: updated:>=$SINCE"
+
           mkdir -p data
-          OUT="data/issues_latest.json"
           TMP="$(mktemp)"
 
           for repo in "${REPOS[@]}"; do
@@ -43,33 +46,162 @@ jobs:
                 --repo "$repo" \
                 --label "$label" \
                 --state open \
-                --search "no:assignee sort:updated-desc" \
-                --json number,title,url,updatedAt,createdAt,labels,body \
+                --search "no:assignee updated:>=$SINCE sort:updated-desc" \
+                --json number,title,url,updatedAt,createdAt,labels \
                 --limit 30 2>/dev/null \
-              | jq -c --arg repo "$repo" --arg label "$label" \
-                  '.[] | . + {repo: $repo, queryLabel: $label}' \
+              | jq -c --arg repo "$repo" --arg queryLabel "$label" \
+                  '.[] | . + {repo: $repo, queryLabel: $queryLabel}' \
                 >> "$TMP" || true
             done
           done
 
-          jq -s --arg scanned "$(date -u +%Y-%m-%dT%H:%M:%SZ)" '
-            {
-              scannedAt: $scanned,
-              count: (unique_by(.repo + "/" + (.number|tostring)) | length),
-              issues: unique_by(.repo + "/" + (.number|tostring))
-            }
-          ' "$TMP" > "$OUT"
+          jq -s 'unique_by(.repo + "/" + (.number|tostring))' "$TMP" > data/candidates.json
+          rm -f "$TMP"
+          echo "Stage 1: $(jq 'length' data/candidates.json) unique candidates"
 
-          echo "Total: $(jq '.count' "$OUT") issues -> $OUT"
+      - name: Stage 2 - Enrich with body + comments
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -uo pipefail
+          mkdir -p data
+          ENRICHED="data/enriched.json"
+          echo "[]" > "$ENRICHED"
+
+          jq -c '.[]' data/candidates.json | while read -r row; do
+            repo=$(echo "$row" | jq -r .repo)
+            num=$(echo "$row" | jq -r .number)
+            label=$(echo "$row" | jq -r .queryLabel)
+            echo ">> enrich $repo#$num"
+            full=$(gh issue view "$num" --repo "$repo" \
+              --json number,title,url,body,createdAt,updatedAt,labels,comments,author \
+              2>/dev/null) || full="{}"
+            merged=$(echo "$full" | jq --arg repo "$repo" --arg ql "$label" \
+              '. + {repo: $repo, queryLabel: $ql}')
+            jq --argjson item "$merged" '. += [$item]' "$ENRICHED" > "$ENRICHED.tmp" \
+              && mv "$ENRICHED.tmp" "$ENRICHED"
+          done
+          echo "Stage 2: $(jq 'length' $ENRICHED) issues enriched"
+
+      - name: Stage 3 - Score and rank
+        run: |
+          set -uo pipefail
+
+          jq '
+            def is_maintainer:
+              .authorAssociation == "OWNER"
+              or .authorAssociation == "MEMBER"
+              or .authorAssociation == "COLLABORATOR";
+
+            def maintainer_green(cs):
+              cs
+              | map(select(is_maintainer))
+              | map(select(
+                  ((.body // "") | ascii_downcase)
+                  | test("pr welcome|would accept|happy to (review|accept)|contributions welcome|please (open|submit) a pr")
+                ))
+              | length;
+
+            def maintainer_red(cs):
+              cs
+              | map(select(is_maintainer))
+              | map(select(
+                  ((.body // "") | ascii_downcase)
+                  | test("won.?t fix|will not (fix|implement)|no longer relevant|out of scope|wontfix|stale|closing( as)?|not planned")
+                ))
+              | length;
+
+            def claimed(cs):
+              cs
+              | map(select(
+                  ((.body // "") | ascii_downcase)
+                  | test("i.?ll work on this|i.?ll take this|taking this|i can do this|i.?m on it|working on this|let me work on|please assign( me)?|assign( me)?")
+                ))
+              | length;
+
+            def checkbox_progress(b):
+              {
+                total: (b | [scan("- \\[[ xX]\\]")] | length),
+                done:  (b | [scan("- \\[[xX]\\]")]   | length)
+              };
+
+            def days_since(ts):
+              ((now - (ts | fromdateiso8601)) / 86400) | floor;
+
+            def score:
+              . as $i
+              | (.comments // []) as $cs
+              | (.body // "") as $b
+              | checkbox_progress($b) as $cb
+              | (if $cb.total > 0 then ($cb.done / $cb.total) else 0 end) as $cb_ratio
+              | days_since(.updatedAt) as $age_upd
+              | days_since(.createdAt) as $age_cre
+              | maintainer_green($cs) as $mg
+              | maintainer_red($cs)   as $mr
+              | claimed($cs)          as $cl
+              | (
+                  (if $age_upd < 30 then 15 elif $age_upd < 90 then 8 elif $age_upd < 180 then 3 else 0 end)
+                  + (if $age_cre < 365 then 10 elif $age_cre < 730 then 4 else 0 end)
+                  + ($mg * 20)
+                  + ($mr * -40)
+                  + ($cl * -25)
+                  + (if ($cb.total > 3 and $cb_ratio >= 0.8) then -30 else 0 end)
+                  + (if ($cs | length) > 30 then -10 elif ($cs | length) > 60 then -25 else 0 end)
+                ) as $s
+              | {
+                  score: $s,
+                  repo: .repo,
+                  number: .number,
+                  title: .title,
+                  url: .url,
+                  queryLabel: .queryLabel,
+                  labels: [.labels[]?.name],
+                  createdAt: .createdAt,
+                  updatedAt: .updatedAt,
+                  daysSinceUpdate: $age_upd,
+                  daysSinceCreate: $age_cre,
+                  commentCount: ($cs | length),
+                  maintainerGreen: $mg,
+                  maintainerRed: $mr,
+                  claimedCount: $cl,
+                  checkboxes: $cb,
+                  bodyExcerpt: ($b | gsub("\r"; "") | .[0:300]),
+                  recentComments: (
+                    $cs
+                    | sort_by(.createdAt) | reverse | .[0:3]
+                    | map({
+                        author: (.author.login // "?"),
+                        association: (.authorAssociation // "NONE"),
+                        createdAt: .createdAt,
+                        excerpt: ((.body // "") | gsub("\r"; "") | .[0:200])
+                      })
+                  )
+                };
+
+            map(score)
+            | sort_by(-.score)
+            | {
+                scannedAt: (now | strftime("%Y-%m-%dT%H:%M:%SZ")),
+                count: length,
+                topIssues: (.[0:12]),
+                allRanked: (
+                  map({score, repo, number, title, url, daysSinceUpdate, claimedCount, maintainerGreen, maintainerRed})
+                )
+              }
+          ' data/enriched.json > data/issues_latest.json
+
+          echo "--- Top 8 ---"
+          jq -r '.topIssues[0:8][] | "  [\(.score|tostring|.+"   ")[0:5]] \(.repo)#\(.number) - \(.title[0:80])"' data/issues_latest.json
+          echo "Total: $(jq '.count' data/issues_latest.json)"
 
       - name: Commit result if changed
         run: |
           git config user.name "labrador-bot"
           git config user.email "labrador-bot@users.noreply.github.com"
-          git add data/issues_latest.json
+          git add data/issues_latest.json data/candidates.json data/enriched.json
           if git diff --staged --quiet; then
             echo "Keine Änderungen."
           else
-            git commit -m "chore(a11y-radar): refresh issue scan"
+            git commit -m "chore(a11y-radar): refresh scan with comment analysis"
             git push
           fi
