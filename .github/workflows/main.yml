@@ -1,4 +1,4 @@
-name: Issue Radar
+name: A11y Issue Radar
 
 on:
   schedule:
@@ -80,8 +80,8 @@ jobs:
           )
           LABELS=("good first issue" "help wanted" "documentation")
 
-          # 6-Monats-Frischefilter
-          SINCE=$(date -u -d '6 months ago' +%Y-%m-%d)
+          # 2-Monats-Frischefilter (vorher 6 Monate, war zu lasch)
+          SINCE=$(date -u -d '2 months ago' +%Y-%m-%d)
           echo "Stage 1 cutoff: updated:>=$SINCE"
           echo "Repos: ${#REPOS[@]}, Labels: ${#LABELS[@]}, Combinations: $((${#REPOS[@]} * ${#LABELS[@]}))"
 
@@ -292,25 +292,4 @@ jobs:
                     score, repo, number, title, url,
                     daysSinceUpdate, claimedRecent, prSubmitted,
                     linkedOpenPRs: (.linkedOpenPRs | length),
-                    maintainerGreen, maintainerRed
-                  })
-                )
-              }
-          ' data/enriched.json > data/issues_latest.json
-
-          echo "--- Top 12 ---"
-          jq -r '.topIssues[0:12][] | "  [\(.score)]  \(.repo)#\(.number)  -  \(.title[0:80])"' data/issues_latest.json
-          echo "Total: $(jq '.count' data/issues_latest.json)"
-          echo "Filtered out (linked PRs): $(jq '[.allRanked[] | select(.linkedOpenPRs > 0)] | length' data/issues_latest.json)"
-
-      - name: Commit result if changed
-        run: |
-          git config user.name "labrador-bot"
-          git config user.email "labrador-bot@users.noreply.github.com"
-          git add data/issues_latest.json data/candidates.json data/enriched.json
-          if git diff --staged --quiet; then
-            echo "Keine Änderungen."
-          else
-            git commit -m "chore(a11y-radar): refresh scan v5 (32 repos, kleinere a11y-tools)"
-            git push
-          fi
+                    maintainerGreen,
