@@ -744,6 +744,75 @@
     "queryLabel": "good first issue"
   },
   {
+    "createdAt": "2025-07-14T14:39:30Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWw2NTQ2NjQ4Njk=",
+        "name": "help wanted",
+        "description": "",
+        "color": "128A0C"
+      },
+      {
+        "id": "MDU6TGFiZWw3NTkzMzYxNDU=",
+        "name": "docs",
+        "description": "",
+        "color": "006b75"
+      }
+    ],
+    "number": 1654,
+    "title": "Add react-virtual support",
+    "updatedAt": "2026-02-20T10:07:00Z",
+    "url": "https://github.com/downshift-js/downshift/issues/1654",
+    "repo": "downshift-js/downshift",
+    "queryLabel": "help wanted"
+  },
+  {
+    "createdAt": "2025-07-23T16:06:23Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWw2NTQ2NjQ4Njk=",
+        "name": "help wanted",
+        "description": "",
+        "color": "128A0C"
+      },
+      {
+        "id": "MDU6TGFiZWw3NTkzMzYxNDU=",
+        "name": "docs",
+        "description": "",
+        "color": "006b75"
+      }
+    ],
+    "number": 1655,
+    "title": "Update useMultipleSelection docs and remove references to itemToString prop",
+    "updatedAt": "2026-02-20T10:05:27Z",
+    "url": "https://github.com/downshift-js/downshift/issues/1655",
+    "repo": "downshift-js/downshift",
+    "queryLabel": "help wanted"
+  },
+  {
+    "createdAt": "2026-01-15T12:39:01Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWw2NTQ2NjQ4Njk=",
+        "name": "help wanted",
+        "description": "",
+        "color": "128A0C"
+      },
+      {
+        "id": "MDU6TGFiZWw3NTkzMzYxNDU=",
+        "name": "docs",
+        "description": "",
+        "color": "006b75"
+      }
+    ],
+    "number": 1668,
+    "title": "Dark mode contrast issue on docs page",
+    "updatedAt": "2026-02-20T10:01:13Z",
+    "url": "https://github.com/downshift-js/downshift/issues/1668",
+    "repo": "downshift-js/downshift",
+    "queryLabel": "help wanted"
+  },
+  {
     "createdAt": "2025-09-02T19:14:22Z",
     "labels": [
       {
@@ -782,5 +851,1009 @@
     "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1087",
     "repo": "jsx-eslint/eslint-plugin-jsx-a11y",
     "queryLabel": "help wanted"
+  },
+  {
+    "createdAt": "2020-01-16T23:34:29Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwyODQ2MDM3OTY=",
+        "name": "z goodForNewDev (archived)",
+        "description": "",
+        "color": "ffffff"
+      },
+      {
+        "id": "MDU6TGFiZWw0MDEyMzgzODU=",
+        "name": "p4",
+        "description": "https://github.com/nvaccess/nvda/blob/master/projectDocs/issues/triage.md#priority",
+        "color": "1D76DB"
+      },
+      {
+        "id": "MDU6TGFiZWw0NjI4Mzk1MzQ=",
+        "name": "quick fix",
+        "description": "",
+        "color": "fef2c0"
+      },
+      {
+        "id": "MDU6TGFiZWwyOTYwMjk1NzM1",
+        "name": "good first issue",
+        "description": "github features these at https://github.com/nvaccess/nvda/contribute",
+        "color": "5319E7"
+      },
+      {
+        "id": "MDU6TGFiZWwzMTYzOTE3NDY1",
+        "name": "feature/screen-curtain",
+        "description": "",
+        "color": "47D7B0"
+      },
+      {
+        "id": "LA_kwDOArwpJM7nJafB",
+        "name": "triaged",
+        "description": "Has been triaged, issue is waiting for implementation.",
+        "color": "109F01"
+      }
+    ],
+    "number": 10692,
+    "title": "Report status of screen curtain at startup when \"Play a sound when toggling screen curtain\" is disabled.",
+    "updatedAt": "2026-01-27T00:48:40Z",
+    "url": "https://github.com/nvaccess/nvda/issues/10692",
+    "repo": "nvaccess/nvda",
+    "queryLabel": "good first issue"
+  },
+  {
+    "createdAt": "2022-03-30T03:14:27Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwyODQ1OTQ2OTQ=",
+        "name": "component/speech",
+        "description": "",
+        "color": "7837a3"
+      },
+      {
+        "id": "MDU6TGFiZWw0MDEyMzgzODU=",
+        "name": "p4",
+        "description": "https://github.com/nvaccess/nvda/blob/master/projectDocs/issues/triage.md#priority",
+        "color": "1D76DB"
+      },
+      {
+        "id": "MDU6TGFiZWw1OTYwOTcwMDY=",
+        "name": "feature",
+        "description": "",
+        "color": "bfdadc"
+      },
+      {
+        "id": "MDU6TGFiZWwxOTIyNzMyOTIw",
+        "name": "component/audio-ux",
+        "description": "",
+        "color": "abb2ea"
+      },
+      {
+        "id": "MDU6TGFiZWwyMDI0NjQxMzI4",
+        "name": "feature/i18n",
+        "description": "Internationalization features",
+        "color": "e861d1"
+      },
+      {
+        "id": "MDU6TGFiZWwyOTYwMjk1NzM1",
+        "name": "good first issue",
+        "description": "github features these at https://github.com/nvaccess/nvda/contribute",
+        "color": "5319E7"
+      },
+      {
+        "id": "LA_kwDOArwpJM7nJafB",
+        "name": "triaged",
+        "description": "Has been triaged, issue is waiting for implementation.",
+        "color": "109F01"
+      }
+    ],
+    "number": 13561,
+    "title": "Don't change dialect when reading a \"parent\" language",
+    "updatedAt": "2026-04-09T03:36:32Z",
+    "url": "https://github.com/nvaccess/nvda/issues/13561",
+    "repo": "nvaccess/nvda",
+    "queryLabel": "good first issue"
+  },
+  {
+    "createdAt": "2024-03-18T23:24:03Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwyODQ1OTUxNjc=",
+        "name": "bug/freeze",
+        "description": "",
+        "color": "fc2929"
+      },
+      {
+        "id": "MDU6TGFiZWw0MDEyMzgzMDQ=",
+        "name": "p2",
+        "description": "https://github.com/nvaccess/nvda/blob/master/projectDocs/issues/triage.md#priority",
+        "color": "FBCA04"
+      },
+      {
+        "id": "MDU6TGFiZWw0NjI4Mzk1MzQ=",
+        "name": "quick fix",
+        "description": "",
+        "color": "fef2c0"
+      },
+      {
+        "id": "MDU6TGFiZWwxOTIyMjUwOTc3",
+        "name": "component/logging",
+        "description": "",
+        "color": "258405"
+      },
+      {
+        "id": "MDU6TGFiZWwxOTcxMzE1ODAy",
+        "name": "audience/nvda-dev",
+        "description": "PR or issue is relevant to NVDA / Add-on developers",
+        "color": "ffccef"
+      },
+      {
+        "id": "MDU6TGFiZWwyOTYwMjk1NzM1",
+        "name": "good first issue",
+        "description": "github features these at https://github.com/nvaccess/nvda/contribute",
+        "color": "5319E7"
+      },
+      {
+        "id": "LA_kwDOArwpJM7nJafB",
+        "name": "triaged",
+        "description": "Has been triaged, issue is waiting for implementation.",
+        "color": "109F01"
+      },
+      {
+        "id": "LA_kwDOArwpJM8AAAABDNXXgg",
+        "name": "needs-technical-investigation",
+        "description": "A technical investigation is required to progress the issue.",
+        "color": "1425B9"
+      },
+      {
+        "id": "LA_kwDOArwpJM8AAAABmlAnPw",
+        "name": "bug squash target",
+        "description": "",
+        "color": "B60205"
+      }
+    ],
+    "number": 16322,
+    "title": "NVDA freezes for a very long time after a long usage when opening the log viewer",
+    "updatedAt": "2026-04-20T11:19:06Z",
+    "url": "https://github.com/nvaccess/nvda/issues/16322",
+    "repo": "nvaccess/nvda",
+    "queryLabel": "good first issue"
+  },
+  {
+    "createdAt": "2011-07-23T14:00:03Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwyODQ1OTA4MTU=",
+        "name": "enhancement",
+        "description": "",
+        "color": "84b6eb"
+      },
+      {
+        "id": "MDU6TGFiZWwyODQ1OTQzOTQ=",
+        "name": "component/NVDA-GUI",
+        "description": "",
+        "color": "2a6ba8"
+      },
+      {
+        "id": "MDU6TGFiZWw0NTUzNDkxNjg=",
+        "name": "p5",
+        "description": "https://github.com/nvaccess/nvda/blob/master/projectDocs/issues/triage.md#priority",
+        "color": "5319E7"
+      },
+      {
+        "id": "MDU6TGFiZWw0NjI4Mzk1MzQ=",
+        "name": "quick fix",
+        "description": "",
+        "color": "fef2c0"
+      },
+      {
+        "id": "MDU6TGFiZWwyOTYwMjk1NzM1",
+        "name": "good first issue",
+        "description": "github features these at https://github.com/nvaccess/nvda/contribute",
+        "color": "5319E7"
+      },
+      {
+        "id": "LA_kwDOArwpJM7nJafB",
+        "name": "triaged",
+        "description": "Has been triaged, issue is waiting for implementation.",
+        "color": "109F01"
+      }
+    ],
+    "number": 1690,
+    "title": "Add documentation hints to the welcome dialog",
+    "updatedAt": "2025-12-04T04:16:48Z",
+    "url": "https://github.com/nvaccess/nvda/issues/1690",
+    "repo": "nvaccess/nvda",
+    "queryLabel": "good first issue"
+  },
+  {
+    "createdAt": "2024-08-09T04:39:27Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWw0NTUzNDkxNjg=",
+        "name": "p5",
+        "description": "https://github.com/nvaccess/nvda/blob/master/projectDocs/issues/triage.md#priority",
+        "color": "5319E7"
+      },
+      {
+        "id": "MDU6TGFiZWwxOTcxMzE1ODAy",
+        "name": "audience/nvda-dev",
+        "description": "PR or issue is relevant to NVDA / Add-on developers",
+        "color": "ffccef"
+      },
+      {
+        "id": "MDU6TGFiZWwyOTYwMjk1NzM1",
+        "name": "good first issue",
+        "description": "github features these at https://github.com/nvaccess/nvda/contribute",
+        "color": "5319E7"
+      },
+      {
+        "id": "LA_kwDOArwpJM7nJafB",
+        "name": "triaged",
+        "description": "Has been triaged, issue is waiting for implementation.",
+        "color": "109F01"
+      },
+      {
+        "id": "LA_kwDOArwpJM8AAAACdbv4OQ",
+        "name": "component/dev-documentation",
+        "description": "",
+        "color": "d845bb"
+      }
+    ],
+    "number": 16984,
+    "title": "Dev Guide should document the use of gui.message.DisplayableError",
+    "updatedAt": "2026-03-31T02:42:07Z",
+    "url": "https://github.com/nvaccess/nvda/issues/16984",
+    "repo": "nvaccess/nvda",
+    "queryLabel": "good first issue"
+  },
+  {
+    "createdAt": "2024-11-29T11:35:40Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwyODQ1OTA4MTY=",
+        "name": "help wanted",
+        "description": "",
+        "color": "159818"
+      },
+      {
+        "id": "MDU6TGFiZWw0MDEyMzgzNDA=",
+        "name": "p3",
+        "description": "https://github.com/nvaccess/nvda/blob/master/projectDocs/issues/triage.md#priority",
+        "color": "0E8A16"
+      },
+      {
+        "id": "LA_kwDOArwpJM7nJafB",
+        "name": "triaged",
+        "description": "Has been triaged, issue is waiting for implementation.",
+        "color": "109F01"
+      },
+      {
+        "id": "LA_kwDOArwpJM8AAAABDNXXgg",
+        "name": "needs-technical-investigation",
+        "description": "A technical investigation is required to progress the issue.",
+        "color": "1425B9"
+      },
+      {
+        "id": "LA_kwDOArwpJM8AAAABFLMgig",
+        "name": "framework/WPF",
+        "description": "",
+        "color": "0EBF21"
+      },
+      {
+        "id": "LA_kwDOArwpJM8AAAACPmI4nQ",
+        "name": "legacy/community-support",
+        "description": "Issues caused by legacy technologies where NV Access will accept a solution from the community",
+        "color": "696ff1"
+      }
+    ],
+    "number": 17454,
+    "title": "NVDA: ComboBox Selected Item Not Announced in DropDownList Style in .NET Framework 4.8 WinForms Applications",
+    "updatedAt": "2026-03-15T18:15:39Z",
+    "url": "https://github.com/nvaccess/nvda/issues/17454",
+    "repo": "nvaccess/nvda",
+    "queryLabel": "help wanted"
+  },
+  {
+    "createdAt": "2024-12-16T08:01:45Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwyODQ2MTc5NjY=",
+        "name": "feature/update-check",
+        "description": "",
+        "color": "276b99"
+      },
+      {
+        "id": "MDU6TGFiZWw0NTUzNDkxNjg=",
+        "name": "p5",
+        "description": "https://github.com/nvaccess/nvda/blob/master/projectDocs/issues/triage.md#priority",
+        "color": "5319E7"
+      },
+      {
+        "id": "MDU6TGFiZWw0NjI4Mzk1MzQ=",
+        "name": "quick fix",
+        "description": "",
+        "color": "fef2c0"
+      },
+      {
+        "id": "MDU6TGFiZWwyOTYwMjk1NzM1",
+        "name": "good first issue",
+        "description": "github features these at https://github.com/nvaccess/nvda/contribute",
+        "color": "5319E7"
+      },
+      {
+        "id": "LA_kwDOArwpJM7nJafB",
+        "name": "triaged",
+        "description": "Has been triaged, issue is waiting for implementation.",
+        "color": "109F01"
+      },
+      {
+        "id": "LA_kwDOArwpJM8AAAABI4u_pg",
+        "name": "feature/addon-store",
+        "description": "Features / behavior of the add-on Store",
+        "color": "946B11"
+      }
+    ],
+    "number": 17534,
+    "title": "Mirror: Provides a list of available mirrors for users to choose from when setting up mirrors.",
+    "updatedAt": "2025-11-26T06:05:33Z",
+    "url": "https://github.com/nvaccess/nvda/issues/17534",
+    "repo": "nvaccess/nvda",
+    "queryLabel": "good first issue"
+  },
+  {
+    "createdAt": "2025-03-17T10:54:07Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwyODQ1OTc5MjI=",
+        "name": "bug/app-crash",
+        "description": "",
+        "color": "fc2929"
+      },
+      {
+        "id": "MDU6TGFiZWwyODQ1OTc5ODE=",
+        "name": "blocked/needs-external-fix",
+        "description": "",
+        "color": "ffffff"
+      },
+      {
+        "id": "MDU6TGFiZWw0MDEyMzgzMDQ=",
+        "name": "p2",
+        "description": "https://github.com/nvaccess/nvda/blob/master/projectDocs/issues/triage.md#priority",
+        "color": "FBCA04"
+      },
+      {
+        "id": "MDU6TGFiZWw0NjI4Mzk1MzQ=",
+        "name": "quick fix",
+        "description": "",
+        "color": "fef2c0"
+      },
+      {
+        "id": "MDU6TGFiZWwxMTYwNDI0NTQ2",
+        "name": "component/vision",
+        "description": "Framework for assisting users with low vision",
+        "color": "76e0b6"
+      },
+      {
+        "id": "MDU6TGFiZWwxOTcxMjY1MzA1",
+        "name": "audience/low-vision",
+        "description": "PR or issue is relevant to sighted or low vision users",
+        "color": "1dd4f4"
+      },
+      {
+        "id": "MDU6TGFiZWwyOTYwMjk1NzM1",
+        "name": "good first issue",
+        "description": "github features these at https://github.com/nvaccess/nvda/contribute",
+        "color": "5319E7"
+      },
+      {
+        "id": "MDU6TGFiZWwzMzUxNzQxOTg2",
+        "name": "app/adobe/acrobat",
+        "description": "",
+        "color": "A51129"
+      },
+      {
+        "id": "LA_kwDOArwpJM7nJafB",
+        "name": "triaged",
+        "description": "Has been triaged, issue is waiting for implementation.",
+        "color": "109F01"
+      },
+      {
+        "id": "LA_kwDOArwpJM8AAAABmlAnPw",
+        "name": "bug squash target",
+        "description": "",
+        "color": "B60205"
+      }
+    ],
+    "number": 17834,
+    "title": "Adobe crashes when NVDA highlighter is enabled",
+    "updatedAt": "2026-02-19T03:12:28Z",
+    "url": "https://github.com/nvaccess/nvda/issues/17834",
+    "repo": "nvaccess/nvda",
+    "queryLabel": "good first issue"
+  },
+  {
+    "createdAt": "2025-09-11T23:37:32Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWw0MDEyMzgzMDQ=",
+        "name": "p2",
+        "description": "https://github.com/nvaccess/nvda/blob/master/projectDocs/issues/triage.md#priority",
+        "color": "FBCA04"
+      },
+      {
+        "id": "MDU6TGFiZWw0NjI4Mzk1MzQ=",
+        "name": "quick fix",
+        "description": "",
+        "color": "fef2c0"
+      },
+      {
+        "id": "MDU6TGFiZWwyOTYwMjk1NzM1",
+        "name": "good first issue",
+        "description": "github features these at https://github.com/nvaccess/nvda/contribute",
+        "color": "5319E7"
+      },
+      {
+        "id": "LA_kwDOArwpJM7nJafB",
+        "name": "triaged",
+        "description": "Has been triaged, issue is waiting for implementation.",
+        "color": "109F01"
+      },
+      {
+        "id": "LA_kwDOArwpJM8AAAABDNXXgg",
+        "name": "needs-technical-investigation",
+        "description": "A technical investigation is required to progress the issue.",
+        "color": "1425B9"
+      },
+      {
+        "id": "LA_kwDOArwpJM8AAAABmlAnPw",
+        "name": "bug squash target",
+        "description": "",
+        "color": "B60205"
+      }
+    ],
+    "number": 18905,
+    "title": "Installers from previous versions of NVDA won't open",
+    "updatedAt": "2025-11-27T03:51:50Z",
+    "url": "https://github.com/nvaccess/nvda/issues/18905",
+    "repo": "nvaccess/nvda",
+    "queryLabel": "good first issue"
+  },
+  {
+    "createdAt": "2025-09-23T02:03:29Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWw0NTUzNDkxNjg=",
+        "name": "p5",
+        "description": "https://github.com/nvaccess/nvda/blob/master/projectDocs/issues/triage.md#priority",
+        "color": "5319E7"
+      },
+      {
+        "id": "MDU6TGFiZWw1OTYwOTcwMDY=",
+        "name": "feature",
+        "description": "",
+        "color": "bfdadc"
+      },
+      {
+        "id": "MDU6TGFiZWwyOTYwMjk1NzM1",
+        "name": "good first issue",
+        "description": "github features these at https://github.com/nvaccess/nvda/contribute",
+        "color": "5319E7"
+      },
+      {
+        "id": "LA_kwDOArwpJM7nJafB",
+        "name": "triaged",
+        "description": "Has been triaged, issue is waiting for implementation.",
+        "color": "109F01"
+      },
+      {
+        "id": "LA_kwDOArwpJM8AAAAB7APoZA",
+        "name": "feature/remote",
+        "description": "NVDA's Remote Access functionality",
+        "color": "bfd4f2"
+      }
+    ],
+    "number": 18968,
+    "title": "Allow quick reestablishment of NVDA Remote connection established at startup",
+    "updatedAt": "2026-01-17T13:29:27Z",
+    "url": "https://github.com/nvaccess/nvda/issues/18968",
+    "repo": "nvaccess/nvda",
+    "queryLabel": "good first issue"
+  },
+  {
+    "createdAt": "2025-11-20T14:44:02Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwyODQ1OTA4MTM=",
+        "name": "bug",
+        "description": "",
+        "color": "fc2929"
+      },
+      {
+        "id": "MDU6TGFiZWwyODQ1OTA4MTY=",
+        "name": "help wanted",
+        "description": "",
+        "color": "159818"
+      },
+      {
+        "id": "MDU6TGFiZWw0MDEyMzgzNDA=",
+        "name": "p3",
+        "description": "https://github.com/nvaccess/nvda/blob/master/projectDocs/issues/triage.md#priority",
+        "color": "0E8A16"
+      },
+      {
+        "id": "LA_kwDOArwpJM7nJafB",
+        "name": "triaged",
+        "description": "Has been triaged, issue is waiting for implementation.",
+        "color": "109F01"
+      },
+      {
+        "id": "LA_kwDOArwpJM8AAAAB6YtRLQ",
+        "name": "epic/64bit-migration",
+        "description": "",
+        "color": "FBCA04"
+      },
+      {
+        "id": "LA_kwDOArwpJM8AAAACPmI4nQ",
+        "name": "legacy/community-support",
+        "description": "Issues caused by legacy technologies where NV Access will accept a solution from the community",
+        "color": "696ff1"
+      }
+    ],
+    "number": 19245,
+    "title": "alpha AMD 64: error with apprentiClavier software",
+    "updatedAt": "2025-12-01T01:11:52Z",
+    "url": "https://github.com/nvaccess/nvda/issues/19245",
+    "repo": "nvaccess/nvda",
+    "queryLabel": "help wanted"
+  },
+  {
+    "createdAt": "2025-11-26T10:13:37Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWw0MDEyMzgzODU=",
+        "name": "p4",
+        "description": "https://github.com/nvaccess/nvda/blob/master/projectDocs/issues/triage.md#priority",
+        "color": "1D76DB"
+      },
+      {
+        "id": "MDU6TGFiZWw0NjI4Mzk1MzQ=",
+        "name": "quick fix",
+        "description": "",
+        "color": "fef2c0"
+      },
+      {
+        "id": "MDU6TGFiZWwxMDMyOTk4MjY2",
+        "name": "component/braille-display-drivers",
+        "description": "",
+        "color": "ccd6ff"
+      },
+      {
+        "id": "MDU6TGFiZWwxOTA2NzIyMzQ1",
+        "name": "feature/input-gestures",
+        "description": "",
+        "color": "86930b"
+      },
+      {
+        "id": "MDU6TGFiZWwyOTYwMjk1NzM1",
+        "name": "good first issue",
+        "description": "github features these at https://github.com/nvaccess/nvda/contribute",
+        "color": "5319E7"
+      },
+      {
+        "id": "LA_kwDOArwpJM7nJafB",
+        "name": "triaged",
+        "description": "Has been triaged, issue is waiting for implementation.",
+        "color": "109F01"
+      }
+    ],
+    "number": 19284,
+    "title": "Eurobraille b.note: joystick up cannot be used for review_previousLine (firmware opens menu instead)",
+    "updatedAt": "2025-12-04T03:50:27Z",
+    "url": "https://github.com/nvaccess/nvda/issues/19284",
+    "repo": "nvaccess/nvda",
+    "queryLabel": "good first issue"
+  },
+  {
+    "createdAt": "2011-11-20T07:06:15Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwyODQ1OTA4MTM=",
+        "name": "bug",
+        "description": "",
+        "color": "fc2929"
+      },
+      {
+        "id": "MDU6TGFiZWwyODQ1OTA4MTY=",
+        "name": "help wanted",
+        "description": "",
+        "color": "159818"
+      },
+      {
+        "id": "MDU6TGFiZWwyODQ2MDE4MTY=",
+        "name": "app/microsoft-office",
+        "description": "",
+        "color": "16bc93"
+      },
+      {
+        "id": "MDU6TGFiZWw0NTUzNDkxNjg=",
+        "name": "p5",
+        "description": "https://github.com/nvaccess/nvda/blob/master/projectDocs/issues/triage.md#priority",
+        "color": "5319E7"
+      },
+      {
+        "id": "LA_kwDOArwpJM7nJafB",
+        "name": "triaged",
+        "description": "Has been triaged, issue is waiting for implementation.",
+        "color": "109F01"
+      },
+      {
+        "id": "LA_kwDOArwpJM8AAAACPmI4nQ",
+        "name": "legacy/community-support",
+        "description": "Issues caused by legacy technologies where NV Access will accept a solution from the community",
+        "color": "696ff1"
+      }
+    ],
+    "number": 1935,
+    "title": "Word Object model: With a bulleted/numbered list, selected using SHIFT+UP/DOWN ARROWS, NVDA doesn’t speak the bullet/number, where it should",
+    "updatedAt": "2026-02-08T23:27:21Z",
+    "url": "https://github.com/nvaccess/nvda/issues/1935",
+    "repo": "nvaccess/nvda",
+    "queryLabel": "help wanted"
+  },
+  {
+    "createdAt": "2025-12-09T03:43:01Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWw0NTUzNDkxNjg=",
+        "name": "p5",
+        "description": "https://github.com/nvaccess/nvda/blob/master/projectDocs/issues/triage.md#priority",
+        "color": "5319E7"
+      },
+      {
+        "id": "MDU6TGFiZWw0NjI4Mzk1MzQ=",
+        "name": "quick fix",
+        "description": "",
+        "color": "fef2c0"
+      },
+      {
+        "id": "MDU6TGFiZWw3ODkzNjkyOTQ=",
+        "name": "ux",
+        "description": "",
+        "color": "77bddd"
+      },
+      {
+        "id": "MDU6TGFiZWwxODk5OTA4ODAy",
+        "name": "app/vs-code",
+        "description": "",
+        "color": "fef2c0"
+      },
+      {
+        "id": "MDU6TGFiZWwyMDI3NDE4Mzkx",
+        "name": "feature/configuration",
+        "description": "Making NVDA more configurable.",
+        "color": "82a6ed"
+      },
+      {
+        "id": "MDU6TGFiZWwyOTYwMjk1NzM1",
+        "name": "good first issue",
+        "description": "github features these at https://github.com/nvaccess/nvda/contribute",
+        "color": "5319E7"
+      },
+      {
+        "id": "LA_kwDOArwpJM7nJafB",
+        "name": "triaged",
+        "description": "Has been triaged, issue is waiting for implementation.",
+        "color": "109F01"
+      }
+    ],
+    "number": 19353,
+    "title": "Make duration of indentation beeps configurable",
+    "updatedAt": "2026-05-06T00:07:31Z",
+    "url": "https://github.com/nvaccess/nvda/issues/19353",
+    "repo": "nvaccess/nvda",
+    "queryLabel": "good first issue"
+  },
+  {
+    "createdAt": "2025-12-16T16:57:25Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwyODQ1OTA4MTY=",
+        "name": "help wanted",
+        "description": "",
+        "color": "159818"
+      },
+      {
+        "id": "MDU6TGFiZWw0NTUzNDkxNjg=",
+        "name": "p5",
+        "description": "https://github.com/nvaccess/nvda/blob/master/projectDocs/issues/triage.md#priority",
+        "color": "5319E7"
+      },
+      {
+        "id": "MDU6TGFiZWw1OTYwOTcwMDY=",
+        "name": "feature",
+        "description": "",
+        "color": "bfdadc"
+      },
+      {
+        "id": "LA_kwDOArwpJM7nJafB",
+        "name": "triaged",
+        "description": "Has been triaged, issue is waiting for implementation.",
+        "color": "109F01"
+      },
+      {
+        "id": "LA_kwDOArwpJM8AAAACPmI4nQ",
+        "name": "legacy/community-support",
+        "description": "Issues caused by legacy technologies where NV Access will accept a solution from the community",
+        "color": "696ff1"
+      }
+    ],
+    "number": 19390,
+    "title": "Improve Display Model (GDI Hooking) to support graphics/symbols and undetected text in legacy apps",
+    "updatedAt": "2026-01-07T00:13:29Z",
+    "url": "https://github.com/nvaccess/nvda/issues/19390",
+    "repo": "nvaccess/nvda",
+    "queryLabel": "help wanted"
+  },
+  {
+    "createdAt": "2026-02-01T00:37:27Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwyOTIyMDA0NjA=",
+        "name": "feature/mouse-tracking",
+        "description": "",
+        "color": "c7def8"
+      },
+      {
+        "id": "MDU6TGFiZWw0MDEyMzgzODU=",
+        "name": "p4",
+        "description": "https://github.com/nvaccess/nvda/blob/master/projectDocs/issues/triage.md#priority",
+        "color": "1D76DB"
+      },
+      {
+        "id": "MDU6TGFiZWw1OTYwOTcwMDY=",
+        "name": "feature",
+        "description": "",
+        "color": "bfdadc"
+      },
+      {
+        "id": "MDU6TGFiZWwxOTcxMjY1MzA1",
+        "name": "audience/low-vision",
+        "description": "PR or issue is relevant to sighted or low vision users",
+        "color": "1dd4f4"
+      },
+      {
+        "id": "MDU6TGFiZWwyOTYwMjk1NzM1",
+        "name": "good first issue",
+        "description": "github features these at https://github.com/nvaccess/nvda/contribute",
+        "color": "5319E7"
+      },
+      {
+        "id": "LA_kwDOArwpJM7nJafB",
+        "name": "triaged",
+        "description": "Has been triaged, issue is waiting for implementation.",
+        "color": "109F01"
+      }
+    ],
+    "number": 19540,
+    "title": "Add a new mouse setting \"System focus follows mouse\"",
+    "updatedAt": "2026-04-01T04:41:32Z",
+    "url": "https://github.com/nvaccess/nvda/issues/19540",
+    "repo": "nvaccess/nvda",
+    "queryLabel": "good first issue"
+  },
+  {
+    "createdAt": "2026-04-18T20:47:27Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWw0MDEyMzgzODU=",
+        "name": "p4",
+        "description": "https://github.com/nvaccess/nvda/blob/master/projectDocs/issues/triage.md#priority",
+        "color": "1D76DB"
+      },
+      {
+        "id": "MDU6TGFiZWw0NjI4Mzk1MzQ=",
+        "name": "quick fix",
+        "description": "",
+        "color": "fef2c0"
+      },
+      {
+        "id": "MDU6TGFiZWw1OTYwOTcwMDY=",
+        "name": "feature",
+        "description": "",
+        "color": "bfdadc"
+      },
+      {
+        "id": "MDU6TGFiZWwyOTYwMjk1NzM1",
+        "name": "good first issue",
+        "description": "github features these at https://github.com/nvaccess/nvda/contribute",
+        "color": "5319E7"
+      },
+      {
+        "id": "LA_kwDOArwpJM7nJafB",
+        "name": "triaged",
+        "description": "Has been triaged, issue is waiting for implementation.",
+        "color": "109F01"
+      },
+      {
+        "id": "LA_kwDOArwpJM8AAAABI4u_pg",
+        "name": "feature/addon-store",
+        "description": "Features / behavior of the add-on Store",
+        "color": "946B11"
+      }
+    ],
+    "number": 19971,
+    "title": "addon store. The appearence of the action button doesn't makes sence in some conditions where multiple addons are selected",
+    "updatedAt": "2026-04-20T23:18:42Z",
+    "url": "https://github.com/nvaccess/nvda/issues/19971",
+    "repo": "nvaccess/nvda",
+    "queryLabel": "good first issue"
+  },
+  {
+    "createdAt": "2012-12-22T23:40:03Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwyODQ1OTA4MTM=",
+        "name": "bug",
+        "description": "",
+        "color": "fc2929"
+      },
+      {
+        "id": "MDU6TGFiZWwyODQ1OTQ1ODA=",
+        "name": "component/installer",
+        "description": "",
+        "color": "00b3c6"
+      },
+      {
+        "id": "MDU6TGFiZWw0MDEyMzgzNDA=",
+        "name": "p3",
+        "description": "https://github.com/nvaccess/nvda/blob/master/projectDocs/issues/triage.md#priority",
+        "color": "0E8A16"
+      },
+      {
+        "id": "MDU6TGFiZWwyOTYwMjk1NzM1",
+        "name": "good first issue",
+        "description": "github features these at https://github.com/nvaccess/nvda/contribute",
+        "color": "5319E7"
+      },
+      {
+        "id": "LA_kwDOArwpJM7nJafB",
+        "name": "triaged",
+        "description": "Has been triaged, issue is waiting for implementation.",
+        "color": "109F01"
+      }
+    ],
+    "number": 2890,
+    "title": "Fail with error if user attempts to uninstall NVDA while it is running",
+    "updatedAt": "2026-03-22T23:21:50Z",
+    "url": "https://github.com/nvaccess/nvda/issues/2890",
+    "repo": "nvaccess/nvda",
+    "queryLabel": "good first issue"
+  },
+  {
+    "createdAt": "2013-08-24T00:54:40Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwyODQ1OTA4MTM=",
+        "name": "bug",
+        "description": "",
+        "color": "fc2929"
+      },
+      {
+        "id": "MDU6TGFiZWw0NTUzNDkxNjg=",
+        "name": "p5",
+        "description": "https://github.com/nvaccess/nvda/blob/master/projectDocs/issues/triage.md#priority",
+        "color": "5319E7"
+      },
+      {
+        "id": "MDU6TGFiZWwyOTYwMjk1NzM1",
+        "name": "good first issue",
+        "description": "github features these at https://github.com/nvaccess/nvda/contribute",
+        "color": "5319E7"
+      },
+      {
+        "id": "LA_kwDOArwpJM7nJafB",
+        "name": "triaged",
+        "description": "Has been triaged, issue is waiting for implementation.",
+        "color": "109F01"
+      }
+    ],
+    "number": 3464,
+    "title": "navigatorObject_toFocus doesn't send a becomeNavigatorObject event",
+    "updatedAt": "2026-04-27T00:04:40Z",
+    "url": "https://github.com/nvaccess/nvda/issues/3464",
+    "repo": "nvaccess/nvda",
+    "queryLabel": "good first issue"
+  },
+  {
+    "createdAt": "2018-12-02T14:14:22Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwyODQ1OTA4MTY=",
+        "name": "help wanted",
+        "description": "",
+        "color": "159818"
+      },
+      {
+        "id": "MDU6TGFiZWw0MDEyMzgzNDA=",
+        "name": "p3",
+        "description": "https://github.com/nvaccess/nvda/blob/master/projectDocs/issues/triage.md#priority",
+        "color": "0E8A16"
+      },
+      {
+        "id": "LA_kwDOArwpJM7nJafB",
+        "name": "triaged",
+        "description": "Has been triaged, issue is waiting for implementation.",
+        "color": "109F01"
+      },
+      {
+        "id": "LA_kwDOArwpJM8AAAACPmI4nQ",
+        "name": "legacy/community-support",
+        "description": "Issues caused by legacy technologies where NV Access will accept a solution from the community",
+        "color": "696ff1"
+      }
+    ],
+    "number": 9002,
+    "title": "Do not detect correct boundary when speaking sentence in word-like documents",
+    "updatedAt": "2026-01-06T01:26:27Z",
+    "url": "https://github.com/nvaccess/nvda/issues/9002",
+    "repo": "nvaccess/nvda",
+    "queryLabel": "help wanted"
+  },
+  {
+    "createdAt": "2019-06-19T14:13:46Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWwyODQ1OTA4MTY=",
+        "name": "help wanted",
+        "description": "",
+        "color": "159818"
+      },
+      {
+        "id": "MDU6TGFiZWw0MDEyMzgzODU=",
+        "name": "p4",
+        "description": "https://github.com/nvaccess/nvda/blob/master/projectDocs/issues/triage.md#priority",
+        "color": "1D76DB"
+      },
+      {
+        "id": "MDU6TGFiZWw3ODkzNjkyOTQ=",
+        "name": "ux",
+        "description": "",
+        "color": "77bddd"
+      },
+      {
+        "id": "LA_kwDOArwpJM7nJafB",
+        "name": "triaged",
+        "description": "Has been triaged, issue is waiting for implementation.",
+        "color": "109F01"
+      },
+      {
+        "id": "LA_kwDOArwpJM8AAAACPmI4nQ",
+        "name": "legacy/community-support",
+        "description": "Issues caused by legacy technologies where NV Access will accept a solution from the community",
+        "color": "696ff1"
+      }
+    ],
+    "number": 9775,
+    "title": "Windows 10: Start menu's search field does not always get focus",
+    "updatedAt": "2025-11-20T05:50:06Z",
+    "url": "https://github.com/nvaccess/nvda/issues/9775",
+    "repo": "nvaccess/nvda",
+    "queryLabel": "help wanted"
+  },
+  {
+    "createdAt": "2020-11-13T12:29:07Z",
+    "labels": [
+      {
+        "id": "MDU6TGFiZWw4OTM2ODA4NTE=",
+        "name": "documentation",
+        "description": "An update needs to be made to documentation",
+        "color": "d4bbf9"
+      }
+    ],
+    "number": 820,
+    "title": "waitFor + getByRole causing severe delays",
+    "updatedAt": "2026-01-14T15:28:09Z",
+    "url": "https://github.com/testing-library/dom-testing-library/issues/820",
+    "repo": "testing-library/dom-testing-library",
+    "queryLabel": "documentation"
   }
 ]
