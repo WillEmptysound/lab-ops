@@ -1,4 +1,4 @@
-name: A11y Issue Radar
+name: Issue Radar
 
 on:
   schedule:
@@ -22,38 +22,68 @@ jobs:
           set -uo pipefail
 
           REPOS=(
-            # core a11y tooling
+            # ====== Core a11y testing engines ======
             "dequelabs/axe-core"
             "dequelabs/axe-core-npm"
-            "a11yproject/a11yproject.com"
-            "jsx-eslint/eslint-plugin-jsx-a11y"
-            "microsoft/accessibility-insights-web"
             "IBM/equal-access"
+            "GoogleChrome/lighthouse"
+
+            # ====== A11y linters ======
+            "jsx-eslint/eslint-plugin-jsx-a11y"
+
+            # ====== Testing helpers ======
             "testing-library/jest-dom"
-            # smaller a11y libs (less umkämpft)
+            "testing-library/dom-testing-library"
+            "testing-library/user-event"
+            "component-driven/cypress-axe"
+
+            # ====== A11y CLIs / dashboards ======
             "pa11y/pa11y"
             "pa11y/pa11y-ci"
             "pa11y/pa11y-dashboard"
+
+            # ====== Headless / unstyled a11y component libs ======
+            "ariakit/ariakit"
+            "adobe/react-spectrum"
+            "radix-ui/primitives"
+            "downshift-js/downshift"
+
+            # ====== Specialized a11y micro-libs ======
             "focus-trap/focus-trap"
             "focus-trap/focus-trap-react"
             "KittyGiraudel/a11y-dialog"
-            "ericwbailey/a11y-syntax-highlighting"
+            "KittyGiraudel/a11y-toggle"
+            "KittyGiraudel/react-a11y-dialog"
+            "feedzai/react-a11y-tools"
+
+            # ====== W3C / WICG community polyfills ======
             "WICG/aom"
-            # GOV.UK / community
+            "WICG/inert"
+            "WICG/focus-visible"
+
+            # ====== Cross-platform a11y framework ======
+            "AccessKit/accesskit"
+
+            # ====== Screen readers / assistive tech ======
+            "nvaccess/nvda"
+
+            # ====== Microsoft a11y suite ======
+            "microsoft/accessibility-insights-web"
+
+            # ====== Community / docs ======
+            "a11yproject/a11yproject.com"
+
+            # ====== GOV.UK design system ======
             "alphagov/accessible-autocomplete"
             "alphagov/govuk-frontend"
             "alphagov/govuk-design-system"
-            # bigger but plenty of a11y issues
-            "GoogleChrome/lighthouse"
-            "component-driven/cypress-axe"
-            "adobe/react-spectrum"
-            "radix-ui/primitives"
           )
           LABELS=("good first issue" "help wanted" "documentation")
 
-          # 6-Monats-Frische
+          # 6-Monats-Frischefilter
           SINCE=$(date -u -d '6 months ago' +%Y-%m-%d)
           echo "Stage 1 cutoff: updated:>=$SINCE"
+          echo "Repos: ${#REPOS[@]}, Labels: ${#LABELS[@]}, Combinations: $((${#REPOS[@]} * ${#LABELS[@]}))"
 
           mkdir -p data
           TMP="$(mktemp)"
@@ -78,7 +108,7 @@ jobs:
           rm -f "$TMP"
           echo "Stage 1: $(jq 'length' data/candidates.json) unique candidates"
 
-      - name: Stage 2 - Enrich with body + comments
+      - name: Stage 2 - Enrich (body + comments + linked open PRs)
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -92,15 +122,39 @@ jobs:
             num=$(echo "$row" | jq -r .number)
             label=$(echo "$row" | jq -r .queryLabel)
             echo ">> enrich $repo#$num"
+
+            # Issue + comments
             full=$(gh issue view "$num" --repo "$repo" \
               --json number,title,url,body,createdAt,updatedAt,labels,comments,author \
               2>/dev/null) || full="{}"
-            merged=$(echo "$full" | jq --arg repo "$repo" --arg ql "$label" \
-              '. + {repo: $repo, queryLabel: $ql}')
+
+            # Verknuepfte offene PRs (closes/fixes/resolves #N im PR-Body)
+            linked_prs=$(gh pr list \
+              --repo "$repo" \
+              --state open \
+              --search "$num" \
+              --json number,title,url,body,createdAt \
+              --limit 10 2>/dev/null \
+              | jq --arg n "$num" '
+                  [.[]
+                    | select((.body // "")
+                        | test("(?i)(close[sd]?|fix(e[sd])?|resolve[sd]?)\\s*[:\\s]?\\s*#" + $n + "\\b")
+                       or ((.body // "") | test("(?i)(closes|fixes|resolves|see)\\s+(issue\\s+)?#" + $n + "\\b")))
+                    | {number, title, url, createdAt}
+                  ]' 2>/dev/null) || linked_prs="[]"
+            [ -z "$linked_prs" ] && linked_prs="[]"
+
+            merged=$(echo "$full" | jq \
+              --arg repo "$repo" \
+              --arg ql "$label" \
+              --argjson lpr "$linked_prs" \
+              '. + {repo: $repo, queryLabel: $ql, linkedOpenPRs: $lpr}')
+
             jq --argjson item "$merged" '. += [$item]' "$ENRICHED" > "$ENRICHED.tmp" \
               && mv "$ENRICHED.tmp" "$ENRICHED"
           done
           echo "Stage 2: $(jq 'length' $ENRICHED) issues enriched"
+          echo "  with linked open PRs: $(jq '[.[] | select(.linkedOpenPRs | length > 0)] | length' $ENRICHED)"
 
       - name: Stage 3 - Score and rank
         run: |
@@ -120,7 +174,7 @@ jobs:
               | map(select(is_maintainer))
               | map(select(
                   ((.body // "") | ascii_downcase)
-                  | test("pr welcome|would accept|happy to (review|accept)|contributions welcome|please (open|submit) a pr|that.?d be great|sounds good")
+                  | test("pr welcome|welcome a (pr|pull request)|would accept|happy to (review|accept)|contributions welcome|please (open|submit) a pr|that.?d be great|sounds good")
                 ))
               | length;
 
@@ -133,7 +187,6 @@ jobs:
                 ))
               | length;
 
-            # Recent claims only (last 120 days) - older claims often expire
             def claimed_recent(cs):
               cs
               | map(select(is_recent(.; 120)))
@@ -143,7 +196,6 @@ jobs:
                 ))
               | length;
 
-            # Did someone already submit a PR for this?
             def pr_submitted(cs):
               cs
               | map(select(
@@ -172,6 +224,7 @@ jobs:
               . as $i
               | (.comments // []) as $cs
               | (.body // "") as $b
+              | (.linkedOpenPRs // []) as $lpr
               | checkbox_progress($b) as $cb
               | (if $cb.total > 0 then ($cb.done / $cb.total) else 0 end) as $cb_ratio
               | days_since(.updatedAt) as $age_upd
@@ -181,6 +234,7 @@ jobs:
               | claimed_recent($cs)   as $cl
               | pr_submitted($cs)     as $pr
               | recent_activity_score($cs) as $rec_act
+              | ($lpr | length) as $lpr_count
               | (
                   (if $age_upd < 14 then 20 elif $age_upd < 30 then 12 elif $age_upd < 90 then 6 else 1 end)
                   + (if $age_cre < 90 then 25 elif $age_cre < 365 then 12 elif $age_cre < 730 then 4 else 0 end)
@@ -188,6 +242,7 @@ jobs:
                   + ($mr * -45)
                   + ($cl * -40)
                   + ($pr * -50)
+                  + ($lpr_count * -100)
                   + ($rec_act * 2)
                   + (if ($cb.total > 5 and $cb_ratio >= 0.7) then -25 else 0 end)
                   + (if ($cs | length) > 80 then -20 elif ($cs | length) > 40 then -8 else 0 end)
@@ -210,6 +265,7 @@ jobs:
                   maintainerRed: $mr,
                   claimedRecent: $cl,
                   prSubmitted: $pr,
+                  linkedOpenPRs: $lpr,
                   checkboxes: $cb,
                   bodyExcerpt: ($b | gsub("\r"; "") | .[0:300]),
                   recentComments: (
@@ -232,14 +288,20 @@ jobs:
                 count: length,
                 topIssues: (.[0:15]),
                 allRanked: (
-                  map({score, repo, number, title, url, daysSinceUpdate, claimedRecent, prSubmitted, maintainerGreen, maintainerRed})
+                  map({
+                    score, repo, number, title, url,
+                    daysSinceUpdate, claimedRecent, prSubmitted,
+                    linkedOpenPRs: (.linkedOpenPRs | length),
+                    maintainerGreen, maintainerRed
+                  })
                 )
               }
           ' data/enriched.json > data/issues_latest.json
 
-          echo "--- Top 10 ---"
-          jq -r '.topIssues[0:10][] | "  [\(.score)]  \(.repo)#\(.number)  -  \(.title[0:80])"' data/issues_latest.json
+          echo "--- Top 12 ---"
+          jq -r '.topIssues[0:12][] | "  [\(.score)]  \(.repo)#\(.number)  -  \(.title[0:80])"' data/issues_latest.json
           echo "Total: $(jq '.count' data/issues_latest.json)"
+          echo "Filtered out (linked PRs): $(jq '[.allRanked[] | select(.linkedOpenPRs > 0)] | length' data/issues_latest.json)"
 
       - name: Commit result if changed
         run: |
@@ -249,6 +311,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "Keine Änderungen."
           else
-            git commit -m "chore(a11y-radar): refresh scan v3 (more repos, better scoring)"
+            git commit -m "chore(a11y-radar): refresh scan v5 (32 repos, kleinere a11y-tools)"
             git push
           fi
