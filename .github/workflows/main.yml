@@ -1,13 +1,10 @@
 name: A11y Issue Radar
-
 on:
   schedule:
     - cron: '0 8 * * 1'   # Montags 08:00 UTC
   workflow_dispatch:
-
 permissions:
   contents: write
-
 jobs:
   scan:
     runs-on: ubuntu-latest
@@ -20,34 +17,28 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -uo pipefail
-
           REPOS=(
             # ====== Core a11y testing engines ======
             "dequelabs/axe-core"
             "dequelabs/axe-core-npm"
             "IBM/equal-access"
             "GoogleChrome/lighthouse"
-
             # ====== A11y linters ======
             "jsx-eslint/eslint-plugin-jsx-a11y"
-
             # ====== Testing helpers ======
             "testing-library/jest-dom"
             "testing-library/dom-testing-library"
             "testing-library/user-event"
             "component-driven/cypress-axe"
-
             # ====== A11y CLIs / dashboards ======
             "pa11y/pa11y"
             "pa11y/pa11y-ci"
             "pa11y/pa11y-dashboard"
-
             # ====== Headless / unstyled a11y component libs ======
             "ariakit/ariakit"
             "adobe/react-spectrum"
             "radix-ui/primitives"
             "downshift-js/downshift"
-
             # ====== Specialized a11y micro-libs ======
             "focus-trap/focus-trap"
             "focus-trap/focus-trap-react"
@@ -55,39 +46,30 @@ jobs:
             "KittyGiraudel/a11y-toggle"
             "KittyGiraudel/react-a11y-dialog"
             "feedzai/react-a11y-tools"
-
             # ====== W3C / WICG community polyfills ======
             "WICG/aom"
             "WICG/inert"
             "WICG/focus-visible"
-
             # ====== Cross-platform a11y framework ======
             "AccessKit/accesskit"
-
             # ====== Screen readers / assistive tech ======
             "nvaccess/nvda"
-
             # ====== Microsoft a11y suite ======
             "microsoft/accessibility-insights-web"
-
             # ====== Community / docs ======
             "a11yproject/a11yproject.com"
-
             # ====== GOV.UK design system ======
             "alphagov/accessible-autocomplete"
             "alphagov/govuk-frontend"
             "alphagov/govuk-design-system"
           )
           LABELS=("good first issue" "help wanted" "documentation")
-
-          # 2-Monats-Frischefilter (vorher 6 Monate, war zu lasch)
-          SINCE=$(date -u -d '2 months ago' +%Y-%m-%d)
+          # 14-Tage-Frischefilter (vorher 2 Monate)
+          SINCE=$(date -u -d '14 days ago' +%Y-%m-%d)
           echo "Stage 1 cutoff: updated:>=$SINCE"
           echo "Repos: ${#REPOS[@]}, Labels: ${#LABELS[@]}, Combinations: $((${#REPOS[@]} * ${#LABELS[@]}))"
-
           mkdir -p data
           TMP="$(mktemp)"
-
           for repo in "${REPOS[@]}"; do
             for label in "${LABELS[@]}"; do
               echo ">> $repo  /  '$label'"
@@ -103,7 +85,6 @@ jobs:
                 >> "$TMP" || true
             done
           done
-
           jq -s 'unique_by(.repo + "/" + (.number|tostring))' "$TMP" > data/candidates.json
           rm -f "$TMP"
           echo "Stage 1: $(jq 'length' data/candidates.json) unique candidates"
@@ -116,18 +97,15 @@ jobs:
           mkdir -p data
           ENRICHED="data/enriched.json"
           echo "[]" > "$ENRICHED"
-
           jq -c '.[]' data/candidates.json | while read -r row; do
             repo=$(echo "$row" | jq -r .repo)
             num=$(echo "$row" | jq -r .number)
             label=$(echo "$row" | jq -r .queryLabel)
             echo ">> enrich $repo#$num"
-
             # Issue + comments
             full=$(gh issue view "$num" --repo "$repo" \
               --json number,title,url,body,createdAt,updatedAt,labels,comments,author \
               2>/dev/null) || full="{}"
-
             # Verknuepfte offene PRs (closes/fixes/resolves #N im PR-Body)
             linked_prs=$(gh pr list \
               --repo "$repo" \
@@ -143,32 +121,27 @@ jobs:
                     | {number, title, url, createdAt}
                   ]' 2>/dev/null) || linked_prs="[]"
             [ -z "$linked_prs" ] && linked_prs="[]"
-
             merged=$(echo "$full" | jq \
               --arg repo "$repo" \
               --arg ql "$label" \
               --argjson lpr "$linked_prs" \
               '. + {repo: $repo, queryLabel: $ql, linkedOpenPRs: $lpr}')
-
             jq --argjson item "$merged" '. += [$item]' "$ENRICHED" > "$ENRICHED.tmp" \
               && mv "$ENRICHED.tmp" "$ENRICHED"
           done
           echo "Stage 2: $(jq 'length' $ENRICHED) issues enriched"
           echo "  with linked open PRs: $(jq '[.[] | select(.linkedOpenPRs | length > 0)] | length' $ENRICHED)"
 
-      - name: Stage 3 - Score and rank
+      - name: Stage 3 - Score, filter (14d), rank
         run: |
           set -uo pipefail
-
           jq '
             def is_maintainer:
               .authorAssociation == "OWNER"
               or .authorAssociation == "MEMBER"
               or .authorAssociation == "COLLABORATOR";
-
             def is_recent(c; days):
               ((now - (c.createdAt | fromdateiso8601)) < (days * 86400));
-
             def maintainer_green(cs):
               cs
               | map(select(is_maintainer))
@@ -177,7 +150,6 @@ jobs:
                   | test("pr welcome|welcome a (pr|pull request)|would accept|happy to (review|accept)|contributions welcome|please (open|submit) a pr|that.?d be great|sounds good")
                 ))
               | length;
-
             def maintainer_red(cs):
               cs
               | map(select(is_maintainer))
@@ -186,7 +158,6 @@ jobs:
                   | test("won.?t fix|will not (fix|implement)|no longer relevant|out of scope|wontfix|stale|closing( as)?|not planned|need to (test|investigate|check) (this )?first|let me (test|check)|extensive testing")
                 ))
               | length;
-
             def claimed_recent(cs):
               cs
               | map(select(is_recent(.; 120)))
@@ -195,7 +166,6 @@ jobs:
                   | test("i.?ll (work|take) (on )?this|i.?ll do this|taking this|i can (do|take) this|i.?m on it|working on this|let me work on|please assign( me)?|assign( me)?|could i (open|create|submit|raise) a pr|may i (work on|take|tackle)|would (love|like) to (work|take|tackle)|happy to (take|tackle|work on)|i would like to (work on|take|tackle)|here is the pr|i.?ve (opened|submitted|created) (a |the )?pr|see pr #")
                 ))
               | length;
-
             def pr_submitted(cs):
               cs
               | map(select(
@@ -203,23 +173,19 @@ jobs:
                   | test("(submitted|opened|created|here.?s|here is) (a |the )?(pr|pull request) #|see pr #|fixes? in #|merged in #|closed in #|resolved (by |in )#")
                 ))
               | length;
-
             def checkbox_progress(b):
               {
                 total: (b | [scan("- \\[[ xX]\\]")] | length),
                 done:  (b | [scan("- \\[[xX]\\]")]   | length)
               };
-
             def days_since(ts):
               if (ts == null or ts == "") then 9999
               else ((now - (ts | fromdateiso8601)) / 86400) | floor
               end;
-
             def recent_activity_score(cs):
               cs
               | map(select(is_recent(.; 60)))
               | length;
-
             def score:
               . as $i
               | (.comments // []) as $cs
@@ -279,9 +245,9 @@ jobs:
                       })
                   )
                 };
-
             map(select(.number != null and .updatedAt != null))
             | map(score)
+            | map(select(.daysSinceUpdate < 14))
             | sort_by(-.score)
             | {
                 scannedAt: (now | strftime("%Y-%m-%dT%H:%M:%SZ")),
@@ -293,3 +259,22 @@ jobs:
                     daysSinceUpdate, claimedRecent, prSubmitted,
                     linkedOpenPRs: (.linkedOpenPRs | length),
                     maintainerGreen,
+                    maintainerRed
+                  })
+                )
+              }
+          ' data/enriched.json > data/ranked.json
+          echo "Stage 3: ranked $(jq '.count' data/ranked.json) issues (post 14-day filter)"
+
+      - name: Stage 4 - Commit ranked output
+        run: |
+          set -uo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ranked.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore(radar): update a11y issue ranking"
+            git push
+          fi
