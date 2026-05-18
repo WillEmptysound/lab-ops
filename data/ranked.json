@@ -1,124 +1,9 @@
 {
-  "scannedAt": "2026-05-17T06:00:03Z",
-  "count": 8,
+  "scannedAt": "2026-05-18T01:33:10Z",
+  "count": 4,
+  "countLarge": 4,
+  "countSmall": 0,
   "topIssues": [
-    {
-      "score": 51,
-      "repo": "adobe/react-spectrum",
-      "number": 10015,
-      "title": "Docs are missing section on InteractOutside",
-      "url": "https://github.com/adobe/react-spectrum/issues/10015",
-      "queryLabel": "documentation",
-      "labels": [
-        "documentation"
-      ],
-      "createdAt": "2026-05-05T14:39:04Z",
-      "updatedAt": "2026-05-06T10:47:37Z",
-      "daysSinceUpdate": 10,
-      "daysSinceCreate": 11,
-      "commentCount": 3,
-      "recentActivity": 3,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "### 🙋 Documentation Request\n\nIt's exported alongside the other hooks, and seems intended as a public API, but is completely missing from the documentation. \n\n### 🧢 Your Company/Team\n\nQuizlet",
-      "recentComments": [
-        {
-          "author": "rhysevans-qz",
-          "association": "NONE",
-          "createdAt": "2026-05-06T10:47:37Z",
-          "excerpt": "Probably using it similarly to how you use it internally: to handle a click or other interaction outside a target element that reliably works even as the react-aria library evolves. I'm working on fix"
-        },
-        {
-          "author": "snowystinger",
-          "association": "MEMBER",
-          "createdAt": "2026-05-05T23:22:34Z",
-          "excerpt": "I think this response will have some more relevant information https://github.com/adobe/react-spectrum/issues/9904#issuecomment-4219050595\n\nThe short of it is that `useInteractOutside` is considered p"
-        },
-        {
-          "author": "yihuiliao",
-          "association": "MEMBER",
-          "createdAt": "2026-05-05T18:39:11Z",
-          "excerpt": "Yeah we are aware that we are missing quite of few docs for our hooks, but we do plan to add additional documentation for them soonish"
-        }
-      ]
-    },
-    {
-      "score": 45,
-      "repo": "alphagov/govuk-design-system",
-      "number": 5277,
-      "title": "Add links to department design systems",
-      "url": "https://github.com/alphagov/govuk-design-system/issues/5277",
-      "queryLabel": "documentation",
-      "labels": [
-        "documentation"
-      ],
-      "createdAt": "2026-05-08T10:23:26Z",
-      "updatedAt": "2026-05-08T10:23:26Z",
-      "daysSinceUpdate": 8,
-      "daysSinceCreate": 8,
-      "commentCount": 0,
-      "recentActivity": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "## Related documentation\n\nCommunity/resource pages maybe?\n\n## Suggestion\n\nApologies if I missed an existing issue, I did do a search but couldnt find anything.\n\nI think it would be useful to add links to department design systems, possibly in the Community section.\n\nThey have useful additional compo",
-      "recentComments": []
-    },
-    {
-      "score": 34,
-      "repo": "downshift-js/downshift",
-      "number": 1668,
-      "title": "Dark mode contrast issue on docs page",
-      "url": "https://github.com/downshift-js/downshift/issues/1668",
-      "queryLabel": "help wanted",
-      "labels": [
-        "help wanted",
-        "docs"
-      ],
-      "createdAt": "2026-01-15T12:39:01Z",
-      "updatedAt": "2026-05-07T06:18:24Z",
-      "daysSinceUpdate": 9,
-      "daysSinceCreate": 121,
-      "commentCount": 2,
-      "recentActivity": 1,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "When using the documentatin in dark mode, the results under the usage examples on the hooks pages are very light gray on a white background and becomes very hard to see.\n\nI’m happy to help with a PR if there’s agreement on the expected behavior or design direction.\n\nHere are some of them:\n\n<img widt",
-      "recentComments": [
-        {
-          "author": "s-jegorow",
-          "association": "NONE",
-          "createdAt": "2026-05-07T06:18:24Z",
-          "excerpt": "Heya @ayberkuman ,  are you still planning a PR for this? If not, I'd like to give it a try.\n\nThe plan would be to replace the hardcoded colors in the demo pages (`color: 'black'` fallbacks, `border: "
-        },
-        {
-          "author": "silviuaavram",
-          "association": "COLLABORATOR",
-          "createdAt": "2026-01-30T08:41:55Z",
-          "excerpt": "Hey @ayberkuman this is quite a pain, thanks opening the issue! Feel free to propose the improvement and create a PR, it will really help the docs. "
-        }
-      ]
-    },
     {
       "score": 34,
       "repo": "nvaccess/nvda",
@@ -135,8 +20,8 @@
       ],
       "createdAt": "2025-12-16T16:57:25Z",
       "updatedAt": "2026-05-11T15:45:21Z",
-      "daysSinceUpdate": 5,
-      "daysSinceCreate": 151,
+      "daysSinceUpdate": 6,
+      "daysSinceCreate": 152,
       "commentCount": 11,
       "recentActivity": 1,
       "maintainerGreen": 0,
@@ -168,59 +53,8 @@
           "createdAt": "2026-01-06T20:54:53Z",
           "excerpt": "@ruifontes You can find it here, as of now, without any improvements to the display model. I don't know how long it is going to take until I have the display model stuff ready. https://github.com/Emil"
         }
-      ]
-    },
-    {
-      "score": 28,
-      "repo": "nvaccess/nvda",
-      "number": 10692,
-      "title": "Report status of screen curtain at startup when \"Play a sound when toggling screen curtain\" is disabled.",
-      "url": "https://github.com/nvaccess/nvda/issues/10692",
-      "queryLabel": "good first issue",
-      "labels": [
-        "z goodForNewDev (archived)",
-        "p4",
-        "quick fix",
-        "good first issue",
-        "feature/screen-curtain",
-        "triaged"
       ],
-      "createdAt": "2020-01-16T23:34:29Z",
-      "updatedAt": "2026-05-08T09:35:06Z",
-      "daysSinceUpdate": 8,
-      "daysSinceCreate": 2312,
-      "commentCount": 24,
-      "recentActivity": 4,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "<!--\nPlease thoroughly read NVDA's wiki article on how to fill in this template, including how to provide the required files.\nIssues may be closed if the required information is not present.\nhttps://github.com/nvaccess/nvda/wiki/Github-issue-template-explanation-and-examples\n-->\n\n### Steps to reprod",
-      "recentComments": [
-        {
-          "author": "XLTechie",
-          "association": "COLLABORATOR",
-          "createdAt": "2026-05-08T09:35:06Z",
-          "excerpt": "You could also trigger it to speak using the postNvdaStartup extensionPoint.\n\nIt should definitely speak after \"Starting NVDA\". But probably before automatic reading, as people are likely to silence t"
-        },
-        {
-          "author": "makhlwf",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-05-08T07:45:21Z",
-          "excerpt": "> First of all, this should probably be handled in `_screenCurtain.py`.\n> \n> Secondly, it might be related to speech priority. It should be possible to refer to the implementation of the remote featur"
-        },
-        {
-          "author": "hwf1324",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-05-07T18:00:13Z",
-          "excerpt": "First of all, this should probably be handled in `_screenCurtain.py`.\n\nSecondly, it might be related to speech priority. It should be possible to refer to the implementation of the remote feature, usi"
-        }
-      ]
+      "repoClass": "large"
     },
     {
       "score": 24,
@@ -236,8 +70,8 @@
       ],
       "createdAt": "2025-01-31T16:11:48Z",
       "updatedAt": "2026-05-14T13:43:39Z",
-      "daysSinceUpdate": 2,
-      "daysSinceCreate": 470,
+      "daysSinceUpdate": 3,
+      "daysSinceCreate": 471,
       "commentCount": 0,
       "recentActivity": 0,
       "maintainerGreen": 0,
@@ -250,7 +84,8 @@
         "done": 0
       },
       "bodyExcerpt": "<!--\n\n  This is a template for any issues that aren’t bug reports or new feature requests. The headings in this section provide examples of the information you might want to include, but feel free to add/delete sections where appropriate.\n\n-->\n\n## What\nThere are some things we've identified in our t",
-      "recentComments": []
+      "recentComments": [],
+      "repoClass": "large"
     },
     {
       "score": -6,
@@ -270,7 +105,7 @@
       ],
       "createdAt": "2025-12-09T03:43:01Z",
       "updatedAt": "2026-05-12T08:19:12Z",
-      "daysSinceUpdate": 4,
+      "daysSinceUpdate": 5,
       "daysSinceCreate": 159,
       "commentCount": 6,
       "recentActivity": 1,
@@ -303,7 +138,8 @@
           "createdAt": "2025-12-10T23:52:49Z",
           "excerpt": "> I just wanted to emphasize the fact that when two groups of users encounter conflicting interests regarding a feature, the easiest solution is to add a configurable option so that each one can confi"
         }
-      ]
+      ],
+      "repoClass": "large"
     },
     {
       "score": -74,
@@ -318,7 +154,7 @@
       ],
       "createdAt": "2025-02-11T02:51:42Z",
       "updatedAt": "2026-05-13T18:30:38Z",
-      "daysSinceUpdate": 3,
+      "daysSinceUpdate": 4,
       "daysSinceCreate": 460,
       "commentCount": 10,
       "recentActivity": 1,
@@ -358,69 +194,19 @@
           "createdAt": "2025-09-01T15:24:45Z",
           "excerpt": "> Maybe we could add a `focusableRef` prop or something like that to DateInput? We're pretty consistent across all of our components that the forwarded `ref` always goes to the outer-most element. But"
         }
-      ]
+      ],
+      "repoClass": "large"
     }
   ],
   "allRanked": [
     {
-      "score": 51,
-      "repo": "adobe/react-spectrum",
-      "number": 10015,
-      "title": "Docs are missing section on InteractOutside",
-      "url": "https://github.com/adobe/react-spectrum/issues/10015",
-      "daysSinceUpdate": 10,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": 45,
-      "repo": "alphagov/govuk-design-system",
-      "number": 5277,
-      "title": "Add links to department design systems",
-      "url": "https://github.com/alphagov/govuk-design-system/issues/5277",
-      "daysSinceUpdate": 8,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": 34,
-      "repo": "downshift-js/downshift",
-      "number": 1668,
-      "title": "Dark mode contrast issue on docs page",
-      "url": "https://github.com/downshift-js/downshift/issues/1668",
-      "daysSinceUpdate": 9,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
       "score": 34,
       "repo": "nvaccess/nvda",
+      "repoClass": "large",
       "number": 19390,
       "title": "Improve Display Model (GDI Hooking) to support graphics/symbols and undetected text in legacy apps",
       "url": "https://github.com/nvaccess/nvda/issues/19390",
-      "daysSinceUpdate": 5,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": 28,
-      "repo": "nvaccess/nvda",
-      "number": 10692,
-      "title": "Report status of screen curtain at startup when \"Play a sound when toggling screen curtain\" is disabled.",
-      "url": "https://github.com/nvaccess/nvda/issues/10692",
-      "daysSinceUpdate": 8,
+      "daysSinceUpdate": 6,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
@@ -430,10 +216,11 @@
     {
       "score": 24,
       "repo": "alphagov/govuk-frontend",
+      "repoClass": "large",
       "number": 5674,
       "title": "Improve release documentation",
       "url": "https://github.com/alphagov/govuk-frontend/issues/5674",
-      "daysSinceUpdate": 2,
+      "daysSinceUpdate": 3,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
@@ -443,10 +230,11 @@
     {
       "score": -6,
       "repo": "nvaccess/nvda",
+      "repoClass": "large",
       "number": 19353,
       "title": "Make duration of indentation beeps configurable",
       "url": "https://github.com/nvaccess/nvda/issues/19353",
-      "daysSinceUpdate": 4,
+      "daysSinceUpdate": 5,
       "claimedRecent": 1,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
@@ -456,10 +244,11 @@
     {
       "score": -74,
       "repo": "adobe/react-spectrum",
+      "repoClass": "large",
       "number": 7756,
       "title": "Unable to pass ref to Datepicker [react-aria-components]",
       "url": "https://github.com/adobe/react-spectrum/issues/7756",
-      "daysSinceUpdate": 3,
+      "daysSinceUpdate": 4,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 1,
