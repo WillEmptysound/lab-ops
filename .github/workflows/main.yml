@@ -17,7 +17,8 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -uo pipefail
-          REPOS=(
+          # Grosse Repos (>2500 Stars): 7-Tage-Fenster - hart, taeglicher Issue-Flow
+          REPOS_LARGE=(
             # ====== Core a11y testing engines ======
             "dequelabs/axe-core"
             "dequelabs/axe-core-npm"
@@ -63,31 +64,58 @@ jobs:
             "alphagov/govuk-frontend"
             "alphagov/govuk-design-system"
           )
+          # Kleine/mittlere Repos (100-2500 Stars): 14-Tage-Fenster - geduldiger, weil weniger Issue-Volumen
+          REPOS_SMALL=(
+            # ====== ARIA-Spec-Libs / Foundational ======
+            "A11yance/aria-query"
+            # ====== Focus-Management Micro-Libs (theKashey) ======
+            "theKashey/react-focus-lock"
+            "theKashey/focus-lock"
+            "theKashey/aria-hidden"
+            # ====== Komponenten-Libs ======
+            "incluud/accessible-astro-components"
+            # ====== Authoring / CMS-a11y ======
+            "itmaybejj/editoria11y"
+            "ryersondmp/sa11y"
+            # ====== CSS-basiertes Flagging ======
+            "ffoodd/a11y.css"
+          )
           LABELS=("good first issue" "help wanted" "documentation")
-          # 14-Tage-Frischefilter (vorher 2 Monate)
-          SINCE=$(date -u -d '14 days ago' +%Y-%m-%d)
-          echo "Stage 1 cutoff: updated:>=$SINCE"
-          echo "Repos: ${#REPOS[@]}, Labels: ${#LABELS[@]}, Combinations: $((${#REPOS[@]} * ${#LABELS[@]}))"
+          SINCE_LARGE=$(date -u -d '7 days ago'  +%Y-%m-%d)
+          SINCE_SMALL=$(date -u -d '14 days ago' +%Y-%m-%d)
+          echo "Stage 1 cutoffs: large updated:>=$SINCE_LARGE, small updated:>=$SINCE_SMALL"
+          echo "Large repos: ${#REPOS_LARGE[@]}, Small repos: ${#REPOS_SMALL[@]}, Labels: ${#LABELS[@]}"
           mkdir -p data
           TMP="$(mktemp)"
-          for repo in "${REPOS[@]}"; do
+          scan_one() {
+            local repo="$1" label="$2" since="$3" class="$4"
+            echo ">> [$class] $repo  /  '$label'  (since $since)"
+            gh issue list \
+              --repo "$repo" \
+              --label "$label" \
+              --state open \
+              --search "no:assignee updated:>=$since sort:updated-desc" \
+              --json number,title,url,updatedAt,createdAt,labels \
+              --limit 30 2>/dev/null \
+            | jq -c --arg repo "$repo" --arg queryLabel "$label" --arg repoClass "$class" \
+                '.[] | . + {repo: $repo, queryLabel: $queryLabel, repoClass: $repoClass}' \
+              >> "$TMP" || true
+          }
+          for repo in "${REPOS_LARGE[@]}"; do
             for label in "${LABELS[@]}"; do
-              echo ">> $repo  /  '$label'"
-              gh issue list \
-                --repo "$repo" \
-                --label "$label" \
-                --state open \
-                --search "no:assignee updated:>=$SINCE sort:updated-desc" \
-                --json number,title,url,updatedAt,createdAt,labels \
-                --limit 30 2>/dev/null \
-              | jq -c --arg repo "$repo" --arg queryLabel "$label" \
-                  '.[] | . + {repo: $repo, queryLabel: $queryLabel}' \
-                >> "$TMP" || true
+              scan_one "$repo" "$label" "$SINCE_LARGE" "large"
+            done
+          done
+          for repo in "${REPOS_SMALL[@]}"; do
+            for label in "${LABELS[@]}"; do
+              scan_one "$repo" "$label" "$SINCE_SMALL" "small"
             done
           done
           jq -s 'unique_by(.repo + "/" + (.number|tostring))' "$TMP" > data/candidates.json
           rm -f "$TMP"
           echo "Stage 1: $(jq 'length' data/candidates.json) unique candidates"
+          echo "  large: $(jq '[.[] | select(.repoClass == "large")] | length' data/candidates.json)"
+          echo "  small: $(jq '[.[] | select(.repoClass == "small")] | length' data/candidates.json)"
 
       - name: Stage 2 - Enrich (body + comments + linked open PRs)
         env:
@@ -101,7 +129,8 @@ jobs:
             repo=$(echo "$row" | jq -r .repo)
             num=$(echo "$row" | jq -r .number)
             label=$(echo "$row" | jq -r .queryLabel)
-            echo ">> enrich $repo#$num"
+            class=$(echo "$row" | jq -r '.repoClass // "large"')
+            echo ">> enrich $repo#$num ($class)"
             # Issue + comments
             full=$(gh issue view "$num" --repo "$repo" \
               --json number,title,url,body,createdAt,updatedAt,labels,comments,author \
@@ -124,15 +153,16 @@ jobs:
             merged=$(echo "$full" | jq \
               --arg repo "$repo" \
               --arg ql "$label" \
+              --arg rc "$class" \
               --argjson lpr "$linked_prs" \
-              '. + {repo: $repo, queryLabel: $ql, linkedOpenPRs: $lpr}')
+              '. + {repo: $repo, queryLabel: $ql, repoClass: $rc, linkedOpenPRs: $lpr}')
             jq --argjson item "$merged" '. += [$item]' "$ENRICHED" > "$ENRICHED.tmp" \
               && mv "$ENRICHED.tmp" "$ENRICHED"
           done
           echo "Stage 2: $(jq 'length' $ENRICHED) issues enriched"
           echo "  with linked open PRs: $(jq '[.[] | select(.linkedOpenPRs | length > 0)] | length' $ENRICHED)"
 
-      - name: Stage 3 - Score, filter (14d), rank
+      - name: Stage 3 - Score, filter (large=7d, small=14d), rank
         run: |
           set -uo pipefail
           jq '
@@ -246,16 +276,21 @@ jobs:
                   )
                 };
             map(select(.number != null and .updatedAt != null))
-            | map(score)
-            | map(select(.daysSinceUpdate < 14))
+            | map(score + {repoClass: (.repoClass // "large")})
+            | map(select(
+                (.repoClass == "large" and .daysSinceUpdate < 7)
+                or (.repoClass == "small" and .daysSinceUpdate < 14)
+              ))
             | sort_by(-.score)
             | {
                 scannedAt: (now | strftime("%Y-%m-%dT%H:%M:%SZ")),
                 count: length,
+                countLarge: ([.[] | select(.repoClass == "large")] | length),
+                countSmall: ([.[] | select(.repoClass == "small")] | length),
                 topIssues: (.[0:15]),
                 allRanked: (
                   map({
-                    score, repo, number, title, url,
+                    score, repo, repoClass, number, title, url,
                     daysSinceUpdate, claimedRecent, prSubmitted,
                     linkedOpenPRs: (.linkedOpenPRs | length),
                     maintainerGreen,
@@ -264,7 +299,9 @@ jobs:
                 )
               }
           ' data/enriched.json > data/ranked.json
-          echo "Stage 3: ranked $(jq '.count' data/ranked.json) issues (post 14-day filter)"
+          echo "Stage 3: ranked $(jq '.count' data/ranked.json) issues total"
+          echo "  large (7d):  $(jq '.countLarge' data/ranked.json)"
+          echo "  small (14d): $(jq '.countSmall' data/ranked.json)"
 
       - name: Stage 4 - Commit ranked output
         run: |
