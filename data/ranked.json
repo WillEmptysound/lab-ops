@@ -1,11 +1,11 @@
 {
-  "scannedAt": "2026-05-18T17:35:32Z",
+  "scannedAt": "2026-05-25T16:35:15Z",
   "count": 4,
   "countLarge": 4,
   "countSmall": 0,
   "topIssues": [
     {
-      "score": 47,
+      "score": 51,
       "repo": "nvaccess/nvda",
       "number": 20159,
       "title": "Failure to create portable copy when path is a top-level drive with no backslash",
@@ -19,11 +19,11 @@
         "feature/portable"
       ],
       "createdAt": "2026-05-18T02:01:42Z",
-      "updatedAt": "2026-05-18T06:35:50Z",
-      "daysSinceUpdate": 0,
-      "daysSinceCreate": 0,
-      "commentCount": 1,
-      "recentActivity": 1,
+      "updatedAt": "2026-05-21T01:27:56Z",
+      "daysSinceUpdate": 4,
+      "daysSinceCreate": 7,
+      "commentCount": 3,
+      "recentActivity": 3,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 0,
@@ -36,6 +36,18 @@
       "bodyExcerpt": "### Brief summary\n\nAnerror occurs when trying to create a portable copy when path is set to a drive without a backslash\n\n### Steps to reproduce\n\n1. Open the NVDA menu\n2. Go to \"tools\"\n3. Go to \"create portable copy\"\n4. Type a drive with no trailing backslash, for example `c:` or `d:`\n5. Optionally, ",
       "recentComments": [
         {
+          "author": "XLTechie",
+          "association": "COLLABORATOR",
+          "createdAt": "2026-05-21T01:27:56Z",
+          "excerpt": "Why should this work?\n\nSpecifying a drive letter without a backslash, makes the exact destination undefined.\n"
+        },
+        {
+          "author": "bakaqimoji",
+          "association": "NONE",
+          "createdAt": "2026-05-19T08:32:32Z",
+          "excerpt": "Hi maintainers, I'd like to attempt this issue.\n\n/attempt #20159\n\nPlan:\n- Root cause: `os.path.isabs(\"D:\")` returns `False` on Windows because `D:` without backslash is a relative path (current dir on"
+        },
+        {
           "author": "CyrilleB79",
           "association": "CONTRIBUTOR",
           "createdAt": "2026-05-18T06:21:14Z",
@@ -45,22 +57,113 @@
       "repoClass": "large"
     },
     {
-      "score": 45,
-      "repo": "alphagov/govuk-design-system",
-      "number": 5306,
-      "title": "Checkbox guidance for toggle may be ambiguous",
-      "url": "https://github.com/alphagov/govuk-design-system/issues/5306",
-      "queryLabel": "documentation",
+      "score": 49,
+      "repo": "dequelabs/axe-core",
+      "number": 5116,
+      "title": "Expose a rule's `enabled` property in the official API",
+      "url": "https://github.com/dequelabs/axe-core/issues/5116",
+      "queryLabel": "help wanted",
       "labels": [
-        "documentation",
-        "checkboxes",
-        "radios"
+        "feat",
+        "help wanted"
       ],
-      "createdAt": "2026-05-18T13:57:24Z",
-      "updatedAt": "2026-05-18T13:59:23Z",
+      "createdAt": "2026-05-24T15:58:37Z",
+      "updatedAt": "2026-05-25T15:34:32Z",
       "daysSinceUpdate": 0,
-      "daysSinceCreate": 0,
-      "commentCount": 0,
+      "daysSinceCreate": 1,
+      "commentCount": 2,
+      "recentActivity": 2,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "### Product\n\naxe-core\n\n### Feature Description\n\nTo my knowledge, there's currently no official way to get the list of rules that are enabled when `axe.run()` is called with no options.\n\nThere's an [`axe.getRules()`](https://github.com/dequelabs/axe-core/blob/c4f60ffcd47eb64514e8cbafbc68ad357ce60e77/",
+      "recentComments": [
+        {
+          "author": "pomerantsev",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2026-05-25T15:34:32Z",
+          "excerpt": "Thanks @WilcoFiers, I'll give it a try."
+        },
+        {
+          "author": "WilcoFiers",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2026-05-25T12:28:11Z",
+          "excerpt": "@pomerantsev I think adding `enabled` to `getRules` is an excellent idea. Would you be up for opening a pull request?\n\nAs for `axe._audit`. I'd strongly advice against that. We are at some point going"
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": 36,
+      "repo": "adobe/react-spectrum",
+      "number": 8239,
+      "title": "Table is not interactive on first click in SSR",
+      "url": "https://github.com/adobe/react-spectrum/issues/8239",
+      "queryLabel": "help wanted",
+      "labels": [
+        "help wanted",
+        "needs investigation"
+      ],
+      "createdAt": "2025-05-15T14:32:17Z",
+      "updatedAt": "2026-05-25T14:57:10Z",
+      "daysSinceUpdate": 0,
+      "daysSinceCreate": 375,
+      "commentCount": 14,
+      "recentActivity": 6,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "### Provide a general summary of the issue here\n\nReact Aria's table is not interactive on the first click when the page was loaded through SSR.\n\n### 🤔 Expected Behavior?\n\nThe table should be interactive/hydrated on page load, not only after a user clicked on the page.\n\n### 😯 Current Behavior\n\n-\n\n###",
+      "recentComments": [
+        {
+          "author": "mryechkin",
+          "association": "NONE",
+          "createdAt": "2026-05-25T14:57:10Z",
+          "excerpt": "> This is not about keyboard support or not. This is about all your users will have to click twice on the action they want to do in the table on the first pageload.\n\nSure, but you'd be losing the keyb"
+        },
+        {
+          "author": "gijsroge",
+          "association": "NONE",
+          "createdAt": "2026-05-25T14:47:18Z",
+          "excerpt": "> > Just use Tanstack Table.\n> \n> That doesn't provide any keyboard navigation support.\n\nThis is not about keyboard support or not. This is about all your users will have to click twice on the action "
+        },
+        {
+          "author": "mryechkin",
+          "association": "NONE",
+          "createdAt": "2026-05-25T13:41:17Z",
+          "excerpt": "> Just use Tanstack Table.\n\nThat doesn't provide any keyboard navigation support."
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": 32,
+      "repo": "downshift-js/downshift",
+      "number": 1668,
+      "title": "Dark mode contrast issue on docs page",
+      "url": "https://github.com/downshift-js/downshift/issues/1668",
+      "queryLabel": "help wanted",
+      "labels": [
+        "help wanted",
+        "docs"
+      ],
+      "createdAt": "2026-01-15T12:39:01Z",
+      "updatedAt": "2026-05-25T13:32:18Z",
+      "daysSinceUpdate": 0,
+      "daysSinceCreate": 130,
+      "commentCount": 1,
       "recentActivity": 0,
       "maintainerGreen": 0,
       "maintainerRed": 0,
@@ -68,119 +171,16 @@
       "prSubmitted": 0,
       "linkedOpenPRs": [],
       "checkboxes": {
-        "total": 1,
-        "done": 0
-      },
-      "bodyExcerpt": "<!--\n\n  This is a template for any issues that aren’t bug reports or new feature requests. The headings in this section provide examples of the information you might want to include, but feel free to add/delete sections where appropriate.\n\n-->\n\n## What\n\nThere's been some confusion around this \"[When",
-      "recentComments": [],
-      "repoClass": "large"
-    },
-    {
-      "score": -6,
-      "repo": "nvaccess/nvda",
-      "number": 19353,
-      "title": "Make duration of indentation beeps configurable",
-      "url": "https://github.com/nvaccess/nvda/issues/19353",
-      "queryLabel": "good first issue",
-      "labels": [
-        "p5",
-        "quick fix",
-        "ux",
-        "app/vs-code",
-        "feature/configuration",
-        "good first issue",
-        "triaged"
-      ],
-      "createdAt": "2025-12-09T03:43:01Z",
-      "updatedAt": "2026-05-12T08:19:12Z",
-      "daysSinceUpdate": 6,
-      "daysSinceCreate": 160,
-      "commentCount": 6,
-      "recentActivity": 1,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 1,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "### Is your feature request related to a problem? Please describe\n\nIn #18898, the length of indentation beeps was reduced from 80ms to 40ms. However, this can cause problems for some users, such as those using audio cues in VS Code.\n\n### Describe the solution you'd like\n\nCompleting the work started ",
+      "bodyExcerpt": "When using the documentatin in dark mode, the results under the usage examples on the hooks pages are very light gray on a white background and becomes very hard to see.\n\nI’m happy to help with a PR if there’s agreement on the expected behavior or design direction.\n\nHere are some of them:\n\n<img widt",
       "recentComments": [
         {
-          "author": "yncat",
-          "association": "NONE",
-          "createdAt": "2026-05-12T08:15:19Z",
-          "excerpt": "Hi.\nFirst, I'm finding the new beep length just a bit to short, personally. But I do agree with all of the matters that everyone has raised so far. \nI always like simple, consistent software. To many "
-        },
-        {
-          "author": "CyrilleB79",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2025-12-11T08:57:27Z",
-          "excerpt": "Thanks @SaschaCowley for elaborating a bit more, that was my main request.\n\nSo if we agree that there is no better solution than creating a new option, the question that comes is: where will this opti"
-        },
-        {
-          "author": "SaschaCowley",
-          "association": "MEMBER",
-          "createdAt": "2025-12-10T23:52:49Z",
-          "excerpt": "> I just wanted to emphasize the fact that when two groups of users encounter conflicting interests regarding a feature, the easiest solution is to add a configurable option so that each one can confi"
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": -74,
-      "repo": "adobe/react-spectrum",
-      "number": 7756,
-      "title": "Unable to pass ref to Datepicker [react-aria-components]",
-      "url": "https://github.com/adobe/react-spectrum/issues/7756",
-      "queryLabel": "good first issue",
-      "labels": [
-        "good first issue",
-        "DatePicker"
-      ],
-      "createdAt": "2025-02-11T02:51:42Z",
-      "updatedAt": "2026-05-13T18:30:38Z",
-      "daysSinceUpdate": 4,
-      "daysSinceCreate": 461,
-      "commentCount": 10,
-      "recentActivity": 1,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [
-        {
-          "number": 9185,
-          "title": "feat: Add `focusableRef` support to `DateInput`",
-          "url": "https://github.com/adobe/react-spectrum/pull/9185",
-          "createdAt": "2025-11-14T15:08:14Z"
-        }
-      ],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "### Provide a general summary of the issue here\n\nI have a custom [Datepicker](https://react-spectrum.adobe.com/react-aria/DatePicker.html) component that I'm integrating with `react-hook-form`. I was wondering which component should received the ref (passed by forwardRef), I need to do so since `rea",
-      "recentComments": [
-        {
-          "author": "LaurAndreea10",
-          "association": "NONE",
-          "createdAt": "2026-05-13T18:30:38Z",
-          "excerpt": "Hi! I’d like to take this one.\nI’ll start by reproducing the issue with a small react-hook-form example, then I’ll check which component should correctly receive the forwarded ref and propose a focuse"
-        },
-        {
-          "author": "hasegawa-101",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2025-11-14T08:17:16Z",
-          "excerpt": "Hi! @snowystinger I'd like to work on this issue. I'll submit a PR soon."
-        },
-        {
-          "author": "lensbart",
-          "association": "NONE",
-          "createdAt": "2025-09-01T15:24:45Z",
-          "excerpt": "> Maybe we could add a `focusableRef` prop or something like that to DateInput? We're pretty consistent across all of our components that the forwarded `ref` always goes to the outer-most element. But"
+          "author": "silviuaavram",
+          "association": "COLLABORATOR",
+          "createdAt": "2026-01-30T08:41:55Z",
+          "excerpt": "Hey @ayberkuman this is quite a pain, thanks opening the issue! Feel free to propose the improvement and create a PR, it will really help the docs. "
         }
       ],
       "repoClass": "large"
@@ -188,58 +188,58 @@
   ],
   "allRanked": [
     {
-      "score": 47,
+      "score": 51,
       "repo": "nvaccess/nvda",
       "repoClass": "large",
       "number": 20159,
       "title": "Failure to create portable copy when path is a top-level drive with no backslash",
       "url": "https://github.com/nvaccess/nvda/issues/20159",
-      "daysSinceUpdate": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": 45,
-      "repo": "alphagov/govuk-design-system",
-      "repoClass": "large",
-      "number": 5306,
-      "title": "Checkbox guidance for toggle may be ambiguous",
-      "url": "https://github.com/alphagov/govuk-design-system/issues/5306",
-      "daysSinceUpdate": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": -6,
-      "repo": "nvaccess/nvda",
-      "repoClass": "large",
-      "number": 19353,
-      "title": "Make duration of indentation beeps configurable",
-      "url": "https://github.com/nvaccess/nvda/issues/19353",
-      "daysSinceUpdate": 6,
-      "claimedRecent": 1,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": -74,
-      "repo": "adobe/react-spectrum",
-      "repoClass": "large",
-      "number": 7756,
-      "title": "Unable to pass ref to Datepicker [react-aria-components]",
-      "url": "https://github.com/adobe/react-spectrum/issues/7756",
       "daysSinceUpdate": 4,
       "claimedRecent": 0,
       "prSubmitted": 0,
-      "linkedOpenPRs": 1,
+      "linkedOpenPRs": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 49,
+      "repo": "dequelabs/axe-core",
+      "repoClass": "large",
+      "number": 5116,
+      "title": "Expose a rule's `enabled` property in the official API",
+      "url": "https://github.com/dequelabs/axe-core/issues/5116",
+      "daysSinceUpdate": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 36,
+      "repo": "adobe/react-spectrum",
+      "repoClass": "large",
+      "number": 8239,
+      "title": "Table is not interactive on first click in SSR",
+      "url": "https://github.com/adobe/react-spectrum/issues/8239",
+      "daysSinceUpdate": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 32,
+      "repo": "downshift-js/downshift",
+      "repoClass": "large",
+      "number": 1668,
+      "title": "Dark mode contrast issue on docs page",
+      "url": "https://github.com/downshift-js/downshift/issues/1668",
+      "daysSinceUpdate": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 0,
       "maintainerGreen": 0,
       "maintainerRed": 0
     }
