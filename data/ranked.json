@@ -1,11 +1,11 @@
 {
-  "scannedAt": "2026-05-25T16:35:15Z",
-  "count": 4,
-  "countLarge": 4,
+  "scannedAt": "2026-06-01T21:17:40Z",
+  "count": 5,
+  "countLarge": 5,
   "countSmall": 0,
   "topIssues": [
     {
-      "score": 51,
+      "score": 53,
       "repo": "nvaccess/nvda",
       "number": 20159,
       "title": "Failure to create portable copy when path is a top-level drive with no backslash",
@@ -19,11 +19,11 @@
         "feature/portable"
       ],
       "createdAt": "2026-05-18T02:01:42Z",
-      "updatedAt": "2026-05-21T01:27:56Z",
-      "daysSinceUpdate": 4,
-      "daysSinceCreate": 7,
-      "commentCount": 3,
-      "recentActivity": 3,
+      "updatedAt": "2026-05-25T23:58:04Z",
+      "daysSinceUpdate": 6,
+      "daysSinceCreate": 14,
+      "commentCount": 4,
+      "recentActivity": 4,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 0,
@@ -36,6 +36,12 @@
       "bodyExcerpt": "### Brief summary\n\nAnerror occurs when trying to create a portable copy when path is set to a drive without a backslash\n\n### Steps to reproduce\n\n1. Open the NVDA menu\n2. Go to \"tools\"\n3. Go to \"create portable copy\"\n4. Type a drive with no trailing backslash, for example `c:` or `d:`\n5. Optionally, ",
       "recentComments": [
         {
+          "author": "seanbudd",
+          "association": "MEMBER",
+          "createdAt": "2026-05-25T23:58:04Z",
+          "excerpt": "I think we should make the error message more clear in that case, as to why it's not supported/defined"
+        },
+        {
           "author": "XLTechie",
           "association": "COLLABORATOR",
           "createdAt": "2026-05-21T01:27:56Z",
@@ -46,33 +52,26 @@
           "association": "NONE",
           "createdAt": "2026-05-19T08:32:32Z",
           "excerpt": "Hi maintainers, I'd like to attempt this issue.\n\n/attempt #20159\n\nPlan:\n- Root cause: `os.path.isabs(\"D:\")` returns `False` on Windows because `D:` without backslash is a relative path (current dir on"
-        },
-        {
-          "author": "CyrilleB79",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-05-18T06:21:14Z",
-          "excerpt": "Because \"c:\" is not the root of the C: drive; \"c:\\\" is.\n\nTo illustrate this, I have run the following tests in a cmd window:\n\n> C:\\Users\\username'>cd c:Favorites                                       "
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": 49,
-      "repo": "dequelabs/axe-core",
-      "number": 5116,
-      "title": "Expose a rule's `enabled` property in the official API",
-      "url": "https://github.com/dequelabs/axe-core/issues/5116",
-      "queryLabel": "help wanted",
+      "score": 47,
+      "repo": "alphagov/govuk-design-system",
+      "number": 5271,
+      "title": "Understand if our existing contribution criteria needs updating as a result of publishing experimental things",
+      "url": "https://github.com/alphagov/govuk-design-system/issues/5271",
+      "queryLabel": "documentation",
       "labels": [
-        "feat",
-        "help wanted"
+        "documentation"
       ],
-      "createdAt": "2026-05-24T15:58:37Z",
-      "updatedAt": "2026-05-25T15:34:32Z",
+      "createdAt": "2026-05-05T12:09:47Z",
+      "updatedAt": "2026-06-01T10:58:57Z",
       "daysSinceUpdate": 0,
-      "daysSinceCreate": 1,
-      "commentCount": 2,
-      "recentActivity": 2,
+      "daysSinceCreate": 27,
+      "commentCount": 1,
+      "recentActivity": 1,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 0,
@@ -82,25 +81,87 @@
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "### Product\n\naxe-core\n\n### Feature Description\n\nTo my knowledge, there's currently no official way to get the list of rules that are enabled when `axe.run()` is called with no options.\n\nThere's an [`axe.getRules()`](https://github.com/dequelabs/axe-core/blob/c4f60ffcd47eb64514e8cbafbc68ad357ce60e77/",
+      "bodyExcerpt": "## What\nCompare the existing contribution criteria with the new experimental criteria, and understand if any changes are needed.\n\n## Why\nTo ensure the two are aligned and make sense to users.\n\n## Who needs to work on this\nTBC \n\n## Who needs to review this\nExperimental squad\n\n## Done when\n\n",
       "recentComments": [
         {
-          "author": "pomerantsev",
+          "author": "hazalarpalikli",
           "association": "CONTRIBUTOR",
-          "createdAt": "2026-05-25T15:34:32Z",
-          "excerpt": "Thanks @WilcoFiers, I'll give it a try."
-        },
-        {
-          "author": "WilcoFiers",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-05-25T12:28:11Z",
-          "excerpt": "@pomerantsev I think adding `enabled` to `getRules` is an excellent idea. Would you be up for opening a pull request?\n\nAs for `axe._audit`. I'd strongly advice against that. We are at some point going"
+          "createdAt": "2026-05-22T12:19:00Z",
+          "excerpt": "We didn't get to do this but we did create a min requirement for each stage , everything is in this document- https://docs.google.com/document/d/1H4JO7aRmt-YUNjj6fTb-WCyVEOK6cJ7W2Qhbqiz9-z0/edit?tab=t"
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": 36,
+      "score": 45,
+      "repo": "nvaccess/nvda",
+      "number": 20192,
+      "title": "Fix up documentation for copying add-ons to system profile",
+      "url": "https://github.com/nvaccess/nvda/issues/20192",
+      "queryLabel": "good first issue",
+      "labels": [
+        "component/user-documentation",
+        "p3",
+        "quick fix",
+        "feature",
+        "good first issue",
+        "triaged"
+      ],
+      "createdAt": "2026-05-21T05:49:13Z",
+      "updatedAt": "2026-05-25T23:41:00Z",
+      "daysSinceUpdate": 6,
+      "daysSinceCreate": 11,
+      "commentCount": 0,
+      "recentActivity": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "### Is your feature request related to a problem? Please describe.\n\nNVDA 2026.1 introduces the [Copy Settings to System-wide Configuration Dialog](https://download.nvaccess.org/documentation/userGuide.html#CopyAddonsToSystemProfileDialog) - the feature works as advertised.\n\nThe feature is not curren",
+      "recentComments": [],
+      "repoClass": "large"
+    },
+    {
+      "score": 45,
+      "repo": "nvaccess/nvda",
+      "number": 20193,
+      "title": "Improvements to math cat",
+      "url": "https://github.com/nvaccess/nvda/issues/20193",
+      "queryLabel": "good first issue",
+      "labels": [
+        "feature/math",
+        "p4",
+        "quick fix",
+        "feature",
+        "good first issue",
+        "triaged"
+      ],
+      "createdAt": "2026-05-21T11:07:54Z",
+      "updatedAt": "2026-05-25T23:40:18Z",
+      "daysSinceUpdate": 6,
+      "daysSinceCreate": 11,
+      "commentCount": 0,
+      "recentActivity": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "### Is your feature request related to a problem? Please describe.\n\nHello! I want to suggest you two small but effective improvements in NVDA math feature:\n1. When I'm on the interaction mode of any math content, if I press NVDA+Alt+m, NVDA says \"not math\". Instead of this, it would be better if NVD",
+      "recentComments": [],
+      "repoClass": "large"
+    },
+    {
+      "score": 40,
       "repo": "adobe/react-spectrum",
       "number": 8239,
       "title": "Table is not interactive on first click in SSR",
@@ -111,11 +172,11 @@
         "needs investigation"
       ],
       "createdAt": "2025-05-15T14:32:17Z",
-      "updatedAt": "2026-05-25T14:57:10Z",
-      "daysSinceUpdate": 0,
-      "daysSinceCreate": 375,
-      "commentCount": 14,
-      "recentActivity": 6,
+      "updatedAt": "2026-05-26T20:42:38Z",
+      "daysSinceUpdate": 6,
+      "daysSinceCreate": 382,
+      "commentCount": 16,
+      "recentActivity": 8,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 0,
@@ -128,59 +189,22 @@
       "bodyExcerpt": "### Provide a general summary of the issue here\n\nReact Aria's table is not interactive on the first click when the page was loaded through SSR.\n\n### 🤔 Expected Behavior?\n\nThe table should be interactive/hydrated on page load, not only after a user clicked on the page.\n\n### 😯 Current Behavior\n\n-\n\n###",
       "recentComments": [
         {
+          "author": "uncvrd",
+          "association": "NONE",
+          "createdAt": "2026-05-26T20:42:38Z",
+          "excerpt": "@snowystinger most immediate difference from the existing repo I see is that I use a Table Virtualizer, I'll try and create a repro for you though"
+        },
+        {
+          "author": "snowystinger",
+          "association": "MEMBER",
+          "createdAt": "2026-05-26T05:47:54Z",
+          "excerpt": "Hey, I was trying to reproduce this again today. I updated the repo shared in the description to our last release (1.17.0) and I'm unable to reproduce the original issue anymore.\n\n@uncvrd do you have "
+        },
+        {
           "author": "mryechkin",
           "association": "NONE",
           "createdAt": "2026-05-25T14:57:10Z",
           "excerpt": "> This is not about keyboard support or not. This is about all your users will have to click twice on the action they want to do in the table on the first pageload.\n\nSure, but you'd be losing the keyb"
-        },
-        {
-          "author": "gijsroge",
-          "association": "NONE",
-          "createdAt": "2026-05-25T14:47:18Z",
-          "excerpt": "> > Just use Tanstack Table.\n> \n> That doesn't provide any keyboard navigation support.\n\nThis is not about keyboard support or not. This is about all your users will have to click twice on the action "
-        },
-        {
-          "author": "mryechkin",
-          "association": "NONE",
-          "createdAt": "2026-05-25T13:41:17Z",
-          "excerpt": "> Just use Tanstack Table.\n\nThat doesn't provide any keyboard navigation support."
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": 32,
-      "repo": "downshift-js/downshift",
-      "number": 1668,
-      "title": "Dark mode contrast issue on docs page",
-      "url": "https://github.com/downshift-js/downshift/issues/1668",
-      "queryLabel": "help wanted",
-      "labels": [
-        "help wanted",
-        "docs"
-      ],
-      "createdAt": "2026-01-15T12:39:01Z",
-      "updatedAt": "2026-05-25T13:32:18Z",
-      "daysSinceUpdate": 0,
-      "daysSinceCreate": 130,
-      "commentCount": 1,
-      "recentActivity": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "When using the documentatin in dark mode, the results under the usage examples on the hooks pages are very light gray on a white background and becomes very hard to see.\n\nI’m happy to help with a PR if there’s agreement on the expected behavior or design direction.\n\nHere are some of them:\n\n<img widt",
-      "recentComments": [
-        {
-          "author": "silviuaavram",
-          "association": "COLLABORATOR",
-          "createdAt": "2026-01-30T08:41:55Z",
-          "excerpt": "Hey @ayberkuman this is quite a pain, thanks opening the issue! Feel free to propose the improvement and create a PR, it will really help the docs. "
         }
       ],
       "repoClass": "large"
@@ -188,13 +212,13 @@
   ],
   "allRanked": [
     {
-      "score": 51,
+      "score": 53,
       "repo": "nvaccess/nvda",
       "repoClass": "large",
       "number": 20159,
       "title": "Failure to create portable copy when path is a top-level drive with no backslash",
       "url": "https://github.com/nvaccess/nvda/issues/20159",
-      "daysSinceUpdate": 4,
+      "daysSinceUpdate": 6,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
@@ -202,12 +226,12 @@
       "maintainerRed": 0
     },
     {
-      "score": 49,
-      "repo": "dequelabs/axe-core",
+      "score": 47,
+      "repo": "alphagov/govuk-design-system",
       "repoClass": "large",
-      "number": 5116,
-      "title": "Expose a rule's `enabled` property in the official API",
-      "url": "https://github.com/dequelabs/axe-core/issues/5116",
+      "number": 5271,
+      "title": "Understand if our existing contribution criteria needs updating as a result of publishing experimental things",
+      "url": "https://github.com/alphagov/govuk-design-system/issues/5271",
       "daysSinceUpdate": 0,
       "claimedRecent": 0,
       "prSubmitted": 0,
@@ -216,27 +240,41 @@
       "maintainerRed": 0
     },
     {
-      "score": 36,
+      "score": 45,
+      "repo": "nvaccess/nvda",
+      "repoClass": "large",
+      "number": 20192,
+      "title": "Fix up documentation for copying add-ons to system profile",
+      "url": "https://github.com/nvaccess/nvda/issues/20192",
+      "daysSinceUpdate": 6,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 45,
+      "repo": "nvaccess/nvda",
+      "repoClass": "large",
+      "number": 20193,
+      "title": "Improvements to math cat",
+      "url": "https://github.com/nvaccess/nvda/issues/20193",
+      "daysSinceUpdate": 6,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 40,
       "repo": "adobe/react-spectrum",
       "repoClass": "large",
       "number": 8239,
       "title": "Table is not interactive on first click in SSR",
       "url": "https://github.com/adobe/react-spectrum/issues/8239",
-      "daysSinceUpdate": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": 32,
-      "repo": "downshift-js/downshift",
-      "repoClass": "large",
-      "number": 1668,
-      "title": "Dark mode contrast issue on docs page",
-      "url": "https://github.com/downshift-js/downshift/issues/1668",
-      "daysSinceUpdate": 0,
+      "daysSinceUpdate": 6,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
