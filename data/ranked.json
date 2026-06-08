@@ -1,76 +1,26 @@
 {
-  "scannedAt": "2026-06-01T21:17:40Z",
-  "count": 5,
-  "countLarge": 5,
+  "scannedAt": "2026-06-08T18:12:20Z",
+  "count": 4,
+  "countLarge": 4,
   "countSmall": 0,
   "topIssues": [
     {
-      "score": 53,
-      "repo": "nvaccess/nvda",
-      "number": 20159,
-      "title": "Failure to create portable copy when path is a top-level drive with no backslash",
-      "url": "https://github.com/nvaccess/nvda/issues/20159",
-      "queryLabel": "good first issue",
+      "score": 26,
+      "repo": "downshift-js/downshift",
+      "number": 1646,
+      "title": "useCombobox appears to be incompatible with react compiler",
+      "url": "https://github.com/downshift-js/downshift/issues/1646",
+      "queryLabel": "help wanted",
       "labels": [
-        "bug",
-        "p4",
-        "good first issue",
-        "triaged",
-        "feature/portable"
+        "help wanted",
+        "needs investigation",
+        "needs discussion"
       ],
-      "createdAt": "2026-05-18T02:01:42Z",
-      "updatedAt": "2026-05-25T23:58:04Z",
-      "daysSinceUpdate": 6,
-      "daysSinceCreate": 14,
-      "commentCount": 4,
-      "recentActivity": 4,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "### Brief summary\n\nAnerror occurs when trying to create a portable copy when path is set to a drive without a backslash\n\n### Steps to reproduce\n\n1. Open the NVDA menu\n2. Go to \"tools\"\n3. Go to \"create portable copy\"\n4. Type a drive with no trailing backslash, for example `c:` or `d:`\n5. Optionally, ",
-      "recentComments": [
-        {
-          "author": "seanbudd",
-          "association": "MEMBER",
-          "createdAt": "2026-05-25T23:58:04Z",
-          "excerpt": "I think we should make the error message more clear in that case, as to why it's not supported/defined"
-        },
-        {
-          "author": "XLTechie",
-          "association": "COLLABORATOR",
-          "createdAt": "2026-05-21T01:27:56Z",
-          "excerpt": "Why should this work?\n\nSpecifying a drive letter without a backslash, makes the exact destination undefined.\n"
-        },
-        {
-          "author": "bakaqimoji",
-          "association": "NONE",
-          "createdAt": "2026-05-19T08:32:32Z",
-          "excerpt": "Hi maintainers, I'd like to attempt this issue.\n\n/attempt #20159\n\nPlan:\n- Root cause: `os.path.isabs(\"D:\")` returns `False` on Windows because `D:` without backslash is a relative path (current dir on"
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": 47,
-      "repo": "alphagov/govuk-design-system",
-      "number": 5271,
-      "title": "Understand if our existing contribution criteria needs updating as a result of publishing experimental things",
-      "url": "https://github.com/alphagov/govuk-design-system/issues/5271",
-      "queryLabel": "documentation",
-      "labels": [
-        "documentation"
-      ],
-      "createdAt": "2026-05-05T12:09:47Z",
-      "updatedAt": "2026-06-01T10:58:57Z",
-      "daysSinceUpdate": 0,
-      "daysSinceCreate": 27,
-      "commentCount": 1,
+      "createdAt": "2025-05-07T16:32:44Z",
+      "updatedAt": "2026-06-03T09:20:13Z",
+      "daysSinceUpdate": 5,
+      "daysSinceCreate": 397,
+      "commentCount": 5,
       "recentActivity": 1,
       "maintainerGreen": 0,
       "maintainerRed": 0,
@@ -81,102 +31,46 @@
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "## What\nCompare the existing contribution criteria with the new experimental criteria, and understand if any changes are needed.\n\n## Why\nTo ensure the two are aligned and make sense to users.\n\n## Who needs to work on this\nTBC \n\n## Who needs to review this\nExperimental squad\n\n## Done when\n\n",
+      "bodyExcerpt": "If I try and type in an input on combobox then the value does not update. If I add `'use no memo';` to the file to opt out then it works as expected.\n\nI have created a minimal reproduction: https://stackblitz.com/edit/vitejs-vite-jzpospa2?file=src%2FApp.jsx",
       "recentComments": [
         {
-          "author": "hazalarpalikli",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-05-22T12:19:00Z",
-          "excerpt": "We didn't get to do this but we did create a min requirement for each stage , everything is in this document- https://docs.google.com/document/d/1H4JO7aRmt-YUNjj6fTb-WCyVEOK6cJ7W2Qhbqiz9-z0/edit?tab=t"
+          "author": "phryneas",
+          "association": "NONE",
+          "createdAt": "2026-06-03T09:19:15Z",
+          "excerpt": "Yeah, I just updated downshift a few majors, and it has actually gotten a lot worse :/\n\nThe pattern of `const latestState = latest.current.state` to keep functions like `getInputProps` stable referenc"
+        },
+        {
+          "author": "MattyBalaam",
+          "association": "NONE",
+          "createdAt": "2025-06-03T13:44:51Z",
+          "excerpt": "I have tried to take a look with Downshift installed locally. Adding the new lint rule threw up some warnings:\n\n```\n/Users/matthewbalaam/downshift/src/hooks/useCombobox/index.js\n   96:5  warning  Reac"
+        },
+        {
+          "author": "MattyBalaam",
+          "association": "NONE",
+          "createdAt": "2025-06-02T12:56:20Z",
+          "excerpt": "It is the “auto memo” feature React has been building for a few years and is now in RC: https://react.dev/blog/2025/04/21/react-compiler-rc\n\nYou can see it in use on the linked minimal reproduction"
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": 45,
-      "repo": "nvaccess/nvda",
-      "number": 20192,
-      "title": "Fix up documentation for copying add-ons to system profile",
-      "url": "https://github.com/nvaccess/nvda/issues/20192",
-      "queryLabel": "good first issue",
-      "labels": [
-        "component/user-documentation",
-        "p3",
-        "quick fix",
-        "feature",
-        "good first issue",
-        "triaged"
-      ],
-      "createdAt": "2026-05-21T05:49:13Z",
-      "updatedAt": "2026-05-25T23:41:00Z",
-      "daysSinceUpdate": 6,
-      "daysSinceCreate": 11,
-      "commentCount": 0,
-      "recentActivity": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "### Is your feature request related to a problem? Please describe.\n\nNVDA 2026.1 introduces the [Copy Settings to System-wide Configuration Dialog](https://download.nvaccess.org/documentation/userGuide.html#CopyAddonsToSystemProfileDialog) - the feature works as advertised.\n\nThe feature is not curren",
-      "recentComments": [],
-      "repoClass": "large"
-    },
-    {
-      "score": 45,
-      "repo": "nvaccess/nvda",
-      "number": 20193,
-      "title": "Improvements to math cat",
-      "url": "https://github.com/nvaccess/nvda/issues/20193",
-      "queryLabel": "good first issue",
-      "labels": [
-        "feature/math",
-        "p4",
-        "quick fix",
-        "feature",
-        "good first issue",
-        "triaged"
-      ],
-      "createdAt": "2026-05-21T11:07:54Z",
-      "updatedAt": "2026-05-25T23:40:18Z",
-      "daysSinceUpdate": 6,
-      "daysSinceCreate": 11,
-      "commentCount": 0,
-      "recentActivity": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "### Is your feature request related to a problem? Please describe.\n\nHello! I want to suggest you two small but effective improvements in NVDA math feature:\n1. When I'm on the interaction mode of any math content, if I press NVDA+Alt+m, NVDA says \"not math\". Instead of this, it would be better if NVD",
-      "recentComments": [],
-      "repoClass": "large"
-    },
-    {
-      "score": 40,
-      "repo": "adobe/react-spectrum",
-      "number": 8239,
-      "title": "Table is not interactive on first click in SSR",
-      "url": "https://github.com/adobe/react-spectrum/issues/8239",
+      "score": 22,
+      "repo": "dequelabs/axe-core",
+      "number": 3658,
+      "title": "Add \"radiogroup should have an accessible name\" as a best practice",
+      "url": "https://github.com/dequelabs/axe-core/issues/3658",
       "queryLabel": "help wanted",
       "labels": [
-        "help wanted",
-        "needs investigation"
+        "feat",
+        "help wanted"
       ],
-      "createdAt": "2025-05-15T14:32:17Z",
-      "updatedAt": "2026-05-26T20:42:38Z",
-      "daysSinceUpdate": 6,
-      "daysSinceCreate": 382,
-      "commentCount": 16,
-      "recentActivity": 8,
+      "createdAt": "2022-09-09T22:36:44Z",
+      "updatedAt": "2026-06-05T10:19:20Z",
+      "daysSinceUpdate": 3,
+      "daysSinceCreate": 1367,
+      "commentCount": 5,
+      "recentActivity": 1,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 0,
@@ -186,25 +80,120 @@
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "### Provide a general summary of the issue here\n\nReact Aria's table is not interactive on the first click when the page was loaded through SSR.\n\n### 🤔 Expected Behavior?\n\nThe table should be interactive/hydrated on page load, not only after a user clicked on the page.\n\n### 😯 Current Behavior\n\n-\n\n###",
+      "bodyExcerpt": "### Product\n\naxe-core\n\n### Feature Description\n\nHi axe-core folks, I am opening a new issue in the vein of https://github.com/dequelabs/axe-core/issues/3256.\n\nI would like to be alerted when elements with `role=\"radiogroup\"` don't have a name that can be programmatically determined. I like [this sug",
       "recentComments": [
         {
-          "author": "uncvrd",
-          "association": "NONE",
-          "createdAt": "2026-05-26T20:42:38Z",
-          "excerpt": "@snowystinger most immediate difference from the existing repo I see is that I use a Table Virtualizer, I'll try and create a repro for you though"
+          "author": "bwyard",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2026-06-05T10:19:20Z",
+          "excerpt": "Is this still live? @WilcoFiers would you still like a rule that uses `reviewOnFail` implemented?"
         },
         {
-          "author": "snowystinger",
-          "association": "MEMBER",
-          "createdAt": "2026-05-26T05:47:54Z",
-          "excerpt": "Hey, I was trying to reproduce this again today. I updated the repo shared in the description to our last release (1.17.0) and I'm unable to reproduce the original issue anymore.\n\n@uncvrd do you have "
+          "author": "WilcoFiers",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2022-10-20T11:20:34Z",
+          "excerpt": "That's fair enough I suppose. If someone explicitly uses role=\"radiogroup\", and then doesn't give it an accessible name, there's a good chance that something is wrong. Needs review might be appropriat"
         },
         {
-          "author": "mryechkin",
+          "author": "scottaohara",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2022-10-19T15:55:18Z",
+          "excerpt": "while i agree with your opinion on this Wilco, I also would like to see this surfaced and tagged as \"needs review\".  Yes, there are situations where if the radio group has no accessible name, but the "
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": 17,
+      "repo": "nvaccess/nvda",
+      "number": 19286,
+      "title": "NVDA Does not Pronounce Completely the last part of the last syllable of the last word or character name After a While Working",
+      "url": "https://github.com/nvaccess/nvda/issues/19286",
+      "queryLabel": "good first issue",
+      "labels": [
+        "bug",
+        "p4",
+        "quick fix",
+        "component/audio",
+        "good first issue",
+        "triaged"
+      ],
+      "createdAt": "2025-11-26T13:49:30Z",
+      "updatedAt": "2026-06-06T12:17:11Z",
+      "daysSinceUpdate": 2,
+      "daysSinceCreate": 194,
+      "commentCount": 18,
+      "recentActivity": 15,
+      "maintainerGreen": 0,
+      "maintainerRed": 1,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "### Brief summary\n\nAfter a while working with windows or web pages or for example moving in a text editor software like Word or text aria character by character and word by word, this issue occurs.\nI even disabled all add-on but it was not effective.\nI have attached three logs.\nI installed NVDA agai",
+      "recentComments": [
+        {
+          "author": "shadyar",
           "association": "NONE",
-          "createdAt": "2026-05-25T14:57:10Z",
-          "excerpt": "> This is not about keyboard support or not. This is about all your users will have to click twice on the action they want to do in the table on the first pageload.\n\nSure, but you'd be losing the keyb"
+          "createdAt": "2026-06-06T12:17:11Z",
+          "excerpt": "I recently noticed that while white noise helps and delays the problem, it eventually reoccurs. In fact, with playing the white noise, a smaller amount is gradually removed from the end of the words, "
+        },
+        {
+          "author": "shadyar",
+          "association": "NONE",
+          "createdAt": "2026-06-06T11:59:27Z",
+          "excerpt": "@seanbudd\n@jcsteh\nThe sound of the white noise is very loud when this script is executed, especially when the user uses headphones. Either we should set the volume of the white noise to 1 or consider "
+        },
+        {
+          "author": "shadyar",
+          "association": "NONE",
+          "createdAt": "2026-06-02T12:14:46Z",
+          "excerpt": "@seanbudd \nYeah, it;s good idea thanks!\nto make a feature in the settings, \"Generate white noise\" button, from the audio panel, next to the \"keep audio device awake\" button.\nIt can be very helpful."
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": -18,
+      "repo": "dequelabs/axe-core",
+      "number": 4241,
+      "title": "Axe-core's d.ts file is incomplete",
+      "url": "https://github.com/dequelabs/axe-core/issues/4241",
+      "queryLabel": "help wanted",
+      "labels": [
+        "help wanted"
+      ],
+      "createdAt": "2023-11-09T17:26:36Z",
+      "updatedAt": "2026-06-05T10:06:54Z",
+      "daysSinceUpdate": 3,
+      "daysSinceCreate": 942,
+      "commentCount": 2,
+      "recentActivity": 1,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 1,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [],
+      "checkboxes": {
+        "total": 1,
+        "done": 1
+      },
+      "bodyExcerpt": "### Product\n\naxe-core\n\n### Product Version\n\n_No response_\n\n### Latest Version\n\n- [X] I have tested the issue with the latest version of the product\n\n### Issue Description\n\nI wanted to access the function isVisibleOnScreen from axe.commons.dom, but this is not exported in the .d.ts.\n\nThis technically",
+      "recentComments": [
+        {
+          "author": "bwyard",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2026-06-05T10:06:54Z",
+          "excerpt": "Took a look at this. I'd be happy to do an audit across the board and add in what's most used. If yall could assign this to me if you still want it done.\n\nCould yall provide guidance on scope -- most "
+        },
+        {
+          "author": "WilcoFiers",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2023-11-20T12:52:48Z",
+          "excerpt": "Axe-core's types fairly minimal. We only provide types for the most used methods. If there are things you would like to see added, please open a pull request."
         }
       ],
       "repoClass": "large"
@@ -212,70 +201,56 @@
   ],
   "allRanked": [
     {
-      "score": 53,
+      "score": 26,
+      "repo": "downshift-js/downshift",
+      "repoClass": "large",
+      "number": 1646,
+      "title": "useCombobox appears to be incompatible with react compiler",
+      "url": "https://github.com/downshift-js/downshift/issues/1646",
+      "daysSinceUpdate": 5,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 22,
+      "repo": "dequelabs/axe-core",
+      "repoClass": "large",
+      "number": 3658,
+      "title": "Add \"radiogroup should have an accessible name\" as a best practice",
+      "url": "https://github.com/dequelabs/axe-core/issues/3658",
+      "daysSinceUpdate": 3,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 17,
       "repo": "nvaccess/nvda",
       "repoClass": "large",
-      "number": 20159,
-      "title": "Failure to create portable copy when path is a top-level drive with no backslash",
-      "url": "https://github.com/nvaccess/nvda/issues/20159",
-      "daysSinceUpdate": 6,
+      "number": 19286,
+      "title": "NVDA Does not Pronounce Completely the last part of the last syllable of the last word or character name After a While Working",
+      "url": "https://github.com/nvaccess/nvda/issues/19286",
+      "daysSinceUpdate": 2,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
       "maintainerGreen": 0,
-      "maintainerRed": 0
+      "maintainerRed": 1
     },
     {
-      "score": 47,
-      "repo": "alphagov/govuk-design-system",
+      "score": -18,
+      "repo": "dequelabs/axe-core",
       "repoClass": "large",
-      "number": 5271,
-      "title": "Understand if our existing contribution criteria needs updating as a result of publishing experimental things",
-      "url": "https://github.com/alphagov/govuk-design-system/issues/5271",
-      "daysSinceUpdate": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": 45,
-      "repo": "nvaccess/nvda",
-      "repoClass": "large",
-      "number": 20192,
-      "title": "Fix up documentation for copying add-ons to system profile",
-      "url": "https://github.com/nvaccess/nvda/issues/20192",
-      "daysSinceUpdate": 6,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": 45,
-      "repo": "nvaccess/nvda",
-      "repoClass": "large",
-      "number": 20193,
-      "title": "Improvements to math cat",
-      "url": "https://github.com/nvaccess/nvda/issues/20193",
-      "daysSinceUpdate": 6,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": 40,
-      "repo": "adobe/react-spectrum",
-      "repoClass": "large",
-      "number": 8239,
-      "title": "Table is not interactive on first click in SSR",
-      "url": "https://github.com/adobe/react-spectrum/issues/8239",
-      "daysSinceUpdate": 6,
-      "claimedRecent": 0,
+      "number": 4241,
+      "title": "Axe-core's d.ts file is incomplete",
+      "url": "https://github.com/dequelabs/axe-core/issues/4241",
+      "daysSinceUpdate": 3,
+      "claimedRecent": 1,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
       "maintainerGreen": 0,
