@@ -1,151 +1,11 @@
 {
-  "scannedAt": "2026-06-15T13:51:02Z",
-  "count": 10,
-  "countLarge": 10,
+  "scannedAt": "2026-06-22T13:31:42Z",
+  "count": 3,
+  "countLarge": 3,
   "countSmall": 0,
   "topIssues": [
     {
-      "score": 55,
-      "repo": "adobe/react-spectrum",
-      "number": 10199,
-      "title": "Toggling a useState within a Popover to control a set of Collection items fails to update properly",
-      "url": "https://github.com/adobe/react-spectrum/issues/10199",
-      "queryLabel": "documentation",
-      "labels": [
-        "documentation"
-      ],
-      "createdAt": "2026-06-13T09:25:46Z",
-      "updatedAt": "2026-06-14T21:31:27Z",
-      "daysSinceUpdate": 0,
-      "daysSinceCreate": 2,
-      "commentCount": 5,
-      "recentActivity": 5,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "### Provide a general summary of the issue here\n\nHi again - I'm running in to an issue when trying to use `SelectStateContext` to determine if there is a `value` in order to show a \"remove selection\" option in the Select ListBox. But I cannot get my list to render an additional item based on a condi",
-      "recentComments": [
-        {
-          "author": "snowystinger",
-          "association": "MEMBER",
-          "createdAt": "2026-06-14T21:31:17Z",
-          "excerpt": "Probably best in the Collections page, this applies to all collections, not just Select"
-        },
-        {
-          "author": "NssGourav",
-          "association": "NONE",
-          "createdAt": "2026-06-14T18:32:25Z",
-          "excerpt": "Since this seems to be a documentation issue, I'd love to help out!\n\nI can put together a PR that adds a section explaining the collection building phases and where state needs to live to mutate JSX c"
-        },
-        {
-          "author": "nwidynski",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-06-13T23:14:24Z",
-          "excerpt": "Haha, I can imagine! Implementing custom collection components is definitely an advanced use case at the moment. \n\nUnfortunately there aint much we can do to provide automatic console warnings for thi"
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": 34,
-      "repo": "adobe/react-spectrum",
-      "number": 9743,
-      "title": "[RAC Feature Request]: Opt-in single tab stop for DatePicker / DateField / TimeField",
-      "url": "https://github.com/adobe/react-spectrum/issues/9743",
-      "queryLabel": "good first issue",
-      "labels": [
-        "help wanted",
-        "good first issue",
-        "DatePicker"
-      ],
-      "createdAt": "2026-03-05T12:34:48Z",
-      "updatedAt": "2026-06-10T22:11:35Z",
-      "daysSinceUpdate": 4,
-      "daysSinceCreate": 102,
-      "commentCount": 1,
-      "recentActivity": 1,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "### Provide a general summary of the feature here\n\nIntroduce an opt-in prop for date and time field components that implements a single tab stop pattern.\n\n### 🤔 Expected Behavior?\n\n- Tab: Moves focus into the field (landing on the first segment or the entire input).\n- Arrow Left / Right: Moves focus",
-      "recentComments": [
-        {
-          "author": "devongovett",
-          "association": "MEMBER",
-          "createdAt": "2026-06-10T22:11:19Z",
-          "excerpt": "Discussed this with the team. We are open to adding an option. Perhaps `keyboardNavigationBehavior=\"tab | arrow\"` to match other components."
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": 25,
-      "repo": "nvaccess/nvda",
-      "number": 19286,
-      "title": "NVDA Does not Pronounce Completely the last part of the last syllable of the last word or character name After a While Working",
-      "url": "https://github.com/nvaccess/nvda/issues/19286",
-      "queryLabel": "good first issue",
-      "labels": [
-        "bug",
-        "component/user-documentation",
-        "p4",
-        "quick fix",
-        "component/audio",
-        "good first issue",
-        "triaged"
-      ],
-      "createdAt": "2025-11-26T13:49:30Z",
-      "updatedAt": "2026-06-10T07:18:36Z",
-      "daysSinceUpdate": 5,
-      "daysSinceCreate": 201,
-      "commentCount": 22,
-      "recentActivity": 19,
-      "maintainerGreen": 0,
-      "maintainerRed": 1,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "### Brief summary\n\nAfter a while working with windows or web pages or for example moving in a text editor software like Word or text aria character by character and word by word, this issue occurs.\nI even disabled all add-on but it was not effective.\nI have attached three logs.\nI installed NVDA agai",
-      "recentComments": [
-        {
-          "author": "shadyar",
-          "association": "NONE",
-          "createdAt": "2026-06-10T07:17:31Z",
-          "excerpt": "Of course that is a good idea. we Will keep this issue open. In my opinion, this problem and its solution can even be mentioned in the NVDA documentation or guide so that users can solve the problem b"
-        },
-        {
-          "author": "seanbudd",
-          "association": "MEMBER",
-          "createdAt": "2026-06-10T01:29:42Z",
-          "excerpt": "@shadyar - do you mind if we keep this open?\nBoth to create the white noise setting, and to document the problem/fix with ASUS drivers. This issue has come up many times before people with this hardwa"
-        },
-        {
-          "author": "shadyar",
-          "association": "NONE",
-          "createdAt": "2026-06-09T21:22:26Z",
-          "excerpt": "I was able to identify the root cause of this issue, and a reliable solution for it.  \nThe problem was observed on an ASUS ZenBook UM325UA laptop equipped with a Realtek audio chipset. However, due to"
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": 24,
+      "score": 26,
       "repo": "dequelabs/axe-core",
       "number": 3658,
       "title": "Add \"radiogroup should have an accessible name\" as a best practice",
@@ -156,11 +16,11 @@
         "help wanted"
       ],
       "createdAt": "2022-09-09T22:36:44Z",
-      "updatedAt": "2026-06-09T10:24:54Z",
-      "daysSinceUpdate": 6,
-      "daysSinceCreate": 1374,
-      "commentCount": 6,
-      "recentActivity": 2,
+      "updatedAt": "2026-06-21T07:08:50Z",
+      "daysSinceUpdate": 1,
+      "daysSinceCreate": 1381,
+      "commentCount": 7,
+      "recentActivity": 3,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 0,
@@ -173,6 +33,12 @@
       "bodyExcerpt": "### Product\n\naxe-core\n\n### Feature Description\n\nHi axe-core folks, I am opening a new issue in the vein of https://github.com/dequelabs/axe-core/issues/3256.\n\nI would like to be alerted when elements with `role=\"radiogroup\"` don't have a name that can be programmatically determined. I like [this sug",
       "recentComments": [
         {
+          "author": "bwyard",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2026-06-21T07:08:50Z",
+          "excerpt": "Wondercul I'll spin it up this weekend "
+        },
+        {
           "author": "WilcoFiers",
           "association": "CONTRIBUTOR",
           "createdAt": "2026-06-09T10:24:54Z",
@@ -183,214 +49,12 @@
           "association": "CONTRIBUTOR",
           "createdAt": "2026-06-05T10:19:20Z",
           "excerpt": "Is this still live? @WilcoFiers would you still like a rule that uses `reviewOnFail` implemented?"
-        },
-        {
-          "author": "WilcoFiers",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2022-10-20T11:20:34Z",
-          "excerpt": "That's fair enough I suppose. If someone explicitly uses role=\"radiogroup\", and then doesn't give it an accessible name, there's a good chance that something is wrong. Needs review might be appropriat"
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": 22,
-      "repo": "GoogleChrome/lighthouse",
-      "number": 11747,
-      "title": "handling impact of isInputPending on long tasks metrics?",
-      "url": "https://github.com/GoogleChrome/lighthouse/issues/11747",
-      "queryLabel": "good first issue",
-      "labels": [
-        "good first issue",
-        "P2",
-        "metrics-cwv"
-      ],
-      "createdAt": "2020-12-02T16:24:54Z",
-      "updatedAt": "2026-06-11T18:53:53Z",
-      "daysSinceUpdate": 3,
-      "daysSinceCreate": 2020,
-      "commentCount": 5,
-      "recentActivity": 1,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "[`navigator.scheduling.isInputPending`](https://wicg.github.io/is-input-pending/) is shipping by default in current Chrome stable (m87). Without user input, any page using `isInputPending` has a strong reason to believe yielding during long tasks won't improve user experience so it could keep on chu",
-      "recentComments": [
-        {
-          "author": "ChristopherPHolder",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-06-11T18:53:53Z",
-          "excerpt": "As this API is not longer recommended:\n\nhttps://developer.mozilla.org/en-US/docs/Web/API/Scheduling/isInputPending\n\nhttps://web.dev/articles/optimize-long-tasks#isinputpending\n\nShould we close this ti"
-        },
-        {
-          "author": "chinhkrb113",
-          "association": "NONE",
-          "createdAt": "2026-03-28T17:10:21Z",
-          "excerpt": "Auto-closing: linked PR #16935 was closed (CI checks failed). Sorry for the inconvenience."
-        },
-        {
-          "author": "paulirish",
-          "association": "MEMBER",
-          "createdAt": "2021-01-11T22:23:15Z",
-          "excerpt": "We think an approach like \"flip on isInputPending in certain circumstances\" could make sense and be more fair to pages using this. Possibilities, always flip on (during a task) at 5000ms since navigat"
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": 22,
-      "repo": "adobe/react-spectrum",
-      "number": 1773,
-      "title": "onCancel should fire in AlertDialog if Escape is pressed",
-      "url": "https://github.com/adobe/react-spectrum/issues/1773",
-      "queryLabel": "good first issue",
-      "labels": [
-        "good first issue"
-      ],
-      "createdAt": "2021-04-07T22:55:57Z",
-      "updatedAt": "2026-06-11T06:55:06Z",
-      "daysSinceUpdate": 4,
-      "daysSinceCreate": 1894,
-      "commentCount": 6,
-      "recentActivity": 1,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "# 🐛 Bug Report (or maybe feature request?)\n\nWhen adding an `onCancel` handler to an AlertDialog, it should fire if the dialog is closed via the Escape key.\n\nSee here for a repro: https://codesandbox.io/s/adoring-meadow-7cl4c?file=/src/App.js\n\nOpen the dialog, click Cancel, dialog will close, you'll ",
-      "recentComments": [
-        {
-          "author": "snowystinger",
-          "association": "MEMBER",
-          "createdAt": "2026-06-11T06:55:06Z",
-          "excerpt": "Adding S2 example https://stackblitz.com/edit/fwp9po8j?file=src%2FExample.tsx"
-        },
-        {
-          "author": "tenphi",
-          "association": "NONE",
-          "createdAt": "2021-07-09T12:16:54Z",
-          "excerpt": "Looks like `DialogContainer` fires the `onDismiss` event in both cases. So it would be consistent to have `onDismiss` event on `DialogTrigger` that works the same."
-        },
-        {
-          "author": "tenphi",
-          "association": "NONE",
-          "createdAt": "2021-07-09T11:42:53Z",
-          "excerpt": "As I see even using `onOpenState` there is no difference between the Button that calls `close()` and pressing `Esc`. So I can't tell if a user dismissed the dialog or confirmed it without wrapping `on"
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": 22,
-      "repo": "adobe/react-spectrum",
-      "number": 2806,
-      "title": "Unit in NumberField cannot be deleted (for some units/ unit-displays)",
-      "url": "https://github.com/adobe/react-spectrum/issues/2806",
-      "queryLabel": "help wanted",
-      "labels": [
-        "bug",
-        "help wanted"
-      ],
-      "createdAt": "2022-02-04T15:55:35Z",
-      "updatedAt": "2026-06-11T07:40:41Z",
-      "daysSinceUpdate": 4,
-      "daysSinceCreate": 1591,
-      "commentCount": 9,
-      "recentActivity": 1,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "<!---\nThanks for filing an issue 😄! Before you submit, please read the following:\n\nSearch open/closed issues before submitting since someone might have asked the same thing before!\n-->\n\n# 🐛 Bug Report \nI am using the useNumberField with the \"formatOptions\" option to add units to the number fields.\n\n",
-      "recentComments": [
-        {
-          "author": "snowystinger",
-          "association": "MEMBER",
-          "createdAt": "2026-06-11T07:40:41Z",
-          "excerpt": "re-test if fixed by https://github.com/adobe/react-spectrum/pull/9905"
-        },
-        {
-          "author": "snowystinger",
-          "association": "MEMBER",
-          "createdAt": "2024-06-24T21:25:47Z",
-          "excerpt": "Thanks for sharing that!"
-        },
-        {
-          "author": "cmawhorter",
-          "association": "NONE",
-          "createdAt": "2024-06-24T12:03:30Z",
-          "excerpt": "@snowystinger my comment was about the Intl.NumberFormat style \"unit\" specifically. but it should be noted, no style other than unit (currency, percent) has the issue with deleting the non-numeric par"
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": 0,
-      "repo": "testing-library/jest-dom",
-      "number": 207,
-      "title": "toBeActiveDescendant",
-      "url": "https://github.com/testing-library/jest-dom/issues/207",
-      "queryLabel": "good first issue",
-      "labels": [
-        "enhancement",
-        "good first issue"
-      ],
-      "createdAt": "2020-02-17T08:31:54Z",
-      "updatedAt": "2026-06-10T22:56:43Z",
-      "daysSinceUpdate": 4,
-      "daysSinceCreate": 2310,
-      "commentCount": 15,
-      "recentActivity": 1,
-      "maintainerGreen": 1,
-      "maintainerRed": 0,
-      "claimedRecent": 1,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "<!--\n\nVote on feature requests by adding a 👍. This helps maintainers prioritize what\nto work on.\n\n* Please fill out this template with all the relevant information so we can\n  understand what's going on and fix the issue. We appreciate bugs filed and PRs\n  submitted!\n\n* Please make sure that you are",
-      "recentComments": [
-        {
-          "author": "beanscg",
-          "association": "NONE",
-          "createdAt": "2026-06-10T01:58:50Z",
-          "excerpt": "Bean Labs took a public-source pass on this issue.\n\nThe narrowest useful next step looks like: Offer a public comment that narrows the keyboard/ARIA or screen-reader expectation and identifies the com"
-        },
-        {
-          "author": "gnapse",
-          "association": "MEMBER",
-          "createdAt": "2024-02-01T01:19:15Z",
-          "excerpt": "@diegohaz do you mean that this library could provide both custom matchers, right?"
-        },
-        {
-          "author": "diegohaz",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2024-01-31T18:12:19Z",
-          "excerpt": "Just wanted to add that I agree with both `toHaveVirtualFocus()` and `toHaveActiveDescendant()` APIs. I think I've had use cases for both in the past few years."
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": -16,
+      "score": -14,
       "repo": "dequelabs/axe-core",
       "number": 4241,
       "title": "Axe-core's d.ts file is incomplete",
@@ -400,11 +64,11 @@
         "help wanted"
       ],
       "createdAt": "2023-11-09T17:26:36Z",
-      "updatedAt": "2026-06-09T10:30:30Z",
-      "daysSinceUpdate": 6,
-      "daysSinceCreate": 948,
-      "commentCount": 3,
-      "recentActivity": 2,
+      "updatedAt": "2026-06-21T07:08:09Z",
+      "daysSinceUpdate": 1,
+      "daysSinceCreate": 955,
+      "commentCount": 4,
+      "recentActivity": 3,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 1,
@@ -417,6 +81,12 @@
       "bodyExcerpt": "### Product\n\naxe-core\n\n### Product Version\n\n_No response_\n\n### Latest Version\n\n- [X] I have tested the issue with the latest version of the product\n\n### Issue Description\n\nI wanted to access the function isVisibleOnScreen from axe.commons.dom, but this is not exported in the .d.ts.\n\nThis technically",
       "recentComments": [
         {
+          "author": "bwyard",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2026-06-21T07:08:09Z",
+          "excerpt": "@WilcoFiers that's fair, in happy to pick up something small I have some time available the next couple weeks and was looking for something to focus on"
+        },
+        {
           "author": "WilcoFiers",
           "association": "CONTRIBUTOR",
           "createdAt": "2026-06-09T10:30:29Z",
@@ -427,49 +97,62 @@
           "association": "CONTRIBUTOR",
           "createdAt": "2026-06-05T10:06:54Z",
           "excerpt": "Took a look at this. I'd be happy to do an audit across the board and add in what's most used. If yall could assign this to me if you still want it done.\n\nCould yall provide guidance on scope -- most "
-        },
-        {
-          "author": "WilcoFiers",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2023-11-20T12:52:48Z",
-          "excerpt": "Axe-core's types fairly minimal. We only provide types for the most used methods. If there are things you would like to see added, please open a pull request."
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": -18,
-      "repo": "GoogleChrome/lighthouse",
-      "number": 14718,
-      "title": "Confirm correct handling of CSS nesting",
-      "url": "https://github.com/GoogleChrome/lighthouse/issues/14718",
-      "queryLabel": "good first issue",
+      "score": -104,
+      "repo": "downshift-js/downshift",
+      "number": 1668,
+      "title": "Dark mode contrast issue on docs page",
+      "url": "https://github.com/downshift-js/downshift/issues/1668",
+      "queryLabel": "help wanted",
       "labels": [
-        "good first issue",
-        "P2"
+        "help wanted",
+        "docs"
       ],
-      "createdAt": "2023-01-26T19:51:14Z",
-      "updatedAt": "2026-06-11T12:31:02Z",
-      "daysSinceUpdate": 4,
-      "daysSinceCreate": 1235,
-      "commentCount": 1,
-      "recentActivity": 1,
+      "createdAt": "2026-01-15T12:39:01Z",
+      "updatedAt": "2026-06-17T09:48:15Z",
+      "daysSinceUpdate": 5,
+      "daysSinceCreate": 158,
+      "commentCount": 3,
+      "recentActivity": 2,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 1,
       "prSubmitted": 0,
-      "linkedOpenPRs": [],
+      "linkedOpenPRs": [
+        {
+          "number": 1694,
+          "title": "fix docs dark mode example contrast",
+          "url": "https://github.com/downshift-js/downshift/pull/1694",
+          "createdAt": "2026-06-22T04:17:11Z"
+        }
+      ],
       "checkboxes": {
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "Chrome recently added support for CSS nesting. We should verify things work ok wrt our usage of the CSS protocol (if anything were to break, it'd be in `font-size` or `css-usage`); and also add something to the smoke tests.",
+      "bodyExcerpt": "When using the documentatin in dark mode, the results under the usage examples on the hooks pages are very light gray on a white background and becomes very hard to see.\n\nI’m happy to help with a PR if there’s agreement on the expected behavior or design direction.\n\nHere are some of them:\n\n<img widt",
       "recentComments": [
         {
-          "author": "Sudarshan-prog",
+          "author": "silviuaavram",
+          "association": "COLLABORATOR",
+          "createdAt": "2026-06-17T09:48:15Z",
+          "excerpt": "It's still available. I think you probably need to update the tailwind config with\n\n```\ndarkMode: ['class', '[data-theme=\"dark\"]'],\n```\n\nAnd then go through the styles and add `dark:` equivalents. Fee"
+        },
+        {
+          "author": "pupuking723",
           "association": "NONE",
-          "createdAt": "2026-06-11T12:31:02Z",
-          "excerpt": "Hey team, \n\nI'd love to take this issue on if it's still open! \n\nI've reviewed the requirements regarding native CSS nesting handling. My plan is to set up Lighthouse locally, create a fixture page ut"
+          "createdAt": "2026-06-17T08:43:23Z",
+          "excerpt": "Hi, I would like to take this on if it is still available.\n\nI will keep the change limited to the docs dark-mode contrast issue shown in the screenshots, avoid changing component behavior, and verify "
+        },
+        {
+          "author": "silviuaavram",
+          "association": "COLLABORATOR",
+          "createdAt": "2026-01-30T08:41:55Z",
+          "excerpt": "Hey @ayberkuman this is quite a pain, thanks opening the issue! Feel free to propose the improvement and create a PR, it will really help the docs. "
         }
       ],
       "repoClass": "large"
@@ -477,55 +160,13 @@
   ],
   "allRanked": [
     {
-      "score": 55,
-      "repo": "adobe/react-spectrum",
-      "repoClass": "large",
-      "number": 10199,
-      "title": "Toggling a useState within a Popover to control a set of Collection items fails to update properly",
-      "url": "https://github.com/adobe/react-spectrum/issues/10199",
-      "daysSinceUpdate": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": 34,
-      "repo": "adobe/react-spectrum",
-      "repoClass": "large",
-      "number": 9743,
-      "title": "[RAC Feature Request]: Opt-in single tab stop for DatePicker / DateField / TimeField",
-      "url": "https://github.com/adobe/react-spectrum/issues/9743",
-      "daysSinceUpdate": 4,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": 25,
-      "repo": "nvaccess/nvda",
-      "repoClass": "large",
-      "number": 19286,
-      "title": "NVDA Does not Pronounce Completely the last part of the last syllable of the last word or character name After a While Working",
-      "url": "https://github.com/nvaccess/nvda/issues/19286",
-      "daysSinceUpdate": 5,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 1
-    },
-    {
-      "score": 24,
+      "score": 26,
       "repo": "dequelabs/axe-core",
       "repoClass": "large",
       "number": 3658,
       "title": "Add \"radiogroup should have an accessible name\" as a best practice",
       "url": "https://github.com/dequelabs/axe-core/issues/3658",
-      "daysSinceUpdate": 6,
+      "daysSinceUpdate": 1,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
@@ -533,69 +174,13 @@
       "maintainerRed": 0
     },
     {
-      "score": 22,
-      "repo": "GoogleChrome/lighthouse",
-      "repoClass": "large",
-      "number": 11747,
-      "title": "handling impact of isInputPending on long tasks metrics?",
-      "url": "https://github.com/GoogleChrome/lighthouse/issues/11747",
-      "daysSinceUpdate": 3,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": 22,
-      "repo": "adobe/react-spectrum",
-      "repoClass": "large",
-      "number": 1773,
-      "title": "onCancel should fire in AlertDialog if Escape is pressed",
-      "url": "https://github.com/adobe/react-spectrum/issues/1773",
-      "daysSinceUpdate": 4,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": 22,
-      "repo": "adobe/react-spectrum",
-      "repoClass": "large",
-      "number": 2806,
-      "title": "Unit in NumberField cannot be deleted (for some units/ unit-displays)",
-      "url": "https://github.com/adobe/react-spectrum/issues/2806",
-      "daysSinceUpdate": 4,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": 0,
-      "repo": "testing-library/jest-dom",
-      "repoClass": "large",
-      "number": 207,
-      "title": "toBeActiveDescendant",
-      "url": "https://github.com/testing-library/jest-dom/issues/207",
-      "daysSinceUpdate": 4,
-      "claimedRecent": 1,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 1,
-      "maintainerRed": 0
-    },
-    {
-      "score": -16,
+      "score": -14,
       "repo": "dequelabs/axe-core",
       "repoClass": "large",
       "number": 4241,
       "title": "Axe-core's d.ts file is incomplete",
       "url": "https://github.com/dequelabs/axe-core/issues/4241",
-      "daysSinceUpdate": 6,
+      "daysSinceUpdate": 1,
       "claimedRecent": 1,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
@@ -603,16 +188,16 @@
       "maintainerRed": 0
     },
     {
-      "score": -18,
-      "repo": "GoogleChrome/lighthouse",
+      "score": -104,
+      "repo": "downshift-js/downshift",
       "repoClass": "large",
-      "number": 14718,
-      "title": "Confirm correct handling of CSS nesting",
-      "url": "https://github.com/GoogleChrome/lighthouse/issues/14718",
-      "daysSinceUpdate": 4,
+      "number": 1668,
+      "title": "Dark mode contrast issue on docs page",
+      "url": "https://github.com/downshift-js/downshift/issues/1668",
+      "daysSinceUpdate": 5,
       "claimedRecent": 1,
       "prSubmitted": 0,
-      "linkedOpenPRs": 0,
+      "linkedOpenPRs": 1,
       "maintainerGreen": 0,
       "maintainerRed": 0
     }
