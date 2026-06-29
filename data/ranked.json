@@ -1,26 +1,61 @@
 {
-  "scannedAt": "2026-06-22T13:31:42Z",
+  "scannedAt": "2026-06-29T12:27:56Z",
   "count": 3,
   "countLarge": 3,
   "countSmall": 0,
   "topIssues": [
     {
-      "score": 26,
-      "repo": "dequelabs/axe-core",
-      "number": 3658,
-      "title": "Add \"radiogroup should have an accessible name\" as a best practice",
-      "url": "https://github.com/dequelabs/axe-core/issues/3658",
-      "queryLabel": "help wanted",
+      "score": 47,
+      "repo": "alphagov/govuk-design-system",
+      "number": 5271,
+      "title": "Define how the contribution criteria should feed into the maturity matrix",
+      "url": "https://github.com/alphagov/govuk-design-system/issues/5271",
+      "queryLabel": "documentation",
       "labels": [
-        "feat",
-        "help wanted"
+        "documentation"
       ],
-      "createdAt": "2022-09-09T22:36:44Z",
-      "updatedAt": "2026-06-21T07:08:50Z",
-      "daysSinceUpdate": 1,
-      "daysSinceCreate": 1381,
-      "commentCount": 7,
-      "recentActivity": 3,
+      "createdAt": "2026-05-05T12:09:47Z",
+      "updatedAt": "2026-06-26T09:45:41Z",
+      "daysSinceUpdate": 3,
+      "daysSinceCreate": 55,
+      "commentCount": 1,
+      "recentActivity": 1,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [],
+      "checkboxes": {
+        "total": 4,
+        "done": 0
+      },
+      "bodyExcerpt": "## What\nReview the GOV.UK Design System contribution criteria and work out how they should map onto the maturity matrix (once built). The output is a clear steer for whoever designs the matrix, so the two work together from the start rather than being aligned later.\nInputs:\n\n- Contribution criteria:",
+      "recentComments": [
+        {
+          "author": "hazalarpalikli",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2026-05-22T12:19:00Z",
+          "excerpt": "We didn't get to do this but we did create a min requirement for each stage , everything is in this document- https://docs.google.com/document/d/1H4JO7aRmt-YUNjj6fTb-WCyVEOK6cJ7W2Qhbqiz9-z0/edit?tab=t"
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": 45,
+      "repo": "alphagov/govuk-design-system",
+      "number": 5440,
+      "title": "Review wording of when not to use the Breadcrumbs component",
+      "url": "https://github.com/alphagov/govuk-design-system/issues/5440",
+      "queryLabel": "documentation",
+      "labels": [
+        "documentation"
+      ],
+      "createdAt": "2026-06-26T14:45:42Z",
+      "updatedAt": "2026-06-26T14:45:42Z",
+      "daysSinceUpdate": 2,
+      "daysSinceCreate": 2,
+      "commentCount": 0,
+      "recentActivity": 0,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 0,
@@ -30,129 +65,49 @@
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "### Product\n\naxe-core\n\n### Feature Description\n\nHi axe-core folks, I am opening a new issue in the vein of https://github.com/dequelabs/axe-core/issues/3256.\n\nI would like to be alerted when elements with `role=\"radiogroup\"` don't have a name that can be programmatically determined. I like [this sug",
-      "recentComments": [
-        {
-          "author": "bwyard",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-06-21T07:08:50Z",
-          "excerpt": "Wondercul I'll spin it up this weekend "
-        },
-        {
-          "author": "WilcoFiers",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-06-09T10:24:54Z",
-          "excerpt": "@bwyard Yes for sure, go for it!"
-        },
-        {
-          "author": "bwyard",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-06-05T10:19:20Z",
-          "excerpt": "Is this still live? @WilcoFiers would you still like a rule that uses `reviewOnFail` implemented?"
-        }
-      ],
+      "bodyExcerpt": "## Related documentation\n\n[Breadcrumbs \"when not to use\" section](https://design-system.service.gov.uk/components/breadcrumbs/#when-not-to-use-this-component), first paragraph.\n\n## Suggestion\n\nReview wording of this sentence, specifically the use of the phrase \"flat structure\". What is this describi",
+      "recentComments": [],
       "repoClass": "large"
     },
     {
-      "score": -14,
-      "repo": "dequelabs/axe-core",
-      "number": 4241,
-      "title": "Axe-core's d.ts file is incomplete",
-      "url": "https://github.com/dequelabs/axe-core/issues/4241",
-      "queryLabel": "help wanted",
-      "labels": [
-        "help wanted"
-      ],
-      "createdAt": "2023-11-09T17:26:36Z",
-      "updatedAt": "2026-06-21T07:08:09Z",
-      "daysSinceUpdate": 1,
-      "daysSinceCreate": 955,
-      "commentCount": 4,
-      "recentActivity": 3,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 1,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 1,
-        "done": 1
-      },
-      "bodyExcerpt": "### Product\n\naxe-core\n\n### Product Version\n\n_No response_\n\n### Latest Version\n\n- [X] I have tested the issue with the latest version of the product\n\n### Issue Description\n\nI wanted to access the function isVisibleOnScreen from axe.commons.dom, but this is not exported in the .d.ts.\n\nThis technically",
-      "recentComments": [
-        {
-          "author": "bwyard",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-06-21T07:08:09Z",
-          "excerpt": "@WilcoFiers that's fair, in happy to pick up something small I have some time available the next couple weeks and was looking for something to focus on"
-        },
-        {
-          "author": "WilcoFiers",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-06-09T10:30:29Z",
-          "excerpt": "@bwyard I'm a little reluctant to add types to axe-core just for the sake of having them. If anyone needs types for any particular function I'd like to know what those are. We can consider adding thos"
-        },
-        {
-          "author": "bwyard",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-06-05T10:06:54Z",
-          "excerpt": "Took a look at this. I'd be happy to do an audit across the board and add in what's most used. If yall could assign this to me if you still want it done.\n\nCould yall provide guidance on scope -- most "
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": -104,
+      "score": 34,
       "repo": "downshift-js/downshift",
-      "number": 1668,
-      "title": "Dark mode contrast issue on docs page",
-      "url": "https://github.com/downshift-js/downshift/issues/1668",
+      "number": 1654,
+      "title": "Add react-virtual support",
+      "url": "https://github.com/downshift-js/downshift/issues/1654",
       "queryLabel": "help wanted",
       "labels": [
         "help wanted",
         "docs"
       ],
-      "createdAt": "2026-01-15T12:39:01Z",
-      "updatedAt": "2026-06-17T09:48:15Z",
-      "daysSinceUpdate": 5,
-      "daysSinceCreate": 158,
-      "commentCount": 3,
-      "recentActivity": 2,
+      "createdAt": "2025-07-14T14:39:30Z",
+      "updatedAt": "2026-06-24T13:22:45Z",
+      "daysSinceUpdate": 4,
+      "daysSinceCreate": 349,
+      "commentCount": 2,
+      "recentActivity": 1,
       "maintainerGreen": 0,
       "maintainerRed": 0,
-      "claimedRecent": 1,
+      "claimedRecent": 0,
       "prSubmitted": 0,
-      "linkedOpenPRs": [
-        {
-          "number": 1694,
-          "title": "fix docs dark mode example contrast",
-          "url": "https://github.com/downshift-js/downshift/pull/1694",
-          "createdAt": "2026-06-22T04:17:11Z"
-        }
-      ],
+      "linkedOpenPRs": [],
       "checkboxes": {
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "When using the documentatin in dark mode, the results under the usage examples on the hooks pages are very light gray on a white background and becomes very hard to see.\n\nI’m happy to help with a PR if there’s agreement on the expected behavior or design direction.\n\nHere are some of them:\n\n<img widt",
+      "bodyExcerpt": "Hi,\n\nCould you add https://tanstack.com/virtual support, at least [optionally](https://docs.npmjs.com/cli/v11/configuring-npm/package-json#optionaldependencies)?\n\nBy being maintained by the lib itself, it would help with potential upgrades / breaking changes, while providing the benefits of it.\n\nPos",
       "recentComments": [
         {
-          "author": "silviuaavram",
-          "association": "COLLABORATOR",
-          "createdAt": "2026-06-17T09:48:15Z",
-          "excerpt": "It's still available. I think you probably need to update the tailwind config with\n\n```\ndarkMode: ['class', '[data-theme=\"dark\"]'],\n```\n\nAnd then go through the styles and add `dark:` equivalents. Fee"
-        },
-        {
           "author": "pupuking723",
-          "association": "NONE",
-          "createdAt": "2026-06-17T08:43:23Z",
-          "excerpt": "Hi, I would like to take this on if it is still available.\n\nI will keep the change limited to the docs dark-mode contrast issue shown in the screenshots, avoid changing component behavior, and verify "
+          "association": "CONTRIBUTOR",
+          "createdAt": "2026-06-24T13:22:45Z",
+          "excerpt": "Hi, I'd like to take this one. I'll keep the first pass scoped to the maintainer suggestion: add a TanStack Virtual example in the downshift examples/docs flow and link it from the docsite, without ad"
         },
         {
           "author": "silviuaavram",
           "association": "COLLABORATOR",
-          "createdAt": "2026-01-30T08:41:55Z",
-          "excerpt": "Hey @ayberkuman this is quite a pain, thanks opening the issue! Feel free to propose the improvement and create a PR, it will really help the docs. "
+          "createdAt": "2026-02-20T10:06:48Z",
+          "excerpt": "That would be a good idea! We could add it in the [examples repo](https://github.com/downshift-js/downshift-examples) and also link it in the docsite."
         }
       ],
       "repoClass": "large"
@@ -160,13 +115,13 @@
   ],
   "allRanked": [
     {
-      "score": 26,
-      "repo": "dequelabs/axe-core",
+      "score": 47,
+      "repo": "alphagov/govuk-design-system",
       "repoClass": "large",
-      "number": 3658,
-      "title": "Add \"radiogroup should have an accessible name\" as a best practice",
-      "url": "https://github.com/dequelabs/axe-core/issues/3658",
-      "daysSinceUpdate": 1,
+      "number": 5271,
+      "title": "Define how the contribution criteria should feed into the maturity matrix",
+      "url": "https://github.com/alphagov/govuk-design-system/issues/5271",
+      "daysSinceUpdate": 3,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
@@ -174,30 +129,30 @@
       "maintainerRed": 0
     },
     {
-      "score": -14,
-      "repo": "dequelabs/axe-core",
+      "score": 45,
+      "repo": "alphagov/govuk-design-system",
       "repoClass": "large",
-      "number": 4241,
-      "title": "Axe-core's d.ts file is incomplete",
-      "url": "https://github.com/dequelabs/axe-core/issues/4241",
-      "daysSinceUpdate": 1,
-      "claimedRecent": 1,
+      "number": 5440,
+      "title": "Review wording of when not to use the Breadcrumbs component",
+      "url": "https://github.com/alphagov/govuk-design-system/issues/5440",
+      "daysSinceUpdate": 2,
+      "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
       "maintainerGreen": 0,
       "maintainerRed": 0
     },
     {
-      "score": -104,
+      "score": 34,
       "repo": "downshift-js/downshift",
       "repoClass": "large",
-      "number": 1668,
-      "title": "Dark mode contrast issue on docs page",
-      "url": "https://github.com/downshift-js/downshift/issues/1668",
-      "daysSinceUpdate": 5,
-      "claimedRecent": 1,
+      "number": 1654,
+      "title": "Add react-virtual support",
+      "url": "https://github.com/downshift-js/downshift/issues/1654",
+      "daysSinceUpdate": 4,
+      "claimedRecent": 0,
       "prSubmitted": 0,
-      "linkedOpenPRs": 1,
+      "linkedOpenPRs": 0,
       "maintainerGreen": 0,
       "maintainerRed": 0
     }
