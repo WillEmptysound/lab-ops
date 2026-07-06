@@ -1,91 +1,78 @@
 {
-  "scannedAt": "2026-06-29T12:27:56Z",
-  "count": 3,
-  "countLarge": 3,
+  "scannedAt": "2026-07-06T11:59:28Z",
+  "count": 9,
+  "countLarge": 9,
   "countSmall": 0,
   "topIssues": [
     {
-      "score": 47,
-      "repo": "alphagov/govuk-design-system",
-      "number": 5271,
-      "title": "Define how the contribution criteria should feed into the maturity matrix",
-      "url": "https://github.com/alphagov/govuk-design-system/issues/5271",
-      "queryLabel": "documentation",
+      "score": 63,
+      "repo": "nvaccess/nvda",
+      "number": 20402,
+      "title": "Hide add-ons from the add-on store",
+      "url": "https://github.com/nvaccess/nvda/issues/20402",
+      "queryLabel": "good first issue",
       "labels": [
-        "documentation"
+        "p5",
+        "feature",
+        "good first issue",
+        "triaged",
+        "feature/addon-store"
       ],
-      "createdAt": "2026-05-05T12:09:47Z",
-      "updatedAt": "2026-06-26T09:45:41Z",
-      "daysSinceUpdate": 3,
-      "daysSinceCreate": 55,
-      "commentCount": 1,
-      "recentActivity": 1,
+      "createdAt": "2026-06-25T03:44:51Z",
+      "updatedAt": "2026-06-30T07:25:27Z",
+      "daysSinceUpdate": 6,
+      "daysSinceCreate": 11,
+      "commentCount": 9,
+      "recentActivity": 9,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": [],
       "checkboxes": {
-        "total": 4,
+        "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "## What\nReview the GOV.UK Design System contribution criteria and work out how they should map onto the maturity matrix (once built). The output is a clear steer for whoever designs the matrix, so the two work together from the start rather than being aligned later.\nInputs:\n\n- Contribution criteria:",
+      "bodyExcerpt": "### Is your feature request related to a problem? Please describe.\n\nThere are many add-ons on the add-on store currently. This can make it hard to meaningfully filter or discover new add-ons.\n\n### Describe the solution you'd like\n\nThe ability to hide add-ons from the available add-ons tab.\nIdeally t",
       "recentComments": [
         {
-          "author": "hazalarpalikli",
+          "author": "CyrilleB79",
           "association": "CONTRIBUTOR",
-          "createdAt": "2026-05-22T12:19:00Z",
-          "excerpt": "We didn't get to do this but we did create a min requirement for each stage , everything is in this document- https://docs.google.com/document/d/1H4JO7aRmt-YUNjj6fTb-WCyVEOK6cJ7W2Qhbqiz9-z0/edit?tab=t"
+          "createdAt": "2026-06-30T07:25:27Z",
+          "excerpt": "Today, there is no way to discover new add-ons. If we sort by publication date, we get both new add-ons and recent updates of existing add-ons.\n\nI'm not so sure that such filtering fully addresses thi"
+        },
+        {
+          "author": "CyrilleB79",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2026-06-30T07:22:42Z",
+          "excerpt": "Thanks Sean. Can you illustrate with your own example of topics you want hidden?\n\nRegarding filtering specifically an author, I'm quite concerned that you may be not interested by add-on A of author X"
+        },
+        {
+          "author": "seanbudd",
+          "association": "MEMBER",
+          "createdAt": "2026-06-30T07:02:45Z",
+          "excerpt": "The problem I'm facing is the add-on store is full of add-ons I'm not interested in, and I want to only see add-ons i might be interested in. there are certain authors or topics i wish i could easily "
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": 45,
-      "repo": "alphagov/govuk-design-system",
-      "number": 5440,
-      "title": "Review wording of when not to use the Breadcrumbs component",
-      "url": "https://github.com/alphagov/govuk-design-system/issues/5440",
-      "queryLabel": "documentation",
-      "labels": [
-        "documentation"
-      ],
-      "createdAt": "2026-06-26T14:45:42Z",
-      "updatedAt": "2026-06-26T14:45:42Z",
-      "daysSinceUpdate": 2,
-      "daysSinceCreate": 2,
-      "commentCount": 0,
-      "recentActivity": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "## Related documentation\n\n[Breadcrumbs \"when not to use\" section](https://design-system.service.gov.uk/components/breadcrumbs/#when-not-to-use-this-component), first paragraph.\n\n## Suggestion\n\nReview wording of this sentence, specifically the use of the phrase \"flat structure\". What is this describi",
-      "recentComments": [],
-      "repoClass": "large"
-    },
-    {
-      "score": 34,
-      "repo": "downshift-js/downshift",
-      "number": 1654,
-      "title": "Add react-virtual support",
-      "url": "https://github.com/downshift-js/downshift/issues/1654",
+      "score": 42,
+      "repo": "adobe/react-spectrum",
+      "number": 8239,
+      "title": "Table is not interactive on first click in SSR",
+      "url": "https://github.com/adobe/react-spectrum/issues/8239",
       "queryLabel": "help wanted",
       "labels": [
         "help wanted",
-        "docs"
+        "needs investigation"
       ],
-      "createdAt": "2025-07-14T14:39:30Z",
-      "updatedAt": "2026-06-24T13:22:45Z",
-      "daysSinceUpdate": 4,
-      "daysSinceCreate": 349,
-      "commentCount": 2,
-      "recentActivity": 1,
+      "createdAt": "2025-05-15T14:32:17Z",
+      "updatedAt": "2026-06-29T20:35:59Z",
+      "daysSinceUpdate": 6,
+      "daysSinceCreate": 416,
+      "commentCount": 17,
+      "recentActivity": 9,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 0,
@@ -95,19 +82,390 @@
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "Hi,\n\nCould you add https://tanstack.com/virtual support, at least [optionally](https://docs.npmjs.com/cli/v11/configuring-npm/package-json#optionaldependencies)?\n\nBy being maintained by the lib itself, it would help with potential upgrades / breaking changes, while providing the benefits of it.\n\nPos",
+      "bodyExcerpt": "### Provide a general summary of the issue here\n\nReact Aria's table is not interactive on the first click when the page was loaded through SSR.\n\n### 🤔 Expected Behavior?\n\nThe table should be interactive/hydrated on page load, not only after a user clicked on the page.\n\n### 😯 Current Behavior\n\n-\n\n###",
+      "recentComments": [
+        {
+          "author": "rsolomon-muon",
+          "association": "NONE",
+          "createdAt": "2026-06-29T20:35:59Z",
+          "excerpt": "@snowystinger I'm not the person you asked, but thought it might be helpful to report that we upgraded `react-aria-components` from `1.14.0` to `1.19.0` and it resolved this issue completely for us. P"
+        },
+        {
+          "author": "uncvrd",
+          "association": "NONE",
+          "createdAt": "2026-05-26T20:42:38Z",
+          "excerpt": "@snowystinger most immediate difference from the existing repo I see is that I use a Table Virtualizer, I'll try and create a repro for you though"
+        },
+        {
+          "author": "snowystinger",
+          "association": "MEMBER",
+          "createdAt": "2026-05-26T05:47:54Z",
+          "excerpt": "Hey, I was trying to reproduce this again today. I updated the repo shared in the description to our last release (1.17.0) and I'm unable to reproduce the original issue anymore.\n\n@uncvrd do you have "
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": 42,
+      "repo": "nvaccess/nvda",
+      "number": 15310,
+      "title": "add option for NVDA to not automatically read first line of an email in outlook",
+      "url": "https://github.com/nvaccess/nvda/issues/15310",
+      "queryLabel": "good first issue",
+      "labels": [
+        "p5",
+        "good first issue",
+        "triaged"
+      ],
+      "createdAt": "2023-08-18T08:45:36Z",
+      "updatedAt": "2026-07-02T16:32:23Z",
+      "daysSinceUpdate": 3,
+      "daysSinceCreate": 1053,
+      "commentCount": 27,
+      "recentActivity": 2,
+      "maintainerGreen": 1,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "<!-- Please read the text in this edit field before filling it in.\nPlease thoroughly read NVDA's wiki article on how to fill in this template, including how to provide the required files.\nIssues may be closed if the required information is not present.\nhttps://github.com/nvaccess/nvda/blob/master/de",
+      "recentComments": [
+        {
+          "author": "joshknnd1982",
+          "association": "NONE",
+          "createdAt": "2026-07-02T16:32:23Z",
+          "excerpt": "Will this be added soon? This is a longstanding issue. "
+        },
+        {
+          "author": "Dennisl123",
+          "association": "NONE",
+          "createdAt": "2026-07-02T13:51:40Z",
+          "excerpt": "do we know when this will be added?"
+        },
+        {
+          "author": "Dennisl123",
+          "association": "NONE",
+          "createdAt": "2025-07-25T16:09:09Z",
+          "excerpt": "Do you have any idea when this will be added?\n \nFrom: Cyrille Bougot ***@***.***> \nSent: Friday, July 25, 2025 11:46 AM\nTo: nvaccess/nvda ***@***.***>\nCc: Dennisl123 ***@***.***>; Mention ***@***.***>"
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": 28,
+      "repo": "dequelabs/axe-core",
+      "number": 3658,
+      "title": "Add \"radiogroup should have an accessible name\" as a best practice",
+      "url": "https://github.com/dequelabs/axe-core/issues/3658",
+      "queryLabel": "help wanted",
+      "labels": [
+        "feat",
+        "help wanted"
+      ],
+      "createdAt": "2022-09-09T22:36:44Z",
+      "updatedAt": "2026-07-06T03:27:02Z",
+      "daysSinceUpdate": 0,
+      "daysSinceCreate": 1395,
+      "commentCount": 8,
+      "recentActivity": 4,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "### Product\n\naxe-core\n\n### Feature Description\n\nHi axe-core folks, I am opening a new issue in the vein of https://github.com/dequelabs/axe-core/issues/3256.\n\nI would like to be alerted when elements with `role=\"radiogroup\"` don't have a name that can be programmatically determined. I like [this sug",
+      "recentComments": [
+        {
+          "author": "bwyard",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2026-07-06T03:27:02Z",
+          "excerpt": "ill have a pr up soon sometime tomorrow i have some things that opped up during the development that im getting toegther toask but made progress\n"
+        },
+        {
+          "author": "bwyard",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2026-06-21T07:08:50Z",
+          "excerpt": "Wondercul I'll spin it up this weekend "
+        },
+        {
+          "author": "WilcoFiers",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2026-06-09T10:24:54Z",
+          "excerpt": "@bwyard Yes for sure, go for it!"
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": 24,
+      "repo": "adobe/react-spectrum",
+      "number": 2806,
+      "title": "Unit in NumberField cannot be deleted (for some units/ unit-displays)",
+      "url": "https://github.com/adobe/react-spectrum/issues/2806",
+      "queryLabel": "help wanted",
+      "labels": [
+        "bug",
+        "help wanted"
+      ],
+      "createdAt": "2022-02-04T15:55:35Z",
+      "updatedAt": "2026-07-03T13:17:50Z",
+      "daysSinceUpdate": 2,
+      "daysSinceCreate": 1612,
+      "commentCount": 10,
+      "recentActivity": 2,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "<!---\nThanks for filing an issue 😄! Before you submit, please read the following:\n\nSearch open/closed issues before submitting since someone might have asked the same thing before!\n-->\n\n# 🐛 Bug Report \nI am using the useNumberField with the \"formatOptions\" option to add units to the number fields.\n\n",
       "recentComments": [
         {
           "author": "pupuking723",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-06-24T13:22:45Z",
-          "excerpt": "Hi, I'd like to take this one. I'll keep the first pass scoped to the maintainer suggestion: add a TanStack Virtual example in the downshift examples/docs flow and link it from the docsite, without ad"
+          "association": "NONE",
+          "createdAt": "2026-07-03T13:17:50Z",
+          "excerpt": "I can help retest this against current main and the changes from #9905. If the unit editing issue is still reproducible, I’ll narrow it down to the NumberField unit parsing/editing path before proposi"
         },
         {
-          "author": "silviuaavram",
-          "association": "COLLABORATOR",
-          "createdAt": "2026-02-20T10:06:48Z",
-          "excerpt": "That would be a good idea! We could add it in the [examples repo](https://github.com/downshift-js/downshift-examples) and also link it in the docsite."
+          "author": "snowystinger",
+          "association": "MEMBER",
+          "createdAt": "2026-06-11T07:40:41Z",
+          "excerpt": "re-test if fixed by https://github.com/adobe/react-spectrum/pull/9905"
+        },
+        {
+          "author": "snowystinger",
+          "association": "MEMBER",
+          "createdAt": "2024-06-24T21:25:47Z",
+          "excerpt": "Thanks for sharing that!"
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": 2,
+      "repo": "testing-library/jest-dom",
+      "number": 207,
+      "title": "toBeActiveDescendant",
+      "url": "https://github.com/testing-library/jest-dom/issues/207",
+      "queryLabel": "good first issue",
+      "labels": [
+        "enhancement",
+        "good first issue"
+      ],
+      "createdAt": "2020-02-17T08:31:54Z",
+      "updatedAt": "2026-07-03T16:11:32Z",
+      "daysSinceUpdate": 2,
+      "daysSinceCreate": 2331,
+      "commentCount": 16,
+      "recentActivity": 2,
+      "maintainerGreen": 1,
+      "maintainerRed": 0,
+      "claimedRecent": 1,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "<!--\n\nVote on feature requests by adding a 👍. This helps maintainers prioritize what\nto work on.\n\n* Please fill out this template with all the relevant information so we can\n  understand what's going on and fix the issue. We appreciate bugs filed and PRs\n  submitted!\n\n* Please make sure that you are",
+      "recentComments": [
+        {
+          "author": "HyeryongChoi",
+          "association": "NONE",
+          "createdAt": "2026-07-03T16:11:32Z",
+          "excerpt": "Opened a draft PR for `toHaveVirtualFocus` here: #730\n\nI scoped it to just `toHaveVirtualFocus` for now, since the discussion above mentioned two possible matchers (`toHaveVirtualFocus` and `toBeActiv"
+        },
+        {
+          "author": "beanscg",
+          "association": "NONE",
+          "createdAt": "2026-06-10T01:58:50Z",
+          "excerpt": "Bean Labs took a public-source pass on this issue.\n\nThe narrowest useful next step looks like: Offer a public comment that narrows the keyboard/ARIA or screen-reader expectation and identifies the com"
+        },
+        {
+          "author": "gnapse",
+          "association": "MEMBER",
+          "createdAt": "2024-02-01T01:19:15Z",
+          "excerpt": "@diegohaz do you mean that this library could provide both custom matchers, right?"
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": -64,
+      "repo": "adobe/react-spectrum",
+      "number": 9743,
+      "title": "[RAC Feature Request]: Opt-in single tab stop for DatePicker / DateField / TimeField",
+      "url": "https://github.com/adobe/react-spectrum/issues/9743",
+      "queryLabel": "good first issue",
+      "labels": [
+        "help wanted",
+        "good first issue",
+        "DatePicker"
+      ],
+      "createdAt": "2026-03-05T12:34:48Z",
+      "updatedAt": "2026-07-03T11:41:44Z",
+      "daysSinceUpdate": 3,
+      "daysSinceCreate": 122,
+      "commentCount": 2,
+      "recentActivity": 2,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [
+        {
+          "number": 10294,
+          "title": "feat(DateField): add keyboardNavigationBehavior prop for single tab stop",
+          "url": "https://github.com/adobe/react-spectrum/pull/10294",
+          "createdAt": "2026-07-03T13:02:53Z"
+        }
+      ],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "### Provide a general summary of the feature here\n\nIntroduce an opt-in prop for date and time field components that implements a single tab stop pattern.\n\n### 🤔 Expected Behavior?\n\n- Tab: Moves focus into the field (landing on the first segment or the entire input).\n- Arrow Left / Right: Moves focus",
+      "recentComments": [
+        {
+          "author": "umarfarooq3152",
+          "association": "NONE",
+          "createdAt": "2026-07-03T11:41:44Z",
+          "excerpt": "Hi @devongovett, I'd like to work on this. To keep the first PR focused, I'm planning to scope it to `DateField` first (introducing the `keyboardNavigationBehavior=\"tab\" | \"arrow\"` prop you suggested,"
+        },
+        {
+          "author": "devongovett",
+          "association": "MEMBER",
+          "createdAt": "2026-06-10T22:11:19Z",
+          "excerpt": "Discussed this with the team. We are open to adding an option. Perhaps `keyboardNavigationBehavior=\"tab | arrow\"` to match other components."
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": -95,
+      "repo": "adobe/react-spectrum",
+      "number": 10292,
+      "title": "Nested `Tabs` height transitions break due to CSS variable bleed and 0-height behavior of `TabList` and `TabPanel`",
+      "url": "https://github.com/adobe/react-spectrum/issues/10292",
+      "queryLabel": "good first issue",
+      "labels": [
+        "bug",
+        "good first issue"
+      ],
+      "createdAt": "2026-07-02T19:46:07Z",
+      "updatedAt": "2026-07-06T10:07:26Z",
+      "daysSinceUpdate": 0,
+      "daysSinceCreate": 3,
+      "commentCount": 5,
+      "recentActivity": 5,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 1,
+      "linkedOpenPRs": [
+        {
+          "number": 10293,
+          "title": "fix: Reset TabPanels size variables on TabPanel so nested Tabs do not inherit them",
+          "url": "https://github.com/adobe/react-spectrum/pull/10293",
+          "createdAt": "2026-07-03T09:43:35Z"
+        }
+      ],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "### Provide a general summary of the issue here\n\nWhen nesting `<Tabs>` inside another `<Tabs>` component, the transition animations severely break and can cause cause large layout shifts, when switching the outer `<Tabs>` component. This is caused by three distinct issues interacting with each other",
+      "recentComments": [
+        {
+          "author": "magraina",
+          "association": "NONE",
+          "createdAt": "2026-07-06T10:07:26Z",
+          "excerpt": "@snowystinger I like your point on that!\nTL;DR then `initial` would be the sweet spot to reflect the actual intent which is functionally equivalent to `auto`.\n\nThe problem though with CCS variables is"
+        },
+        {
+          "author": "snowystinger",
+          "association": "MEMBER",
+          "createdAt": "2026-07-06T05:51:45Z",
+          "excerpt": "@magraina The key is [here](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/unset):\n> if the property naturally inherits from its parent\n\nHeight does not naturally inherit from its p"
+        },
+        {
+          "author": "mvanhorn",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2026-07-03T09:43:58Z",
+          "excerpt": "Opened PR #10293 for the nested-inheritance part: TabPanelInner now resets --tab-panel-width/--tab-panel-height to auto on the panel div, so a nested TabPanels stops picking up the outer panel's pixel"
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": -104,
+      "repo": "nvaccess/nvda",
+      "number": 19353,
+      "title": "Make duration of indentation beeps configurable",
+      "url": "https://github.com/nvaccess/nvda/issues/19353",
+      "queryLabel": "good first issue",
+      "labels": [
+        "p5",
+        "quick fix",
+        "ux",
+        "app/vs-code",
+        "feature/configuration",
+        "good first issue",
+        "triaged"
+      ],
+      "createdAt": "2025-12-09T03:43:01Z",
+      "updatedAt": "2026-07-05T23:47:06Z",
+      "daysSinceUpdate": 0,
+      "daysSinceCreate": 209,
+      "commentCount": 7,
+      "recentActivity": 2,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 1,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [
+        {
+          "number": 20447,
+          "title": "Make duration of indentation beeps configurable (#19353)",
+          "url": "https://github.com/nvaccess/nvda/pull/20447",
+          "createdAt": "2026-07-05T13:35:32Z"
+        }
+      ],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "### Is your feature request related to a problem? Please describe\n\nIn #18898, the length of indentation beeps was reduced from 80ms to 40ms. However, this can cause problems for some users, such as those using audio cues in VS Code.\n\n### Describe the solution you'd like\n\nCompleting the work started ",
+      "recentComments": [
+        {
+          "author": "cary-rowen",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2026-07-05T23:47:06Z",
+          "excerpt": "I agree with @yncat that we can experiment with a few default values and choose one that is widely acceptable. I believe there are many times when using NVDA requires making trade-offs. If the beep fo"
+        },
+        {
+          "author": "yncat",
+          "association": "NONE",
+          "createdAt": "2026-05-12T08:15:19Z",
+          "excerpt": "Hi.\nFirst, I'm finding the new beep length just a bit to short, personally. But I do agree with all of the matters that everyone has raised so far. \nI always like simple, consistent software. To many "
+        },
+        {
+          "author": "CyrilleB79",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2025-12-11T08:57:27Z",
+          "excerpt": "Thanks @SaschaCowley for elaborating a bit more, that was my main request.\n\nSo if we agree that there is no better solution than creating a new option, the question that comes is: where will this opti"
         }
       ],
       "repoClass": "large"
@@ -115,13 +473,13 @@
   ],
   "allRanked": [
     {
-      "score": 47,
-      "repo": "alphagov/govuk-design-system",
+      "score": 63,
+      "repo": "nvaccess/nvda",
       "repoClass": "large",
-      "number": 5271,
-      "title": "Define how the contribution criteria should feed into the maturity matrix",
-      "url": "https://github.com/alphagov/govuk-design-system/issues/5271",
-      "daysSinceUpdate": 3,
+      "number": 20402,
+      "title": "Hide add-ons from the add-on store",
+      "url": "https://github.com/nvaccess/nvda/issues/20402",
+      "daysSinceUpdate": 6,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
@@ -129,12 +487,54 @@
       "maintainerRed": 0
     },
     {
-      "score": 45,
-      "repo": "alphagov/govuk-design-system",
+      "score": 42,
+      "repo": "adobe/react-spectrum",
       "repoClass": "large",
-      "number": 5440,
-      "title": "Review wording of when not to use the Breadcrumbs component",
-      "url": "https://github.com/alphagov/govuk-design-system/issues/5440",
+      "number": 8239,
+      "title": "Table is not interactive on first click in SSR",
+      "url": "https://github.com/adobe/react-spectrum/issues/8239",
+      "daysSinceUpdate": 6,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 42,
+      "repo": "nvaccess/nvda",
+      "repoClass": "large",
+      "number": 15310,
+      "title": "add option for NVDA to not automatically read first line of an email in outlook",
+      "url": "https://github.com/nvaccess/nvda/issues/15310",
+      "daysSinceUpdate": 3,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 0,
+      "maintainerGreen": 1,
+      "maintainerRed": 0
+    },
+    {
+      "score": 28,
+      "repo": "dequelabs/axe-core",
+      "repoClass": "large",
+      "number": 3658,
+      "title": "Add \"radiogroup should have an accessible name\" as a best practice",
+      "url": "https://github.com/dequelabs/axe-core/issues/3658",
+      "daysSinceUpdate": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 24,
+      "repo": "adobe/react-spectrum",
+      "repoClass": "large",
+      "number": 2806,
+      "title": "Unit in NumberField cannot be deleted (for some units/ unit-displays)",
+      "url": "https://github.com/adobe/react-spectrum/issues/2806",
       "daysSinceUpdate": 2,
       "claimedRecent": 0,
       "prSubmitted": 0,
@@ -143,16 +543,58 @@
       "maintainerRed": 0
     },
     {
-      "score": 34,
-      "repo": "downshift-js/downshift",
+      "score": 2,
+      "repo": "testing-library/jest-dom",
       "repoClass": "large",
-      "number": 1654,
-      "title": "Add react-virtual support",
-      "url": "https://github.com/downshift-js/downshift/issues/1654",
-      "daysSinceUpdate": 4,
-      "claimedRecent": 0,
+      "number": 207,
+      "title": "toBeActiveDescendant",
+      "url": "https://github.com/testing-library/jest-dom/issues/207",
+      "daysSinceUpdate": 2,
+      "claimedRecent": 1,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
+      "maintainerGreen": 1,
+      "maintainerRed": 0
+    },
+    {
+      "score": -64,
+      "repo": "adobe/react-spectrum",
+      "repoClass": "large",
+      "number": 9743,
+      "title": "[RAC Feature Request]: Opt-in single tab stop for DatePicker / DateField / TimeField",
+      "url": "https://github.com/adobe/react-spectrum/issues/9743",
+      "daysSinceUpdate": 3,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 1,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": -95,
+      "repo": "adobe/react-spectrum",
+      "repoClass": "large",
+      "number": 10292,
+      "title": "Nested `Tabs` height transitions break due to CSS variable bleed and 0-height behavior of `TabList` and `TabPanel`",
+      "url": "https://github.com/adobe/react-spectrum/issues/10292",
+      "daysSinceUpdate": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 1,
+      "linkedOpenPRs": 1,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": -104,
+      "repo": "nvaccess/nvda",
+      "repoClass": "large",
+      "number": 19353,
+      "title": "Make duration of indentation beeps configurable",
+      "url": "https://github.com/nvaccess/nvda/issues/19353",
+      "daysSinceUpdate": 0,
+      "claimedRecent": 1,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 1,
       "maintainerGreen": 0,
       "maintainerRed": 0
     }
