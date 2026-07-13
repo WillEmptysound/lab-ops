@@ -1,110 +1,9 @@
 {
-  "scannedAt": "2026-07-06T11:59:28Z",
-  "count": 9,
-  "countLarge": 9,
+  "scannedAt": "2026-07-13T10:55:31Z",
+  "count": 8,
+  "countLarge": 8,
   "countSmall": 0,
   "topIssues": [
-    {
-      "score": 63,
-      "repo": "nvaccess/nvda",
-      "number": 20402,
-      "title": "Hide add-ons from the add-on store",
-      "url": "https://github.com/nvaccess/nvda/issues/20402",
-      "queryLabel": "good first issue",
-      "labels": [
-        "p5",
-        "feature",
-        "good first issue",
-        "triaged",
-        "feature/addon-store"
-      ],
-      "createdAt": "2026-06-25T03:44:51Z",
-      "updatedAt": "2026-06-30T07:25:27Z",
-      "daysSinceUpdate": 6,
-      "daysSinceCreate": 11,
-      "commentCount": 9,
-      "recentActivity": 9,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "### Is your feature request related to a problem? Please describe.\n\nThere are many add-ons on the add-on store currently. This can make it hard to meaningfully filter or discover new add-ons.\n\n### Describe the solution you'd like\n\nThe ability to hide add-ons from the available add-ons tab.\nIdeally t",
-      "recentComments": [
-        {
-          "author": "CyrilleB79",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-06-30T07:25:27Z",
-          "excerpt": "Today, there is no way to discover new add-ons. If we sort by publication date, we get both new add-ons and recent updates of existing add-ons.\n\nI'm not so sure that such filtering fully addresses thi"
-        },
-        {
-          "author": "CyrilleB79",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-06-30T07:22:42Z",
-          "excerpt": "Thanks Sean. Can you illustrate with your own example of topics you want hidden?\n\nRegarding filtering specifically an author, I'm quite concerned that you may be not interested by add-on A of author X"
-        },
-        {
-          "author": "seanbudd",
-          "association": "MEMBER",
-          "createdAt": "2026-06-30T07:02:45Z",
-          "excerpt": "The problem I'm facing is the add-on store is full of add-ons I'm not interested in, and I want to only see add-ons i might be interested in. there are certain authors or topics i wish i could easily "
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": 42,
-      "repo": "adobe/react-spectrum",
-      "number": 8239,
-      "title": "Table is not interactive on first click in SSR",
-      "url": "https://github.com/adobe/react-spectrum/issues/8239",
-      "queryLabel": "help wanted",
-      "labels": [
-        "help wanted",
-        "needs investigation"
-      ],
-      "createdAt": "2025-05-15T14:32:17Z",
-      "updatedAt": "2026-06-29T20:35:59Z",
-      "daysSinceUpdate": 6,
-      "daysSinceCreate": 416,
-      "commentCount": 17,
-      "recentActivity": 9,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "### Provide a general summary of the issue here\n\nReact Aria's table is not interactive on the first click when the page was loaded through SSR.\n\n### 🤔 Expected Behavior?\n\nThe table should be interactive/hydrated on page load, not only after a user clicked on the page.\n\n### 😯 Current Behavior\n\n-\n\n###",
-      "recentComments": [
-        {
-          "author": "rsolomon-muon",
-          "association": "NONE",
-          "createdAt": "2026-06-29T20:35:59Z",
-          "excerpt": "@snowystinger I'm not the person you asked, but thought it might be helpful to report that we upgraded `react-aria-components` from `1.14.0` to `1.19.0` and it resolved this issue completely for us. P"
-        },
-        {
-          "author": "uncvrd",
-          "association": "NONE",
-          "createdAt": "2026-05-26T20:42:38Z",
-          "excerpt": "@snowystinger most immediate difference from the existing repo I see is that I use a Table Virtualizer, I'll try and create a repro for you though"
-        },
-        {
-          "author": "snowystinger",
-          "association": "MEMBER",
-          "createdAt": "2026-05-26T05:47:54Z",
-          "excerpt": "Hey, I was trying to reproduce this again today. I updated the repo shared in the description to our last release (1.17.0) and I'm unable to reproduce the original issue anymore.\n\n@uncvrd do you have "
-        }
-      ],
-      "repoClass": "large"
-    },
     {
       "score": 42,
       "repo": "nvaccess/nvda",
@@ -118,9 +17,9 @@
         "triaged"
       ],
       "createdAt": "2023-08-18T08:45:36Z",
-      "updatedAt": "2026-07-02T16:32:23Z",
-      "daysSinceUpdate": 3,
-      "daysSinceCreate": 1053,
+      "updatedAt": "2026-07-09T06:31:25Z",
+      "daysSinceUpdate": 4,
+      "daysSinceCreate": 1060,
       "commentCount": 27,
       "recentActivity": 2,
       "maintainerGreen": 1,
@@ -156,70 +55,25 @@
       "repoClass": "large"
     },
     {
-      "score": 28,
-      "repo": "dequelabs/axe-core",
-      "number": 3658,
-      "title": "Add \"radiogroup should have an accessible name\" as a best practice",
-      "url": "https://github.com/dequelabs/axe-core/issues/3658",
-      "queryLabel": "help wanted",
-      "labels": [
-        "feat",
-        "help wanted"
-      ],
-      "createdAt": "2022-09-09T22:36:44Z",
-      "updatedAt": "2026-07-06T03:27:02Z",
-      "daysSinceUpdate": 0,
-      "daysSinceCreate": 1395,
-      "commentCount": 8,
-      "recentActivity": 4,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "### Product\n\naxe-core\n\n### Feature Description\n\nHi axe-core folks, I am opening a new issue in the vein of https://github.com/dequelabs/axe-core/issues/3256.\n\nI would like to be alerted when elements with `role=\"radiogroup\"` don't have a name that can be programmatically determined. I like [this sug",
-      "recentComments": [
-        {
-          "author": "bwyard",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-07-06T03:27:02Z",
-          "excerpt": "ill have a pr up soon sometime tomorrow i have some things that opped up during the development that im getting toegther toask but made progress\n"
-        },
-        {
-          "author": "bwyard",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-06-21T07:08:50Z",
-          "excerpt": "Wondercul I'll spin it up this weekend "
-        },
-        {
-          "author": "WilcoFiers",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-06-09T10:24:54Z",
-          "excerpt": "@bwyard Yes for sure, go for it!"
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": 24,
-      "repo": "adobe/react-spectrum",
-      "number": 2806,
-      "title": "Unit in NumberField cannot be deleted (for some units/ unit-displays)",
-      "url": "https://github.com/adobe/react-spectrum/issues/2806",
+      "score": 36,
+      "repo": "nvaccess/nvda",
+      "number": 19245,
+      "title": "alpha AMD 64: error with apprentiClavier software",
+      "url": "https://github.com/nvaccess/nvda/issues/19245",
       "queryLabel": "help wanted",
       "labels": [
         "bug",
-        "help wanted"
+        "help wanted",
+        "p3",
+        "triaged",
+        "epic/64bit-migration",
+        "legacy/community-support"
       ],
-      "createdAt": "2022-02-04T15:55:35Z",
-      "updatedAt": "2026-07-03T13:17:50Z",
-      "daysSinceUpdate": 2,
-      "daysSinceCreate": 1612,
-      "commentCount": 10,
+      "createdAt": "2025-11-20T14:44:02Z",
+      "updatedAt": "2026-07-09T01:11:54Z",
+      "daysSinceUpdate": 4,
+      "daysSinceCreate": 234,
+      "commentCount": 4,
       "recentActivity": 2,
       "maintainerGreen": 0,
       "maintainerRed": 0,
@@ -230,94 +84,85 @@
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "<!---\nThanks for filing an issue 😄! Before you submit, please read the following:\n\nSearch open/closed issues before submitting since someone might have asked the same thing before!\n-->\n\n# 🐛 Bug Report \nI am using the useNumberField with the \"formatOptions\" option to add units to the number fields.\n\n",
+      "bodyExcerpt": "### Brief summary\n\n_No response_\n\n### Steps to reproduce\n\nSince the 64-bit version of NVDA, errors are issued when using the ApprentiClavier software.\nThese errors do not occur with earlier versions.\n\n### Actual behavior\n\n\nStart Apprenticlavier and type \"enter\"  several times.\nThis is the error type",
       "recentComments": [
         {
-          "author": "pupuking723",
+          "author": "seanbudd",
+          "association": "MEMBER",
+          "createdAt": "2026-07-09T01:11:54Z",
+          "excerpt": ">Can you elaborate please?\n\nThe application requires an add-on to work. It was clearly not designed with accessibility built in. Given it is no longer maintained - we are not supporting it either. The"
+        },
+        {
+          "author": "CyrilleB79",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2026-07-08T08:04:53Z",
+          "excerpt": "@paulber19, except the (optional) error sound and the logged error messages, is there any other noticeable effect on the user experience?\nSaid otherwise, does a user using this software on a stable NV"
+        },
+        {
+          "author": "paulber19",
           "association": "NONE",
-          "createdAt": "2026-07-03T13:17:50Z",
-          "excerpt": "I can help retest this against current main and the changes from #9905. If the unit editing issue is still reproducible, I’ll narrow it down to the NumberField unit parsing/editing path before proposi"
-        },
-        {
-          "author": "snowystinger",
-          "association": "MEMBER",
-          "createdAt": "2026-06-11T07:40:41Z",
-          "excerpt": "re-test if fixed by https://github.com/adobe/react-spectrum/pull/9905"
-        },
-        {
-          "author": "snowystinger",
-          "association": "MEMBER",
-          "createdAt": "2024-06-24T21:25:47Z",
-          "excerpt": "Thanks for sharing that!"
+          "createdAt": "2025-11-26T10:48:41Z",
+          "excerpt": "\n> The readme page for the application says you need to use an add-on for \n> it to work. Can you confirm if the software works with the add-on \n> installed?\nYes, the software needs an addon to signifi"
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": 2,
-      "repo": "testing-library/jest-dom",
-      "number": 207,
-      "title": "toBeActiveDescendant",
-      "url": "https://github.com/testing-library/jest-dom/issues/207",
+      "score": 26,
+      "repo": "nvaccess/nvda",
+      "number": 16984,
+      "title": "Dev Guide should document the use of gui.message.DisplayableError",
+      "url": "https://github.com/nvaccess/nvda/issues/16984",
       "queryLabel": "good first issue",
       "labels": [
-        "enhancement",
-        "good first issue"
+        "p5",
+        "audience/nvda-dev",
+        "good first issue",
+        "triaged",
+        "component/dev-documentation"
       ],
-      "createdAt": "2020-02-17T08:31:54Z",
-      "updatedAt": "2026-07-03T16:11:32Z",
-      "daysSinceUpdate": 2,
-      "daysSinceCreate": 2331,
-      "commentCount": 16,
-      "recentActivity": 2,
-      "maintainerGreen": 1,
+      "createdAt": "2024-08-09T04:39:27Z",
+      "updatedAt": "2026-07-11T16:40:42Z",
+      "daysSinceUpdate": 1,
+      "daysSinceCreate": 703,
+      "commentCount": 1,
+      "recentActivity": 1,
+      "maintainerGreen": 0,
       "maintainerRed": 0,
-      "claimedRecent": 1,
+      "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": [],
       "checkboxes": {
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "<!--\n\nVote on feature requests by adding a 👍. This helps maintainers prioritize what\nto work on.\n\n* Please fill out this template with all the relevant information so we can\n  understand what's going on and fix the issue. We appreciate bugs filed and PRs\n  submitted!\n\n* Please make sure that you are",
+      "bodyExcerpt": "### Is your feature request related to a problem? Please describe.\n\n`gui.message.DisplayableError` is a class which uses an `extensionPoint.Action` in an interesting way, to display user-friendly exceptions in a `gui.message.messageBox`.\nIn fact, it (appears to) call itself a \"type of extension poin",
       "recentComments": [
         {
-          "author": "HyeryongChoi",
+          "author": "danielw97",
           "association": "NONE",
-          "createdAt": "2026-07-03T16:11:32Z",
-          "excerpt": "Opened a draft PR for `toHaveVirtualFocus` here: #730\n\nI scoped it to just `toHaveVirtualFocus` for now, since the discussion above mentioned two possible matchers (`toHaveVirtualFocus` and `toBeActiv"
-        },
-        {
-          "author": "beanscg",
-          "association": "NONE",
-          "createdAt": "2026-06-10T01:58:50Z",
-          "excerpt": "Bean Labs took a public-source pass on this issue.\n\nThe narrowest useful next step looks like: Offer a public comment that narrows the keyboard/ARIA or screen-reader expectation and identifies the com"
-        },
-        {
-          "author": "gnapse",
-          "association": "MEMBER",
-          "createdAt": "2024-02-01T01:19:15Z",
-          "excerpt": "@diegohaz do you mean that this library could provide both custom matchers, right?"
+          "createdAt": "2026-07-11T16:40:42Z",
+          "excerpt": "Hi, I'd like to take this on as a first contribution if that's okay.\nI know it was initially proposed that the author write this. However, since it's been triaged as a good first issue, I'm hoping an "
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": -64,
+      "score": -51,
       "repo": "adobe/react-spectrum",
-      "number": 9743,
-      "title": "[RAC Feature Request]: Opt-in single tab stop for DatePicker / DateField / TimeField",
-      "url": "https://github.com/adobe/react-spectrum/issues/9743",
-      "queryLabel": "good first issue",
+      "number": 10310,
+      "title": "useInteractionModality detects JAWS and NVDA as mouse in Chromium",
+      "url": "https://github.com/adobe/react-spectrum/issues/10310",
+      "queryLabel": "help wanted",
       "labels": [
+        "bug",
         "help wanted",
-        "good first issue",
-        "DatePicker"
+        "accessibility"
       ],
-      "createdAt": "2026-03-05T12:34:48Z",
-      "updatedAt": "2026-07-03T11:41:44Z",
+      "createdAt": "2026-07-07T12:41:02Z",
+      "updatedAt": "2026-07-10T08:33:52Z",
       "daysSinceUpdate": 3,
-      "daysSinceCreate": 122,
+      "daysSinceCreate": 5,
       "commentCount": 2,
       "recentActivity": 2,
       "maintainerGreen": 0,
@@ -326,35 +171,146 @@
       "prSubmitted": 0,
       "linkedOpenPRs": [
         {
-          "number": 10294,
-          "title": "feat(DateField): add keyboardNavigationBehavior prop for single tab stop",
-          "url": "https://github.com/adobe/react-spectrum/pull/10294",
-          "createdAt": "2026-07-03T13:02:53Z"
+          "number": 10316,
+          "title": "fix(react-aria): detect screen reader pointer events as virtual modality",
+          "url": "https://github.com/adobe/react-spectrum/pull/10316",
+          "createdAt": "2026-07-09T01:06:03Z"
         }
       ],
       "checkboxes": {
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "### Provide a general summary of the feature here\n\nIntroduce an opt-in prop for date and time field components that implements a single tab stop pattern.\n\n### 🤔 Expected Behavior?\n\n- Tab: Moves focus into the field (landing on the first segment or the entire input).\n- Arrow Left / Right: Moves focus",
+      "bodyExcerpt": "### Provide a general summary of the issue here\n\nScenario: `useInteractionModality` reports \"mouse\" when screen reader user interacts\n   GIVEN a user has started their screenreader (JAWS or NVDA) and a chromium browser (Chrome)\n   WHEN the user interacts with the page clicking a button\n   THEN the h",
       "recentComments": [
         {
-          "author": "umarfarooq3152",
+          "author": "jesusgalhub",
           "association": "NONE",
-          "createdAt": "2026-07-03T11:41:44Z",
-          "excerpt": "Hi @devongovett, I'd like to work on this. To keep the first PR focused, I'm planning to scope it to `DateField` first (introducing the `keyboardNavigationBehavior=\"tab\" | \"arrow\"` prop you suggested,"
+          "createdAt": "2026-07-10T08:33:52Z",
+          "excerpt": "@LFDanLu I've commented in the PR. I believe the solution may not be sufficient for this use case"
         },
         {
-          "author": "devongovett",
+          "author": "LFDanLu",
           "association": "MEMBER",
-          "createdAt": "2026-06-10T22:11:19Z",
-          "excerpt": "Discussed this with the team. We are open to adding an option. Perhaps `keyboardNavigationBehavior=\"tab | arrow\"` to match other components."
+          "createdAt": "2026-07-08T18:26:24Z",
+          "excerpt": "Verified your findings in NVDA and JAWS locally. [React](https://github.com/react/react/commit/4ef269606) (who we borrowed this logic from in the first place) used to check the coordinate of the click"
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": -95,
+      "score": -60,
+      "repo": "testing-library/jest-dom",
+      "number": 548,
+      "title": "Support assertions for each DOM query",
+      "url": "https://github.com/testing-library/jest-dom/issues/548",
+      "queryLabel": "good first issue",
+      "labels": [
+        "enhancement",
+        "good first issue"
+      ],
+      "createdAt": "2023-11-09T19:52:18Z",
+      "updatedAt": "2026-07-10T19:02:39Z",
+      "daysSinceUpdate": 2,
+      "daysSinceCreate": 976,
+      "commentCount": 9,
+      "recentActivity": 1,
+      "maintainerGreen": 1,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [
+        {
+          "number": 731,
+          "title": "feat: add toContainAnyBy* and toContainOneBy* query matchers",
+          "url": "https://github.com/testing-library/jest-dom/pull/731",
+          "createdAt": "2026-07-10T18:09:31Z"
+        }
+      ],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "## Describe the feature you'd like:\n\nTL;DR:\n```ts\nexpect(element).toContainOneByRole(\"heading\", {\n    name: \"Attention\"\n});\n```\n\nPlease consider adding jest assertions for each of the eight query types provided by `@testing-library/dom`. Assertions based directly on DOM queries would make [this advi",
+      "recentComments": [
+        {
+          "author": "benquarmby",
+          "association": "NONE",
+          "createdAt": "2026-07-10T19:02:38Z",
+          "excerpt": "Hello from 2026! I was able to find some time to polish the DOM query matchers implementation and open #731. We've been testing this internally for a year or so, so it's well baked and stable. Thanks "
+        },
+        {
+          "author": "benquarmby",
+          "association": "NONE",
+          "createdAt": "2024-01-16T18:43:29Z",
+          "excerpt": "Made some progress here: https://github.com/testing-library/jest-dom/compare/main...benquarmby:jest-dom:jest-dom-query\n\nPlease ignore the VSCode settings. They're just for my personal convenience and "
+        },
+        {
+          "author": "gnapse",
+          "association": "MEMBER",
+          "createdAt": "2023-11-24T10:18:16Z",
+          "excerpt": "@benquarmby I say go for it."
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": -76,
+      "repo": "adobe/react-spectrum",
+      "number": 1773,
+      "title": "onCancel should fire in AlertDialog if Escape is pressed",
+      "url": "https://github.com/adobe/react-spectrum/issues/1773",
+      "queryLabel": "good first issue",
+      "labels": [
+        "good first issue"
+      ],
+      "createdAt": "2021-04-07T22:55:57Z",
+      "updatedAt": "2026-07-07T02:45:38Z",
+      "daysSinceUpdate": 6,
+      "daysSinceCreate": 1922,
+      "commentCount": 7,
+      "recentActivity": 2,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [
+        {
+          "number": 10307,
+          "title": "fix(dialog): fire onCancel when AlertDialog is dismissed via Escape key",
+          "url": "https://github.com/adobe/react-spectrum/pull/10307",
+          "createdAt": "2026-07-07T07:29:04Z"
+        }
+      ],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "# 🐛 Bug Report (or maybe feature request?)\n\nWhen adding an `onCancel` handler to an AlertDialog, it should fire if the dialog is closed via the Escape key.\n\nSee here for a repro: https://codesandbox.io/s/adoring-meadow-7cl4c?file=/src/App.js\n\nOpen the dialog, click Cancel, dialog will close, you'll ",
+      "recentComments": [
+        {
+          "author": "arham766",
+          "association": "NONE",
+          "createdAt": "2026-07-07T02:45:38Z",
+          "excerpt": "Looks like #10136 had an approved approach but was closed over the unsigned CLA. I'd like to pick this up: re-implement that approach with regression tests, and cover the S2 AlertDialog counterpart me"
+        },
+        {
+          "author": "snowystinger",
+          "association": "MEMBER",
+          "createdAt": "2026-06-11T06:55:06Z",
+          "excerpt": "Adding S2 example https://stackblitz.com/edit/fwp9po8j?file=src%2FExample.tsx"
+        },
+        {
+          "author": "tenphi",
+          "association": "NONE",
+          "createdAt": "2021-07-09T12:16:54Z",
+          "excerpt": "Looks like `DialogContainer` fires the `onDismiss` event in both cases. So it would be consistent to have `onDismiss` event on `DialogTrigger` that works the same."
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": -93,
       "repo": "adobe/react-spectrum",
       "number": 10292,
       "title": "Nested `Tabs` height transitions break due to CSS variable bleed and 0-height behavior of `TabList` and `TabPanel`",
@@ -365,11 +321,11 @@
         "good first issue"
       ],
       "createdAt": "2026-07-02T19:46:07Z",
-      "updatedAt": "2026-07-06T10:07:26Z",
-      "daysSinceUpdate": 0,
-      "daysSinceCreate": 3,
-      "commentCount": 5,
-      "recentActivity": 5,
+      "updatedAt": "2026-07-06T20:36:47Z",
+      "daysSinceUpdate": 6,
+      "daysSinceCreate": 10,
+      "commentCount": 6,
+      "recentActivity": 6,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 0,
@@ -389,6 +345,12 @@
       "bodyExcerpt": "### Provide a general summary of the issue here\n\nWhen nesting `<Tabs>` inside another `<Tabs>` component, the transition animations severely break and can cause cause large layout shifts, when switching the outer `<Tabs>` component. This is caused by three distinct issues interacting with each other",
       "recentComments": [
         {
+          "author": "snowystinger",
+          "association": "MEMBER",
+          "createdAt": "2026-07-06T20:36:47Z",
+          "excerpt": "> The problem though with CCS variables is, that such keywords are evaluated a bit differently, than one might expect.\nIt's true that height does not naturally inherit form it's parent, but CSS Custom"
+        },
+        {
           "author": "magraina",
           "association": "NONE",
           "createdAt": "2026-07-06T10:07:26Z",
@@ -399,73 +361,68 @@
           "association": "MEMBER",
           "createdAt": "2026-07-06T05:51:45Z",
           "excerpt": "@magraina The key is [here](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/unset):\n> if the property naturally inherits from its parent\n\nHeight does not naturally inherit from its p"
-        },
-        {
-          "author": "mvanhorn",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-07-03T09:43:58Z",
-          "excerpt": "Opened PR #10293 for the nested-inheritance part: TabPanelInner now resets --tab-panel-width/--tab-panel-height to auto on the panel div, so a nested TabPanels stops picking up the outer panel's pixel"
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": -104,
-      "repo": "nvaccess/nvda",
-      "number": 19353,
-      "title": "Make duration of indentation beeps configurable",
-      "url": "https://github.com/nvaccess/nvda/issues/19353",
+      "score": -178,
+      "repo": "GoogleChrome/lighthouse",
+      "number": 9934,
+      "title": "Display plugins in footer of report",
+      "url": "https://github.com/GoogleChrome/lighthouse/issues/9934",
       "queryLabel": "good first issue",
       "labels": [
-        "p5",
-        "quick fix",
-        "ux",
-        "app/vs-code",
-        "feature/configuration",
         "good first issue",
-        "triaged"
+        "P3"
       ],
-      "createdAt": "2025-12-09T03:43:01Z",
-      "updatedAt": "2026-07-05T23:47:06Z",
-      "daysSinceUpdate": 0,
-      "daysSinceCreate": 209,
-      "commentCount": 7,
-      "recentActivity": 2,
+      "createdAt": "2019-11-06T19:29:16Z",
+      "updatedAt": "2026-07-09T10:10:22Z",
+      "daysSinceUpdate": 4,
+      "daysSinceCreate": 2440,
+      "commentCount": 15,
+      "recentActivity": 1,
       "maintainerGreen": 0,
       "maintainerRed": 0,
-      "claimedRecent": 1,
+      "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": [
         {
-          "number": 20447,
-          "title": "Make duration of indentation beeps configurable (#19353)",
-          "url": "https://github.com/nvaccess/nvda/pull/20447",
-          "createdAt": "2026-07-05T13:35:32Z"
+          "number": 17119,
+          "title": "report: display used plugins in footer tooltip",
+          "url": "https://github.com/GoogleChrome/lighthouse/pull/17119",
+          "createdAt": "2026-07-09T05:40:51Z"
+        },
+        {
+          "number": 17125,
+          "title": "report: display plugins in footer",
+          "url": "https://github.com/GoogleChrome/lighthouse/pull/17125",
+          "createdAt": "2026-07-12T07:44:43Z"
         }
       ],
       "checkboxes": {
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "### Is your feature request related to a problem? Please describe\n\nIn #18898, the length of indentation beeps was reduced from 80ms to 40ms. However, this can cause problems for some users, such as those using audio cues in VS Code.\n\n### Describe the solution you'd like\n\nCompleting the work started ",
+      "bodyExcerpt": "Currently, at the footer of the report the LH version and GH issue link is included. I propose that we also include any used the plugins and respective issue links.",
       "recentComments": [
         {
-          "author": "cary-rowen",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-07-05T23:47:06Z",
-          "excerpt": "I agree with @yncat that we can experiment with a few default values and choose one that is widely acceptable. I believe there are many times when using NVDA requires making trade-offs. If the beep fo"
-        },
-        {
-          "author": "yncat",
+          "author": "Develop-KIM",
           "association": "NONE",
-          "createdAt": "2026-05-12T08:15:19Z",
-          "excerpt": "Hi.\nFirst, I'm finding the new beep length just a bit to short, personally. But I do agree with all of the matters that everyone has raised so far. \nI always like simple, consistent software. To many "
+          "createdAt": "2026-07-09T05:29:44Z",
+          "excerpt": "I'd like to work on this. Plan, following the suggestion above: collect the plugin audits from the LHR (config settings / audit group metadata), and render the plugin names in the hover tooltip of the"
         },
         {
-          "author": "CyrilleB79",
+          "author": "connorjclark",
+          "association": "COLLABORATOR",
+          "createdAt": "2023-06-21T19:56:47Z",
+          "excerpt": "@tannerdolby I think there's still some utility to this.\n\nThe best place for it now would be as part of the hover tooltip on the bottom-left item in the footer:\n\n<img width=\"1032\" alt=\"image\" src=\"htt"
+        },
+        {
+          "author": "tannerdolby",
           "association": "CONTRIBUTOR",
-          "createdAt": "2025-12-11T08:57:27Z",
-          "excerpt": "Thanks @SaschaCowley for elaborating a bit more, that was my main request.\n\nSo if we agree that there is no better solution than creating a new option, the question that comes is: where will this opti"
+          "createdAt": "2023-06-21T18:34:31Z",
+          "excerpt": "@connorjclark is there still any interest in updating the footer of reports? I see it has changed a bit since [this comment](https://github.com/GoogleChrome/lighthouse/issues/9934#issuecomment-7428144"
         }
       ],
       "repoClass": "large"
@@ -473,41 +430,13 @@
   ],
   "allRanked": [
     {
-      "score": 63,
-      "repo": "nvaccess/nvda",
-      "repoClass": "large",
-      "number": 20402,
-      "title": "Hide add-ons from the add-on store",
-      "url": "https://github.com/nvaccess/nvda/issues/20402",
-      "daysSinceUpdate": 6,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": 42,
-      "repo": "adobe/react-spectrum",
-      "repoClass": "large",
-      "number": 8239,
-      "title": "Table is not interactive on first click in SSR",
-      "url": "https://github.com/adobe/react-spectrum/issues/8239",
-      "daysSinceUpdate": 6,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
       "score": 42,
       "repo": "nvaccess/nvda",
       "repoClass": "large",
       "number": 15310,
       "title": "add option for NVDA to not automatically read first line of an email in outlook",
       "url": "https://github.com/nvaccess/nvda/issues/15310",
-      "daysSinceUpdate": 3,
+      "daysSinceUpdate": 4,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
@@ -515,13 +444,13 @@
       "maintainerRed": 0
     },
     {
-      "score": 28,
-      "repo": "dequelabs/axe-core",
+      "score": 36,
+      "repo": "nvaccess/nvda",
       "repoClass": "large",
-      "number": 3658,
-      "title": "Add \"radiogroup should have an accessible name\" as a best practice",
-      "url": "https://github.com/dequelabs/axe-core/issues/3658",
-      "daysSinceUpdate": 0,
+      "number": 19245,
+      "title": "alpha AMD 64: error with apprentiClavier software",
+      "url": "https://github.com/nvaccess/nvda/issues/19245",
+      "daysSinceUpdate": 4,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
@@ -529,13 +458,13 @@
       "maintainerRed": 0
     },
     {
-      "score": 24,
-      "repo": "adobe/react-spectrum",
+      "score": 26,
+      "repo": "nvaccess/nvda",
       "repoClass": "large",
-      "number": 2806,
-      "title": "Unit in NumberField cannot be deleted (for some units/ unit-displays)",
-      "url": "https://github.com/adobe/react-spectrum/issues/2806",
-      "daysSinceUpdate": 2,
+      "number": 16984,
+      "title": "Dev Guide should document the use of gui.message.DisplayableError",
+      "url": "https://github.com/nvaccess/nvda/issues/16984",
+      "daysSinceUpdate": 1,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
@@ -543,26 +472,12 @@
       "maintainerRed": 0
     },
     {
-      "score": 2,
-      "repo": "testing-library/jest-dom",
-      "repoClass": "large",
-      "number": 207,
-      "title": "toBeActiveDescendant",
-      "url": "https://github.com/testing-library/jest-dom/issues/207",
-      "daysSinceUpdate": 2,
-      "claimedRecent": 1,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 1,
-      "maintainerRed": 0
-    },
-    {
-      "score": -64,
+      "score": -51,
       "repo": "adobe/react-spectrum",
       "repoClass": "large",
-      "number": 9743,
-      "title": "[RAC Feature Request]: Opt-in single tab stop for DatePicker / DateField / TimeField",
-      "url": "https://github.com/adobe/react-spectrum/issues/9743",
+      "number": 10310,
+      "title": "useInteractionModality detects JAWS and NVDA as mouse in Chromium",
+      "url": "https://github.com/adobe/react-spectrum/issues/10310",
       "daysSinceUpdate": 3,
       "claimedRecent": 0,
       "prSubmitted": 0,
@@ -571,13 +486,41 @@
       "maintainerRed": 0
     },
     {
-      "score": -95,
+      "score": -60,
+      "repo": "testing-library/jest-dom",
+      "repoClass": "large",
+      "number": 548,
+      "title": "Support assertions for each DOM query",
+      "url": "https://github.com/testing-library/jest-dom/issues/548",
+      "daysSinceUpdate": 2,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 1,
+      "maintainerGreen": 1,
+      "maintainerRed": 0
+    },
+    {
+      "score": -76,
+      "repo": "adobe/react-spectrum",
+      "repoClass": "large",
+      "number": 1773,
+      "title": "onCancel should fire in AlertDialog if Escape is pressed",
+      "url": "https://github.com/adobe/react-spectrum/issues/1773",
+      "daysSinceUpdate": 6,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 1,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": -93,
       "repo": "adobe/react-spectrum",
       "repoClass": "large",
       "number": 10292,
       "title": "Nested `Tabs` height transitions break due to CSS variable bleed and 0-height behavior of `TabList` and `TabPanel`",
       "url": "https://github.com/adobe/react-spectrum/issues/10292",
-      "daysSinceUpdate": 0,
+      "daysSinceUpdate": 6,
       "claimedRecent": 0,
       "prSubmitted": 1,
       "linkedOpenPRs": 1,
@@ -585,16 +528,16 @@
       "maintainerRed": 0
     },
     {
-      "score": -104,
-      "repo": "nvaccess/nvda",
+      "score": -178,
+      "repo": "GoogleChrome/lighthouse",
       "repoClass": "large",
-      "number": 19353,
-      "title": "Make duration of indentation beeps configurable",
-      "url": "https://github.com/nvaccess/nvda/issues/19353",
-      "daysSinceUpdate": 0,
-      "claimedRecent": 1,
+      "number": 9934,
+      "title": "Display plugins in footer of report",
+      "url": "https://github.com/GoogleChrome/lighthouse/issues/9934",
+      "daysSinceUpdate": 4,
+      "claimedRecent": 0,
       "prSubmitted": 0,
-      "linkedOpenPRs": 1,
+      "linkedOpenPRs": 2,
       "maintainerGreen": 0,
       "maintainerRed": 0
     }
