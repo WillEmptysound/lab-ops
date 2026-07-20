@@ -1,80 +1,29 @@
 {
-  "scannedAt": "2026-07-13T10:55:31Z",
-  "count": 8,
-  "countLarge": 8,
+  "scannedAt": "2026-07-20T10:47:00Z",
+  "count": 6,
+  "countLarge": 6,
   "countSmall": 0,
   "topIssues": [
     {
-      "score": 42,
+      "score": 65,
       "repo": "nvaccess/nvda",
-      "number": 15310,
-      "title": "add option for NVDA to not automatically read first line of an email in outlook",
-      "url": "https://github.com/nvaccess/nvda/issues/15310",
+      "number": 20478,
+      "title": "Increase the maximum value limit for the \"Maximum number of characters on one line\" setting control.",
+      "url": "https://github.com/nvaccess/nvda/issues/20478",
       "queryLabel": "good first issue",
       "labels": [
-        "p5",
+        "component/NVDA-GUI",
+        "p4",
+        "feature",
         "good first issue",
         "triaged"
       ],
-      "createdAt": "2023-08-18T08:45:36Z",
-      "updatedAt": "2026-07-09T06:31:25Z",
-      "daysSinceUpdate": 4,
-      "daysSinceCreate": 1060,
-      "commentCount": 27,
-      "recentActivity": 2,
-      "maintainerGreen": 1,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "<!-- Please read the text in this edit field before filling it in.\nPlease thoroughly read NVDA's wiki article on how to fill in this template, including how to provide the required files.\nIssues may be closed if the required information is not present.\nhttps://github.com/nvaccess/nvda/blob/master/de",
-      "recentComments": [
-        {
-          "author": "joshknnd1982",
-          "association": "NONE",
-          "createdAt": "2026-07-02T16:32:23Z",
-          "excerpt": "Will this be added soon? This is a longstanding issue. "
-        },
-        {
-          "author": "Dennisl123",
-          "association": "NONE",
-          "createdAt": "2026-07-02T13:51:40Z",
-          "excerpt": "do we know when this will be added?"
-        },
-        {
-          "author": "Dennisl123",
-          "association": "NONE",
-          "createdAt": "2025-07-25T16:09:09Z",
-          "excerpt": "Do you have any idea when this will be added?\n \nFrom: Cyrille Bougot ***@***.***> \nSent: Friday, July 25, 2025 11:46 AM\nTo: nvaccess/nvda ***@***.***>\nCc: Dennisl123 ***@***.***>; Mention ***@***.***>"
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": 36,
-      "repo": "nvaccess/nvda",
-      "number": 19245,
-      "title": "alpha AMD 64: error with apprentiClavier software",
-      "url": "https://github.com/nvaccess/nvda/issues/19245",
-      "queryLabel": "help wanted",
-      "labels": [
-        "bug",
-        "help wanted",
-        "p3",
-        "triaged",
-        "epic/64bit-migration",
-        "legacy/community-support"
-      ],
-      "createdAt": "2025-11-20T14:44:02Z",
-      "updatedAt": "2026-07-09T01:11:54Z",
-      "daysSinceUpdate": 4,
-      "daysSinceCreate": 234,
-      "commentCount": 4,
-      "recentActivity": 2,
+      "createdAt": "2026-07-10T02:34:26Z",
+      "updatedAt": "2026-07-14T23:52:18Z",
+      "daysSinceUpdate": 5,
+      "daysSinceCreate": 10,
+      "commentCount": 10,
+      "recentActivity": 10,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 0,
@@ -84,47 +33,44 @@
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "### Brief summary\n\n_No response_\n\n### Steps to reproduce\n\nSince the 64-bit version of NVDA, errors are issued when using the ApprentiClavier software.\nThese errors do not occur with earlier versions.\n\n### Actual behavior\n\n\nStart Apprenticlavier and type \"enter\"  several times.\nThis is the error type",
+      "bodyExcerpt": "### Is your feature request related to a problem? Please describe.\n\nWhen browse mode is set to use screen layout navigation, paragraphs exceeding 250 characters are frequently encountered.\n\n### Describe the solution you'd like\n\nIncrease the maximum value limit for the \"Maximum number of characters o",
       "recentComments": [
+        {
+          "author": "Rasaec5",
+          "association": "NONE",
+          "createdAt": "2026-07-14T23:52:18Z",
+          "excerpt": "I will definitely take on the issue, and ensure that my contribution matches the guidelines."
+        },
         {
           "author": "seanbudd",
           "association": "MEMBER",
-          "createdAt": "2026-07-09T01:11:54Z",
-          "excerpt": ">Can you elaborate please?\n\nThe application requires an add-on to work. It was clearly not designed with accessibility built in. Given it is no longer maintained - we are not supporting it either. The"
+          "createdAt": "2026-07-14T23:12:30Z",
+          "excerpt": "@Mubashir78's PR has been rejected. Please feel free to continue to work on it. Let us know if you no longer plan to work on it and we can @Mubashir78 the green light to start work again."
         },
         {
           "author": "CyrilleB79",
           "association": "CONTRIBUTOR",
-          "createdAt": "2026-07-08T08:04:53Z",
-          "excerpt": "@paulber19, except the (optional) error sound and the logged error messages, is there any other noticeable effect on the user experience?\nSaid otherwise, does a user using this software on a stable NV"
-        },
-        {
-          "author": "paulber19",
-          "association": "NONE",
-          "createdAt": "2025-11-26T10:48:41Z",
-          "excerpt": "\n> The readme page for the application says you need to use an add-on for \n> it to work. Can you confirm if the software works with the add-on \n> installed?\nYes, the software needs an addon to signifi"
+          "createdAt": "2026-07-14T14:43:41Z",
+          "excerpt": "@Rasaec5 note that @Mubashir78 has already opened #20495. It's quite unfortunate but just wanted to inform you so that you do not work for nothing."
         }
       ],
       "repoClass": "large"
     },
     {
       "score": 26,
-      "repo": "nvaccess/nvda",
-      "number": 16984,
-      "title": "Dev Guide should document the use of gui.message.DisplayableError",
-      "url": "https://github.com/nvaccess/nvda/issues/16984",
-      "queryLabel": "good first issue",
+      "repo": "alphagov/govuk-design-system",
+      "number": 4758,
+      "title": "Edit transcript for June's #DSChat",
+      "url": "https://github.com/alphagov/govuk-design-system/issues/4758",
+      "queryLabel": "documentation",
       "labels": [
-        "p5",
-        "audience/nvda-dev",
-        "good first issue",
-        "triaged",
-        "component/dev-documentation"
+        "documentation",
+        "small story"
       ],
-      "createdAt": "2024-08-09T04:39:27Z",
-      "updatedAt": "2026-07-11T16:40:42Z",
-      "daysSinceUpdate": 1,
-      "daysSinceCreate": 703,
+      "createdAt": "2025-06-05T11:37:17Z",
+      "updatedAt": "2026-07-14T07:20:16Z",
+      "daysSinceUpdate": 6,
+      "daysSinceCreate": 409,
       "commentCount": 1,
       "recentActivity": 1,
       "maintainerGreen": 0,
@@ -133,22 +79,123 @@
       "prSubmitted": 0,
       "linkedOpenPRs": [],
       "checkboxes": {
-        "total": 0,
+        "total": 2,
         "done": 0
       },
-      "bodyExcerpt": "### Is your feature request related to a problem? Please describe.\n\n`gui.message.DisplayableError` is a class which uses an `extensionPoint.Action` in an interesting way, to display user-friendly exceptions in a `gui.message.messageBox`.\nIn fact, it (appears to) call itself a \"type of extension poin",
+      "bodyExcerpt": "## What\nEdit the transcript from the recording of June's #DSChat.\n\n## Why\nTo ensure it's correct and free of typos.\n\n## Who needs to work on this\nAnyone\n\n## Who needs to review this\nN/A\n\n## Done when\n- [ ] [transcript ](https://docs.google.com/document/d/1pQap4fpVZYXyL53TxjpXW1W3DSzgeXdkWjz5zPKrz7o/",
       "recentComments": [
         {
-          "author": "danielw97",
-          "association": "NONE",
-          "createdAt": "2026-07-11T16:40:42Z",
-          "excerpt": "Hi, I'd like to take this on as a first contribution if that's okay.\nI know it was initially proposed that the author write this. However, since it's been triaged as a good first issue, I'm hoping an "
+          "author": "emma1carter",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2026-07-14T07:20:16Z",
+          "excerpt": "@kellylee-gds Can i close this one?"
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": -51,
+      "score": -18,
+      "repo": "GoogleChrome/lighthouse",
+      "number": 11593,
+      "title": "\"Properly size image\" report is too strict?",
+      "url": "https://github.com/GoogleChrome/lighthouse/issues/11593",
+      "queryLabel": "good first issue",
+      "labels": [
+        "good first issue",
+        "docs",
+        "P2",
+        "images"
+      ],
+      "createdAt": "2020-10-24T03:27:29Z",
+      "updatedAt": "2026-07-14T18:44:52Z",
+      "daysSinceUpdate": 5,
+      "daysSinceCreate": 2095,
+      "commentCount": 22,
+      "recentActivity": 1,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 1,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "<!-- We would love to hear anything on your mind about Lighthouse -->\n**Summary**\n\nHi !\n\nI am trying to get rid of the \"Properly image size\" but I am facing a wall here. Here are the kind of errors I get:\n\n![image](https://user-images.githubusercontent.com/1198915/97066910-92428000-15f3-11eb-82e7-6a",
+      "recentComments": [
+        {
+          "author": "Ujwal-Developer",
+          "association": "NONE",
+          "createdAt": "2026-07-14T18:44:52Z",
+          "excerpt": "Hi! I’m a first-time open-source contributor and I’m interested in working on this issue. Since the discussion is a few years old, could you please confirm whether the issue is still active and availa"
+        },
+        {
+          "author": "thommyhh",
+          "association": "NONE",
+          "createdAt": "2026-04-23T08:09:25Z",
+          "excerpt": "That seems to be resolve with Lighthouse 13.0.2 in Brave browser and Lighthouse 13.1.0 in Chrome Canary.  Lighthouse 13.0.1 (Pagespeed Insights) still shows messages where the image is \"too large\". So"
+        },
+        {
+          "author": "rafay247",
+          "association": "NONE",
+          "createdAt": "2026-02-25T16:50:50Z",
+          "excerpt": "Hi, I would like to work on this issue."
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": -18,
+      "repo": "GoogleChrome/lighthouse",
+      "number": 9474,
+      "title": "Add a check to test if :hover styles require doubletapping links",
+      "url": "https://github.com/GoogleChrome/lighthouse/issues/9474",
+      "queryLabel": "good first issue",
+      "labels": [
+        "new_audit",
+        "good first issue",
+        "P3"
+      ],
+      "createdAt": "2019-07-27T12:35:28Z",
+      "updatedAt": "2026-07-15T09:39:41Z",
+      "daysSinceUpdate": 5,
+      "daysSinceCreate": 2549,
+      "commentCount": 7,
+      "recentActivity": 1,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 1,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "It's really annoying when a website needs to have a double tap on links and buttons when the website is being used on a mobile device.\n\nIt would be a nice feature for Lighthouse to test if the website has this poor user experience.\n\nThen if the website does make users have to double tap for links an",
+      "recentComments": [
+        {
+          "author": "snehal242005",
+          "association": "NONE",
+          "createdAt": "2026-07-15T09:39:41Z",
+          "excerpt": "Hi, I'd like to work on this issue!\n"
+        },
+        {
+          "author": "Malusnow",
+          "association": "NONE",
+          "createdAt": "2026-04-14T05:39:04Z",
+          "excerpt": "Hello, I'm interested in this issue, may I work on this?"
+        },
+        {
+          "author": "patrickhulce",
+          "association": "COLLABORATOR",
+          "createdAt": "2021-06-21T21:29:46Z",
+          "excerpt": "We like this idea if it's still a problem! Good first issue to investigate if anyone out there would like to put in the research :)"
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": -43,
       "repo": "adobe/react-spectrum",
       "number": 10310,
       "title": "useInteractionModality detects JAWS and NVDA as mouse in Chromium",
@@ -160,11 +207,11 @@
         "accessibility"
       ],
       "createdAt": "2026-07-07T12:41:02Z",
-      "updatedAt": "2026-07-10T08:33:52Z",
-      "daysSinceUpdate": 3,
-      "daysSinceCreate": 5,
-      "commentCount": 2,
-      "recentActivity": 2,
+      "updatedAt": "2026-07-15T06:34:51Z",
+      "daysSinceUpdate": 5,
+      "daysSinceCreate": 12,
+      "commentCount": 6,
+      "recentActivity": 6,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 0,
@@ -186,243 +233,73 @@
         {
           "author": "jesusgalhub",
           "association": "NONE",
-          "createdAt": "2026-07-10T08:33:52Z",
-          "excerpt": "@LFDanLu I've commented in the PR. I believe the solution may not be sufficient for this use case"
+          "createdAt": "2026-07-15T06:34:51Z",
+          "excerpt": "I created this issue. Feel free to comment and add any information\nhttps://issuetracker.google.com/issues/534943063"
         },
         {
           "author": "LFDanLu",
           "association": "MEMBER",
-          "createdAt": "2026-07-08T18:26:24Z",
-          "excerpt": "Verified your findings in NVDA and JAWS locally. [React](https://github.com/react/react/commit/4ef269606) (who we borrowed this logic from in the first place) used to check the coordinate of the click"
+          "createdAt": "2026-07-14T16:38:33Z",
+          "excerpt": "yep, definitely can, probably in the same vein as https://issuetracker.google.com/issues/40805554 which we reported for Talkback. I need to find some time to update that ticket (hopefully soon), and c"
+        },
+        {
+          "author": "jesusgalhub",
+          "association": "NONE",
+          "createdAt": "2026-07-14T11:26:21Z",
+          "excerpt": "@LFDanLu \nIs this something we can report to chromium team?"
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": -60,
-      "repo": "testing-library/jest-dom",
-      "number": 548,
-      "title": "Support assertions for each DOM query",
-      "url": "https://github.com/testing-library/jest-dom/issues/548",
+      "score": -54,
+      "repo": "nvaccess/nvda",
+      "number": 16984,
+      "title": "Dev Guide should document the use of gui.message.DisplayableError",
+      "url": "https://github.com/nvaccess/nvda/issues/16984",
       "queryLabel": "good first issue",
       "labels": [
-        "enhancement",
-        "good first issue"
+        "p5",
+        "audience/nvda-dev",
+        "good first issue",
+        "triaged",
+        "component/dev-documentation"
       ],
-      "createdAt": "2023-11-09T19:52:18Z",
-      "updatedAt": "2026-07-10T19:02:39Z",
-      "daysSinceUpdate": 2,
-      "daysSinceCreate": 976,
-      "commentCount": 9,
-      "recentActivity": 1,
+      "createdAt": "2024-08-09T04:39:27Z",
+      "updatedAt": "2026-07-14T03:51:23Z",
+      "daysSinceUpdate": 6,
+      "daysSinceCreate": 710,
+      "commentCount": 2,
+      "recentActivity": 2,
       "maintainerGreen": 1,
       "maintainerRed": 0,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": [
         {
-          "number": 731,
-          "title": "feat: add toContainAnyBy* and toContainOneBy* query matchers",
-          "url": "https://github.com/testing-library/jest-dom/pull/731",
-          "createdAt": "2026-07-10T18:09:31Z"
+          "number": 20504,
+          "title": "Document gui.message.DisplayableError in the  Developer Guide",
+          "url": "https://github.com/nvaccess/nvda/pull/20504",
+          "createdAt": "2026-07-15T15:33:30Z"
         }
       ],
       "checkboxes": {
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "## Describe the feature you'd like:\n\nTL;DR:\n```ts\nexpect(element).toContainOneByRole(\"heading\", {\n    name: \"Attention\"\n});\n```\n\nPlease consider adding jest assertions for each of the eight query types provided by `@testing-library/dom`. Assertions based directly on DOM queries would make [this advi",
+      "bodyExcerpt": "### Is your feature request related to a problem? Please describe.\n\n`gui.message.DisplayableError` is a class which uses an `extensionPoint.Action` in an interesting way, to display user-friendly exceptions in a `gui.message.messageBox`.\nIn fact, it (appears to) call itself a \"type of extension poin",
       "recentComments": [
         {
-          "author": "benquarmby",
-          "association": "NONE",
-          "createdAt": "2026-07-10T19:02:38Z",
-          "excerpt": "Hello from 2026! I was able to find some time to polish the DOM query matchers implementation and open #731. We've been testing this internally for a year or so, so it's well baked and stable. Thanks "
-        },
-        {
-          "author": "benquarmby",
-          "association": "NONE",
-          "createdAt": "2024-01-16T18:43:29Z",
-          "excerpt": "Made some progress here: https://github.com/testing-library/jest-dom/compare/main...benquarmby:jest-dom:jest-dom-query\n\nPlease ignore the VSCode settings. They're just for my personal convenience and "
-        },
-        {
-          "author": "gnapse",
+          "author": "seanbudd",
           "association": "MEMBER",
-          "createdAt": "2023-11-24T10:18:16Z",
-          "excerpt": "@benquarmby I say go for it."
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": -76,
-      "repo": "adobe/react-spectrum",
-      "number": 1773,
-      "title": "onCancel should fire in AlertDialog if Escape is pressed",
-      "url": "https://github.com/adobe/react-spectrum/issues/1773",
-      "queryLabel": "good first issue",
-      "labels": [
-        "good first issue"
-      ],
-      "createdAt": "2021-04-07T22:55:57Z",
-      "updatedAt": "2026-07-07T02:45:38Z",
-      "daysSinceUpdate": 6,
-      "daysSinceCreate": 1922,
-      "commentCount": 7,
-      "recentActivity": 2,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [
-        {
-          "number": 10307,
-          "title": "fix(dialog): fire onCancel when AlertDialog is dismissed via Escape key",
-          "url": "https://github.com/adobe/react-spectrum/pull/10307",
-          "createdAt": "2026-07-07T07:29:04Z"
-        }
-      ],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "# 🐛 Bug Report (or maybe feature request?)\n\nWhen adding an `onCancel` handler to an AlertDialog, it should fire if the dialog is closed via the Escape key.\n\nSee here for a repro: https://codesandbox.io/s/adoring-meadow-7cl4c?file=/src/App.js\n\nOpen the dialog, click Cancel, dialog will close, you'll ",
-      "recentComments": [
-        {
-          "author": "arham766",
-          "association": "NONE",
-          "createdAt": "2026-07-07T02:45:38Z",
-          "excerpt": "Looks like #10136 had an approved approach but was closed over the unsigned CLA. I'd like to pick this up: re-implement that approach with regression tests, and cover the S2 AlertDialog counterpart me"
+          "createdAt": "2026-07-14T03:51:23Z",
+          "excerpt": "Hi @danielw97 - all that sounds good to me.\nThe docstring for a class typically goes in the `__init__` field in situations like this, so I would encourage just adding more information to the existing "
         },
         {
-          "author": "snowystinger",
-          "association": "MEMBER",
-          "createdAt": "2026-06-11T06:55:06Z",
-          "excerpt": "Adding S2 example https://stackblitz.com/edit/fwp9po8j?file=src%2FExample.tsx"
-        },
-        {
-          "author": "tenphi",
-          "association": "NONE",
-          "createdAt": "2021-07-09T12:16:54Z",
-          "excerpt": "Looks like `DialogContainer` fires the `onDismiss` event in both cases. So it would be consistent to have `onDismiss` event on `DialogTrigger` that works the same."
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": -93,
-      "repo": "adobe/react-spectrum",
-      "number": 10292,
-      "title": "Nested `Tabs` height transitions break due to CSS variable bleed and 0-height behavior of `TabList` and `TabPanel`",
-      "url": "https://github.com/adobe/react-spectrum/issues/10292",
-      "queryLabel": "good first issue",
-      "labels": [
-        "bug",
-        "good first issue"
-      ],
-      "createdAt": "2026-07-02T19:46:07Z",
-      "updatedAt": "2026-07-06T20:36:47Z",
-      "daysSinceUpdate": 6,
-      "daysSinceCreate": 10,
-      "commentCount": 6,
-      "recentActivity": 6,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 1,
-      "linkedOpenPRs": [
-        {
-          "number": 10293,
-          "title": "fix: Reset TabPanels size variables on TabPanel so nested Tabs do not inherit them",
-          "url": "https://github.com/adobe/react-spectrum/pull/10293",
-          "createdAt": "2026-07-03T09:43:35Z"
-        }
-      ],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "### Provide a general summary of the issue here\n\nWhen nesting `<Tabs>` inside another `<Tabs>` component, the transition animations severely break and can cause cause large layout shifts, when switching the outer `<Tabs>` component. This is caused by three distinct issues interacting with each other",
-      "recentComments": [
-        {
-          "author": "snowystinger",
-          "association": "MEMBER",
-          "createdAt": "2026-07-06T20:36:47Z",
-          "excerpt": "> The problem though with CCS variables is, that such keywords are evaluated a bit differently, than one might expect.\nIt's true that height does not naturally inherit form it's parent, but CSS Custom"
-        },
-        {
-          "author": "magraina",
-          "association": "NONE",
-          "createdAt": "2026-07-06T10:07:26Z",
-          "excerpt": "@snowystinger I like your point on that!\nTL;DR then `initial` would be the sweet spot to reflect the actual intent which is functionally equivalent to `auto`.\n\nThe problem though with CCS variables is"
-        },
-        {
-          "author": "snowystinger",
-          "association": "MEMBER",
-          "createdAt": "2026-07-06T05:51:45Z",
-          "excerpt": "@magraina The key is [here](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/unset):\n> if the property naturally inherits from its parent\n\nHeight does not naturally inherit from its p"
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": -178,
-      "repo": "GoogleChrome/lighthouse",
-      "number": 9934,
-      "title": "Display plugins in footer of report",
-      "url": "https://github.com/GoogleChrome/lighthouse/issues/9934",
-      "queryLabel": "good first issue",
-      "labels": [
-        "good first issue",
-        "P3"
-      ],
-      "createdAt": "2019-11-06T19:29:16Z",
-      "updatedAt": "2026-07-09T10:10:22Z",
-      "daysSinceUpdate": 4,
-      "daysSinceCreate": 2440,
-      "commentCount": 15,
-      "recentActivity": 1,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [
-        {
-          "number": 17119,
-          "title": "report: display used plugins in footer tooltip",
-          "url": "https://github.com/GoogleChrome/lighthouse/pull/17119",
-          "createdAt": "2026-07-09T05:40:51Z"
-        },
-        {
-          "number": 17125,
-          "title": "report: display plugins in footer",
-          "url": "https://github.com/GoogleChrome/lighthouse/pull/17125",
-          "createdAt": "2026-07-12T07:44:43Z"
-        }
-      ],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "Currently, at the footer of the report the LH version and GH issue link is included. I propose that we also include any used the plugins and respective issue links.",
-      "recentComments": [
-        {
-          "author": "Develop-KIM",
-          "association": "NONE",
-          "createdAt": "2026-07-09T05:29:44Z",
-          "excerpt": "I'd like to work on this. Plan, following the suggestion above: collect the plugin audits from the LHR (config settings / audit group metadata), and render the plugin names in the hover tooltip of the"
-        },
-        {
-          "author": "connorjclark",
-          "association": "COLLABORATOR",
-          "createdAt": "2023-06-21T19:56:47Z",
-          "excerpt": "@tannerdolby I think there's still some utility to this.\n\nThe best place for it now would be as part of the hover tooltip on the bottom-left item in the footer:\n\n<img width=\"1032\" alt=\"image\" src=\"htt"
-        },
-        {
-          "author": "tannerdolby",
+          "author": "danielw97",
           "association": "CONTRIBUTOR",
-          "createdAt": "2023-06-21T18:34:31Z",
-          "excerpt": "@connorjclark is there still any interest in updating the footer of reports? I see it has changed a bit since [this comment](https://github.com/GoogleChrome/lighthouse/issues/9934#issuecomment-7428144"
+          "createdAt": "2026-07-11T16:40:42Z",
+          "excerpt": "Hi, I'd like to take this on as a first contribution if that's okay.\nI know it was initially proposed that the author write this. However, since it's been triaged as a good first issue, I'm hoping an "
         }
       ],
       "repoClass": "large"
@@ -430,27 +307,13 @@
   ],
   "allRanked": [
     {
-      "score": 42,
+      "score": 65,
       "repo": "nvaccess/nvda",
       "repoClass": "large",
-      "number": 15310,
-      "title": "add option for NVDA to not automatically read first line of an email in outlook",
-      "url": "https://github.com/nvaccess/nvda/issues/15310",
-      "daysSinceUpdate": 4,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 1,
-      "maintainerRed": 0
-    },
-    {
-      "score": 36,
-      "repo": "nvaccess/nvda",
-      "repoClass": "large",
-      "number": 19245,
-      "title": "alpha AMD 64: error with apprentiClavier software",
-      "url": "https://github.com/nvaccess/nvda/issues/19245",
-      "daysSinceUpdate": 4,
+      "number": 20478,
+      "title": "Increase the maximum value limit for the \"Maximum number of characters on one line\" setting control.",
+      "url": "https://github.com/nvaccess/nvda/issues/20478",
+      "daysSinceUpdate": 5,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
@@ -459,12 +322,12 @@
     },
     {
       "score": 26,
-      "repo": "nvaccess/nvda",
+      "repo": "alphagov/govuk-design-system",
       "repoClass": "large",
-      "number": 16984,
-      "title": "Dev Guide should document the use of gui.message.DisplayableError",
-      "url": "https://github.com/nvaccess/nvda/issues/16984",
-      "daysSinceUpdate": 1,
+      "number": 4758,
+      "title": "Edit transcript for June's #DSChat",
+      "url": "https://github.com/alphagov/govuk-design-system/issues/4758",
+      "daysSinceUpdate": 6,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
@@ -472,13 +335,41 @@
       "maintainerRed": 0
     },
     {
-      "score": -51,
+      "score": -18,
+      "repo": "GoogleChrome/lighthouse",
+      "repoClass": "large",
+      "number": 11593,
+      "title": "\"Properly size image\" report is too strict?",
+      "url": "https://github.com/GoogleChrome/lighthouse/issues/11593",
+      "daysSinceUpdate": 5,
+      "claimedRecent": 1,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": -18,
+      "repo": "GoogleChrome/lighthouse",
+      "repoClass": "large",
+      "number": 9474,
+      "title": "Add a check to test if :hover styles require doubletapping links",
+      "url": "https://github.com/GoogleChrome/lighthouse/issues/9474",
+      "daysSinceUpdate": 5,
+      "claimedRecent": 1,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": -43,
       "repo": "adobe/react-spectrum",
       "repoClass": "large",
       "number": 10310,
       "title": "useInteractionModality detects JAWS and NVDA as mouse in Chromium",
       "url": "https://github.com/adobe/react-spectrum/issues/10310",
-      "daysSinceUpdate": 3,
+      "daysSinceUpdate": 5,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 1,
@@ -486,59 +377,17 @@
       "maintainerRed": 0
     },
     {
-      "score": -60,
-      "repo": "testing-library/jest-dom",
+      "score": -54,
+      "repo": "nvaccess/nvda",
       "repoClass": "large",
-      "number": 548,
-      "title": "Support assertions for each DOM query",
-      "url": "https://github.com/testing-library/jest-dom/issues/548",
-      "daysSinceUpdate": 2,
+      "number": 16984,
+      "title": "Dev Guide should document the use of gui.message.DisplayableError",
+      "url": "https://github.com/nvaccess/nvda/issues/16984",
+      "daysSinceUpdate": 6,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 1,
       "maintainerGreen": 1,
-      "maintainerRed": 0
-    },
-    {
-      "score": -76,
-      "repo": "adobe/react-spectrum",
-      "repoClass": "large",
-      "number": 1773,
-      "title": "onCancel should fire in AlertDialog if Escape is pressed",
-      "url": "https://github.com/adobe/react-spectrum/issues/1773",
-      "daysSinceUpdate": 6,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 1,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": -93,
-      "repo": "adobe/react-spectrum",
-      "repoClass": "large",
-      "number": 10292,
-      "title": "Nested `Tabs` height transitions break due to CSS variable bleed and 0-height behavior of `TabList` and `TabPanel`",
-      "url": "https://github.com/adobe/react-spectrum/issues/10292",
-      "daysSinceUpdate": 6,
-      "claimedRecent": 0,
-      "prSubmitted": 1,
-      "linkedOpenPRs": 1,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": -178,
-      "repo": "GoogleChrome/lighthouse",
-      "repoClass": "large",
-      "number": 9934,
-      "title": "Display plugins in footer of report",
-      "url": "https://github.com/GoogleChrome/lighthouse/issues/9934",
-      "daysSinceUpdate": 4,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 2,
-      "maintainerGreen": 0,
       "maintainerRed": 0
     }
   ]
