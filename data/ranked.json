@@ -1,305 +1,154 @@
 {
-  "scannedAt": "2026-07-20T10:47:00Z",
-  "count": 6,
-  "countLarge": 6,
+  "scannedAt": "2026-07-27T11:15:21Z",
+  "count": 3,
+  "countLarge": 3,
   "countSmall": 0,
   "topIssues": [
     {
-      "score": 65,
-      "repo": "nvaccess/nvda",
-      "number": 20478,
-      "title": "Increase the maximum value limit for the \"Maximum number of characters on one line\" setting control.",
-      "url": "https://github.com/nvaccess/nvda/issues/20478",
-      "queryLabel": "good first issue",
-      "labels": [
-        "component/NVDA-GUI",
-        "p4",
-        "feature",
-        "good first issue",
-        "triaged"
-      ],
-      "createdAt": "2026-07-10T02:34:26Z",
-      "updatedAt": "2026-07-14T23:52:18Z",
-      "daysSinceUpdate": 5,
-      "daysSinceCreate": 10,
-      "commentCount": 10,
-      "recentActivity": 10,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "### Is your feature request related to a problem? Please describe.\n\nWhen browse mode is set to use screen layout navigation, paragraphs exceeding 250 characters are frequently encountered.\n\n### Describe the solution you'd like\n\nIncrease the maximum value limit for the \"Maximum number of characters o",
-      "recentComments": [
-        {
-          "author": "Rasaec5",
-          "association": "NONE",
-          "createdAt": "2026-07-14T23:52:18Z",
-          "excerpt": "I will definitely take on the issue, and ensure that my contribution matches the guidelines."
-        },
-        {
-          "author": "seanbudd",
-          "association": "MEMBER",
-          "createdAt": "2026-07-14T23:12:30Z",
-          "excerpt": "@Mubashir78's PR has been rejected. Please feel free to continue to work on it. Let us know if you no longer plan to work on it and we can @Mubashir78 the green light to start work again."
-        },
-        {
-          "author": "CyrilleB79",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-07-14T14:43:41Z",
-          "excerpt": "@Rasaec5 note that @Mubashir78 has already opened #20495. It's quite unfortunate but just wanted to inform you so that you do not work for nothing."
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": 26,
-      "repo": "alphagov/govuk-design-system",
-      "number": 4758,
-      "title": "Edit transcript for June's #DSChat",
-      "url": "https://github.com/alphagov/govuk-design-system/issues/4758",
-      "queryLabel": "documentation",
-      "labels": [
-        "documentation",
-        "small story"
-      ],
-      "createdAt": "2025-06-05T11:37:17Z",
-      "updatedAt": "2026-07-14T07:20:16Z",
-      "daysSinceUpdate": 6,
-      "daysSinceCreate": 409,
-      "commentCount": 1,
-      "recentActivity": 1,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 2,
-        "done": 0
-      },
-      "bodyExcerpt": "## What\nEdit the transcript from the recording of June's #DSChat.\n\n## Why\nTo ensure it's correct and free of typos.\n\n## Who needs to work on this\nAnyone\n\n## Who needs to review this\nN/A\n\n## Done when\n- [ ] [transcript ](https://docs.google.com/document/d/1pQap4fpVZYXyL53TxjpXW1W3DSzgeXdkWjz5zPKrz7o/",
-      "recentComments": [
-        {
-          "author": "emma1carter",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-07-14T07:20:16Z",
-          "excerpt": "@kellylee-gds Can i close this one?"
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": -18,
-      "repo": "GoogleChrome/lighthouse",
-      "number": 11593,
-      "title": "\"Properly size image\" report is too strict?",
-      "url": "https://github.com/GoogleChrome/lighthouse/issues/11593",
-      "queryLabel": "good first issue",
-      "labels": [
-        "good first issue",
-        "docs",
-        "P2",
-        "images"
-      ],
-      "createdAt": "2020-10-24T03:27:29Z",
-      "updatedAt": "2026-07-14T18:44:52Z",
-      "daysSinceUpdate": 5,
-      "daysSinceCreate": 2095,
-      "commentCount": 22,
-      "recentActivity": 1,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 1,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "<!-- We would love to hear anything on your mind about Lighthouse -->\n**Summary**\n\nHi !\n\nI am trying to get rid of the \"Properly image size\" but I am facing a wall here. Here are the kind of errors I get:\n\n![image](https://user-images.githubusercontent.com/1198915/97066910-92428000-15f3-11eb-82e7-6a",
-      "recentComments": [
-        {
-          "author": "Ujwal-Developer",
-          "association": "NONE",
-          "createdAt": "2026-07-14T18:44:52Z",
-          "excerpt": "Hi! I’m a first-time open-source contributor and I’m interested in working on this issue. Since the discussion is a few years old, could you please confirm whether the issue is still active and availa"
-        },
-        {
-          "author": "thommyhh",
-          "association": "NONE",
-          "createdAt": "2026-04-23T08:09:25Z",
-          "excerpt": "That seems to be resolve with Lighthouse 13.0.2 in Brave browser and Lighthouse 13.1.0 in Chrome Canary.  Lighthouse 13.0.1 (Pagespeed Insights) still shows messages where the image is \"too large\". So"
-        },
-        {
-          "author": "rafay247",
-          "association": "NONE",
-          "createdAt": "2026-02-25T16:50:50Z",
-          "excerpt": "Hi, I would like to work on this issue."
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": -18,
-      "repo": "GoogleChrome/lighthouse",
-      "number": 9474,
-      "title": "Add a check to test if :hover styles require doubletapping links",
-      "url": "https://github.com/GoogleChrome/lighthouse/issues/9474",
-      "queryLabel": "good first issue",
-      "labels": [
-        "new_audit",
-        "good first issue",
-        "P3"
-      ],
-      "createdAt": "2019-07-27T12:35:28Z",
-      "updatedAt": "2026-07-15T09:39:41Z",
-      "daysSinceUpdate": 5,
-      "daysSinceCreate": 2549,
-      "commentCount": 7,
-      "recentActivity": 1,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 1,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "It's really annoying when a website needs to have a double tap on links and buttons when the website is being used on a mobile device.\n\nIt would be a nice feature for Lighthouse to test if the website has this poor user experience.\n\nThen if the website does make users have to double tap for links an",
-      "recentComments": [
-        {
-          "author": "snehal242005",
-          "association": "NONE",
-          "createdAt": "2026-07-15T09:39:41Z",
-          "excerpt": "Hi, I'd like to work on this issue!\n"
-        },
-        {
-          "author": "Malusnow",
-          "association": "NONE",
-          "createdAt": "2026-04-14T05:39:04Z",
-          "excerpt": "Hello, I'm interested in this issue, may I work on this?"
-        },
-        {
-          "author": "patrickhulce",
-          "association": "COLLABORATOR",
-          "createdAt": "2021-06-21T21:29:46Z",
-          "excerpt": "We like this idea if it's still a problem! Good first issue to investigate if anyone out there would like to put in the research :)"
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": -43,
+      "score": 22,
       "repo": "adobe/react-spectrum",
-      "number": 10310,
-      "title": "useInteractionModality detects JAWS and NVDA as mouse in Chromium",
-      "url": "https://github.com/adobe/react-spectrum/issues/10310",
+      "number": 5934,
+      "title": "useLongPress should be cancelled on multiple touches",
+      "url": "https://github.com/adobe/react-spectrum/issues/5934",
       "queryLabel": "help wanted",
       "labels": [
         "bug",
-        "help wanted",
-        "accessibility"
+        "help wanted"
       ],
-      "createdAt": "2026-07-07T12:41:02Z",
-      "updatedAt": "2026-07-15T06:34:51Z",
-      "daysSinceUpdate": 5,
-      "daysSinceCreate": 12,
-      "commentCount": 6,
-      "recentActivity": 6,
+      "createdAt": "2024-02-24T02:09:36Z",
+      "updatedAt": "2026-07-21T10:54:51Z",
+      "daysSinceUpdate": 6,
+      "daysSinceCreate": 884,
+      "commentCount": 2,
+      "recentActivity": 1,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 0,
       "prSubmitted": 0,
-      "linkedOpenPRs": [
-        {
-          "number": 10316,
-          "title": "fix(react-aria): detect screen reader pointer events as virtual modality",
-          "url": "https://github.com/adobe/react-spectrum/pull/10316",
-          "createdAt": "2026-07-09T01:06:03Z"
-        }
-      ],
+      "linkedOpenPRs": [],
       "checkboxes": {
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "### Provide a general summary of the issue here\n\nScenario: `useInteractionModality` reports \"mouse\" when screen reader user interacts\n   GIVEN a user has started their screenreader (JAWS or NVDA) and a chromium browser (Chrome)\n   WHEN the user interacts with the page clicking a button\n   THEN the h",
+      "bodyExcerpt": "### Provide a general summary of the feature here\n\nHi there!\n\nI just received an accessibility issue from a user (see: https://github.com/aeharding/voyager/issues/1254).\n\n> 3-finger double tap cause [long press menu] to open. This is commonly used as an accessibility shortcut. I use it for full scre",
       "recentComments": [
         {
-          "author": "jesusgalhub",
+          "author": "kalayciburak",
           "association": "NONE",
-          "createdAt": "2026-07-15T06:34:51Z",
-          "excerpt": "I created this issue. Feel free to comment and add any information\nhttps://issuetracker.google.com/issues/534943063"
+          "createdAt": "2026-07-21T10:54:51Z",
+          "excerpt": "I’d like to work on this. I’ll add a regression test covering a second touch before the threshold and keep the fix scoped to cancelling the pending long press."
         },
         {
-          "author": "LFDanLu",
+          "author": "reidbarber",
           "association": "MEMBER",
-          "createdAt": "2026-07-14T16:38:33Z",
-          "excerpt": "yep, definitely can, probably in the same vein as https://issuetracker.google.com/issues/40805554 which we reported for Talkback. I need to find some time to update that ticket (hopefully soon), and c"
-        },
-        {
-          "author": "jesusgalhub",
-          "association": "NONE",
-          "createdAt": "2026-07-14T11:26:21Z",
-          "excerpt": "@LFDanLu \nIs this something we can report to chromium team?"
+          "createdAt": "2024-02-26T15:44:33Z",
+          "excerpt": "Cancelling the long press seem like the correct behavior in this case, and matches native iOS and Android behavior."
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": -54,
-      "repo": "nvaccess/nvda",
-      "number": 16984,
-      "title": "Dev Guide should document the use of gui.message.DisplayableError",
-      "url": "https://github.com/nvaccess/nvda/issues/16984",
-      "queryLabel": "good first issue",
+      "score": 20,
+      "repo": "dequelabs/axe-core",
+      "number": 598,
+      "title": "Feature request: If CSS display:none causes failure, pull it into code snip.",
+      "url": "https://github.com/dequelabs/axe-core/issues/598",
+      "queryLabel": "help wanted",
       "labels": [
-        "p5",
-        "audience/nvda-dev",
-        "good first issue",
-        "triaged",
-        "component/dev-documentation"
+        "feat",
+        "help wanted",
+        "rules"
       ],
-      "createdAt": "2024-08-09T04:39:27Z",
-      "updatedAt": "2026-07-14T03:51:23Z",
+      "createdAt": "2017-11-02T16:02:36Z",
+      "updatedAt": "2026-07-21T10:21:07Z",
       "daysSinceUpdate": 6,
-      "daysSinceCreate": 710,
-      "commentCount": 2,
-      "recentActivity": 2,
-      "maintainerGreen": 1,
+      "daysSinceCreate": 3188,
+      "commentCount": 5,
+      "recentActivity": 0,
+      "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 0,
       "prSubmitted": 0,
+      "linkedOpenPRs": [],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "The now closed issue #597 shows that this feature would save a lot of trouble.",
+      "recentComments": [
+        {
+          "author": "WilcoFiers",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2022-01-26T16:39:07Z",
+          "excerpt": "I'm looking at this with fresh eyes. I think there is value in us recording for each node we return whether it's visible or not. We can do that on DqElement. We'd need to consider if we want to track "
+        },
+        {
+          "author": "dylanb",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2021-03-12T13:12:54Z",
+          "excerpt": "@WilcoFiers close?"
+        },
+        {
+          "author": "WilcoFiers",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2018-02-10T21:52:28Z",
+          "excerpt": "@marcysutton I've been thinking about this one a bit. How about we do the same thing with the \"fail\" and \"pass\" messages that we did with the \"incomplete\": allow them to be objects with multiple messa"
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": -89,
+      "repo": "adobe/react-spectrum",
+      "number": 10292,
+      "title": "Nested `Tabs` height transitions break due to CSS variable bleed and 0-height behavior of `TabList` and `TabPanel`",
+      "url": "https://github.com/adobe/react-spectrum/issues/10292",
+      "queryLabel": "good first issue",
+      "labels": [
+        "bug",
+        "good first issue"
+      ],
+      "createdAt": "2026-07-02T19:46:07Z",
+      "updatedAt": "2026-07-21T21:04:32Z",
+      "daysSinceUpdate": 5,
+      "daysSinceCreate": 24,
+      "commentCount": 8,
+      "recentActivity": 8,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 1,
       "linkedOpenPRs": [
         {
-          "number": 20504,
-          "title": "Document gui.message.DisplayableError in the  Developer Guide",
-          "url": "https://github.com/nvaccess/nvda/pull/20504",
-          "createdAt": "2026-07-15T15:33:30Z"
+          "number": 10293,
+          "title": "fix: Reset TabPanels size variables on TabPanel so nested Tabs do not inherit them",
+          "url": "https://github.com/adobe/react-spectrum/pull/10293",
+          "createdAt": "2026-07-03T09:43:35Z"
         }
       ],
       "checkboxes": {
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "### Is your feature request related to a problem? Please describe.\n\n`gui.message.DisplayableError` is a class which uses an `extensionPoint.Action` in an interesting way, to display user-friendly exceptions in a `gui.message.messageBox`.\nIn fact, it (appears to) call itself a \"type of extension poin",
+      "bodyExcerpt": "### Provide a general summary of the issue here\n\nWhen nesting `<Tabs>` inside another `<Tabs>` component, the transition animations severely break and can cause cause large layout shifts, when switching the outer `<Tabs>` component. This is caused by three distinct issues interacting with each other",
       "recentComments": [
         {
-          "author": "seanbudd",
+          "author": "snowystinger",
           "association": "MEMBER",
-          "createdAt": "2026-07-14T03:51:23Z",
-          "excerpt": "Hi @danielw97 - all that sounds good to me.\nThe docstring for a class typically goes in the `__init__` field in situations like this, so I would encourage just adding more information to the existing "
+          "createdAt": "2026-07-21T21:04:23Z",
+          "excerpt": "@rully-saputra15 there's a PR already open for this that's in review. \nThere's a link at the top of the page to it.\n<img width=\"295\" height=\"221\" alt=\"Image\" src=\"https://github.com/user-attachments/a"
         },
         {
-          "author": "danielw97",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-07-11T16:40:42Z",
-          "excerpt": "Hi, I'd like to take this on as a first contribution if that's okay.\nI know it was initially proposed that the author write this. However, since it's been triaged as a good first issue, I'm hoping an "
+          "author": "rully-saputra15",
+          "association": "NONE",
+          "createdAt": "2026-07-21T12:08:49Z",
+          "excerpt": "Hi, \n\nI'd like work on this, is still open for contribute?"
+        },
+        {
+          "author": "snowystinger",
+          "association": "MEMBER",
+          "createdAt": "2026-07-06T20:36:47Z",
+          "excerpt": "> The problem though with CCS variables is, that such keywords are evaluated a bit differently, than one might expect.\nIt's true that height does not naturally inherit form it's parent, but CSS Custom"
         }
       ],
       "repoClass": "large"
@@ -307,87 +156,45 @@
   ],
   "allRanked": [
     {
-      "score": 65,
-      "repo": "nvaccess/nvda",
-      "repoClass": "large",
-      "number": 20478,
-      "title": "Increase the maximum value limit for the \"Maximum number of characters on one line\" setting control.",
-      "url": "https://github.com/nvaccess/nvda/issues/20478",
-      "daysSinceUpdate": 5,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": 26,
-      "repo": "alphagov/govuk-design-system",
-      "repoClass": "large",
-      "number": 4758,
-      "title": "Edit transcript for June's #DSChat",
-      "url": "https://github.com/alphagov/govuk-design-system/issues/4758",
-      "daysSinceUpdate": 6,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": -18,
-      "repo": "GoogleChrome/lighthouse",
-      "repoClass": "large",
-      "number": 11593,
-      "title": "\"Properly size image\" report is too strict?",
-      "url": "https://github.com/GoogleChrome/lighthouse/issues/11593",
-      "daysSinceUpdate": 5,
-      "claimedRecent": 1,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": -18,
-      "repo": "GoogleChrome/lighthouse",
-      "repoClass": "large",
-      "number": 9474,
-      "title": "Add a check to test if :hover styles require doubletapping links",
-      "url": "https://github.com/GoogleChrome/lighthouse/issues/9474",
-      "daysSinceUpdate": 5,
-      "claimedRecent": 1,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": -43,
+      "score": 22,
       "repo": "adobe/react-spectrum",
       "repoClass": "large",
-      "number": 10310,
-      "title": "useInteractionModality detects JAWS and NVDA as mouse in Chromium",
-      "url": "https://github.com/adobe/react-spectrum/issues/10310",
-      "daysSinceUpdate": 5,
+      "number": 5934,
+      "title": "useLongPress should be cancelled on multiple touches",
+      "url": "https://github.com/adobe/react-spectrum/issues/5934",
+      "daysSinceUpdate": 6,
       "claimedRecent": 0,
       "prSubmitted": 0,
-      "linkedOpenPRs": 1,
+      "linkedOpenPRs": 0,
       "maintainerGreen": 0,
       "maintainerRed": 0
     },
     {
-      "score": -54,
-      "repo": "nvaccess/nvda",
+      "score": 20,
+      "repo": "dequelabs/axe-core",
       "repoClass": "large",
-      "number": 16984,
-      "title": "Dev Guide should document the use of gui.message.DisplayableError",
-      "url": "https://github.com/nvaccess/nvda/issues/16984",
+      "number": 598,
+      "title": "Feature request: If CSS display:none causes failure, pull it into code snip.",
+      "url": "https://github.com/dequelabs/axe-core/issues/598",
       "daysSinceUpdate": 6,
       "claimedRecent": 0,
       "prSubmitted": 0,
+      "linkedOpenPRs": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": -89,
+      "repo": "adobe/react-spectrum",
+      "repoClass": "large",
+      "number": 10292,
+      "title": "Nested `Tabs` height transitions break due to CSS variable bleed and 0-height behavior of `TabList` and `TabPanel`",
+      "url": "https://github.com/adobe/react-spectrum/issues/10292",
+      "daysSinceUpdate": 5,
+      "claimedRecent": 0,
+      "prSubmitted": 1,
       "linkedOpenPRs": 1,
-      "maintainerGreen": 1,
+      "maintainerGreen": 0,
       "maintainerRed": 0
     }
   ]
