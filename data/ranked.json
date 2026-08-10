@@ -1,26 +1,28 @@
 {
-  "scannedAt": "2026-08-03T11:17:52Z",
-  "count": 4,
-  "countLarge": 4,
+  "scannedAt": "2026-08-10T09:14:12Z",
+  "count": 7,
+  "countLarge": 7,
   "countSmall": 0,
   "topIssues": [
     {
-      "score": 28,
-      "repo": "downshift-js/downshift",
-      "number": 1654,
-      "title": "Add react-virtual support",
-      "url": "https://github.com/downshift-js/downshift/issues/1654",
-      "queryLabel": "help wanted",
+      "score": 51,
+      "repo": "nvaccess/nvda",
+      "number": 20605,
+      "title": "Make the announcement number of repeated symbols configurable instead of always being more than 3",
+      "url": "https://github.com/nvaccess/nvda/issues/20605",
+      "queryLabel": "good first issue",
       "labels": [
-        "help wanted",
-        "docs"
+        "p5",
+        "feature",
+        "good first issue",
+        "triaged"
       ],
-      "createdAt": "2025-07-14T14:39:30Z",
-      "updatedAt": "2026-07-30T12:16:33Z",
-      "daysSinceUpdate": 3,
-      "daysSinceCreate": 384,
+      "createdAt": "2026-07-31T16:45:19Z",
+      "updatedAt": "2026-08-05T00:45:01Z",
+      "daysSinceUpdate": 5,
+      "daysSinceCreate": 9,
       "commentCount": 3,
-      "recentActivity": 2,
+      "recentActivity": 3,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 0,
@@ -30,46 +32,44 @@
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "Hi,\n\nCould you add https://tanstack.com/virtual support, at least [optionally](https://docs.npmjs.com/cli/v11/configuring-npm/package-json#optionaldependencies)?\n\nBy being maintained by the lib itself, it would help with potential upgrades / breaking changes, while providing the benefits of it.\n\nPos",
+      "bodyExcerpt": "### Is your feature request related to a problem? Please describe.\n\nCurrently, When We enter an emoji repeatedly more than 3, It will announce number of entered ones instead of announcing emoji name for all. For example If I enter this emoji 3 times 😭😭😭 And read it, I here crying face crying face cr",
       "recentComments": [
         {
-          "author": "pupuking723",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-07-30T12:16:33Z",
-          "excerpt": "I opened downshift-js/downshift-examples#55 with the scoped examples-repo update discussed here. It migrates the existing useCombobox and useSelect virtual examples to @tanstack/react-virtual without "
+          "author": "seanbudd",
+          "association": "MEMBER",
+          "createdAt": "2026-08-05T00:45:01Z",
+          "excerpt": "@amirmahdifard - feel free to start, we don't have it scheduled"
         },
         {
-          "author": "pupuking723",
+          "author": "amirmahdifard",
           "association": "CONTRIBUTOR",
-          "createdAt": "2026-06-24T13:22:45Z",
-          "excerpt": "Hi, I'd like to take this one. I'll keep the first pass scoped to the maintainer suggestion: add a TanStack Virtual example in the downshift examples/docs flow and link it from the docsite, without ad"
+          "createdAt": "2026-08-04T19:13:17Z",
+          "excerpt": "@seanbudd this is needed for persian group of people. Do you want to do it or should I do it? Thanks."
         },
         {
-          "author": "silviuaavram",
-          "association": "COLLABORATOR",
-          "createdAt": "2026-02-20T10:06:48Z",
-          "excerpt": "That would be a good idea! We could add it in the [examples repo](https://github.com/downshift-js/downshift-examples) and also link it in the docsite."
+          "author": "seanbudd",
+          "association": "MEMBER",
+          "createdAt": "2026-08-03T23:25:42Z",
+          "excerpt": "This can be fixed by changing the following code and adding a setting https://github.com/nvaccess/nvda/blob/9c44dd5942f2997267973a6d105931d42f9f982c/source/characterProcessing.py#L617-L626"
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": 22,
-      "repo": "nvaccess/nvda",
-      "number": 9804,
-      "title": "Synth Settings Ring: Remember last Focused Setting",
-      "url": "https://github.com/nvaccess/nvda/issues/9804",
-      "queryLabel": "good first issue",
+      "score": 47,
+      "repo": "testing-library/user-event",
+      "number": 1319,
+      "title": "Migration recommendation: prefer Vitest browser mode or Playwright for new work",
+      "url": "https://github.com/testing-library/user-event/issues/1319",
+      "queryLabel": "documentation",
       "labels": [
-        "p5",
-        "good first issue",
-        "triaged"
+        "documentation"
       ],
-      "createdAt": "2019-06-24T15:24:01Z",
-      "updatedAt": "2026-08-03T04:33:22Z",
-      "daysSinceUpdate": 0,
-      "daysSinceCreate": 2596,
-      "commentCount": 6,
+      "createdAt": "2026-08-03T15:39:46Z",
+      "updatedAt": "2026-08-07T03:36:43Z",
+      "daysSinceUpdate": 3,
+      "daysSinceCreate": 6,
+      "commentCount": 1,
       "recentActivity": 1,
       "maintainerGreen": 0,
       "maintainerRed": 0,
@@ -80,44 +80,63 @@
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "For some users, the Synth Settings Ring is only used to change one particular setting and saves lots of time instead of having to go through the Preferences dialog. To that end, would it be possible to consider saving the last-used setting in the Ring so that it's not necessary to manually focus thi",
+      "bodyExcerpt": "Hey folks,\n\nI want to be upfront about where this library sits in 2026.\n\n**`user-event` was built for a world where most component tests ran in jsdom.** It does a great job approximating browser behavior by dispatching the right DOM events in the right order. That still matters if your tests run in ",
       "recentComments": [
         {
-          "author": "Qchristensen",
+          "author": "kentcdodds",
           "association": "MEMBER",
-          "createdAt": "2026-08-03T04:33:22Z",
-          "excerpt": "If someone does take on this issue, I would be interested to see it as a setting in the speech settings dialog.  I believe we have three main groups of users with regard to the synth settings ring (no"
-        },
-        {
-          "author": "CyrilleB79",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2024-07-15T07:49:12Z",
-          "excerpt": "@seanbudd would you mind triage this one.\nIf you accept it, it would probably then deserve a goodFirstIssue label.\n"
-        },
-        {
-          "author": "Adriani90",
-          "association": "COLLABORATOR",
-          "createdAt": "2024-07-15T01:47:55Z",
-          "excerpt": "Still reproducible with NVDA 2024.3 Beta."
+          "createdAt": "2026-08-07T03:36:43Z",
+          "excerpt": "@snowystinger is now a core maintainer!"
         }
       ],
+      "repoClass": "large"
+    },
+    {
+      "score": 45,
+      "repo": "adobe/react-spectrum",
+      "number": 10409,
+      "title": "Docs: add Formisch to the form libraries section of the forms guide",
+      "url": "https://github.com/adobe/react-spectrum/issues/10409",
+      "queryLabel": "documentation",
+      "labels": [
+        "documentation"
+      ],
+      "createdAt": "2026-08-02T01:53:04Z",
+      "updatedAt": "2026-08-03T17:50:09Z",
+      "daysSinceUpdate": 6,
+      "daysSinceCreate": 8,
+      "commentCount": 0,
+      "recentActivity": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "### 🙋 Documentation Request\n\nThe [forms guide](https://react-aria.adobe.com/forms) shows how to integrate React Aria components with React Hook Form and Formik. I'd like to contribute an example for [Formisch](https://formisch.dev/), a schema-based, headless form library I maintain. It validates wit",
+      "recentComments": [],
       "repoClass": "large"
     },
     {
       "score": 7,
-      "repo": "adobe/react-spectrum",
-      "number": 10411,
-      "title": "Docs: Tooltip example generates placement on <Tooltip> instead of <TooltipTrigger>",
-      "url": "https://github.com/adobe/react-spectrum/issues/10411",
-      "queryLabel": "documentation",
+      "repo": "nvaccess/nvda",
+      "number": 20584,
+      "title": "Make the MSVC build treat UTF-8 source files as UTF-8",
+      "url": "https://github.com/nvaccess/nvda/issues/20584",
+      "queryLabel": "good first issue",
       "labels": [
-        "bug",
-        "documentation"
+        "p4",
+        "audience/nvda-dev",
+        "good first issue",
+        "triaged"
       ],
-      "createdAt": "2026-08-03T05:11:51Z",
-      "updatedAt": "2026-08-03T05:44:08Z",
-      "daysSinceUpdate": 0,
-      "daysSinceCreate": 0,
+      "createdAt": "2026-07-29T06:53:06Z",
+      "updatedAt": "2026-08-03T23:58:24Z",
+      "daysSinceUpdate": 6,
+      "daysSinceCreate": 12,
       "commentCount": 1,
       "recentActivity": 1,
       "maintainerGreen": 0,
@@ -129,55 +148,180 @@
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "### 🙋 Documentation Request\n\nThe interactive example at the top of https://react-spectrum.adobe.com/Tooltip exposes controls for `placement`, `crossOffset`, `shouldFlip`, and `shouldCloseOnPress`. The live preview responds correctly, but the generated code sample places these props on `<Tooltip>` ra",
+      "bodyExcerpt": "### Related issues, PRs or discussions\n\n_No response_\n\n### What is the current state of the codebase?\n\nNVDA's `.editorconfig` declares C/C++ source files as UTF-8.\n\nSome cppjieba headers contain non-ASCII comments and have no UTF-8 BOM.\nWhen building with MSVC on a system whose ANSI code page is not",
       "recentComments": [
         {
-          "author": "snowystinger",
-          "association": "MEMBER",
-          "createdAt": "2026-08-03T05:43:36Z",
-          "excerpt": "Thanks, I noticed some of the props weren't rendering correctly, so I've opened a PR to fix both https://github.com/adobe/react-spectrum/pull/10413"
+          "author": "noor-ahmadi",
+          "association": "NONE",
+          "createdAt": "2026-08-03T23:42:13Z",
+          "excerpt": "I'll work on this. I'll add `/utf-8` to the shared MSVC flags and verify the helper build configuration."
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": -18,
-      "repo": "nvaccess/nvda",
-      "number": 13561,
-      "title": "Don't change dialect when reading a \"parent\" language",
-      "url": "https://github.com/nvaccess/nvda/issues/13561",
+      "score": -56,
+      "repo": "GoogleChrome/lighthouse",
+      "number": 9474,
+      "title": "Add a check to test if :hover styles require doubletapping links",
+      "url": "https://github.com/GoogleChrome/lighthouse/issues/9474",
       "queryLabel": "good first issue",
       "labels": [
-        "component/speech",
-        "p4",
-        "feature",
-        "component/audio-ux",
-        "feature/i18n",
+        "new_audit",
         "good first issue",
-        "triaged"
+        "P3"
       ],
-      "createdAt": "2022-03-30T03:14:27Z",
-      "updatedAt": "2026-07-27T21:04:20Z",
-      "daysSinceUpdate": 6,
-      "daysSinceCreate": 1587,
-      "commentCount": 1,
-      "recentActivity": 1,
+      "createdAt": "2019-07-27T12:35:28Z",
+      "updatedAt": "2026-08-04T12:51:13Z",
+      "daysSinceUpdate": 5,
+      "daysSinceCreate": 2570,
+      "commentCount": 8,
+      "recentActivity": 2,
       "maintainerGreen": 0,
       "maintainerRed": 0,
-      "claimedRecent": 1,
+      "claimedRecent": 2,
       "prSubmitted": 0,
       "linkedOpenPRs": [],
       "checkboxes": {
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "<!-- Please read the text in this edit field before filling it in.\nPlease thoroughly read NVDA's wiki article on how to fill in this template, including how to provide the required files.\nIssues may be closed if the required information is not present.\nhttps://github.com/nvaccess/nvda/blob/master/de",
+      "bodyExcerpt": "It's really annoying when a website needs to have a double tap on links and buttons when the website is being used on a mobile device.\n\nIt would be a nice feature for Lighthouse to test if the website has this poor user experience.\n\nThen if the website does make users have to double tap for links an",
       "recentComments": [
         {
-          "author": "marisombra-dev",
+          "author": "plutoTaco",
           "association": "NONE",
-          "createdAt": "2026-07-27T21:04:20Z",
-          "excerpt": "I would like to work on this issue. I plan to preserve the user's current dialect when the content specifies only the matching parent language (for example, keep en_AU for lang=en), while still switch"
+          "createdAt": "2026-08-04T12:51:13Z",
+          "excerpt": "Is the issue still open? If it is may I work on it?"
+        },
+        {
+          "author": "snehal242005",
+          "association": "NONE",
+          "createdAt": "2026-07-15T09:39:41Z",
+          "excerpt": "Hi, I'd like to work on this issue!\n"
+        },
+        {
+          "author": "Malusnow",
+          "association": "NONE",
+          "createdAt": "2026-04-14T05:39:04Z",
+          "excerpt": "Hello, I'm interested in this issue, may I work on this?"
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": -66,
+      "repo": "nvaccess/nvda",
+      "number": 20118,
+      "title": "error copying NVDA user settings",
+      "url": "https://github.com/nvaccess/nvda/issues/20118",
+      "queryLabel": "good first issue",
+      "labels": [
+        "bug",
+        "p3",
+        "quick fix",
+        "good first issue",
+        "triaged"
+      ],
+      "createdAt": "2026-05-12T03:35:53Z",
+      "updatedAt": "2026-08-10T01:44:11Z",
+      "daysSinceUpdate": 0,
+      "daysSinceCreate": 90,
+      "commentCount": 4,
+      "recentActivity": 1,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [
+        {
+          "number": 20635,
+          "title": "Retry copying a file while its source is briefly in use",
+          "url": "https://github.com/nvaccess/nvda/pull/20635",
+          "createdAt": "2026-08-09T12:37:55Z"
+        }
+      ],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "### Brief summary\n\nrunning NVDA \nNonVisual Desktop Access (NVDA)\nVersion: 2026.1 (2026.1.0.55743)\nURL: https://www.nvaccess.org\nCopyright (C) 2006-2026 NVDA Contributors\nEdition\tWindows 11 Pro\nVersion\t25H2\nInstalled on\t‎10/‎29/‎2025\nOS build\t26200.8328\nExperience\tWindows Feature Experience Pack 1000",
+      "recentComments": [
+        {
+          "author": "yasumorishima",
+          "association": "NONE",
+          "createdAt": "2026-08-09T12:35:54Z",
+          "excerpt": "I'd like to work on this.\n\nFollowing @seanbudd's suggestion above: `installer.tryCopyFile` raises as soon as `CopyFile` fails and no destination file was created, and `config._setSystemConfig` calls i"
+        },
+        {
+          "author": "vladdragomir1983",
+          "association": "NONE",
+          "createdAt": "2026-05-31T15:02:43Z",
+          "excerpt": "Hello, I'm having exactly the same problem. This never happened before, and it doesn't exist on my old computer still using NVDA 2025. The only difference: my list of add-ons is not the same."
+        },
+        {
+          "author": "seanbudd",
+          "association": "MEMBER",
+          "createdAt": "2026-05-18T23:44:10Z",
+          "excerpt": "Looks like we need to retry copying these files, as NVDA might hold onto them briefly while exiting the UAC screen after confirming the user wants to copy the settings"
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": -74,
+      "repo": "adobe/react-spectrum",
+      "number": 6809,
+      "title": "isFocusVisible is not set on elements using react-hook-form",
+      "url": "https://github.com/adobe/react-spectrum/issues/6809",
+      "queryLabel": "help wanted",
+      "labels": [
+        "bug",
+        "help wanted",
+        "Form",
+        "RAC"
+      ],
+      "createdAt": "2024-07-31T15:27:45Z",
+      "updatedAt": "2026-08-05T02:27:26Z",
+      "daysSinceUpdate": 5,
+      "daysSinceCreate": 739,
+      "commentCount": 12,
+      "recentActivity": 3,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [
+        {
+          "number": 10426,
+          "title": "feat: add useShowFocusIndicator hook",
+          "url": "https://github.com/adobe/react-spectrum/pull/10426",
+          "createdAt": "2026-08-05T02:27:15Z"
+        }
+      ],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "### Provide a general summary of the issue here\n\nWhen I use react-hook-form I cannot focus WITH isFocusVisible on the Select element. \n\nThe Select element itself gets the focus but without the isFocusVisible I cannot render a propper ring around the select.\n\nhttps://github.com/user-attachments/asset",
+      "recentComments": [
+        {
+          "author": "JasonColapietro",
+          "association": "NONE",
+          "createdAt": "2026-08-05T02:27:26Z",
+          "excerpt": "Thanks for the clarification. I kept this to the thin hook plus focused behavior test and opened draft PR #10426: https://github.com/adobe/react-spectrum/pull/10426\n"
+        },
+        {
+          "author": "snowystinger",
+          "association": "MEMBER",
+          "createdAt": "2026-08-05T00:42:04Z",
+          "excerpt": "I am not sure what all that says. It should be pretty straightforward:\n```\nfunction useShowFocusIndicator() {\n  return () => setInteractionModality(true);\n}\n\nlet showFocus = useShowFocusIndicator();\ns"
+        },
+        {
+          "author": "JasonColapietro",
+          "association": "NONE",
+          "createdAt": "2026-08-04T17:59:04Z",
+          "excerpt": "Hi — I’d like to work on this if the public hook contract aligns with the team’s direction. I reviewed the discussion and closed #9662. My proposed hook would expose a narrow “make this validation-dri"
         }
       ],
       "repoClass": "large"
@@ -185,12 +329,26 @@
   ],
   "allRanked": [
     {
-      "score": 28,
-      "repo": "downshift-js/downshift",
+      "score": 51,
+      "repo": "nvaccess/nvda",
       "repoClass": "large",
-      "number": 1654,
-      "title": "Add react-virtual support",
-      "url": "https://github.com/downshift-js/downshift/issues/1654",
+      "number": 20605,
+      "title": "Make the announcement number of repeated symbols configurable instead of always being more than 3",
+      "url": "https://github.com/nvaccess/nvda/issues/20605",
+      "daysSinceUpdate": 5,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 47,
+      "repo": "testing-library/user-event",
+      "repoClass": "large",
+      "number": 1319,
+      "title": "Migration recommendation: prefer Vitest browser mode or Playwright for new work",
+      "url": "https://github.com/testing-library/user-event/issues/1319",
       "daysSinceUpdate": 3,
       "claimedRecent": 0,
       "prSubmitted": 0,
@@ -199,13 +357,13 @@
       "maintainerRed": 0
     },
     {
-      "score": 22,
-      "repo": "nvaccess/nvda",
+      "score": 45,
+      "repo": "adobe/react-spectrum",
       "repoClass": "large",
-      "number": 9804,
-      "title": "Synth Settings Ring: Remember last Focused Setting",
-      "url": "https://github.com/nvaccess/nvda/issues/9804",
-      "daysSinceUpdate": 0,
+      "number": 10409,
+      "title": "Docs: add Formisch to the form libraries section of the forms guide",
+      "url": "https://github.com/adobe/react-spectrum/issues/10409",
+      "daysSinceUpdate": 6,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
@@ -214,12 +372,12 @@
     },
     {
       "score": 7,
-      "repo": "adobe/react-spectrum",
+      "repo": "nvaccess/nvda",
       "repoClass": "large",
-      "number": 10411,
-      "title": "Docs: Tooltip example generates placement on <Tooltip> instead of <TooltipTrigger>",
-      "url": "https://github.com/adobe/react-spectrum/issues/10411",
-      "daysSinceUpdate": 0,
+      "number": 20584,
+      "title": "Make the MSVC build treat UTF-8 source files as UTF-8",
+      "url": "https://github.com/nvaccess/nvda/issues/20584",
+      "daysSinceUpdate": 6,
       "claimedRecent": 1,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
@@ -227,16 +385,44 @@
       "maintainerRed": 0
     },
     {
-      "score": -18,
-      "repo": "nvaccess/nvda",
+      "score": -56,
+      "repo": "GoogleChrome/lighthouse",
       "repoClass": "large",
-      "number": 13561,
-      "title": "Don't change dialect when reading a \"parent\" language",
-      "url": "https://github.com/nvaccess/nvda/issues/13561",
-      "daysSinceUpdate": 6,
-      "claimedRecent": 1,
+      "number": 9474,
+      "title": "Add a check to test if :hover styles require doubletapping links",
+      "url": "https://github.com/GoogleChrome/lighthouse/issues/9474",
+      "daysSinceUpdate": 5,
+      "claimedRecent": 2,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": -66,
+      "repo": "nvaccess/nvda",
+      "repoClass": "large",
+      "number": 20118,
+      "title": "error copying NVDA user settings",
+      "url": "https://github.com/nvaccess/nvda/issues/20118",
+      "daysSinceUpdate": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 1,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": -74,
+      "repo": "adobe/react-spectrum",
+      "repoClass": "large",
+      "number": 6809,
+      "title": "isFocusVisible is not set on elements using react-hook-form",
+      "url": "https://github.com/adobe/react-spectrum/issues/6809",
+      "daysSinceUpdate": 5,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 1,
       "maintainerGreen": 0,
       "maintainerRed": 0
     }
