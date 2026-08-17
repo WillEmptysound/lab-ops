@@ -1,28 +1,30 @@
 {
-  "scannedAt": "2026-08-10T09:14:12Z",
-  "count": 7,
-  "countLarge": 7,
+  "scannedAt": "2026-08-17T08:36:49Z",
+  "count": 4,
+  "countLarge": 4,
   "countSmall": 0,
   "topIssues": [
     {
-      "score": 51,
+      "score": 49,
       "repo": "nvaccess/nvda",
-      "number": 20605,
-      "title": "Make the announcement number of repeated symbols configurable instead of always being more than 3",
-      "url": "https://github.com/nvaccess/nvda/issues/20605",
+      "number": 20619,
+      "title": "Feature: CLI argument to start after I sign in",
+      "url": "https://github.com/nvaccess/nvda/issues/20619",
       "queryLabel": "good first issue",
       "labels": [
+        "component/installer",
         "p5",
         "feature",
+        "feature/configuration",
         "good first issue",
         "triaged"
       ],
-      "createdAt": "2026-07-31T16:45:19Z",
-      "updatedAt": "2026-08-05T00:45:01Z",
-      "daysSinceUpdate": 5,
-      "daysSinceCreate": 9,
-      "commentCount": 3,
-      "recentActivity": 3,
+      "createdAt": "2026-08-05T03:48:57Z",
+      "updatedAt": "2026-08-16T18:58:07Z",
+      "daysSinceUpdate": 0,
+      "daysSinceCreate": 12,
+      "commentCount": 2,
+      "recentActivity": 2,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 0,
@@ -32,79 +34,37 @@
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "### Is your feature request related to a problem? Please describe.\n\nCurrently, When We enter an emoji repeatedly more than 3, It will announce number of entered ones instead of announcing emoji name for all. For example If I enter this emoji 3 times 😭😭😭 And read it, I here crying face crying face cr",
+      "bodyExcerpt": "### Is your feature request related to a problem? Please describe.\n\nIn NVDA\"s command line options, there is an argument to run NVDA on the logon screen, but NOT one to start NVDA after signing in: https://download.nvaccess.org/documentation/userGuide.html#CommandLineOptions\n\nThis would be useful, p",
       "recentComments": [
         {
-          "author": "seanbudd",
-          "association": "MEMBER",
-          "createdAt": "2026-08-05T00:45:01Z",
-          "excerpt": "@amirmahdifard - feel free to start, we don't have it scheduled"
-        },
-        {
-          "author": "amirmahdifard",
+          "author": "makhlwf",
           "association": "CONTRIBUTOR",
-          "createdAt": "2026-08-04T19:13:17Z",
-          "excerpt": "@seanbudd this is needed for persian group of people. Do you want to do it or should I do it? Thanks."
+          "createdAt": "2026-08-16T18:58:07Z",
+          "excerpt": "> Hi! I’d like to work on this issue if it’s still available. I’ll keep the change scoped to adding the command-line option and matching the existing “start NVDA after sign-in” setting behavior.\n\nThis"
         },
         {
-          "author": "seanbudd",
-          "association": "MEMBER",
-          "createdAt": "2026-08-03T23:25:42Z",
-          "excerpt": "This can be fixed by changing the following code and adding a setting https://github.com/nvaccess/nvda/blob/9c44dd5942f2997267973a6d105931d42f9f982c/source/characterProcessing.py#L617-L626"
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": 47,
-      "repo": "testing-library/user-event",
-      "number": 1319,
-      "title": "Migration recommendation: prefer Vitest browser mode or Playwright for new work",
-      "url": "https://github.com/testing-library/user-event/issues/1319",
-      "queryLabel": "documentation",
-      "labels": [
-        "documentation"
-      ],
-      "createdAt": "2026-08-03T15:39:46Z",
-      "updatedAt": "2026-08-07T03:36:43Z",
-      "daysSinceUpdate": 3,
-      "daysSinceCreate": 6,
-      "commentCount": 1,
-      "recentActivity": 1,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "Hey folks,\n\nI want to be upfront about where this library sits in 2026.\n\n**`user-event` was built for a world where most component tests ran in jsdom.** It does a great job approximating browser behavior by dispatching the right DOM events in the right order. That still matters if your tests run in ",
-      "recentComments": [
-        {
-          "author": "kentcdodds",
-          "association": "MEMBER",
-          "createdAt": "2026-08-07T03:36:43Z",
-          "excerpt": "@snowystinger is now a core maintainer!"
+          "author": "ShlokShar",
+          "association": "NONE",
+          "createdAt": "2026-08-16T18:48:44Z",
+          "excerpt": "Hi! I’d like to work on this issue if it’s still available. I’ll keep the change scoped to adding the command-line option and matching the existing “start NVDA after sign-in” setting behavior."
         }
       ],
       "repoClass": "large"
     },
     {
       "score": 45,
-      "repo": "adobe/react-spectrum",
-      "number": 10409,
-      "title": "Docs: add Formisch to the form libraries section of the forms guide",
-      "url": "https://github.com/adobe/react-spectrum/issues/10409",
-      "queryLabel": "documentation",
+      "repo": "jsx-eslint/eslint-plugin-jsx-a11y",
+      "number": 1095,
+      "title": "<picture> element should allow aria-hidden",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1095",
+      "queryLabel": "help wanted",
       "labels": [
-        "documentation"
+        "help wanted"
       ],
-      "createdAt": "2026-08-02T01:53:04Z",
-      "updatedAt": "2026-08-03T17:50:09Z",
-      "daysSinceUpdate": 6,
-      "daysSinceCreate": 8,
+      "createdAt": "2026-08-14T20:56:37Z",
+      "updatedAt": "2026-08-17T07:46:30Z",
+      "daysSinceUpdate": 0,
+      "daysSinceCreate": 2,
       "commentCount": 0,
       "recentActivity": 0,
       "maintainerGreen": 0,
@@ -116,212 +76,112 @@
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "### 🙋 Documentation Request\n\nThe [forms guide](https://react-aria.adobe.com/forms) shows how to integrate React Aria components with React Hook Form and Formik. I'd like to contribute an example for [Formisch](https://formisch.dev/), a schema-based, headless form library I maintain. It validates wit",
+      "bodyExcerpt": "A `<picture>` element is allowed to have aria-hidden since October 2021, per the [W3C Recommendation](https://www.w3.org/TR/html-aria/#:~:text=26%20October%202021%20%2D%20Addition%3A%20Allow%20aria%2Dhidden%20attribute%20on%20the%20picture%20element.).\n\n```html\n<picture aria-hidden=\"true\"></picture>",
       "recentComments": [],
       "repoClass": "large"
     },
     {
-      "score": 7,
-      "repo": "nvaccess/nvda",
-      "number": 20584,
-      "title": "Make the MSVC build treat UTF-8 source files as UTF-8",
-      "url": "https://github.com/nvaccess/nvda/issues/20584",
-      "queryLabel": "good first issue",
+      "score": 32,
+      "repo": "adobe/react-spectrum",
+      "number": 9031,
+      "title": "Searchable Select: scroll to selected item does not work",
+      "url": "https://github.com/adobe/react-spectrum/issues/9031",
+      "queryLabel": "help wanted",
       "labels": [
-        "p4",
-        "audience/nvda-dev",
-        "good first issue",
-        "triaged"
+        "bug",
+        "help wanted",
+        "Autocomplete"
       ],
-      "createdAt": "2026-07-29T06:53:06Z",
-      "updatedAt": "2026-08-03T23:58:24Z",
-      "daysSinceUpdate": 6,
-      "daysSinceCreate": 12,
-      "commentCount": 1,
-      "recentActivity": 1,
+      "createdAt": "2025-10-14T10:46:20Z",
+      "updatedAt": "2026-08-12T22:28:57Z",
+      "daysSinceUpdate": 4,
+      "daysSinceCreate": 306,
+      "commentCount": 13,
+      "recentActivity": 0,
       "maintainerGreen": 0,
       "maintainerRed": 0,
-      "claimedRecent": 1,
+      "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": [],
       "checkboxes": {
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "### Related issues, PRs or discussions\n\n_No response_\n\n### What is the current state of the codebase?\n\nNVDA's `.editorconfig` declares C/C++ source files as UTF-8.\n\nSome cppjieba headers contain non-ASCII comments and have no UTF-8 BOM.\nWhen building with MSVC on a system whose ANSI code page is not",
+      "bodyExcerpt": "### Provide a general summary of the issue here\n\nIf we have a searchable select with a long item list, it should scroll to the first selected item on open.\n\n### 🤔 Expected Behavior?\n\nScroll to the first selected item.\n\n### 😯 Current Behavior\n\nIt does not scroll.\n\n### 💁 Possible Solution\n\n_No respons",
       "recentComments": [
         {
-          "author": "noor-ahmadi",
-          "association": "NONE",
-          "createdAt": "2026-08-03T23:42:13Z",
-          "excerpt": "I'll work on this. I'll add `/utf-8` to the shared MSVC flags and verify the helper build configuration."
+          "author": "lixiaoyan",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2025-10-16T07:04:38Z",
+          "excerpt": "@LFDanLu #9043 and #9044 filled."
+        },
+        {
+          "author": "LFDanLu",
+          "association": "MEMBER",
+          "createdAt": "2025-10-15T23:08:25Z",
+          "excerpt": "@lixiaoyan mind splitting out the window resizing issue to a separate issue so that we can track them separately?"
+        },
+        {
+          "author": "LFDanLu",
+          "association": "MEMBER",
+          "createdAt": "2025-10-15T16:42:20Z",
+          "excerpt": "> Unfortunately, that doesn't work. The input does not have the aria-activedescendant attribute set at the time the updatePosition function is called.\n\nOh right, that is due to the delay. In that case"
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": -56,
-      "repo": "GoogleChrome/lighthouse",
-      "number": 9474,
-      "title": "Add a check to test if :hover styles require doubletapping links",
-      "url": "https://github.com/GoogleChrome/lighthouse/issues/9474",
-      "queryLabel": "good first issue",
+      "score": -156,
+      "repo": "dequelabs/axe-core",
+      "number": 620,
+      "title": "Remove the undocumented tagExclude option",
+      "url": "https://github.com/dequelabs/axe-core/issues/620",
+      "queryLabel": "help wanted",
       "labels": [
-        "new_audit",
-        "good first issue",
-        "P3"
+        "feat",
+        "help wanted"
       ],
-      "createdAt": "2019-07-27T12:35:28Z",
-      "updatedAt": "2026-08-04T12:51:13Z",
-      "daysSinceUpdate": 5,
-      "daysSinceCreate": 2570,
-      "commentCount": 8,
+      "createdAt": "2017-11-16T20:30:17Z",
+      "updatedAt": "2026-08-15T18:52:13Z",
+      "daysSinceUpdate": 1,
+      "daysSinceCreate": 3195,
+      "commentCount": 4,
       "recentActivity": 2,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 2,
       "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "It's really annoying when a website needs to have a double tap on links and buttons when the website is being used on a mobile device.\n\nIt would be a nice feature for Lighthouse to test if the website has this poor user experience.\n\nThen if the website does make users have to double tap for links an",
-      "recentComments": [
-        {
-          "author": "plutoTaco",
-          "association": "NONE",
-          "createdAt": "2026-08-04T12:51:13Z",
-          "excerpt": "Is the issue still open? If it is may I work on it?"
-        },
-        {
-          "author": "snehal242005",
-          "association": "NONE",
-          "createdAt": "2026-07-15T09:39:41Z",
-          "excerpt": "Hi, I'd like to work on this issue!\n"
-        },
-        {
-          "author": "Malusnow",
-          "association": "NONE",
-          "createdAt": "2026-04-14T05:39:04Z",
-          "excerpt": "Hello, I'm interested in this issue, may I work on this?"
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": -66,
-      "repo": "nvaccess/nvda",
-      "number": 20118,
-      "title": "error copying NVDA user settings",
-      "url": "https://github.com/nvaccess/nvda/issues/20118",
-      "queryLabel": "good first issue",
-      "labels": [
-        "bug",
-        "p3",
-        "quick fix",
-        "good first issue",
-        "triaged"
-      ],
-      "createdAt": "2026-05-12T03:35:53Z",
-      "updatedAt": "2026-08-10T01:44:11Z",
-      "daysSinceUpdate": 0,
-      "daysSinceCreate": 90,
-      "commentCount": 4,
-      "recentActivity": 1,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
       "linkedOpenPRs": [
         {
-          "number": 20635,
-          "title": "Retry copying a file while its source is briefly in use",
-          "url": "https://github.com/nvaccess/nvda/pull/20635",
-          "createdAt": "2026-08-09T12:37:55Z"
+          "number": 5304,
+          "title": "fix(audit): remove undocumented tagExclude option (closes #620)",
+          "url": "https://github.com/dequelabs/axe-core/pull/5304",
+          "createdAt": "2026-08-10T05:19:09Z"
         }
       ],
       "checkboxes": {
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "### Brief summary\n\nrunning NVDA \nNonVisual Desktop Access (NVDA)\nVersion: 2026.1 (2026.1.0.55743)\nURL: https://www.nvaccess.org\nCopyright (C) 2006-2026 NVDA Contributors\nEdition\tWindows 11 Pro\nVersion\t25H2\nInstalled on\t‎10/‎29/‎2025\nOS build\t26200.8328\nExperience\tWindows Feature Experience Pack 1000",
+      "bodyExcerpt": "There is currently no documentation in the API docs describing how it works or what the default setting is",
       "recentComments": [
         {
-          "author": "yasumorishima",
+          "author": "shoaibyazdani",
           "association": "NONE",
-          "createdAt": "2026-08-09T12:35:54Z",
-          "excerpt": "I'd like to work on this.\n\nFollowing @seanbudd's suggestion above: `installer.tryCopyFile` raises as soon as `CopyFile` fails and no destination file was created, and `config._setSystemConfig` calls i"
+          "createdAt": "2026-08-15T18:52:13Z",
+          "excerpt": "> Hi,\n> \n> Is this issue still open? I would like to work on any open issue as my first contribution to axe-core.\n> \n> Thanks!\n\ni have already submited the fix"
         },
         {
-          "author": "vladdragomir1983",
+          "author": "nisha8c",
           "association": "NONE",
-          "createdAt": "2026-05-31T15:02:43Z",
-          "excerpt": "Hello, I'm having exactly the same problem. This never happened before, and it doesn't exist on my old computer still using NVDA 2025. The only difference: my list of add-ons is not the same."
+          "createdAt": "2026-08-11T13:56:40Z",
+          "excerpt": "Hi,\n\nIs this issue still open? I would like to work on any open issue as my first contribution to axe-core.\n\nThanks!"
         },
         {
-          "author": "seanbudd",
-          "association": "MEMBER",
-          "createdAt": "2026-05-18T23:44:10Z",
-          "excerpt": "Looks like we need to retry copying these files, as NVDA might hold onto them briefly while exiting the UAC screen after confirming the user wants to copy the settings"
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": -74,
-      "repo": "adobe/react-spectrum",
-      "number": 6809,
-      "title": "isFocusVisible is not set on elements using react-hook-form",
-      "url": "https://github.com/adobe/react-spectrum/issues/6809",
-      "queryLabel": "help wanted",
-      "labels": [
-        "bug",
-        "help wanted",
-        "Form",
-        "RAC"
-      ],
-      "createdAt": "2024-07-31T15:27:45Z",
-      "updatedAt": "2026-08-05T02:27:26Z",
-      "daysSinceUpdate": 5,
-      "daysSinceCreate": 739,
-      "commentCount": 12,
-      "recentActivity": 3,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [
-        {
-          "number": 10426,
-          "title": "feat: add useShowFocusIndicator hook",
-          "url": "https://github.com/adobe/react-spectrum/pull/10426",
-          "createdAt": "2026-08-05T02:27:15Z"
-        }
-      ],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "### Provide a general summary of the issue here\n\nWhen I use react-hook-form I cannot focus WITH isFocusVisible on the Select element. \n\nThe Select element itself gets the focus but without the isFocusVisible I cannot render a propper ring around the select.\n\nhttps://github.com/user-attachments/asset",
-      "recentComments": [
-        {
-          "author": "JasonColapietro",
-          "association": "NONE",
-          "createdAt": "2026-08-05T02:27:26Z",
-          "excerpt": "Thanks for the clarification. I kept this to the thin hook plus focused behavior test and opened draft PR #10426: https://github.com/adobe/react-spectrum/pull/10426\n"
-        },
-        {
-          "author": "snowystinger",
-          "association": "MEMBER",
-          "createdAt": "2026-08-05T00:42:04Z",
-          "excerpt": "I am not sure what all that says. It should be pretty straightforward:\n```\nfunction useShowFocusIndicator() {\n  return () => setInteractionModality(true);\n}\n\nlet showFocus = useShowFocusIndicator();\ns"
-        },
-        {
-          "author": "JasonColapietro",
-          "association": "NONE",
-          "createdAt": "2026-08-04T17:59:04Z",
-          "excerpt": "Hi — I’d like to work on this if the public hook contract aligns with the team’s direction. I reviewed the discussion and closed #9662. My proposed hook would expose a narrow “make this validation-dri"
+          "author": "WilcoFiers",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2017-11-17T10:35:45Z",
+          "excerpt": "@dylanb The lack of documentation is intentional. As Marcy points out, the way to run experimental rules is to add it to your runOnly option. I think tagExclude is pretty confusing as far as APIs go ("
         }
       ],
       "repoClass": "large"
@@ -329,27 +189,13 @@
   ],
   "allRanked": [
     {
-      "score": 51,
+      "score": 49,
       "repo": "nvaccess/nvda",
       "repoClass": "large",
-      "number": 20605,
-      "title": "Make the announcement number of repeated symbols configurable instead of always being more than 3",
-      "url": "https://github.com/nvaccess/nvda/issues/20605",
-      "daysSinceUpdate": 5,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": 47,
-      "repo": "testing-library/user-event",
-      "repoClass": "large",
-      "number": 1319,
-      "title": "Migration recommendation: prefer Vitest browser mode or Playwright for new work",
-      "url": "https://github.com/testing-library/user-event/issues/1319",
-      "daysSinceUpdate": 3,
+      "number": 20619,
+      "title": "Feature: CLI argument to start after I sign in",
+      "url": "https://github.com/nvaccess/nvda/issues/20619",
+      "daysSinceUpdate": 0,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
@@ -358,69 +204,41 @@
     },
     {
       "score": 45,
-      "repo": "adobe/react-spectrum",
+      "repo": "jsx-eslint/eslint-plugin-jsx-a11y",
       "repoClass": "large",
-      "number": 10409,
-      "title": "Docs: add Formisch to the form libraries section of the forms guide",
-      "url": "https://github.com/adobe/react-spectrum/issues/10409",
-      "daysSinceUpdate": 6,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": 7,
-      "repo": "nvaccess/nvda",
-      "repoClass": "large",
-      "number": 20584,
-      "title": "Make the MSVC build treat UTF-8 source files as UTF-8",
-      "url": "https://github.com/nvaccess/nvda/issues/20584",
-      "daysSinceUpdate": 6,
-      "claimedRecent": 1,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": -56,
-      "repo": "GoogleChrome/lighthouse",
-      "repoClass": "large",
-      "number": 9474,
-      "title": "Add a check to test if :hover styles require doubletapping links",
-      "url": "https://github.com/GoogleChrome/lighthouse/issues/9474",
-      "daysSinceUpdate": 5,
-      "claimedRecent": 2,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": -66,
-      "repo": "nvaccess/nvda",
-      "repoClass": "large",
-      "number": 20118,
-      "title": "error copying NVDA user settings",
-      "url": "https://github.com/nvaccess/nvda/issues/20118",
+      "number": 1095,
+      "title": "<picture> element should allow aria-hidden",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1095",
       "daysSinceUpdate": 0,
       "claimedRecent": 0,
       "prSubmitted": 0,
-      "linkedOpenPRs": 1,
+      "linkedOpenPRs": 0,
       "maintainerGreen": 0,
       "maintainerRed": 0
     },
     {
-      "score": -74,
+      "score": 32,
       "repo": "adobe/react-spectrum",
       "repoClass": "large",
-      "number": 6809,
-      "title": "isFocusVisible is not set on elements using react-hook-form",
-      "url": "https://github.com/adobe/react-spectrum/issues/6809",
-      "daysSinceUpdate": 5,
+      "number": 9031,
+      "title": "Searchable Select: scroll to selected item does not work",
+      "url": "https://github.com/adobe/react-spectrum/issues/9031",
+      "daysSinceUpdate": 4,
       "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": -156,
+      "repo": "dequelabs/axe-core",
+      "repoClass": "large",
+      "number": 620,
+      "title": "Remove the undocumented tagExclude option",
+      "url": "https://github.com/dequelabs/axe-core/issues/620",
+      "daysSinceUpdate": 1,
+      "claimedRecent": 2,
       "prSubmitted": 0,
       "linkedOpenPRs": 1,
       "maintainerGreen": 0,
