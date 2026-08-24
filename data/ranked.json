@@ -1,28 +1,27 @@
 {
-  "scannedAt": "2026-08-17T08:36:49Z",
-  "count": 4,
-  "countLarge": 4,
+  "scannedAt": "2026-08-24T08:41:41Z",
+  "count": 2,
+  "countLarge": 2,
   "countSmall": 0,
   "topIssues": [
     {
       "score": 49,
       "repo": "nvaccess/nvda",
-      "number": 20619,
-      "title": "Feature: CLI argument to start after I sign in",
-      "url": "https://github.com/nvaccess/nvda/issues/20619",
+      "number": 20688,
+      "title": "Screen Curtain fails to enable during post-sign-in Windows OOBE because desktop BitBlt verification fails",
+      "url": "https://github.com/nvaccess/nvda/issues/20688",
       "queryLabel": "good first issue",
       "labels": [
-        "component/installer",
-        "p5",
-        "feature",
-        "feature/configuration",
+        "bug",
+        "p4",
+        "quick fix",
         "good first issue",
         "triaged"
       ],
-      "createdAt": "2026-08-05T03:48:57Z",
-      "updatedAt": "2026-08-16T18:58:07Z",
-      "daysSinceUpdate": 0,
-      "daysSinceCreate": 12,
+      "createdAt": "2026-08-17T10:08:08Z",
+      "updatedAt": "2026-08-20T00:07:26Z",
+      "daysSinceUpdate": 4,
+      "daysSinceCreate": 6,
       "commentCount": 2,
       "recentActivity": 2,
       "maintainerGreen": 0,
@@ -34,154 +33,68 @@
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "### Is your feature request related to a problem? Please describe.\n\nIn NVDA\"s command line options, there is an argument to run NVDA on the logon screen, but NOT one to start NVDA after signing in: https://download.nvaccess.org/documentation/userGuide.html#CommandLineOptions\n\nThis would be useful, p",
+      "bodyExcerpt": "### Brief summary\n\nWhen NVDA starts automatically immediately after a successful Windows PIN sign-in, Screen Curtain fails to enable if the post-sign-in Windows OOBE (\"You're almost done setting up your PC\") is displayed.\n\nThe problem has been reproduced with both NVDA 2026.1.1 and NVDA 2026.2 beta ",
       "recentComments": [
         {
-          "author": "makhlwf",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-08-16T18:58:07Z",
-          "excerpt": "> Hi! I’d like to work on this issue if it’s still available. I’ll keep the change scoped to adding the command-line option and matching the existing “start NVDA after sign-in” setting behavior.\n\nThis"
+          "author": "SaschaCowley",
+          "association": "MEMBER",
+          "createdAt": "2026-08-20T00:07:26Z",
+          "excerpt": "@seanbudd I was thinking of adding an exponential cooldowntimer to the retry loop. I.e. wait, say, 10, then 20, then 40ms. I think 500ms is way too long for something that may be blocking."
         },
         {
-          "author": "ShlokShar",
-          "association": "NONE",
-          "createdAt": "2026-08-16T18:48:44Z",
-          "excerpt": "Hi! I’d like to work on this issue if it’s still available. I’ll keep the change scoped to adding the command-line option and matching the existing “start NVDA after sign-in” setting behavior."
+          "author": "seanbudd",
+          "association": "MEMBER",
+          "createdAt": "2026-08-17T23:21:04Z",
+          "excerpt": "This could be fixed by extending the retry time out for intializing screen curtain. we could delay each check by 500ms or similar."
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": 45,
-      "repo": "jsx-eslint/eslint-plugin-jsx-a11y",
-      "number": 1095,
-      "title": "<picture> element should allow aria-hidden",
-      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1095",
-      "queryLabel": "help wanted",
-      "labels": [
-        "help wanted"
-      ],
-      "createdAt": "2026-08-14T20:56:37Z",
-      "updatedAt": "2026-08-17T07:46:30Z",
-      "daysSinceUpdate": 0,
-      "daysSinceCreate": 2,
-      "commentCount": 0,
-      "recentActivity": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "A `<picture>` element is allowed to have aria-hidden since October 2021, per the [W3C Recommendation](https://www.w3.org/TR/html-aria/#:~:text=26%20October%202021%20%2D%20Addition%3A%20Allow%20aria%2Dhidden%20attribute%20on%20the%20picture%20element.).\n\n```html\n<picture aria-hidden=\"true\"></picture>",
-      "recentComments": [],
-      "repoClass": "large"
-    },
-    {
-      "score": 32,
+      "score": 15,
       "repo": "adobe/react-spectrum",
-      "number": 9031,
-      "title": "Searchable Select: scroll to selected item does not work",
-      "url": "https://github.com/adobe/react-spectrum/issues/9031",
-      "queryLabel": "help wanted",
+      "number": 10292,
+      "title": "Nested `Tabs` height transitions break due to CSS variable bleed and 0-height behavior of `TabList` and `TabPanel`",
+      "url": "https://github.com/adobe/react-spectrum/issues/10292",
+      "queryLabel": "good first issue",
       "labels": [
         "bug",
-        "help wanted",
-        "Autocomplete"
+        "good first issue"
       ],
-      "createdAt": "2025-10-14T10:46:20Z",
-      "updatedAt": "2026-08-12T22:28:57Z",
-      "daysSinceUpdate": 4,
-      "daysSinceCreate": 306,
-      "commentCount": 13,
-      "recentActivity": 0,
+      "createdAt": "2026-07-02T19:46:07Z",
+      "updatedAt": "2026-08-23T23:45:34Z",
+      "daysSinceUpdate": 0,
+      "daysSinceCreate": 52,
+      "commentCount": 10,
+      "recentActivity": 10,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 0,
-      "prSubmitted": 0,
+      "prSubmitted": 1,
       "linkedOpenPRs": [],
       "checkboxes": {
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "### Provide a general summary of the issue here\n\nIf we have a searchable select with a long item list, it should scroll to the first selected item on open.\n\n### 🤔 Expected Behavior?\n\nScroll to the first selected item.\n\n### 😯 Current Behavior\n\nIt does not scroll.\n\n### 💁 Possible Solution\n\n_No respons",
+      "bodyExcerpt": "### Provide a general summary of the issue here\n\nWhen nesting `<Tabs>` inside another `<Tabs>` component, the transition animations severely break and can cause cause large layout shifts, when switching the outer `<Tabs>` component. This is caused by three distinct issues interacting with each other",
       "recentComments": [
         {
-          "author": "lixiaoyan",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2025-10-16T07:04:38Z",
-          "excerpt": "@LFDanLu #9043 and #9044 filled."
-        },
-        {
-          "author": "LFDanLu",
+          "author": "snowystinger",
           "association": "MEMBER",
-          "createdAt": "2025-10-15T23:08:25Z",
-          "excerpt": "@lixiaoyan mind splitting out the window resizing issue to a separate issue so that we can track them separately?"
+          "createdAt": "2026-08-23T23:44:08Z",
+          "excerpt": "The whole thing is available. Just know that AI appears to be pretty bad at solving this one and verifying it. Just something to keep in mind."
         },
         {
-          "author": "LFDanLu",
+          "author": "uchiha-suraj",
+          "association": "NONE",
+          "createdAt": "2026-08-23T15:25:18Z",
+          "excerpt": "Hi @snowystinger, I noticed that PR #10293 was closed without merging. Are any parts of this issue still available for contribution?\n\nIf so, I’d like to work on one narrowly scoped subproblem—preferab"
+        },
+        {
+          "author": "snowystinger",
           "association": "MEMBER",
-          "createdAt": "2025-10-15T16:42:20Z",
-          "excerpt": "> Unfortunately, that doesn't work. The input does not have the aria-activedescendant attribute set at the time the updatePosition function is called.\n\nOh right, that is due to the delay. In that case"
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": -156,
-      "repo": "dequelabs/axe-core",
-      "number": 620,
-      "title": "Remove the undocumented tagExclude option",
-      "url": "https://github.com/dequelabs/axe-core/issues/620",
-      "queryLabel": "help wanted",
-      "labels": [
-        "feat",
-        "help wanted"
-      ],
-      "createdAt": "2017-11-16T20:30:17Z",
-      "updatedAt": "2026-08-15T18:52:13Z",
-      "daysSinceUpdate": 1,
-      "daysSinceCreate": 3195,
-      "commentCount": 4,
-      "recentActivity": 2,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 2,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [
-        {
-          "number": 5304,
-          "title": "fix(audit): remove undocumented tagExclude option (closes #620)",
-          "url": "https://github.com/dequelabs/axe-core/pull/5304",
-          "createdAt": "2026-08-10T05:19:09Z"
-        }
-      ],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "There is currently no documentation in the API docs describing how it works or what the default setting is",
-      "recentComments": [
-        {
-          "author": "shoaibyazdani",
-          "association": "NONE",
-          "createdAt": "2026-08-15T18:52:13Z",
-          "excerpt": "> Hi,\n> \n> Is this issue still open? I would like to work on any open issue as my first contribution to axe-core.\n> \n> Thanks!\n\ni have already submited the fix"
-        },
-        {
-          "author": "nisha8c",
-          "association": "NONE",
-          "createdAt": "2026-08-11T13:56:40Z",
-          "excerpt": "Hi,\n\nIs this issue still open? I would like to work on any open issue as my first contribution to axe-core.\n\nThanks!"
-        },
-        {
-          "author": "WilcoFiers",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2017-11-17T10:35:45Z",
-          "excerpt": "@dylanb The lack of documentation is intentional. As Marcy points out, the way to run experimental rules is to add it to your runOnly option. I think tagExclude is pretty confusing as far as APIs go ("
+          "createdAt": "2026-07-21T21:04:23Z",
+          "excerpt": "~@rully-saputra15 there's a PR already open for this that's in review.~\n~There's a link at the top of the page to it.~\n<img width=\"295\" height=\"221\" alt=\"Image\" src=\"https://github.com/user-attachment"
         }
       ],
       "repoClass": "large"
@@ -192,37 +105,9 @@
       "score": 49,
       "repo": "nvaccess/nvda",
       "repoClass": "large",
-      "number": 20619,
-      "title": "Feature: CLI argument to start after I sign in",
-      "url": "https://github.com/nvaccess/nvda/issues/20619",
-      "daysSinceUpdate": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": 45,
-      "repo": "jsx-eslint/eslint-plugin-jsx-a11y",
-      "repoClass": "large",
-      "number": 1095,
-      "title": "<picture> element should allow aria-hidden",
-      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1095",
-      "daysSinceUpdate": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": 32,
-      "repo": "adobe/react-spectrum",
-      "repoClass": "large",
-      "number": 9031,
-      "title": "Searchable Select: scroll to selected item does not work",
-      "url": "https://github.com/adobe/react-spectrum/issues/9031",
+      "number": 20688,
+      "title": "Screen Curtain fails to enable during post-sign-in Windows OOBE because desktop BitBlt verification fails",
+      "url": "https://github.com/nvaccess/nvda/issues/20688",
       "daysSinceUpdate": 4,
       "claimedRecent": 0,
       "prSubmitted": 0,
@@ -231,16 +116,16 @@
       "maintainerRed": 0
     },
     {
-      "score": -156,
-      "repo": "dequelabs/axe-core",
+      "score": 15,
+      "repo": "adobe/react-spectrum",
       "repoClass": "large",
-      "number": 620,
-      "title": "Remove the undocumented tagExclude option",
-      "url": "https://github.com/dequelabs/axe-core/issues/620",
-      "daysSinceUpdate": 1,
-      "claimedRecent": 2,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 1,
+      "number": 10292,
+      "title": "Nested `Tabs` height transitions break due to CSS variable bleed and 0-height behavior of `TabList` and `TabPanel`",
+      "url": "https://github.com/adobe/react-spectrum/issues/10292",
+      "daysSinceUpdate": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 1,
+      "linkedOpenPRs": 0,
       "maintainerGreen": 0,
       "maintainerRed": 0
     }
