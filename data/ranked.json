@@ -1,74 +1,26 @@
 {
-  "scannedAt": "2026-08-31T15:46:40Z",
-  "count": 7,
-  "countLarge": 7,
+  "scannedAt": "2026-09-07T13:53:59Z",
+  "count": 5,
+  "countLarge": 5,
   "countSmall": 0,
   "topIssues": [
     {
-      "score": 49,
-      "repo": "nvaccess/nvda",
-      "number": 20619,
-      "title": "Feature: CLI argument to start after I sign in",
-      "url": "https://github.com/nvaccess/nvda/issues/20619",
-      "queryLabel": "good first issue",
-      "labels": [
-        "component/installer",
-        "p5",
-        "feature",
-        "feature/configuration",
-        "good first issue",
-        "triaged"
-      ],
-      "createdAt": "2026-08-05T03:48:57Z",
-      "updatedAt": "2026-08-25T00:28:57Z",
-      "daysSinceUpdate": 6,
-      "daysSinceCreate": 26,
-      "commentCount": 2,
-      "recentActivity": 2,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "### Is your feature request related to a problem? Please describe.\n\nIn NVDA\"s command line options, there is an argument to run NVDA on the logon screen, but NOT one to start NVDA after signing in: https://download.nvaccess.org/documentation/userGuide.html#CommandLineOptions\n\nThis would be useful, p",
-      "recentComments": [
-        {
-          "author": "makhlwf",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-08-16T18:58:07Z",
-          "excerpt": "> Hi! I’d like to work on this issue if it’s still available. I’ll keep the change scoped to adding the command-line option and matching the existing “start NVDA after sign-in” setting behavior.\n\nThis"
-        },
-        {
-          "author": "ShlokShar",
-          "association": "NONE",
-          "createdAt": "2026-08-16T18:48:44Z",
-          "excerpt": "Hi! I’d like to work on this issue if it’s still available. I’ll keep the change scoped to adding the command-line option and matching the existing “start NVDA after sign-in” setting behavior."
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": 36,
-      "repo": "adobe/react-spectrum",
-      "number": 9031,
-      "title": "Searchable Select: scroll to selected item does not work",
-      "url": "https://github.com/adobe/react-spectrum/issues/9031",
+      "score": 22,
+      "repo": "jsx-eslint/eslint-plugin-jsx-a11y",
+      "number": 954,
+      "title": "jsx-a11y/control-has-associated-label: dangerouslySetInnerHTML should pass?",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/954",
       "queryLabel": "help wanted",
       "labels": [
         "bug",
-        "help wanted",
-        "Autocomplete"
+        "help wanted"
       ],
-      "createdAt": "2025-10-14T10:46:20Z",
-      "updatedAt": "2026-08-27T15:16:46Z",
-      "daysSinceUpdate": 4,
-      "daysSinceCreate": 321,
-      "commentCount": 15,
-      "recentActivity": 2,
+      "createdAt": "2023-09-12T19:25:28Z",
+      "updatedAt": "2026-09-01T10:17:06Z",
+      "daysSinceUpdate": 6,
+      "daysSinceCreate": 1090,
+      "commentCount": 4,
+      "recentActivity": 1,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 0,
@@ -78,31 +30,31 @@
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "### Provide a general summary of the issue here\n\nIf we have a searchable select with a long item list, it should scroll to the first selected item on open.\n\n### 🤔 Expected Behavior?\n\nScroll to the first selected item.\n\n### 😯 Current Behavior\n\nIt does not scroll.\n\n### 💁 Possible Solution\n\n_No respons",
+      "bodyExcerpt": "```jsx\n<td\n  dangerouslySetInnerHTML={parseMarkdownLinks(\n    prop.description,\n  )}\n></td>\n```\n\nthrows a `jsx-a11y/control-has-associated-label` error.\n\nI believe this should pass in the same way as https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/64 ?\n\nAlso, the documentation says \"Enfo",
       "recentComments": [
         {
-          "author": "su-jin1425",
+          "author": "dylanpulver",
           "association": "NONE",
-          "createdAt": "2026-08-27T15:16:45Z",
-          "excerpt": "I’ll first reproduce the issue and trace how scrollIntoView interacts with useOverlayPosition. Then I’ll implement the smallest fix that preserves the existing overlay behavior, add a regression test "
+          "createdAt": "2026-09-01T10:17:06Z",
+          "excerpt": "The `td` report doesn't come from the role path — it comes from `isInteractiveElement`. `aria-query` has two entries for `td`, and the interactive one is constrained:\n\n```\n{ name: 'td', constraints: ["
         },
         {
-          "author": "su-jin1425",
-          "association": "NONE",
-          "createdAt": "2026-08-27T11:16:15Z",
-          "excerpt": "Hi I’d like to work on this issue. I’ll review it and share my plan ASAP.  \n\nPlease confirm before I start investigating and implementing a fix."
+          "author": "ljharb",
+          "association": "MEMBER",
+          "createdAt": "2023-09-14T18:10:26Z",
+          "excerpt": "It definitely seems like a bug, to be clear - `td` isn't a control or a label, so it should just be ignoring it."
         },
         {
-          "author": "lixiaoyan",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2025-10-16T07:04:38Z",
-          "excerpt": "@LFDanLu #9043 and #9044 filled."
+          "author": "thomasmattheussen",
+          "association": "NONE",
+          "createdAt": "2023-09-14T10:07:38Z",
+          "excerpt": "I get the dynamic value issue, so feel free to close. (The HTML in this case is not dangerous at all btw, no worries of XSS).\n\nI don't understand why a `<td>` can't be empty though?"
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": 17,
+      "score": 7,
       "repo": "adobe/react-spectrum",
       "number": 10292,
       "title": "Nested `Tabs` height transitions break due to CSS variable bleed and 0-height behavior of `TabList` and `TabPanel`",
@@ -113,11 +65,11 @@
         "good first issue"
       ],
       "createdAt": "2026-07-02T19:46:07Z",
-      "updatedAt": "2026-08-27T11:21:37Z",
+      "updatedAt": "2026-09-03T11:27:16Z",
       "daysSinceUpdate": 4,
-      "daysSinceCreate": 59,
-      "commentCount": 11,
-      "recentActivity": 11,
+      "daysSinceCreate": 66,
+      "commentCount": 12,
+      "recentActivity": 6,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 0,
@@ -132,6 +84,12 @@
         {
           "author": "su-jin1425",
           "association": "NONE",
+          "createdAt": "2026-09-03T11:27:16Z",
+          "excerpt": "PR #10293 addresses the CSS variable bleed (Issue 1). For Issues 2 and 3 (0-height on initial render), should we fix this in code by delaying the outer TabPanels measurement until nested collections l"
+        },
+        {
+          "author": "su-jin1425",
+          "association": "NONE",
           "createdAt": "2026-08-27T11:21:37Z",
           "excerpt": "Hi I’d like to work on this issue. I’ll review it and share my plan ASAP.\n\nPlease confirm before I start investigating and implementing a fix."
         },
@@ -140,68 +98,113 @@
           "association": "MEMBER",
           "createdAt": "2026-08-23T23:44:08Z",
           "excerpt": "The whole thing is available. Just know that AI appears to be pretty bad at solving this one and verifying it. Just something to keep in mind."
-        },
-        {
-          "author": "uchiha-suraj",
-          "association": "NONE",
-          "createdAt": "2026-08-23T15:25:18Z",
-          "excerpt": "Hi @snowystinger, I noticed that PR #10293 was closed without merging. Are any parts of this issue still available for contribution?\n\nIf so, I’d like to work on one narrowly scoped subproblem—preferab"
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": -14,
-      "repo": "GoogleChrome/lighthouse",
-      "number": 9474,
-      "title": "Add a check to test if :hover styles require doubletapping links",
-      "url": "https://github.com/GoogleChrome/lighthouse/issues/9474",
+      "score": -38,
+      "repo": "nvaccess/nvda",
+      "number": 17763,
+      "title": "Function to copy list of add-ons from store",
+      "url": "https://github.com/nvaccess/nvda/issues/17763",
       "queryLabel": "good first issue",
       "labels": [
-        "new_audit",
+        "p5",
+        "feature",
         "good first issue",
-        "P3"
+        "triaged",
+        "feature/addon-store"
       ],
-      "createdAt": "2019-07-27T12:35:28Z",
-      "updatedAt": "2026-08-26T06:58:37Z",
+      "createdAt": "2025-03-03T09:09:12Z",
+      "updatedAt": "2026-09-02T08:28:25Z",
       "daysSinceUpdate": 5,
-      "daysSinceCreate": 2592,
-      "commentCount": 9,
-      "recentActivity": 3,
+      "daysSinceCreate": 553,
+      "commentCount": 15,
+      "recentActivity": 9,
       "maintainerGreen": 0,
       "maintainerRed": 0,
-      "claimedRecent": 1,
+      "claimedRecent": 2,
       "prSubmitted": 0,
       "linkedOpenPRs": [],
       "checkboxes": {
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "It's really annoying when a website needs to have a double tap on links and buttons when the website is being used on a mobile device.\n\nIt would be a nice feature for Lighthouse to test if the website has this poor user experience.\n\nThen if the website does make users have to double tap for links an",
+      "bodyExcerpt": "<!-- Please read the text in this edit field before filling it in.\nPlease thoroughly read NVDA's wiki article on how to fill in this template, including how to provide the required files.\nIssues may be closed if the required information is not present.\nhttps://github.com/nvaccess/nvda/blob/master/pr",
       "recentComments": [
         {
-          "author": "aditya4oo4",
+          "author": "rpccl",
           "association": "NONE",
-          "createdAt": "2026-08-26T06:58:37Z",
-          "excerpt": "can you describe more about this issue any video for this issue?\n"
+          "createdAt": "2026-09-02T08:28:25Z",
+          "excerpt": "Thanks.\nMake sance\n\n\n*Rahul Vaniya*\n\nComputer Instructor | Tanya Computer Centre\n\nBlind People's Association, India\n\nDHS Trusted Tester (Section 508)\nNVDA Certified Expert 2025\n<https://certification."
         },
         {
-          "author": "plutoTaco",
-          "association": "NONE",
-          "createdAt": "2026-08-04T12:51:13Z",
-          "excerpt": "Is the issue still open? If it is may I work on it?"
+          "author": "CyrilleB79",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2026-09-02T08:23:39Z",
+          "excerpt": "A nice copy format would be tab-separated values, e.g.:\n```\nAccess8Math\tEnabled\t5.0\tStable\tTseng Woody <tsengwoody.tw@gmail.com>\t5/1/2026\t5/22/2026\t2024.1\t2026.1\nCharacter information\tEnabled\t3.8\tStab"
         },
         {
-          "author": "snehal242005",
+          "author": "rpccl",
           "association": "NONE",
-          "createdAt": "2026-07-15T09:39:41Z",
-          "excerpt": "Hi, I'd like to work on this issue!\n"
+          "createdAt": "2026-09-02T06:42:52Z",
+          "excerpt": "It seems good.\nWill share updates once I have something working.\nThanks.\n\n\n*Rahul Vaniya*\n\nComputer Instructor | Tanya Computer Centre\n\nBlind People's Association, India\n\nDHS Trusted Tester (Section 5"
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": -16,
+      "score": -51,
+      "repo": "adobe/react-spectrum",
+      "number": 10539,
+      "title": "useTreeData: move() silently drops a node moved into its own subtree; moveBefore/moveAfter miss root-level nodes",
+      "url": "https://github.com/adobe/react-spectrum/issues/10539",
+      "queryLabel": "help wanted",
+      "labels": [
+        "help wanted"
+      ],
+      "createdAt": "2026-08-31T19:38:35Z",
+      "updatedAt": "2026-09-03T07:25:06Z",
+      "daysSinceUpdate": 4,
+      "daysSinceCreate": 6,
+      "commentCount": 2,
+      "recentActivity": 2,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [
+        {
+          "number": 10560,
+          "title": "Fix useTreeData subtree move validation",
+          "url": "https://github.com/adobe/react-spectrum/pull/10560",
+          "createdAt": "2026-09-03T10:35:15Z"
+        }
+      ],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "### Provide a general summary of the issue here\n\n`useTreeData`'s `move()` has no guard against moving a node into its own subtree. `moveBefore()` and `moveAfter()` have a guard, but it skips root-level moved nodes. Both gaps silently destroy the moved node and all its descendants. Drag-and-drop is n",
+      "recentComments": [
+        {
+          "author": "su-jin1425",
+          "association": "NONE",
+          "createdAt": "2026-09-03T07:25:06Z",
+          "excerpt": "Is this Still available ?\n\nIm willing to help."
+        },
+        {
+          "author": "snowystinger",
+          "association": "MEMBER",
+          "createdAt": "2026-09-01T23:47:36Z",
+          "excerpt": "Seems fine, want to give it a go and open a PR?"
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": -112,
       "repo": "GoogleChrome/lighthouse",
       "number": 11352,
       "title": "runWarnings format difficult for pragmatic usage",
@@ -213,16 +216,23 @@
         "breaking"
       ],
       "createdAt": "2020-09-01T00:21:17Z",
-      "updatedAt": "2026-08-31T12:18:58Z",
-      "daysSinceUpdate": 0,
-      "daysSinceCreate": 2190,
-      "commentCount": 6,
-      "recentActivity": 2,
+      "updatedAt": "2026-09-01T15:36:53Z",
+      "daysSinceUpdate": 5,
+      "daysSinceCreate": 2197,
+      "commentCount": 8,
+      "recentActivity": 4,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 1,
       "prSubmitted": 0,
-      "linkedOpenPRs": [],
+      "linkedOpenPRs": [
+        {
+          "number": 17208,
+          "title": "core: introduce structured `runtimeWarnings` field (#11352)",
+          "url": "https://github.com/GoogleChrome/lighthouse/pull/17208",
+          "createdAt": "2026-09-01T14:43:05Z"
+        }
+      ],
       "checkboxes": {
         "total": 0,
         "done": 0
@@ -230,129 +240,22 @@
       "bodyExcerpt": "I have two concerns with `runWarnings` specifically around pragmatic usage: \n\n* `runWarnings` contains both errors (eg, page hung / non-successful request on main document resource) and warnings (eg, CPU throttling might be bad)\n* The errors and warnings contained within `runWarnings` are strings. T",
       "recentComments": [
         {
+          "author": "connorjclark",
+          "association": "COLLABORATOR",
+          "createdAt": "2026-09-01T15:36:53Z",
+          "excerpt": "@benschwarz if this feature still interests you, could you help review the PR please?"
+        },
+        {
+          "author": "spideyashith",
+          "association": "NONE",
+          "createdAt": "2026-09-01T15:23:39Z",
+          "excerpt": "I've implemented the scoped changes and opened #17208 for review. \n\nAll unit tests and type-checks are passing cleanly with the existing `runWarnings` preserved for backward compatibility. Whenever yo"
+        },
+        {
           "author": "spideyashith",
           "association": "NONE",
           "createdAt": "2026-08-31T12:18:58Z",
           "excerpt": "Quick update: I've added the `runtimeWarnings?: Array<{ code: string; message: string }>` type to `types/lhr/lhr.d.ts` (type-checks cleanly) and mapped out where page-level warnings currently get push"
-        },
-        {
-          "author": "spideyashith",
-          "association": "NONE",
-          "createdAt": "2026-08-29T16:58:12Z",
-          "excerpt": "Hi! I'd like to work on this issue.\n\nFrom the discussion above, my understanding of the scope is:\n- Add a new `runtimeWarnings` field to the LHR that contains structured `{ code, message }` objects, f"
-        },
-        {
-          "author": "benschwarz",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2021-06-16T01:40:59Z",
-          "excerpt": "> Is it mostly the errors that are already known you'd like as an object in errorMessage?\n\nYep. At the moment they need to be parsed to be machine readable. \nIdeally every existing error message with "
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": -56,
-      "repo": "GoogleChrome/lighthouse",
-      "number": 11593,
-      "title": "\"Properly size image\" report is too strict?",
-      "url": "https://github.com/GoogleChrome/lighthouse/issues/11593",
-      "queryLabel": "good first issue",
-      "labels": [
-        "good first issue",
-        "docs",
-        "P2",
-        "images"
-      ],
-      "createdAt": "2020-10-24T03:27:29Z",
-      "updatedAt": "2026-08-26T06:56:48Z",
-      "daysSinceUpdate": 5,
-      "daysSinceCreate": 2137,
-      "commentCount": 23,
-      "recentActivity": 2,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 2,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "<!-- We would love to hear anything on your mind about Lighthouse -->\n**Summary**\n\nHi !\n\nI am trying to get rid of the \"Properly image size\" but I am facing a wall here. Here are the kind of errors I get:\n\n![image](https://user-images.githubusercontent.com/1198915/97066910-92428000-15f3-11eb-82e7-6a",
-      "recentComments": [
-        {
-          "author": "aditya4oo4",
-          "association": "NONE",
-          "createdAt": "2026-08-26T06:56:48Z",
-          "excerpt": "can i work on this issue if no one is working on this??? let me know"
-        },
-        {
-          "author": "Ujwal-Developer",
-          "association": "NONE",
-          "createdAt": "2026-07-14T18:44:52Z",
-          "excerpt": "Hi! I’m a first-time open-source contributor and I’m interested in working on this issue. Since the discussion is a few years old, could you please confirm whether the issue is still active and availa"
-        },
-        {
-          "author": "thommyhh",
-          "association": "NONE",
-          "createdAt": "2026-04-23T08:09:25Z",
-          "excerpt": "That seems to be resolve with Lighthouse 13.0.2 in Brave browser and Lighthouse 13.1.0 in Chrome Canary.  Lighthouse 13.0.1 (Pagespeed Insights) still shows messages where the image is \"too large\". So"
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": -116,
-      "repo": "adobe/react-spectrum",
-      "number": 5934,
-      "title": "useLongPress should be cancelled on multiple touches",
-      "url": "https://github.com/adobe/react-spectrum/issues/5934",
-      "queryLabel": "help wanted",
-      "labels": [
-        "bug",
-        "help wanted"
-      ],
-      "createdAt": "2024-02-24T02:09:36Z",
-      "updatedAt": "2026-08-29T03:45:30Z",
-      "daysSinceUpdate": 2,
-      "daysSinceCreate": 919,
-      "commentCount": 3,
-      "recentActivity": 2,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 1,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [
-        {
-          "number": 10535,
-          "title": "fix: cancel useLongPress when a second touch begins",
-          "url": "https://github.com/adobe/react-spectrum/pull/10535",
-          "createdAt": "2026-08-29T03:58:23Z"
-        }
-      ],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "### Provide a general summary of the feature here\n\nHi there!\n\nI just received an accessibility issue from a user (see: https://github.com/aeharding/voyager/issues/1254).\n\n> 3-finger double tap cause [long press menu] to open. This is commonly used as an accessibility shortcut. I use it for full scre",
-      "recentComments": [
-        {
-          "author": "giaBaoJS",
-          "association": "NONE",
-          "createdAt": "2026-08-29T03:45:30Z",
-          "excerpt": "Hi @kalayciburak, are you still working on this? It has looked unclaimed for a few weeks, so I am picking it up. Happy to step back if you already have a branch in progress."
-        },
-        {
-          "author": "kalayciburak",
-          "association": "NONE",
-          "createdAt": "2026-07-21T10:54:51Z",
-          "excerpt": "I’d like to work on this. I’ll add a regression test covering a second touch before the threshold and keep the fix scoped to cancelling the pending long press."
-        },
-        {
-          "author": "reidbarber",
-          "association": "MEMBER",
-          "createdAt": "2024-02-26T15:44:33Z",
-          "excerpt": "Cancelling the long press seem like the correct behavior in this case, and matches native iOS and Android behavior."
         }
       ],
       "repoClass": "large"
@@ -360,12 +263,12 @@
   ],
   "allRanked": [
     {
-      "score": 49,
-      "repo": "nvaccess/nvda",
+      "score": 22,
+      "repo": "jsx-eslint/eslint-plugin-jsx-a11y",
       "repoClass": "large",
-      "number": 20619,
-      "title": "Feature: CLI argument to start after I sign in",
-      "url": "https://github.com/nvaccess/nvda/issues/20619",
+      "number": 954,
+      "title": "jsx-a11y/control-has-associated-label: dangerouslySetInnerHTML should pass?",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/954",
       "daysSinceUpdate": 6,
       "claimedRecent": 0,
       "prSubmitted": 0,
@@ -374,21 +277,7 @@
       "maintainerRed": 0
     },
     {
-      "score": 36,
-      "repo": "adobe/react-spectrum",
-      "repoClass": "large",
-      "number": 9031,
-      "title": "Searchable Select: scroll to selected item does not work",
-      "url": "https://github.com/adobe/react-spectrum/issues/9031",
-      "daysSinceUpdate": 4,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": 17,
+      "score": 7,
       "repo": "adobe/react-spectrum",
       "repoClass": "large",
       "number": 10292,
@@ -402,40 +291,12 @@
       "maintainerRed": 0
     },
     {
-      "score": -14,
-      "repo": "GoogleChrome/lighthouse",
+      "score": -38,
+      "repo": "nvaccess/nvda",
       "repoClass": "large",
-      "number": 9474,
-      "title": "Add a check to test if :hover styles require doubletapping links",
-      "url": "https://github.com/GoogleChrome/lighthouse/issues/9474",
-      "daysSinceUpdate": 5,
-      "claimedRecent": 1,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": -16,
-      "repo": "GoogleChrome/lighthouse",
-      "repoClass": "large",
-      "number": 11352,
-      "title": "runWarnings format difficult for pragmatic usage",
-      "url": "https://github.com/GoogleChrome/lighthouse/issues/11352",
-      "daysSinceUpdate": 0,
-      "claimedRecent": 1,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": -56,
-      "repo": "GoogleChrome/lighthouse",
-      "repoClass": "large",
-      "number": 11593,
-      "title": "\"Properly size image\" report is too strict?",
-      "url": "https://github.com/GoogleChrome/lighthouse/issues/11593",
+      "number": 17763,
+      "title": "Function to copy list of add-ons from store",
+      "url": "https://github.com/nvaccess/nvda/issues/17763",
       "daysSinceUpdate": 5,
       "claimedRecent": 2,
       "prSubmitted": 0,
@@ -444,13 +305,27 @@
       "maintainerRed": 0
     },
     {
-      "score": -116,
+      "score": -51,
       "repo": "adobe/react-spectrum",
       "repoClass": "large",
-      "number": 5934,
-      "title": "useLongPress should be cancelled on multiple touches",
-      "url": "https://github.com/adobe/react-spectrum/issues/5934",
-      "daysSinceUpdate": 2,
+      "number": 10539,
+      "title": "useTreeData: move() silently drops a node moved into its own subtree; moveBefore/moveAfter miss root-level nodes",
+      "url": "https://github.com/adobe/react-spectrum/issues/10539",
+      "daysSinceUpdate": 4,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 1,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": -112,
+      "repo": "GoogleChrome/lighthouse",
+      "repoClass": "large",
+      "number": 11352,
+      "title": "runWarnings format difficult for pragmatic usage",
+      "url": "https://github.com/GoogleChrome/lighthouse/issues/11352",
+      "daysSinceUpdate": 5,
       "claimedRecent": 1,
       "prSubmitted": 0,
       "linkedOpenPRs": 1,
