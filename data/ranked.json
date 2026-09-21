@@ -1,11 +1,115 @@
 {
-  "scannedAt": "2026-09-14T14:41:09Z",
-  "count": 2,
-  "countLarge": 2,
+  "scannedAt": "2026-09-21T14:47:30Z",
+  "count": 8,
+  "countLarge": 8,
   "countSmall": 0,
   "topIssues": [
     {
-      "score": 19,
+      "score": 51,
+      "repo": "nvaccess/nvda",
+      "number": 20688,
+      "title": "Screen Curtain fails to enable during post-sign-in Windows OOBE because desktop BitBlt verification fails",
+      "url": "https://github.com/nvaccess/nvda/issues/20688",
+      "queryLabel": "good first issue",
+      "labels": [
+        "bug",
+        "p4",
+        "quick fix",
+        "good first issue",
+        "triaged"
+      ],
+      "createdAt": "2026-08-17T10:08:08Z",
+      "updatedAt": "2026-09-16T03:39:52Z",
+      "daysSinceUpdate": 5,
+      "daysSinceCreate": 35,
+      "commentCount": 3,
+      "recentActivity": 3,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "### Brief summary\n\nWhen NVDA starts automatically immediately after a successful Windows PIN sign-in, Screen Curtain fails to enable if the post-sign-in Windows OOBE (\"You're almost done setting up your PC\") is displayed.\n\nThe problem has been reproduced with both NVDA 2026.1.1 and NVDA 2026.2 beta ",
+      "recentComments": [
+        {
+          "author": "phamhungvuong302",
+          "association": "NONE",
+          "createdAt": "2026-09-16T03:39:52Z",
+          "excerpt": "Hi @seanbudd and @SaschaCowley.\nI am glad you proposed a solution. I really hope this issue gets fixed soon and that the Screen Curtain feature continues to improve. Thank you."
+        },
+        {
+          "author": "SaschaCowley",
+          "association": "MEMBER",
+          "createdAt": "2026-08-20T00:07:26Z",
+          "excerpt": "@seanbudd I was thinking of adding an exponential cooldowntimer to the retry loop. I.e. wait, say, 10, then 20, then 40ms. I think 500ms is way too long for something that may be blocking."
+        },
+        {
+          "author": "seanbudd",
+          "association": "MEMBER",
+          "createdAt": "2026-08-17T23:21:04Z",
+          "excerpt": "This could be fixed by extending the retry time out for intializing screen curtain. we could delay each check by 500ms or similar."
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": 24,
+      "repo": "nvaccess/nvda",
+      "number": 18905,
+      "title": "Installers from previous versions of NVDA won't open",
+      "url": "https://github.com/nvaccess/nvda/issues/18905",
+      "queryLabel": "good first issue",
+      "labels": [
+        "p2",
+        "quick fix",
+        "good first issue",
+        "triaged",
+        "bug squash target"
+      ],
+      "createdAt": "2025-09-11T23:37:32Z",
+      "updatedAt": "2026-09-16T00:32:08Z",
+      "daysSinceUpdate": 5,
+      "daysSinceCreate": 374,
+      "commentCount": 10,
+      "recentActivity": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "<!-- Please read the text in this edit area before filling in the required information.\nPlease carefully read NVDA's wiki article on how to complete this template and provide the necessary files.\nIssues may be closed if the required information is not available.\nhttps://github.com/nvaccess/nvda/blob",
+      "recentComments": [
+        {
+          "author": "seanbudd",
+          "association": "MEMBER",
+          "createdAt": "2025-10-06T04:41:38Z",
+          "excerpt": "Yes we could update `InstallingOverNewerVersionDialog` to add a message about config being reset if it is going to be reset after installing. Currently the message is:\n\n> \"You are attempting to instal"
+        },
+        {
+          "author": "seanbudd",
+          "association": "MEMBER",
+          "createdAt": "2025-09-12T06:17:57Z",
+          "excerpt": "Yes, only the installer itself. The installer doesn't save any config changes to disk"
+        },
+        {
+          "author": "harun-342",
+          "association": "NONE",
+          "createdAt": "2025-09-12T06:16:47Z",
+          "excerpt": "@seanbudd\nThe only thing that will be reset is the installer itself, right? If our installed NVDAs were also reset, that would also disrupt our current settings. But if you're only aiming to reset the"
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": 21,
       "repo": "nvaccess/nvda",
       "number": 20605,
       "title": "Make the announcement number of repeated symbols configurable instead of always being more than 3",
@@ -18,11 +122,11 @@
         "triaged"
       ],
       "createdAt": "2026-07-31T16:45:19Z",
-      "updatedAt": "2026-09-08T17:38:51Z",
-      "daysSinceUpdate": 5,
-      "daysSinceCreate": 44,
-      "commentCount": 7,
-      "recentActivity": 7,
+      "updatedAt": "2026-09-14T20:15:41Z",
+      "daysSinceUpdate": 6,
+      "daysSinceCreate": 51,
+      "commentCount": 8,
+      "recentActivity": 8,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 1,
@@ -37,6 +141,12 @@
         {
           "author": "Efury1",
           "association": "NONE",
+          "createdAt": "2026-09-14T20:15:41Z",
+          "excerpt": "Hi @seanbudd  @amirmahdifard, I think I found the code responsible for this behavior:\n```\n# Repeated characters: more than 3 repeats.\nr\"(?P<repeated>(?P<repTmp>%s)(?P=repTmp){3,})\" % characters,\n```\nH"
+        },
+        {
+          "author": "Efury1",
+          "association": "NONE",
           "createdAt": "2026-09-08T17:38:51Z",
           "excerpt": "@amirmahdifard, thank you. I'll give it a go!"
         },
@@ -45,63 +155,268 @@
           "association": "CONTRIBUTOR",
           "createdAt": "2026-09-08T08:38:51Z",
           "excerpt": "@Efury1 hi. My current life problems doesn't allow me to implement this yet. If you can implement it before 2023.3 is releaced, it would be nice. Also, in the comments, @seanbudd explaned the correct "
-        },
-        {
-          "author": "seanbudd",
-          "association": "MEMBER",
-          "createdAt": "2026-09-08T00:21:45Z",
-          "excerpt": "Hi @Efury1 - a fix would be appreciated. Please make sure to follow our contributing guidelines."
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": -51,
-      "repo": "dequelabs/axe-core",
-      "number": 5283,
-      "title": "False positive: p-as-heading fires on <p role=\"heading\" aria-level=\"n\">",
-      "url": "https://github.com/dequelabs/axe-core/issues/5283",
+      "score": 20,
+      "repo": "adobe/react-spectrum",
+      "number": 3936,
+      "title": "Expose FocusableProvider in `react-aria`",
+      "url": "https://github.com/adobe/react-spectrum/issues/3936",
       "queryLabel": "good first issue",
       "labels": [
-        "fix",
-        "rules",
+        "enhancement",
         "good first issue"
       ],
-      "createdAt": "2026-08-04T16:53:46Z",
-      "updatedAt": "2026-09-08T10:33:55Z",
-      "daysSinceUpdate": 6,
-      "daysSinceCreate": 40,
-      "commentCount": 2,
-      "recentActivity": 2,
+      "createdAt": "2023-01-19T15:12:13Z",
+      "updatedAt": "2026-09-18T03:59:08Z",
+      "daysSinceUpdate": 3,
+      "daysSinceCreate": 1340,
+      "commentCount": 3,
+      "recentActivity": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "# 🙋 Feature Request\n\nExpose `FocusableProvider` from `react-aria`\n\n## 🤔 Expected Behavior\n\nHave the ability to inject custom dom attributes into focusable elements\n\n## 😯 Current Behavior\n\npublic `useFocusable` uses context to inject dom attributes, but the provider is not exposed to the public\n\n## 💁",
+      "recentComments": [
+        {
+          "author": "LFDanLu",
+          "association": "MEMBER",
+          "createdAt": "2023-01-31T21:36:26Z",
+          "excerpt": "The guardrails would be something along these lines I imagine:\n- `FocusableProvider` currently accepts all DOMAttributes and passes it down the context. This feels a bit too wide especially since the "
+        },
+        {
+          "author": "filipw01",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2023-01-26T08:42:05Z",
+          "excerpt": "What guardrails do you have in mind? I can work on it if you elaborate and point me in the right direction with docs"
+        },
+        {
+          "author": "LFDanLu",
+          "association": "MEMBER",
+          "createdAt": "2023-01-25T21:18:43Z",
+          "excerpt": "We are fine exposing this provider, we'll need docs + additional guardrails to prevent abuse of it so people don't use it to pass any arbitrary attribute to an element.  "
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": 20,
+      "repo": "adobe/react-spectrum",
+      "number": 5611,
+      "title": "Tabs component, trigger onSelectionChange on hover",
+      "url": "https://github.com/adobe/react-spectrum/issues/5611",
+      "queryLabel": "good first issue",
+      "labels": [
+        "bug",
+        "help wanted",
+        "good first issue"
+      ],
+      "createdAt": "2023-12-20T22:04:17Z",
+      "updatedAt": "2026-09-21T03:34:34Z",
+      "daysSinceUpdate": 0,
+      "daysSinceCreate": 1005,
+      "commentCount": 5,
+      "recentActivity": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "### Provide a general summary of the issue here\n\nThis is the component i'm using:\n```\n<Tabs onSelectionChange={(key) => {\n\t\t\talert(key);\n\t\t}}>\n  <TabList aria-label=\"Input settings\">\n    <Tab id=\"mouse\">Mouse Settings</Tab>\n    <Tab id=\"keyboard\">Keyboard Settings</Tab>\n  </TabList>\n  <TabPanel id=\"",
+      "recentComments": [
+        {
+          "author": "snowystinger",
+          "association": "MEMBER",
+          "createdAt": "2024-09-24T02:35:12Z",
+          "excerpt": "Possibly, looks like a good avenue to explore. Would you like to open a PR to test it out?\nThank you!"
+        },
+        {
+          "author": "AndrewLeedham",
+          "association": "NONE",
+          "createdAt": "2024-09-20T15:14:28Z",
+          "excerpt": "Would a potential solution/workaround be to run `cancel` [from here](https://github.com/adobe/react-spectrum/blob/6193c40ee3c572f90b0347c690c00685906a153e/packages/%40react-aria/interactions/src/usePr"
+        },
+        {
+          "author": "snowystinger",
+          "association": "MEMBER",
+          "createdAt": "2024-04-22T20:32:44Z",
+          "excerpt": "This appears to be an issue in some cases where a new tab is opened and receives focus in some browsers, such as Chrome. When you come back to the original tab, a hover event will trigger onSelectionC"
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": -43,
+      "repo": "testing-library/dom-testing-library",
+      "number": 820,
+      "title": "waitFor + getByRole causing severe delays",
+      "url": "https://github.com/testing-library/dom-testing-library/issues/820",
+      "queryLabel": "documentation",
+      "labels": [
+        "documentation"
+      ],
+      "createdAt": "2020-11-13T12:29:07Z",
+      "updatedAt": "2026-09-17T18:04:53Z",
+      "daysSinceUpdate": 3,
+      "daysSinceCreate": 2138,
+      "commentCount": 104,
+      "recentActivity": 1,
+      "maintainerGreen": 0,
+      "maintainerRed": 1,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "- `@testing-library/dom` version: 7.26.6\n- `node` version: 14.3.0\n\n### Relevant code or config:\n\n```js\nit(\"Causes a big delay\", async () => {\n      // This fires a fetch request that is mocked using MSW (so it should be near instant)\n      userEvent.click(screen.getByRole(\"button\", { name: \"Search\"}",
+      "recentComments": [
+        {
+          "author": "scttcper",
+          "association": "NONE",
+          "createdAt": "2026-09-17T18:04:53Z",
+          "excerpt": "[latest jsdom 30.1 ](https://github.com/jsdom/jsdom/releases/tag/v30.1.0)has a bunch of fixes around performance in this area and i've opened https://github.com/testing-library/dom-testing-library/pul"
+        },
+        {
+          "author": "foxaltus",
+          "association": "NONE",
+          "createdAt": "2026-01-14T15:27:11Z",
+          "excerpt": "Going down the rabbit hole... so *ByRole + name queries are slow because `getComputedStyles` is still getting called under the hood.\n\nIn `happy-dom`, which I used, the method is notably slow, as repor"
+        },
+        {
+          "author": "foxaltus",
+          "association": "NONE",
+          "createdAt": "2026-01-14T13:56:43Z",
+          "excerpt": "> [@benlesh](https://github.com/benlesh) problem with `hidden: true` is that it does nothing for `description` or `name` options. If we have `name`, the code calls [computeAccessibleName](https://gith"
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": -74,
+      "repo": "adobe/react-spectrum",
+      "number": 7756,
+      "title": "Unable to pass ref to Datepicker [react-aria-components]",
+      "url": "https://github.com/adobe/react-spectrum/issues/7756",
+      "queryLabel": "good first issue",
+      "labels": [
+        "good first issue",
+        "DatePicker"
+      ],
+      "createdAt": "2025-02-11T02:51:42Z",
+      "updatedAt": "2026-09-17T15:20:46Z",
+      "daysSinceUpdate": 3,
+      "daysSinceCreate": 587,
+      "commentCount": 11,
+      "recentActivity": 1,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": [
         {
-          "number": 5348,
-          "title": "fix(p-as-heading): ignore paragraphs with heading roles",
-          "url": "https://github.com/dequelabs/axe-core/pull/5348",
-          "createdAt": "2026-09-08T22:15:45Z"
+          "number": 9185,
+          "title": "feat: Add `focusableRef` support to `DateInput`",
+          "url": "https://github.com/adobe/react-spectrum/pull/9185",
+          "createdAt": "2025-11-14T15:08:14Z"
         }
       ],
       "checkboxes": {
-        "total": 1,
-        "done": 1
+        "total": 0,
+        "done": 0
       },
-      "bodyExcerpt": "### Product\n\naxe-core\n\n### Product Version\n\n4.12.1\n\n### Latest Version\n\n- [x] I have tested the issue with the latest version of the product\n\n### Issue Description\n\n#### Expectation\np-as-heading should not report a violation for a `<p>` element that carries an explicit role=\"heading\" with aria-level",
+      "bodyExcerpt": "### Provide a general summary of the issue here\n\nI have a custom [Datepicker](https://react-spectrum.adobe.com/react-aria/DatePicker.html) component that I'm integrating with `react-hook-form`. I was wondering which component should received the ref (passed by forwardRef), I need to do so since `rea",
       "recentComments": [
         {
-          "author": "WilcoFiers",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-09-08T10:31:43Z",
-          "excerpt": "@olitreadwell did you mean to make that pull request to your own fork or to Axe-core proper? A pull request for a fix to this would be greatly appreciated.\n\nI think the way to address this would be in"
+          "author": "rigobauer",
+          "association": "NONE",
+          "createdAt": "2026-09-17T15:19:49Z",
+          "excerpt": "@devongovett Any plans to fix this? Maybe there's a reason we're not seeing, but looks like the PR was ready? Thanks"
         },
         {
-          "author": "straker",
+          "author": "LaurAndreea10",
+          "association": "NONE",
+          "createdAt": "2026-05-13T18:30:38Z",
+          "excerpt": "Hi! I’d like to take this one.\nI’ll start by reproducing the issue with a small react-hook-form example, then I’ll check which component should correctly receive the forwarded ref and propose a focuse"
+        },
+        {
+          "author": "hasegawa-101",
           "association": "CONTRIBUTOR",
-          "createdAt": "2026-08-18T16:29:29Z",
-          "excerpt": "Thanks for the issue. I think you are correct but @WilcoFiers should give the final say."
+          "createdAt": "2025-11-14T08:17:16Z",
+          "excerpt": "Hi! @snowystinger I'd like to work on this issue. I'll submit a PR soon."
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": -80,
+      "repo": "adobe/react-spectrum",
+      "number": 5837,
+      "title": "Disable entire ListBox without needing to set disabledKeys",
+      "url": "https://github.com/adobe/react-spectrum/issues/5837",
+      "queryLabel": "good first issue",
+      "labels": [
+        "enhancement",
+        "help wanted",
+        "good first issue",
+        "ListBox",
+        "accessibility"
+      ],
+      "createdAt": "2024-02-08T05:30:39Z",
+      "updatedAt": "2026-09-20T01:12:18Z",
+      "daysSinceUpdate": 1,
+      "daysSinceCreate": 956,
+      "commentCount": 3,
+      "recentActivity": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [
+        {
+          "number": 10619,
+          "title": "fix(listbox): support disabling entire listboxes",
+          "url": "https://github.com/adobe/react-spectrum/pull/10619",
+          "createdAt": "2026-09-21T01:49:39Z"
+        }
+      ],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "### Provide a general summary of the feature here\n\nHey folks,\n\nI have a ListBox which is displayed inline (aka not popped out by a trigger) inside a component which can be disabled. I'd like to be able to disable a ListBox component entirely without needing to know ahead of time what the items are w",
+      "recentComments": [
+        {
+          "author": "snowystinger",
+          "association": "MEMBER",
+          "createdAt": "2025-03-27T20:11:05Z",
+          "excerpt": "Thanks for the interest, it has not been a priority for us, but we welcome a contribution."
+        },
+        {
+          "author": "thomasbritton",
+          "association": "NONE",
+          "createdAt": "2025-03-27T12:17:36Z",
+          "excerpt": "Is there any update on this? Could be a really useful addition"
+        },
+        {
+          "author": "LFDanLu",
+          "association": "MEMBER",
+          "createdAt": "2024-02-12T19:22:52Z",
+          "excerpt": "Perhaps we could expand the `disabledKeys` type to include `all` as an option like `selectedKeys` does. Including a top level `isDisabled` makes sense to me as well, will have to keep an eye out for u"
         }
       ],
       "repoClass": "large"
@@ -109,13 +424,41 @@
   ],
   "allRanked": [
     {
-      "score": 19,
+      "score": 51,
+      "repo": "nvaccess/nvda",
+      "repoClass": "large",
+      "number": 20688,
+      "title": "Screen Curtain fails to enable during post-sign-in Windows OOBE because desktop BitBlt verification fails",
+      "url": "https://github.com/nvaccess/nvda/issues/20688",
+      "daysSinceUpdate": 5,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 24,
+      "repo": "nvaccess/nvda",
+      "repoClass": "large",
+      "number": 18905,
+      "title": "Installers from previous versions of NVDA won't open",
+      "url": "https://github.com/nvaccess/nvda/issues/18905",
+      "daysSinceUpdate": 5,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 21,
       "repo": "nvaccess/nvda",
       "repoClass": "large",
       "number": 20605,
       "title": "Make the announcement number of repeated symbols configurable instead of always being more than 3",
       "url": "https://github.com/nvaccess/nvda/issues/20605",
-      "daysSinceUpdate": 5,
+      "daysSinceUpdate": 6,
       "claimedRecent": 1,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
@@ -123,13 +466,69 @@
       "maintainerRed": 0
     },
     {
-      "score": -51,
-      "repo": "dequelabs/axe-core",
+      "score": 20,
+      "repo": "adobe/react-spectrum",
       "repoClass": "large",
-      "number": 5283,
-      "title": "False positive: p-as-heading fires on <p role=\"heading\" aria-level=\"n\">",
-      "url": "https://github.com/dequelabs/axe-core/issues/5283",
-      "daysSinceUpdate": 6,
+      "number": 3936,
+      "title": "Expose FocusableProvider in `react-aria`",
+      "url": "https://github.com/adobe/react-spectrum/issues/3936",
+      "daysSinceUpdate": 3,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 20,
+      "repo": "adobe/react-spectrum",
+      "repoClass": "large",
+      "number": 5611,
+      "title": "Tabs component, trigger onSelectionChange on hover",
+      "url": "https://github.com/adobe/react-spectrum/issues/5611",
+      "daysSinceUpdate": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": -43,
+      "repo": "testing-library/dom-testing-library",
+      "repoClass": "large",
+      "number": 820,
+      "title": "waitFor + getByRole causing severe delays",
+      "url": "https://github.com/testing-library/dom-testing-library/issues/820",
+      "daysSinceUpdate": 3,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 1
+    },
+    {
+      "score": -74,
+      "repo": "adobe/react-spectrum",
+      "repoClass": "large",
+      "number": 7756,
+      "title": "Unable to pass ref to Datepicker [react-aria-components]",
+      "url": "https://github.com/adobe/react-spectrum/issues/7756",
+      "daysSinceUpdate": 3,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 1,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": -80,
+      "repo": "adobe/react-spectrum",
+      "repoClass": "large",
+      "number": 5837,
+      "title": "Disable entire ListBox without needing to set disabledKeys",
+      "url": "https://github.com/adobe/react-spectrum/issues/5837",
+      "daysSinceUpdate": 1,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 1,
