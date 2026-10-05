@@ -1,11 +1,54 @@
 {
-  "scannedAt": "2026-09-28T16:23:39Z",
-  "count": 2,
-  "countLarge": 2,
+  "scannedAt": "2026-10-05T16:43:51Z",
+  "count": 4,
+  "countLarge": 4,
   "countSmall": 0,
   "topIssues": [
     {
-      "score": 22,
+      "score": 26,
+      "repo": "downshift-js/downshift",
+      "number": 1654,
+      "title": "Add react-virtual support",
+      "url": "https://github.com/downshift-js/downshift/issues/1654",
+      "queryLabel": "help wanted",
+      "labels": [
+        "help wanted",
+        "docs"
+      ],
+      "createdAt": "2025-07-14T14:39:30Z",
+      "updatedAt": "2026-10-04T07:17:17Z",
+      "daysSinceUpdate": 1,
+      "daysSinceCreate": 448,
+      "commentCount": 2,
+      "recentActivity": 1,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "Hi,\n\nCould you add https://tanstack.com/virtual support, at least [optionally](https://docs.npmjs.com/cli/v11/configuring-npm/package-json#optionaldependencies)?\n\nBy being maintained by the lib itself, it would help with potential upgrades / breaking changes, while providing the benefits of it.\n\nPos",
+      "recentComments": [
+        {
+          "author": "Huzaifa-Asif",
+          "association": "NONE",
+          "createdAt": "2026-10-04T07:17:17Z",
+          "excerpt": "I have the TanStack Virtual v3 migration prepared and validated locally, but noticed that downshift-js/downshift-examples does not include a LICENSE or contribution guidance. Before opening a PR there"
+        },
+        {
+          "author": "silviuaavram",
+          "association": "COLLABORATOR",
+          "createdAt": "2026-02-20T10:06:48Z",
+          "excerpt": "That would be a good idea! We could add it in the [examples repo](https://github.com/downshift-js/downshift-examples) and also link it in the docsite."
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": 24,
       "repo": "adobe/react-spectrum",
       "number": 2806,
       "title": "Unit in NumberField cannot be deleted (for some units/ unit-displays)",
@@ -16,11 +59,11 @@
         "help wanted"
       ],
       "createdAt": "2022-02-04T15:55:35Z",
-      "updatedAt": "2026-09-28T12:42:46Z",
-      "daysSinceUpdate": 0,
-      "daysSinceCreate": 1697,
-      "commentCount": 10,
-      "recentActivity": 1,
+      "updatedAt": "2026-09-29T09:21:38Z",
+      "daysSinceUpdate": 6,
+      "daysSinceCreate": 1704,
+      "commentCount": 11,
+      "recentActivity": 2,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 0,
@@ -33,6 +76,12 @@
       "bodyExcerpt": "<!---\nThanks for filing an issue 😄! Before you submit, please read the following:\n\nSearch open/closed issues before submitting since someone might have asked the same thing before!\n-->\n\n# 🐛 Bug Report \nI am using the useNumberField with the \"formatOptions\" option to add units to the number fields.\n\n",
       "recentComments": [
         {
+          "author": "snowystinger",
+          "association": "MEMBER",
+          "createdAt": "2026-09-29T09:21:37Z",
+          "excerpt": "> The straightforward fix is to let isValidPartialNumber accept a remainder that is a prefix of some known literal\n\nI think this would be the goal so that typing works as you noted. If there are tests"
+        },
+        {
           "author": "teoarjun",
           "association": "NONE",
           "createdAt": "2026-09-28T12:33:18Z",
@@ -43,70 +92,106 @@
           "association": "MEMBER",
           "createdAt": "2026-06-11T07:40:41Z",
           "excerpt": "re-test if fixed by https://github.com/adobe/react-spectrum/pull/9905"
-        },
-        {
-          "author": "snowystinger",
-          "association": "MEMBER",
-          "createdAt": "2024-06-24T21:25:47Z",
-          "excerpt": "Thanks for sharing that!"
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": -119,
-      "repo": "nvaccess/nvda",
-      "number": 10872,
-      "title": "Input Gestures Dialog: Don't allow Duplicate Gestures to be Defined",
-      "url": "https://github.com/nvaccess/nvda/issues/10872",
-      "queryLabel": "good first issue",
+      "score": -78,
+      "repo": "adobe/react-spectrum",
+      "number": 5412,
+      "title": "ResizableTableContainer: Column resize to infinite width when wrapped with display: flex",
+      "url": "https://github.com/adobe/react-spectrum/issues/5412",
+      "queryLabel": "help wanted",
       "labels": [
-        "enhancement",
-        "p4",
-        "feature/input-gestures",
-        "good first issue"
+        "bug",
+        "help wanted",
+        "has workaround"
       ],
-      "createdAt": "2020-03-12T19:37:54Z",
-      "updatedAt": "2026-09-24T13:02:14Z",
-      "daysSinceUpdate": 4,
-      "daysSinceCreate": 2390,
-      "commentCount": 8,
-      "recentActivity": 3,
+      "createdAt": "2023-11-13T15:10:41Z",
+      "updatedAt": "2026-10-03T20:20:00Z",
+      "daysSinceUpdate": 1,
+      "daysSinceCreate": 1057,
+      "commentCount": 7,
+      "recentActivity": 1,
       "maintainerGreen": 0,
-      "maintainerRed": 1,
+      "maintainerRed": 0,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": [
         {
-          "number": 20890,
-          "title": "Fix for creating duplicate gesture for same script",
-          "url": "https://github.com/nvaccess/nvda/pull/20890",
-          "createdAt": "2026-09-25T12:39:11Z"
+          "number": 10715,
+          "title": "fix: stabilize resizable tables in nested flex layouts",
+          "url": "https://github.com/adobe/react-spectrum/pull/10715",
+          "createdAt": "2026-10-03T22:44:35Z"
         }
       ],
       "checkboxes": {
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "<!--\nPlease thoroughly read NVDA's wiki article on how to fill in this template, including how to provide the required files.\nIssues may be closed if the required information is not present.\nhttps://github.com/nvaccess/nvda/wiki/Github-issue-template-explanation-and-examples\n-->\n\n### Steps to reprod",
+      "bodyExcerpt": "### Provide a general summary of the issue here\n\nWhen rendering a `ResizableTableContainer` which for parent has an element with style `display: flex`, the columns are expanding in size infinitely if they're not bounded (not using maxWidth).\n\n### 🤔 Expected Behavior?\n\nColumns most likely should not ",
       "recentComments": [
         {
-          "author": "theshippeys",
-          "association": "NONE",
-          "createdAt": "2026-09-24T13:02:14Z",
-          "excerpt": "@CyrilleB79 I've got the change on a branch, so I'll submit a PR, if that's OK. Obviously happy to update the solution with any and all feedback, for a first change on a new codebase! \n\nAnd if it's tr"
-        },
-        {
-          "author": "CyrilleB79",
+          "author": "minwookshin",
           "association": "CONTRIBUTOR",
-          "createdAt": "2026-09-24T11:42:34Z",
-          "excerpt": "@seanbudd yould you mind triage this one?\n\n@theshippeys if you already have a branch, you can submit it as a PR, with the risk that NV Access does not accept your fix design. If you haven't implemente"
+          "createdAt": "2026-10-03T20:20:00Z",
+          "excerpt": "I’ll check the nested-flex reproduction against current main and focus on the width feedback loop. The equal-width behavior with virtualization mentioned later in this thread can stay as designed.\n"
         },
         {
-          "author": "theshippeys",
+          "author": "snowystinger",
+          "association": "MEMBER",
+          "createdAt": "2025-07-14T06:59:35Z",
+          "excerpt": "Sorry @henkkasoft for the delay, I lost this while I was out sick. I believe you're seeing the intended behaviour for the resizable example as described [here](https://react-spectrum.adobe.com/react-a"
+        },
+        {
+          "author": "henkkasoft",
           "association": "NONE",
-          "createdAt": "2026-09-24T11:05:01Z",
-          "excerpt": "I took a look at this as a first step to contributing to NVDA, since it was tagged `good first issue`. I checked if the bug could be recreated at SHA `f56b2e0d7`, since the original ticket is over 6 y"
+          "createdAt": "2025-07-14T05:48:09Z",
+          "excerpt": "> [@snowystinger](https://github.com/snowystinger) not sure if this is related or should this be separate issue but I am having this kind of problem:\n> \n> When Virtualizer and/or Column resize are use"
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": -78,
+      "repo": "adobe/react-spectrum",
+      "number": 6839,
+      "title": "Selectable Collection keyboardDelegates",
+      "url": "https://github.com/adobe/react-spectrum/issues/6839",
+      "queryLabel": "help wanted",
+      "labels": [
+        "help wanted"
+      ],
+      "createdAt": "2024-08-07T06:12:09Z",
+      "updatedAt": "2026-10-03T20:19:58Z",
+      "daysSinceUpdate": 1,
+      "daysSinceCreate": 789,
+      "commentCount": 1,
+      "recentActivity": 1,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [
+        {
+          "number": 10714,
+          "title": "docs: propose keyboard delegate event handling",
+          "url": "https://github.com/adobe/react-spectrum/pull/10714",
+          "createdAt": "2026-10-03T22:33:39Z"
+        }
+      ],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "### Provide a general summary of the feature here\n\nFrom https://github.com/adobe/react-spectrum/pull/5812\n\nAdd/modify the keyboard delegates so that they can accept a similar kind of keyboard handler override that was done in the linked PRs useSelectableCollection and then refactoring useSelectableC",
+      "recentComments": [
+        {
+          "author": "minwookshin",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2026-10-03T20:19:58Z",
+          "excerpt": "I can explore the delegate-based approach discussed in #5812 against the current keyboard handling. I’ll start with ListKeyboardDelegate and keep the existing APG keys unchanged, then check the Grid/T"
         }
       ],
       "repoClass": "large"
@@ -114,13 +199,13 @@
   ],
   "allRanked": [
     {
-      "score": 22,
-      "repo": "adobe/react-spectrum",
+      "score": 26,
+      "repo": "downshift-js/downshift",
       "repoClass": "large",
-      "number": 2806,
-      "title": "Unit in NumberField cannot be deleted (for some units/ unit-displays)",
-      "url": "https://github.com/adobe/react-spectrum/issues/2806",
-      "daysSinceUpdate": 0,
+      "number": 1654,
+      "title": "Add react-virtual support",
+      "url": "https://github.com/downshift-js/downshift/issues/1654",
+      "daysSinceUpdate": 1,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
@@ -128,18 +213,46 @@
       "maintainerRed": 0
     },
     {
-      "score": -119,
-      "repo": "nvaccess/nvda",
+      "score": 24,
+      "repo": "adobe/react-spectrum",
       "repoClass": "large",
-      "number": 10872,
-      "title": "Input Gestures Dialog: Don't allow Duplicate Gestures to be Defined",
-      "url": "https://github.com/nvaccess/nvda/issues/10872",
-      "daysSinceUpdate": 4,
+      "number": 2806,
+      "title": "Unit in NumberField cannot be deleted (for some units/ unit-displays)",
+      "url": "https://github.com/adobe/react-spectrum/issues/2806",
+      "daysSinceUpdate": 6,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": -78,
+      "repo": "adobe/react-spectrum",
+      "repoClass": "large",
+      "number": 5412,
+      "title": "ResizableTableContainer: Column resize to infinite width when wrapped with display: flex",
+      "url": "https://github.com/adobe/react-spectrum/issues/5412",
+      "daysSinceUpdate": 1,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 1,
       "maintainerGreen": 0,
-      "maintainerRed": 1
+      "maintainerRed": 0
+    },
+    {
+      "score": -78,
+      "repo": "adobe/react-spectrum",
+      "repoClass": "large",
+      "number": 6839,
+      "title": "Selectable Collection keyboardDelegates",
+      "url": "https://github.com/adobe/react-spectrum/issues/6839",
+      "daysSinceUpdate": 1,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 1,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
     }
   ]
 }
