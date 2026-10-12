@@ -1,25 +1,26 @@
 {
-  "scannedAt": "2026-10-05T16:43:51Z",
-  "count": 4,
-  "countLarge": 4,
+  "scannedAt": "2026-10-12T17:16:52Z",
+  "count": 3,
+  "countLarge": 3,
   "countSmall": 0,
   "topIssues": [
     {
-      "score": 26,
-      "repo": "downshift-js/downshift",
-      "number": 1654,
-      "title": "Add react-virtual support",
-      "url": "https://github.com/downshift-js/downshift/issues/1654",
-      "queryLabel": "help wanted",
+      "score": 22,
+      "repo": "GoogleChrome/lighthouse",
+      "number": 9511,
+      "title": "Audit proposal: Detect if React is development mode",
+      "url": "https://github.com/GoogleChrome/lighthouse/issues/9511",
+      "queryLabel": "good first issue",
       "labels": [
-        "help wanted",
-        "docs"
+        "new_audit",
+        "good first issue",
+        "P2"
       ],
-      "createdAt": "2025-07-14T14:39:30Z",
-      "updatedAt": "2026-10-04T07:17:17Z",
-      "daysSinceUpdate": 1,
-      "daysSinceCreate": 448,
-      "commentCount": 2,
+      "createdAt": "2019-08-05T17:36:47Z",
+      "updatedAt": "2026-10-09T06:21:17Z",
+      "daysSinceUpdate": 3,
+      "daysSinceCreate": 2624,
+      "commentCount": 8,
       "recentActivity": 1,
       "maintainerGreen": 0,
       "maintainerRed": 0,
@@ -30,40 +31,49 @@
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "Hi,\n\nCould you add https://tanstack.com/virtual support, at least [optionally](https://docs.npmjs.com/cli/v11/configuring-npm/package-json#optionaldependencies)?\n\nBy being maintained by the lib itself, it would help with potential upgrades / breaking changes, while providing the benefits of it.\n\nPos",
+      "bodyExcerpt": "#### Provide a basic description of the audit\n\nReact DevTools has a feature that detects when a page is using a development version of React. This signals a misconfigured build system, and has a negative effect on page performance.\n\nTheir DevTools [installs a hook (`backend/installGlobalHook.js`)](h",
       "recentComments": [
         {
-          "author": "Huzaifa-Asif",
+          "author": "Hiperstark50",
           "association": "NONE",
-          "createdAt": "2026-10-04T07:17:17Z",
-          "excerpt": "I have the TanStack Virtual v3 migration prepared and validated locally, but noticed that downshift-js/downshift-examples does not include a LICENSE or contribution guidance. Before opening a PR there"
+          "createdAt": "2026-10-09T06:21:16Z",
+          "excerpt": "Hi! I'd like to explore implementing this audit.\n\nAfter inspecting the current Lighthouse code, I couldn't find an existing audit that detects React's development build mode.\n\nOne possible approach is"
         },
         {
-          "author": "silviuaavram",
+          "author": "paulirish",
+          "association": "MEMBER",
+          "createdAt": "2020-05-26T19:51:01Z",
+          "excerpt": "On Builtwith stats, I'm sure that >5% of sites that are audited with Lighthouse are react. \n\nIdea seems reasonable in general. Only question is how does this proposal compare in priority with other [p"
+        },
+        {
+          "author": "wardpeet",
           "association": "COLLABORATOR",
-          "createdAt": "2026-02-20T10:06:48Z",
-          "excerpt": "That would be a good idea! We could add it in the [examples repo](https://github.com/downshift-js/downshift-examples) and also link it in the docsite."
+          "createdAt": "2019-08-20T18:16:35Z",
+          "excerpt": "5% seems so small for React but numbers don't lie I guess. HTTParchive is using wappalzyer which looks like they detect correctly. I probably live in a React bubble so that's probably why I think so m"
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": 24,
-      "repo": "adobe/react-spectrum",
-      "number": 2806,
-      "title": "Unit in NumberField cannot be deleted (for some units/ unit-displays)",
-      "url": "https://github.com/adobe/react-spectrum/issues/2806",
-      "queryLabel": "help wanted",
+      "score": 22,
+      "repo": "nvaccess/nvda",
+      "number": 9686,
+      "title": "Add additional ways to restart NVDA",
+      "url": "https://github.com/nvaccess/nvda/issues/9686",
+      "queryLabel": "good first issue",
       "labels": [
-        "bug",
-        "help wanted"
+        "p5",
+        "quick fix",
+        "feature",
+        "good first issue",
+        "triaged"
       ],
-      "createdAt": "2022-02-04T15:55:35Z",
-      "updatedAt": "2026-09-29T09:21:38Z",
-      "daysSinceUpdate": 6,
-      "daysSinceCreate": 1704,
+      "createdAt": "2019-06-06T23:16:26Z",
+      "updatedAt": "2026-10-07T23:44:40Z",
+      "daysSinceUpdate": 4,
+      "daysSinceCreate": 2684,
       "commentCount": 11,
-      "recentActivity": 2,
+      "recentActivity": 1,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 0,
@@ -73,125 +83,76 @@
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "<!---\nThanks for filing an issue 😄! Before you submit, please read the following:\n\nSearch open/closed issues before submitting since someone might have asked the same thing before!\n-->\n\n# 🐛 Bug Report \nI am using the useNumberField with the \"formatOptions\" option to add units to the number fields.\n\n",
+      "bodyExcerpt": "<!--\nPlease thoroughly read NVDA's wiki article on how to fill in this template, including how to provide the required files.\nIssues may be closed if the required information is not present.\nhttps://github.com/nvaccess/nvda/wiki/Github-issue-template-explanation-and-examples\n-->\n\n### Is your feature",
       "recentComments": [
         {
-          "author": "snowystinger",
+          "author": "Qchristensen",
           "association": "MEMBER",
-          "createdAt": "2026-09-29T09:21:37Z",
-          "excerpt": "> The straightforward fix is to let isValidPartialNumber accept a remainder that is a prefix of some known literal\n\nI think this would be the goal so that typing works as you noted. If there are tests"
+          "createdAt": "2026-10-07T23:44:40Z",
+          "excerpt": "Having Issue 11538 resolved makes getting a debug log easier.  But the initial issue here still exists - Having just had a user tell me they couldn't restart with add-ons disabled because the exit dia"
         },
         {
-          "author": "teoarjun",
-          "association": "NONE",
-          "createdAt": "2026-09-28T12:33:18Z",
-          "excerpt": "This reproduces at the parser level, independent of React, and the behaviour tracks the length of the unit's literal text. Walking a backspace one character at a time from the formatted value, with `i"
+          "author": "seanbudd",
+          "association": "MEMBER",
+          "createdAt": "2024-07-15T00:55:14Z",
+          "excerpt": "@josephsl - I think that issue is mentioned above, #11538, but I think Quentin's 2 proposals in this issue description are still valid. I think the first proposal is a priority, and the second one cou"
         },
         {
-          "author": "snowystinger",
-          "association": "MEMBER",
-          "createdAt": "2026-06-11T07:40:41Z",
-          "excerpt": "re-test if fixed by https://github.com/adobe/react-spectrum/pull/9905"
+          "author": "josephsl",
+          "association": "CONTRIBUTOR",
+          "createdAt": "2024-07-14T22:37:40Z",
+          "excerpt": "Hi,\n\n2024 update: didn't we have a more recent issue/PR proposal around \"no to add-ons and yes to debug logging at the same time after restart\"?\n\nThanks."
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": -78,
-      "repo": "adobe/react-spectrum",
-      "number": 5412,
-      "title": "ResizableTableContainer: Column resize to infinite width when wrapped with display: flex",
-      "url": "https://github.com/adobe/react-spectrum/issues/5412",
-      "queryLabel": "help wanted",
+      "score": 20,
+      "repo": "GoogleChrome/lighthouse",
+      "number": 11747,
+      "title": "handling impact of isInputPending on long tasks metrics?",
+      "url": "https://github.com/GoogleChrome/lighthouse/issues/11747",
+      "queryLabel": "good first issue",
       "labels": [
-        "bug",
-        "help wanted",
-        "has workaround"
+        "good first issue",
+        "P2",
+        "simulation / lantern",
+        "metrics-cwv"
       ],
-      "createdAt": "2023-11-13T15:10:41Z",
-      "updatedAt": "2026-10-03T20:20:00Z",
-      "daysSinceUpdate": 1,
-      "daysSinceCreate": 1057,
-      "commentCount": 7,
-      "recentActivity": 1,
+      "createdAt": "2020-12-02T16:24:54Z",
+      "updatedAt": "2026-10-08T21:36:33Z",
+      "daysSinceUpdate": 3,
+      "daysSinceCreate": 2140,
+      "commentCount": 5,
+      "recentActivity": 0,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 0,
       "prSubmitted": 0,
-      "linkedOpenPRs": [
-        {
-          "number": 10715,
-          "title": "fix: stabilize resizable tables in nested flex layouts",
-          "url": "https://github.com/adobe/react-spectrum/pull/10715",
-          "createdAt": "2026-10-03T22:44:35Z"
-        }
-      ],
+      "linkedOpenPRs": [],
       "checkboxes": {
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "### Provide a general summary of the issue here\n\nWhen rendering a `ResizableTableContainer` which for parent has an element with style `display: flex`, the columns are expanding in size infinitely if they're not bounded (not using maxWidth).\n\n### 🤔 Expected Behavior?\n\nColumns most likely should not ",
+      "bodyExcerpt": "[`navigator.scheduling.isInputPending`](https://wicg.github.io/is-input-pending/) is shipping by default in current Chrome stable (m87). Without user input, any page using `isInputPending` has a strong reason to believe yielding during long tasks won't improve user experience so it could keep on chu",
       "recentComments": [
         {
-          "author": "minwookshin",
+          "author": "ChristopherPHolder",
           "association": "CONTRIBUTOR",
-          "createdAt": "2026-10-03T20:20:00Z",
-          "excerpt": "I’ll check the nested-flex reproduction against current main and focus on the width feedback loop. The equal-width behavior with virtualization mentioned later in this thread can stay as designed.\n"
+          "createdAt": "2026-06-11T18:53:53Z",
+          "excerpt": "As this API is not longer recommended:\n\nhttps://developer.mozilla.org/en-US/docs/Web/API/Scheduling/isInputPending\n\nhttps://web.dev/articles/optimize-long-tasks#isinputpending\n\nShould we close this ti"
         },
         {
-          "author": "snowystinger",
-          "association": "MEMBER",
-          "createdAt": "2025-07-14T06:59:35Z",
-          "excerpt": "Sorry @henkkasoft for the delay, I lost this while I was out sick. I believe you're seeing the intended behaviour for the resizable example as described [here](https://react-spectrum.adobe.com/react-a"
-        },
-        {
-          "author": "henkkasoft",
+          "author": "chinhkrb113",
           "association": "NONE",
-          "createdAt": "2025-07-14T05:48:09Z",
-          "excerpt": "> [@snowystinger](https://github.com/snowystinger) not sure if this is related or should this be separate issue but I am having this kind of problem:\n> \n> When Virtualizer and/or Column resize are use"
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": -78,
-      "repo": "adobe/react-spectrum",
-      "number": 6839,
-      "title": "Selectable Collection keyboardDelegates",
-      "url": "https://github.com/adobe/react-spectrum/issues/6839",
-      "queryLabel": "help wanted",
-      "labels": [
-        "help wanted"
-      ],
-      "createdAt": "2024-08-07T06:12:09Z",
-      "updatedAt": "2026-10-03T20:19:58Z",
-      "daysSinceUpdate": 1,
-      "daysSinceCreate": 789,
-      "commentCount": 1,
-      "recentActivity": 1,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [
+          "createdAt": "2026-03-28T17:10:21Z",
+          "excerpt": "Auto-closing: linked PR #16935 was closed (CI checks failed). Sorry for the inconvenience."
+        },
         {
-          "number": 10714,
-          "title": "docs: propose keyboard delegate event handling",
-          "url": "https://github.com/adobe/react-spectrum/pull/10714",
-          "createdAt": "2026-10-03T22:33:39Z"
-        }
-      ],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "### Provide a general summary of the feature here\n\nFrom https://github.com/adobe/react-spectrum/pull/5812\n\nAdd/modify the keyboard delegates so that they can accept a similar kind of keyboard handler override that was done in the linked PRs useSelectableCollection and then refactoring useSelectableC",
-      "recentComments": [
-        {
-          "author": "minwookshin",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-10-03T20:19:58Z",
-          "excerpt": "I can explore the delegate-based approach discussed in #5812 against the current keyboard handling. I’ll start with ListKeyboardDelegate and keep the existing APG keys unchanged, then check the Grid/T"
+          "author": "paulirish",
+          "association": "MEMBER",
+          "createdAt": "2021-01-11T22:23:15Z",
+          "excerpt": "We think an approach like \"flip on isInputPending in certain circumstances\" could make sense and be more fair to pages using this. Possibilities, always flip on (during a task) at 5000ms since navigat"
         }
       ],
       "repoClass": "large"
@@ -199,13 +160,13 @@
   ],
   "allRanked": [
     {
-      "score": 26,
-      "repo": "downshift-js/downshift",
+      "score": 22,
+      "repo": "GoogleChrome/lighthouse",
       "repoClass": "large",
-      "number": 1654,
-      "title": "Add react-virtual support",
-      "url": "https://github.com/downshift-js/downshift/issues/1654",
-      "daysSinceUpdate": 1,
+      "number": 9511,
+      "title": "Audit proposal: Detect if React is development mode",
+      "url": "https://github.com/GoogleChrome/lighthouse/issues/9511",
+      "daysSinceUpdate": 3,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
@@ -213,13 +174,13 @@
       "maintainerRed": 0
     },
     {
-      "score": 24,
-      "repo": "adobe/react-spectrum",
+      "score": 22,
+      "repo": "nvaccess/nvda",
       "repoClass": "large",
-      "number": 2806,
-      "title": "Unit in NumberField cannot be deleted (for some units/ unit-displays)",
-      "url": "https://github.com/adobe/react-spectrum/issues/2806",
-      "daysSinceUpdate": 6,
+      "number": 9686,
+      "title": "Add additional ways to restart NVDA",
+      "url": "https://github.com/nvaccess/nvda/issues/9686",
+      "daysSinceUpdate": 4,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
@@ -227,30 +188,16 @@
       "maintainerRed": 0
     },
     {
-      "score": -78,
-      "repo": "adobe/react-spectrum",
+      "score": 20,
+      "repo": "GoogleChrome/lighthouse",
       "repoClass": "large",
-      "number": 5412,
-      "title": "ResizableTableContainer: Column resize to infinite width when wrapped with display: flex",
-      "url": "https://github.com/adobe/react-spectrum/issues/5412",
-      "daysSinceUpdate": 1,
+      "number": 11747,
+      "title": "handling impact of isInputPending on long tasks metrics?",
+      "url": "https://github.com/GoogleChrome/lighthouse/issues/11747",
+      "daysSinceUpdate": 3,
       "claimedRecent": 0,
       "prSubmitted": 0,
-      "linkedOpenPRs": 1,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": -78,
-      "repo": "adobe/react-spectrum",
-      "repoClass": "large",
-      "number": 6839,
-      "title": "Selectable Collection keyboardDelegates",
-      "url": "https://github.com/adobe/react-spectrum/issues/6839",
-      "daysSinceUpdate": 1,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 1,
+      "linkedOpenPRs": 0,
       "maintainerGreen": 0,
       "maintainerRed": 0
     }
