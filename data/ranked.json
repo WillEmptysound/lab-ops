@@ -1,79 +1,29 @@
 {
-  "scannedAt": "2026-10-12T17:16:52Z",
-  "count": 3,
-  "countLarge": 3,
+  "scannedAt": "2026-10-19T15:13:50Z",
+  "count": 4,
+  "countLarge": 4,
   "countSmall": 0,
   "topIssues": [
     {
-      "score": 22,
-      "repo": "GoogleChrome/lighthouse",
-      "number": 9511,
-      "title": "Audit proposal: Detect if React is development mode",
-      "url": "https://github.com/GoogleChrome/lighthouse/issues/9511",
-      "queryLabel": "good first issue",
-      "labels": [
-        "new_audit",
-        "good first issue",
-        "P2"
-      ],
-      "createdAt": "2019-08-05T17:36:47Z",
-      "updatedAt": "2026-10-09T06:21:17Z",
-      "daysSinceUpdate": 3,
-      "daysSinceCreate": 2624,
-      "commentCount": 8,
-      "recentActivity": 1,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "#### Provide a basic description of the audit\n\nReact DevTools has a feature that detects when a page is using a development version of React. This signals a misconfigured build system, and has a negative effect on page performance.\n\nTheir DevTools [installs a hook (`backend/installGlobalHook.js`)](h",
-      "recentComments": [
-        {
-          "author": "Hiperstark50",
-          "association": "NONE",
-          "createdAt": "2026-10-09T06:21:16Z",
-          "excerpt": "Hi! I'd like to explore implementing this audit.\n\nAfter inspecting the current Lighthouse code, I couldn't find an existing audit that detects React's development build mode.\n\nOne possible approach is"
-        },
-        {
-          "author": "paulirish",
-          "association": "MEMBER",
-          "createdAt": "2020-05-26T19:51:01Z",
-          "excerpt": "On Builtwith stats, I'm sure that >5% of sites that are audited with Lighthouse are react. \n\nIdea seems reasonable in general. Only question is how does this proposal compare in priority with other [p"
-        },
-        {
-          "author": "wardpeet",
-          "association": "COLLABORATOR",
-          "createdAt": "2019-08-20T18:16:35Z",
-          "excerpt": "5% seems so small for React but numbers don't lie I guess. HTTParchive is using wappalzyer which looks like they detect correctly. I probably live in a React bubble so that's probably why I think so m"
-        }
-      ],
-      "repoClass": "large"
-    },
-    {
-      "score": 22,
+      "score": 38,
       "repo": "nvaccess/nvda",
-      "number": 9686,
-      "title": "Add additional ways to restart NVDA",
-      "url": "https://github.com/nvaccess/nvda/issues/9686",
+      "number": 20159,
+      "title": "Failure to create portable copy when path is a top-level drive with no backslash",
+      "url": "https://github.com/nvaccess/nvda/issues/20159",
       "queryLabel": "good first issue",
       "labels": [
-        "p5",
-        "quick fix",
-        "feature",
+        "bug",
+        "p4",
         "good first issue",
-        "triaged"
+        "triaged",
+        "feature/portable"
       ],
-      "createdAt": "2019-06-06T23:16:26Z",
-      "updatedAt": "2026-10-07T23:44:40Z",
+      "createdAt": "2026-05-18T02:01:42Z",
+      "updatedAt": "2026-10-15T03:28:52Z",
       "daysSinceUpdate": 4,
-      "daysSinceCreate": 2684,
-      "commentCount": 11,
-      "recentActivity": 1,
+      "daysSinceCreate": 154,
+      "commentCount": 7,
+      "recentActivity": 3,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 0,
@@ -83,47 +33,48 @@
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "<!--\nPlease thoroughly read NVDA's wiki article on how to fill in this template, including how to provide the required files.\nIssues may be closed if the required information is not present.\nhttps://github.com/nvaccess/nvda/wiki/Github-issue-template-explanation-and-examples\n-->\n\n### Is your feature",
+      "bodyExcerpt": "### Brief summary\n\nAnerror occurs when trying to create a portable copy when path is set to a drive without a backslash\n\n### Steps to reproduce\n\n1. Open the NVDA menu\n2. Go to \"tools\"\n3. Go to \"create portable copy\"\n4. Type a drive with no trailing backslash, for example `c:` or `d:`\n5. Optionally, ",
       "recentComments": [
-        {
-          "author": "Qchristensen",
-          "association": "MEMBER",
-          "createdAt": "2026-10-07T23:44:40Z",
-          "excerpt": "Having Issue 11538 resolved makes getting a debug log easier.  But the initial issue here still exists - Having just had a user tell me they couldn't restart with add-ons disabled because the exit dia"
-        },
         {
           "author": "seanbudd",
           "association": "MEMBER",
-          "createdAt": "2024-07-15T00:55:14Z",
-          "excerpt": "@josephsl - I think that issue is mentioned above, #11538, but I think Quentin's 2 proposals in this issue description are still valid. I think the first proposal is a priority, and the second one cou"
+          "createdAt": "2026-10-15T03:28:52Z",
+          "excerpt": "Yes, please update the example"
         },
         {
-          "author": "josephsl",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2024-07-14T22:37:40Z",
-          "excerpt": "Hi,\n\n2024 update: didn't we have a more recent issue/PR proposal around \"no to add-ons and yes to debug logging at the same time after restart\"?\n\nThanks."
+          "author": "Shimmy0530",
+          "association": "NONE",
+          "createdAt": "2026-10-15T03:24:50Z",
+          "excerpt": "Reproduced on current master (`20ae5c856`), running from source. Create portable copy is hidden from the Tools menu when running from source, so I opened the dialog from the Python console with `impor"
+        },
+        {
+          "author": "Shimmy0530",
+          "association": "NONE",
+          "createdAt": "2026-10-15T02:36:06Z",
+          "excerpt": "I'd like to work on this. Following the maintainer's comment above, the fix I'm aiming for is a clearer error message when the path is a bare drive like `D:`, not accepting it as a destination. First "
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": 20,
-      "repo": "GoogleChrome/lighthouse",
-      "number": 11747,
-      "title": "handling impact of isInputPending on long tasks metrics?",
-      "url": "https://github.com/GoogleChrome/lighthouse/issues/11747",
+      "score": 32,
+      "repo": "nvaccess/nvda",
+      "number": 20118,
+      "title": "error copying NVDA user settings",
+      "url": "https://github.com/nvaccess/nvda/issues/20118",
       "queryLabel": "good first issue",
       "labels": [
+        "bug",
+        "p3",
+        "quick fix",
         "good first issue",
-        "P2",
-        "simulation / lantern",
-        "metrics-cwv"
+        "triaged"
       ],
-      "createdAt": "2020-12-02T16:24:54Z",
-      "updatedAt": "2026-10-08T21:36:33Z",
-      "daysSinceUpdate": 3,
-      "daysSinceCreate": 2140,
-      "commentCount": 5,
+      "createdAt": "2026-05-12T03:35:53Z",
+      "updatedAt": "2026-10-15T03:16:25Z",
+      "daysSinceUpdate": 4,
+      "daysSinceCreate": 160,
+      "commentCount": 4,
       "recentActivity": 0,
       "maintainerGreen": 0,
       "maintainerRed": 0,
@@ -134,25 +85,107 @@
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "[`navigator.scheduling.isInputPending`](https://wicg.github.io/is-input-pending/) is shipping by default in current Chrome stable (m87). Without user input, any page using `isInputPending` has a strong reason to believe yielding during long tasks won't improve user experience so it could keep on chu",
+      "bodyExcerpt": "### Brief summary\n\nrunning NVDA \nNonVisual Desktop Access (NVDA)\nVersion: 2026.1 (2026.1.0.55743)\nURL: https://www.nvaccess.org\nCopyright (C) 2006-2026 NVDA Contributors\nEdition\tWindows 11 Pro\nVersion\t25H2\nInstalled on\t‎10/‎29/‎2025\nOS build\t26200.8328\nExperience\tWindows Feature Experience Pack 1000",
       "recentComments": [
         {
-          "author": "ChristopherPHolder",
-          "association": "CONTRIBUTOR",
-          "createdAt": "2026-06-11T18:53:53Z",
-          "excerpt": "As this API is not longer recommended:\n\nhttps://developer.mozilla.org/en-US/docs/Web/API/Scheduling/isInputPending\n\nhttps://web.dev/articles/optimize-long-tasks#isinputpending\n\nShould we close this ti"
-        },
-        {
-          "author": "chinhkrb113",
+          "author": "yasumorishima",
           "association": "NONE",
-          "createdAt": "2026-03-28T17:10:21Z",
-          "excerpt": "Auto-closing: linked PR #16935 was closed (CI checks failed). Sorry for the inconvenience."
+          "createdAt": "2026-08-09T12:35:54Z",
+          "excerpt": "I'd like to work on this.\n\nFollowing @seanbudd's suggestion above: `installer.tryCopyFile` raises as soon as `CopyFile` fails and no destination file was created, and `config._setSystemConfig` calls i"
         },
         {
-          "author": "paulirish",
+          "author": "vladdragomir1983",
+          "association": "NONE",
+          "createdAt": "2026-05-31T15:02:43Z",
+          "excerpt": "Hello, I'm having exactly the same problem. This never happened before, and it doesn't exist on my old computer still using NVDA 2025. The only difference: my list of add-ons is not the same."
+        },
+        {
+          "author": "seanbudd",
           "association": "MEMBER",
-          "createdAt": "2021-01-11T22:23:15Z",
-          "excerpt": "We think an approach like \"flip on isInputPending in certain circumstances\" could make sense and be more fair to pages using this. Possibilities, always flip on (during a task) at 5000ms since navigat"
+          "createdAt": "2026-05-18T23:44:10Z",
+          "excerpt": "Looks like we need to retry copying these files, as NVDA might hold onto them briefly while exiting the UAC screen after confirming the user wants to copy the settings"
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": -55,
+      "repo": "jsx-eslint/eslint-plugin-jsx-a11y",
+      "number": 1102,
+      "title": "prefer-tag-over-role: TypeError propValue.lastIndexOf is not a function on an object-literal role prop",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1102",
+      "queryLabel": "help wanted",
+      "labels": [
+        "bug",
+        "help wanted"
+      ],
+      "createdAt": "2026-10-15T19:33:52Z",
+      "updatedAt": "2026-10-16T21:56:25Z",
+      "daysSinceUpdate": 2,
+      "daysSinceCreate": 3,
+      "commentCount": 0,
+      "recentActivity": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [
+        {
+          "number": 1103,
+          "title": "[patch] `prefer-tag-over-role`: only check DOM elements, and skip a non-string `role`",
+          "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/pull/1103",
+          "createdAt": "2026-10-15T19:46:47Z"
+        }
+      ],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "`jsx-a11y/prefer-tag-over-role` throws when `role` is given an object literal, which happens on custom components that take a prop named `role`.\n\n**Version:** eslint-plugin-jsx-a11y 6.10.2, ESLint 9.39.4. The same code is on `main`.\n\n**Reproduction**\n\n```js\n// eslint.config.mjs\nimport jsxA11y from \"",
+      "recentComments": [],
+      "repoClass": "large"
+    },
+    {
+      "score": -93,
+      "repo": "dequelabs/axe-core",
+      "number": 5474,
+      "title": "New best practice: label-content-name-exact checks accessible names are an exact match to visible text",
+      "url": "https://github.com/dequelabs/axe-core/issues/5474",
+      "queryLabel": "help wanted",
+      "labels": [
+        "feat",
+        "help wanted",
+        "rules"
+      ],
+      "createdAt": "2026-10-16T10:32:21Z",
+      "updatedAt": "2026-10-16T12:21:32Z",
+      "daysSinceUpdate": 3,
+      "daysSinceCreate": 3,
+      "commentCount": 1,
+      "recentActivity": 1,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 1,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [
+        {
+          "number": 5477,
+          "title": "feat(new-rule): add label-content-name-exact best practice",
+          "url": "https://github.com/dequelabs/axe-core/pull/5477",
+          "createdAt": "2026-10-16T16:36:45Z"
+        }
+      ],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "In axe-core 4.14 we enabled label-content-name-mismatch. In figuring that rule out we learned that Voice Control on MacOS requires the accessible name to be an exact match, and on iOS it requires it to be at the start of the accessible name (instead of just anywhere within it).\n\nI think it would be ",
+      "recentComments": [
+        {
+          "author": "MannXo",
+          "association": "NONE",
+          "createdAt": "2026-10-16T12:21:32Z",
+          "excerpt": "Interested in working on this. Can I be assigned?"
         }
       ],
       "repoClass": "large"
@@ -160,26 +193,12 @@
   ],
   "allRanked": [
     {
-      "score": 22,
-      "repo": "GoogleChrome/lighthouse",
-      "repoClass": "large",
-      "number": 9511,
-      "title": "Audit proposal: Detect if React is development mode",
-      "url": "https://github.com/GoogleChrome/lighthouse/issues/9511",
-      "daysSinceUpdate": 3,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": 22,
+      "score": 38,
       "repo": "nvaccess/nvda",
       "repoClass": "large",
-      "number": 9686,
-      "title": "Add additional ways to restart NVDA",
-      "url": "https://github.com/nvaccess/nvda/issues/9686",
+      "number": 20159,
+      "title": "Failure to create portable copy when path is a top-level drive with no backslash",
+      "url": "https://github.com/nvaccess/nvda/issues/20159",
       "daysSinceUpdate": 4,
       "claimedRecent": 0,
       "prSubmitted": 0,
@@ -188,16 +207,44 @@
       "maintainerRed": 0
     },
     {
-      "score": 20,
-      "repo": "GoogleChrome/lighthouse",
+      "score": 32,
+      "repo": "nvaccess/nvda",
       "repoClass": "large",
-      "number": 11747,
-      "title": "handling impact of isInputPending on long tasks metrics?",
-      "url": "https://github.com/GoogleChrome/lighthouse/issues/11747",
-      "daysSinceUpdate": 3,
+      "number": 20118,
+      "title": "error copying NVDA user settings",
+      "url": "https://github.com/nvaccess/nvda/issues/20118",
+      "daysSinceUpdate": 4,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": -55,
+      "repo": "jsx-eslint/eslint-plugin-jsx-a11y",
+      "repoClass": "large",
+      "number": 1102,
+      "title": "prefer-tag-over-role: TypeError propValue.lastIndexOf is not a function on an object-literal role prop",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1102",
+      "daysSinceUpdate": 2,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 1,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": -93,
+      "repo": "dequelabs/axe-core",
+      "repoClass": "large",
+      "number": 5474,
+      "title": "New best practice: label-content-name-exact checks accessible names are an exact match to visible text",
+      "url": "https://github.com/dequelabs/axe-core/issues/5474",
+      "daysSinceUpdate": 3,
+      "claimedRecent": 1,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 1,
       "maintainerGreen": 0,
       "maintainerRed": 0
     }
