@@ -1,28 +1,27 @@
 {
-  "scannedAt": "2026-10-19T15:13:50Z",
+  "scannedAt": "2026-10-26T14:47:21Z",
   "count": 4,
   "countLarge": 4,
   "countSmall": 0,
   "topIssues": [
     {
-      "score": 38,
+      "score": 51,
       "repo": "nvaccess/nvda",
-      "number": 20159,
-      "title": "Failure to create portable copy when path is a top-level drive with no backslash",
-      "url": "https://github.com/nvaccess/nvda/issues/20159",
+      "number": 21022,
+      "title": "Braille Viewer draws two braille patterns wrongly (U+28CC, U+2873) because of glyph errors in FreeMono-FixedBraille.ttf",
+      "url": "https://github.com/nvaccess/nvda/issues/21022",
       "queryLabel": "good first issue",
       "labels": [
-        "bug",
         "p4",
+        "audience/a11y-tester",
         "good first issue",
-        "triaged",
-        "feature/portable"
+        "triaged"
       ],
-      "createdAt": "2026-05-18T02:01:42Z",
-      "updatedAt": "2026-10-15T03:28:52Z",
-      "daysSinceUpdate": 4,
-      "daysSinceCreate": 154,
-      "commentCount": 7,
+      "createdAt": "2026-10-17T17:19:33Z",
+      "updatedAt": "2026-10-20T02:44:22Z",
+      "daysSinceUpdate": 6,
+      "daysSinceCreate": 8,
+      "commentCount": 3,
       "recentActivity": 3,
       "maintainerGreen": 0,
       "maintainerRed": 0,
@@ -33,31 +32,81 @@
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "### Brief summary\n\nAnerror occurs when trying to create a portable copy when path is set to a drive without a backslash\n\n### Steps to reproduce\n\n1. Open the NVDA menu\n2. Go to \"tools\"\n3. Go to \"create portable copy\"\n4. Type a drive with no trailing backslash, for example `c:` or `d:`\n5. Optionally, ",
+      "bodyExcerpt": "### Steps to reproduce:\n\n1. Open the Braille Viewer (NVDA menu > Tools > Braille Viewer).\n2. Use an output table that produces braille pattern U+28CC (dots 3-4-7-8) or U+2873 (dots 1-2-5-6-7). The simplest way: set the output table to Chinese (Taiwan, Mandarin) `zh-tw.ctb`, open Notepad and type or ",
       "recentComments": [
         {
           "author": "seanbudd",
           "association": "MEMBER",
-          "createdAt": "2026-10-15T03:28:52Z",
-          "excerpt": "Yes, please update the example"
+          "createdAt": "2026-10-20T02:44:14Z",
+          "excerpt": "nope oops I meant #17396"
         },
         {
-          "author": "Shimmy0530",
+          "author": "hurthuang",
           "association": "NONE",
-          "createdAt": "2026-10-15T03:24:50Z",
-          "excerpt": "Reproduced on current master (`20ae5c856`), running from source. Create portable copy is hidden from the Tools menu when running from source, so I opened the dialog from the Python console with `impor"
+          "createdAt": "2026-10-20T02:24:12Z",
+          "excerpt": "Thanks! I think the link may be meant for #17781 rather than #21030. #17781 reports exactly these two glyphs in Czech 8-dot computer braille (Ť 12567 shown as 1267 = U+2873, Ź 3478 shown as 23478 = U+"
         },
         {
-          "author": "Shimmy0530",
-          "association": "NONE",
-          "createdAt": "2026-10-15T02:36:06Z",
-          "excerpt": "I'd like to work on this. Following the maintainer's comment above, the fix I'm aiming for is a clearer error message when the path is a bare drive like `D:`, not accepting it as a destination. First "
+          "author": "seanbudd",
+          "association": "MEMBER",
+          "createdAt": "2026-10-19T23:27:29Z",
+          "excerpt": "Related #17396, we think it's worth switching to Segoe UI now"
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": 32,
+      "score": 34,
+      "repo": "adobe/react-spectrum",
+      "number": 10310,
+      "title": "useInteractionModality detects JAWS and NVDA as mouse in Chromium",
+      "url": "https://github.com/adobe/react-spectrum/issues/10310",
+      "queryLabel": "help wanted",
+      "labels": [
+        "bug",
+        "help wanted",
+        "accessibility"
+      ],
+      "createdAt": "2026-07-07T12:41:02Z",
+      "updatedAt": "2026-10-20T21:54:56Z",
+      "daysSinceUpdate": 5,
+      "daysSinceCreate": 111,
+      "commentCount": 7,
+      "recentActivity": 1,
+      "maintainerGreen": 0,
+      "maintainerRed": 0,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": [],
+      "checkboxes": {
+        "total": 0,
+        "done": 0
+      },
+      "bodyExcerpt": "### Provide a general summary of the issue here\n\nScenario: `useInteractionModality` reports \"mouse\" when screen reader user interacts\n   GIVEN a user has started their screenreader (JAWS or NVDA) and a chromium browser (Chrome)\n   WHEN the user interacts with the page clicking a button\n   THEN the h",
+      "recentComments": [
+        {
+          "author": "chanellebingham",
+          "association": "NONE",
+          "createdAt": "2026-10-20T21:54:56Z",
+          "excerpt": "I measured this on Windows 11 (26H2, build 26300) with Chrome 155.0.8059.40 and NVDA 2026.2, after seeing #10316 was closed. I'm posting the data because it may explain why no event-based check has wo"
+        },
+        {
+          "author": "jesusgalhub",
+          "association": "NONE",
+          "createdAt": "2026-07-15T06:34:51Z",
+          "excerpt": "I created this issue. Feel free to comment and add any information\nhttps://issuetracker.google.com/issues/534943063"
+        },
+        {
+          "author": "LFDanLu",
+          "association": "MEMBER",
+          "createdAt": "2026-07-14T16:38:33Z",
+          "excerpt": "yep, definitely can, probably in the same vein as https://issuetracker.google.com/issues/40805554 which we reported for Talkback. I need to find some time to update that ticket (hopefully soon), and c"
+        }
+      ],
+      "repoClass": "large"
+    },
+    {
+      "score": 34,
       "repo": "nvaccess/nvda",
       "number": 20118,
       "title": "error copying NVDA user settings",
@@ -71,11 +120,11 @@
         "triaged"
       ],
       "createdAt": "2026-05-12T03:35:53Z",
-      "updatedAt": "2026-10-15T03:16:25Z",
-      "daysSinceUpdate": 4,
-      "daysSinceCreate": 160,
-      "commentCount": 4,
-      "recentActivity": 0,
+      "updatedAt": "2026-10-24T14:34:14Z",
+      "daysSinceUpdate": 2,
+      "daysSinceCreate": 167,
+      "commentCount": 5,
+      "recentActivity": 1,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 0,
@@ -88,6 +137,12 @@
       "bodyExcerpt": "### Brief summary\n\nrunning NVDA \nNonVisual Desktop Access (NVDA)\nVersion: 2026.1 (2026.1.0.55743)\nURL: https://www.nvaccess.org\nCopyright (C) 2006-2026 NVDA Contributors\nEdition\tWindows 11 Pro\nVersion\t25H2\nInstalled on\t‎10/‎29/‎2025\nOS build\t26200.8328\nExperience\tWindows Feature Experience Pack 1000",
       "recentComments": [
         {
+          "author": "b-tanyileke",
+          "association": "NONE",
+          "createdAt": "2026-10-24T14:34:14Z",
+          "excerpt": "I saw #20635 was closed without a response from its author, so I'd like to pick this up. My first step will be to reproduce the \"Error copying NVDA user settings\" failure on Windows 11 by holding a co"
+        },
+        {
           "author": "yasumorishima",
           "association": "NONE",
           "createdAt": "2026-08-09T12:35:54Z",
@@ -98,94 +153,49 @@
           "association": "NONE",
           "createdAt": "2026-05-31T15:02:43Z",
           "excerpt": "Hello, I'm having exactly the same problem. This never happened before, and it doesn't exist on my old computer still using NVDA 2025. The only difference: my list of add-ons is not the same."
-        },
-        {
-          "author": "seanbudd",
-          "association": "MEMBER",
-          "createdAt": "2026-05-18T23:44:10Z",
-          "excerpt": "Looks like we need to retry copying these files, as NVDA might hold onto them briefly while exiting the UAC screen after confirming the user wants to copy the settings"
         }
       ],
       "repoClass": "large"
     },
     {
-      "score": -55,
-      "repo": "jsx-eslint/eslint-plugin-jsx-a11y",
-      "number": 1102,
-      "title": "prefer-tag-over-role: TypeError propValue.lastIndexOf is not a function on an object-literal role prop",
-      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1102",
-      "queryLabel": "help wanted",
+      "score": 9,
+      "repo": "adobe/react-spectrum",
+      "number": 10825,
+      "title": "S2 docs: Card anatomy examples close <CardPreview> with </CardView>",
+      "url": "https://github.com/adobe/react-spectrum/issues/10825",
+      "queryLabel": "good first issue",
       "labels": [
-        "bug",
-        "help wanted"
+        "documentation",
+        "good first issue"
       ],
-      "createdAt": "2026-10-15T19:33:52Z",
-      "updatedAt": "2026-10-16T21:56:25Z",
-      "daysSinceUpdate": 2,
-      "daysSinceCreate": 3,
-      "commentCount": 0,
-      "recentActivity": 0,
-      "maintainerGreen": 0,
-      "maintainerRed": 0,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": [
-        {
-          "number": 1103,
-          "title": "[patch] `prefer-tag-over-role`: only check DOM elements, and skip a non-string `role`",
-          "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/pull/1103",
-          "createdAt": "2026-10-15T19:46:47Z"
-        }
-      ],
-      "checkboxes": {
-        "total": 0,
-        "done": 0
-      },
-      "bodyExcerpt": "`jsx-a11y/prefer-tag-over-role` throws when `role` is given an object literal, which happens on custom components that take a prop named `role`.\n\n**Version:** eslint-plugin-jsx-a11y 6.10.2, ESLint 9.39.4. The same code is on `main`.\n\n**Reproduction**\n\n```js\n// eslint.config.mjs\nimport jsxA11y from \"",
-      "recentComments": [],
-      "repoClass": "large"
-    },
-    {
-      "score": -93,
-      "repo": "dequelabs/axe-core",
-      "number": 5474,
-      "title": "New best practice: label-content-name-exact checks accessible names are an exact match to visible text",
-      "url": "https://github.com/dequelabs/axe-core/issues/5474",
-      "queryLabel": "help wanted",
-      "labels": [
-        "feat",
-        "help wanted",
-        "rules"
-      ],
-      "createdAt": "2026-10-16T10:32:21Z",
-      "updatedAt": "2026-10-16T12:21:32Z",
-      "daysSinceUpdate": 3,
-      "daysSinceCreate": 3,
-      "commentCount": 1,
-      "recentActivity": 1,
+      "createdAt": "2026-10-22T03:54:55Z",
+      "updatedAt": "2026-10-22T09:13:00Z",
+      "daysSinceUpdate": 4,
+      "daysSinceCreate": 4,
+      "commentCount": 2,
+      "recentActivity": 2,
       "maintainerGreen": 0,
       "maintainerRed": 0,
       "claimedRecent": 1,
       "prSubmitted": 0,
-      "linkedOpenPRs": [
-        {
-          "number": 5477,
-          "title": "feat(new-rule): add label-content-name-exact best practice",
-          "url": "https://github.com/dequelabs/axe-core/pull/5477",
-          "createdAt": "2026-10-16T16:36:45Z"
-        }
-      ],
+      "linkedOpenPRs": [],
       "checkboxes": {
         "total": 0,
         "done": 0
       },
-      "bodyExcerpt": "In axe-core 4.14 we enabled label-content-name-mismatch. In figuring that rule out we learned that Voice Control on MacOS requires the accessible name to be an exact match, and on iOS it requires it to be at the start of the accessible name (instead of just anywhere within it).\n\nI think it would be ",
+      "bodyExcerpt": "In `packages/dev/s2-docs/pages/s2/Card.mdx` on main (e36b8c2), the anatomy examples for `AssetCard`, `UserCard` and `ProductCard` open `<CardPreview>` and close it with `</CardView>`:\n\n- AssetCard: lines 289-291\n- UserCard: lines 306-308\n- ProductCard: lines 325-327\n\nCopying them gives invalid JSX. ",
       "recentComments": [
+        {
+          "author": "hamzabhulla",
+          "association": "NONE",
+          "createdAt": "2026-10-22T09:13:00Z",
+          "excerpt": "I saw someone has already offered to work on this. If it’s still available, I’d be happy to take it on. I can fix the three examples and check the matching skill reference too."
+        },
         {
           "author": "MannXo",
           "association": "NONE",
-          "createdAt": "2026-10-16T12:21:32Z",
-          "excerpt": "Interested in working on this. Can I be assigned?"
+          "createdAt": "2026-10-22T06:53:11Z",
+          "excerpt": "Can I take this? I have some time to work on it this week."
         }
       ],
       "repoClass": "large"
@@ -193,13 +203,13 @@
   ],
   "allRanked": [
     {
-      "score": 38,
+      "score": 51,
       "repo": "nvaccess/nvda",
       "repoClass": "large",
-      "number": 20159,
-      "title": "Failure to create portable copy when path is a top-level drive with no backslash",
-      "url": "https://github.com/nvaccess/nvda/issues/20159",
-      "daysSinceUpdate": 4,
+      "number": 21022,
+      "title": "Braille Viewer draws two braille patterns wrongly (U+28CC, U+2873) because of glyph errors in FreeMono-FixedBraille.ttf",
+      "url": "https://github.com/nvaccess/nvda/issues/21022",
+      "daysSinceUpdate": 6,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
@@ -207,13 +217,27 @@
       "maintainerRed": 0
     },
     {
-      "score": 32,
+      "score": 34,
+      "repo": "adobe/react-spectrum",
+      "repoClass": "large",
+      "number": 10310,
+      "title": "useInteractionModality detects JAWS and NVDA as mouse in Chromium",
+      "url": "https://github.com/adobe/react-spectrum/issues/10310",
+      "daysSinceUpdate": 5,
+      "claimedRecent": 0,
+      "prSubmitted": 0,
+      "linkedOpenPRs": 0,
+      "maintainerGreen": 0,
+      "maintainerRed": 0
+    },
+    {
+      "score": 34,
       "repo": "nvaccess/nvda",
       "repoClass": "large",
       "number": 20118,
       "title": "error copying NVDA user settings",
       "url": "https://github.com/nvaccess/nvda/issues/20118",
-      "daysSinceUpdate": 4,
+      "daysSinceUpdate": 2,
       "claimedRecent": 0,
       "prSubmitted": 0,
       "linkedOpenPRs": 0,
@@ -221,30 +245,16 @@
       "maintainerRed": 0
     },
     {
-      "score": -55,
-      "repo": "jsx-eslint/eslint-plugin-jsx-a11y",
+      "score": 9,
+      "repo": "adobe/react-spectrum",
       "repoClass": "large",
-      "number": 1102,
-      "title": "prefer-tag-over-role: TypeError propValue.lastIndexOf is not a function on an object-literal role prop",
-      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/1102",
-      "daysSinceUpdate": 2,
-      "claimedRecent": 0,
-      "prSubmitted": 0,
-      "linkedOpenPRs": 1,
-      "maintainerGreen": 0,
-      "maintainerRed": 0
-    },
-    {
-      "score": -93,
-      "repo": "dequelabs/axe-core",
-      "repoClass": "large",
-      "number": 5474,
-      "title": "New best practice: label-content-name-exact checks accessible names are an exact match to visible text",
-      "url": "https://github.com/dequelabs/axe-core/issues/5474",
-      "daysSinceUpdate": 3,
+      "number": 10825,
+      "title": "S2 docs: Card anatomy examples close <CardPreview> with </CardView>",
+      "url": "https://github.com/adobe/react-spectrum/issues/10825",
+      "daysSinceUpdate": 4,
       "claimedRecent": 1,
       "prSubmitted": 0,
-      "linkedOpenPRs": 1,
+      "linkedOpenPRs": 0,
       "maintainerGreen": 0,
       "maintainerRed": 0
     }
